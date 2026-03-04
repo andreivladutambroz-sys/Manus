@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, profiles, vehicles, diagnostics } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +89,40 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+export async function getOrCreateProfile(userId: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+
+  let profile = await db.select().from(profiles).where(eq(profiles.userId, userId)).limit(1);
+  if (profile.length === 0) {
+    await db.insert(profiles).values({ userId });
+    profile = await db.select().from(profiles).where(eq(profiles.userId, userId)).limit(1);
+  }
+  return profile[0];
+}
+
+export async function getUserVehicles(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(vehicles).where(eq(vehicles.userId, userId));
+}
+
+export async function getUserDiagnostics(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(diagnostics).where(eq(diagnostics.userId, userId));
+}
+
+export async function getVehicleById(vehicleId: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(vehicles).where(eq(vehicles.id, vehicleId)).limit(1);
+  return result[0];
+}
+
+export async function getDiagnosticById(diagnosticId: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(diagnostics).where(eq(diagnostics.id, diagnosticId)).limit(1);
+  return result[0];
+}
