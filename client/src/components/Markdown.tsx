@@ -212,17 +212,15 @@ export const Markdown = memo(function Markdown({
   const plugins: Record<string, unknown> = {};
   if (enableCode) plugins.code = code;
   if (enableMermaid) plugins.mermaid = mermaid;
-
   return (
     <Streamdown
       className={cn("text-foreground leading-relaxed", className)}
       components={{ ...components, ...customComponents }}
-      plugins={plugins}
       shikiTheme={shikiTheme}
       controls={controls}
       {...props}
     >
-      {children}
+      {children ?? ""}
     </Streamdown>
   );
 });
