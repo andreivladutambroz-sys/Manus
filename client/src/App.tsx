@@ -15,6 +15,8 @@ import SwarmMonitoring from "./pages/SwarmMonitoring";
 import AgentFineTuning from "./pages/AgentFineTuning";
 import DiagnosticFeedback from "./pages/DiagnosticFeedback";
 import LearningDashboard from "./pages/LearningDashboard";
+import AdminKnowledgeBase from "./pages/AdminKnowledgeBase";
+import DiagnosticChat from "./pages/DiagnosticChat";
 
 function Router() {
   return (
@@ -30,6 +32,8 @@ function Router() {
       <Route path={"/agent-fine-tuning"} component={AgentFineTuning} />
       <Route path={"/diagnostic/:id/feedback"} component={DiagnosticFeedback} />
       <Route path={"/learning"} component={LearningDashboard} />
+      <Route path={"/admin/knowledge-base"} component={AdminKnowledgeBase} />
+      <Route path={"/diagnostic-chat"} component={DiagnosticChat} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

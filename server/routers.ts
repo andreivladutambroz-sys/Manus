@@ -11,6 +11,8 @@ import { runDiagnostic, runFallbackDiagnostic, ocrCertificateAgent } from "./dia
 import type { DiagnosticInput, DiagnosticReport } from "./diagnostic-orchestrator";
 import { storagePut } from "./storage";
 import { submitFeedback, getAccuracyDashboard, getFeedbackForDiagnostic, findSimilarPatterns, optimizePromptForAgent, getActivePromptForAgent } from "./learning-engine";
+import { knowledgeDocuments, chatMessages } from "../drizzle/schema";
+import { desc, like, and, or, sql } from "drizzle-orm";
 
 export const appRouter = router({
   system: systemRouter,
@@ -313,6 +315,110 @@ export const appRouter = router({
       }))
       .mutation(async ({ input }) => {
         return await addDiagnosticImage(input.diagnosticId, input.imageUrl, input.description);
+      }),
+  }),
+
+  // Knowledge Base Admin procedures
+  knowledge: router({
+    listDocuments: protectedProcedure.query(async ({ ctx }) => {
+      const db = await getDb();
+      if (!db) return [];
+      return await db.select().from(knowledgeDocuments).orderBy(desc(knowledgeDocuments.createdAt));
+    }),
+    uploadDocument: protectedProcedure
+      .input(z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        category: z.enum(["elsa", "etka", "autodata", "workshop_manual", "wiring_diagram", "tsi_bulletin", "other"]),
+        brand: z.string().optional(),
+        model: z.string().optional(),
+        yearFrom: z.number().optional(),
+        yearTo: z.number().optional(),
+        engineCode: z.string().optional(),
+        fileUrl: z.string(),
+        fileKey: z.string(),
+        fileName: z.string(),
+        fileSize: z.number().optional(),
+        mimeType: z.string().optional(),
+        extractedText: z.string().optional(),
+        tags: z.array(z.string()).optional(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const result = await db.insert(knowledgeDocuments).values({
+          uploadedBy: ctx.user.id,
+          ...input,
+        });
+        return { success: true, id: (result as any)[0]?.insertId || 0 };
+      }),
+    deleteDocument: protectedProcedure
+      .input(z.object({ id: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        if (ctx.user.role !== "admin") throw new Error("Admin only");
+        await db.delete(knowledgeDocuments).where(eq(knowledgeDocuments.id, input.id));
+        return { success: true };
+      }),
+    searchDocuments: protectedProcedure
+      .input(z.object({
+        query: z.string().optional(),
+        brand: z.string().optional(),
+        category: z.string().optional(),
+      }))
+      .query(async ({ input }) => {
+        const db = await getDb();
+        if (!db) return [];
+        const conditions = [];
+        if (input.query) {
+          conditions.push(
+            or(
+              like(knowledgeDocuments.title, `%${input.query}%`),
+              like(knowledgeDocuments.extractedText, `%${input.query}%`)
+            )
+          );
+        }
+        if (input.brand) conditions.push(eq(knowledgeDocuments.brand, input.brand));
+        if (conditions.length > 0) {
+          return await db.select().from(knowledgeDocuments).where(and(...conditions)).orderBy(desc(knowledgeDocuments.createdAt));
+        }
+        return await db.select().from(knowledgeDocuments).orderBy(desc(knowledgeDocuments.createdAt));
+      }),
+  }),
+
+  // Chat Messages procedures
+  chat: router({
+    loadMessages: protectedProcedure
+      .input(z.object({ chatId: z.string() }))
+      .query(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) return [];
+        const messages = await db.select().from(chatMessages)
+          .where(and(eq(chatMessages.chatId, input.chatId), eq(chatMessages.userId, ctx.user.id)))
+          .orderBy(chatMessages.ordering);
+        return messages.map(m => m.content);
+      }),
+    saveMessage: protectedProcedure
+      .input(z.object({
+        chatId: z.string(),
+        messageId: z.string(),
+        diagnosticId: z.number().optional(),
+        content: z.any(),
+        ordering: z.number(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        await db.insert(chatMessages).values({
+          id: input.messageId,
+          chatId: input.chatId,
+          diagnosticId: input.diagnosticId,
+          userId: ctx.user.id,
+          content: input.content,
+          ordering: input.ordering,
+        }).onDuplicateKeyUpdate({ set: { content: input.content } });
+        return { success: true };
       }),
   }),
 

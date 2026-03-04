@@ -762,6 +762,14 @@ export default function DiagnosticDetail() {
           <div className="flex gap-3">
             <Button
               variant="outline"
+              className="border-blue-300 text-blue-700 hover:bg-blue-50"
+              onClick={() => navigate(`/diagnostic-chat?diagnosticId=${diagnosticId}`)}
+            >
+              <Brain className="w-4 h-4 mr-2" />
+              Chat AI
+            </Button>
+            <Button
+              variant="outline"
               className="border-purple-300 text-purple-700 hover:bg-purple-50"
               onClick={() => navigate(`/diagnostic/${diagnosticId}/feedback`)}
             >

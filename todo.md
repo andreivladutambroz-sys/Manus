@@ -159,8 +159,8 @@
 - [x] Estimări costuri piese și manoperă
 
 ### Etapa 5: Admin Knowledge Base
-- [ ] Upload manuale service (ELSA, ETKA, Autodata)
-- [ ] Gestionare bază de date piese
+- [x] Upload manuale service (ELSA, ETKA, Autodata)
+- [x] Gestionare bază de date piese
 - [ ] Import/export date tehnice
 
 
@@ -188,3 +188,15 @@
 - [x] Tabel learned_patterns (pattern-uri validate)
 - [x] Tabel prompt_versions (versiuni prompt cu performance)
 - [x] Tabel accuracy_metrics (metrici acuratețe per categorie)
+
+## Next Implementation Round
+- [x] Admin Knowledge Base Upload page (ELSA, ETKA, Autodata manuals) (8/8 teste)
+- [x] File upload to S3 for manuals/documents
+- [x] Manual categorization and tagging
+- [x] Search within uploaded manuals
+- [x] Agent integration with uploaded knowledge base
+- [x] Diagnostic Chat Assistant with Kimi (streaming + tools)
+- [x] Conversational chat UI for follow-up questions
+- [x] Context-aware responses based on diagnostic history
+- [x] Streaming responses for real-time chat
+- [x] Re-deploy all features to Vercel (LIVE!)

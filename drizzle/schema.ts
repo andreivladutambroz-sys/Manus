@@ -322,3 +322,65 @@ export const accuracyMetrics = mysqlTable("accuracyMetrics", {
 
 export type AccuracyMetric = typeof accuracyMetrics.$inferSelect;
 export type InsertAccuracyMetric = typeof accuracyMetrics.$inferInsert;
+
+// ============================================================
+// KNOWLEDGE BASE DOCUMENTS
+// ============================================================
+
+/**
+ * Knowledge Base Documents - manuale ELSA, ETKA, Autodata uploadate de admin
+ */
+export const knowledgeDocuments = mysqlTable("knowledgeDocuments", {
+  id: int("id").autoincrement().primaryKey(),
+  uploadedBy: int("uploadedBy").notNull().references(() => users.id),
+  
+  // Document info
+  title: varchar("title", { length: 255 }).notNull(),
+  description: text("description"),
+  category: mysqlEnum("category", ["elsa", "etka", "autodata", "workshop_manual", "wiring_diagram", "tsi_bulletin", "other"]).notNull(),
+  
+  // Vehicle scope
+  brand: varchar("brand", { length: 50 }),
+  model: varchar("model", { length: 100 }),
+  yearFrom: int("yearFrom"),
+  yearTo: int("yearTo"),
+  engineCode: varchar("engineCode", { length: 20 }),
+  
+  // File info
+  fileUrl: varchar("fileUrl", { length: 500 }).notNull(),
+  fileKey: varchar("fileKey", { length: 500 }).notNull(),
+  fileName: varchar("fileName", { length: 255 }).notNull(),
+  fileSize: int("fileSize"),
+  mimeType: varchar("mimeType", { length: 100 }),
+  
+  // Extracted content for AI search
+  extractedText: text("extractedText"),
+  tags: json("tags").$type<string[]>(),
+  
+  isActive: boolean("isActive").default(true).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type KnowledgeDocument = typeof knowledgeDocuments.$inferSelect;
+export type InsertKnowledgeDocument = typeof knowledgeDocuments.$inferInsert;
+
+// ============================================================
+// DIAGNOSTIC CHAT MESSAGES
+// ============================================================
+
+/**
+ * Chat Messages - conversații mecanic-AI despre diagnostic
+ */
+export const chatMessages = mysqlTable("chatMessages", {
+  id: varchar("id", { length: 36 }).primaryKey(),
+  chatId: varchar("chatId", { length: 36 }).notNull(),
+  diagnosticId: int("diagnosticId").references(() => diagnostics.id, { onDelete: "cascade" }),
+  userId: int("userId").notNull().references(() => users.id, { onDelete: "cascade" }),
+  content: json("content").notNull(), // Full UIMessage object
+  ordering: int("ordering").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type ChatMessage = typeof chatMessages.$inferSelect;
+export type InsertChatMessage = typeof chatMessages.$inferInsert;

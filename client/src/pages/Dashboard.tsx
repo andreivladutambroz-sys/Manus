@@ -71,6 +71,20 @@ export default function Dashboard() {
                 AI Learning
               </Button>
               <Button
+                variant="outline"
+                className="border-blue-300 text-blue-700 hover:bg-blue-50"
+                onClick={() => navigate("/diagnostic-chat")}
+              >
+                Chat AI
+              </Button>
+              <Button
+                variant="outline"
+                className="border-green-300 text-green-700 hover:bg-green-50"
+                onClick={() => navigate("/admin/knowledge-base")}
+              >
+                Admin KB
+              </Button>
+              <Button
                 onClick={() => navigate("/diagnostic/new")}
                 className="bg-orange-500 hover:bg-orange-600"
               >
