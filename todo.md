@@ -72,3 +72,17 @@
 - [ ] Export diagnostic history as CSV
 - [ ] Mechanic statistics and performance metrics
 - [ ] Integration with OBD scanner data
+
+
+## Kimi Swarm Integration (New)
+- [x] Implementa Orchestrator Agent pentru descompunere sarcini
+- [x] Crea SymptomAnalyzer Agent
+- [x] Crea HistoryLookup Agent
+- [x] Crea ErrorCodeDecoder Agent
+- [x] Crea ComponentEvaluator Agent
+- [x] Crea RepairProcedure Agent
+- [x] Crea PartsIdentifier Agent
+- [x] Integra Kimi Swarm în diagnostic API
+- [x] Testa paralel execution și performance (4/4 teste trecute)
+- [ ] Optimiza prompt-uri pentru fiecare agent
+- [ ] Adauga monitoring și logging pentru swarm

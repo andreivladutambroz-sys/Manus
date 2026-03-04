@@ -8,6 +8,7 @@ import { eq } from "drizzle-orm";
 import { z } from "zod";
 import { analyzeSymptoms, type KimiDiagnosticResponse } from "./kimi";
 import { generateDiagnosticPDF } from "./pdf-generator";
+import { executeDiagnosticSwarm, formatSwarmResults } from "./kimi-swarm";
 
 export const appRouter = router({
   system: systemRouter,
@@ -100,6 +101,56 @@ export const appRouter = router({
           throw new Error("Diagnostic not found");
         }
         return diagnostic;
+      }),
+    swarm: protectedProcedure
+      .input(z.object({
+        vehicleId: z.number(),
+        symptoms: z.string(),
+        errorCodes: z.array(z.string()).optional(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+
+        const vehicle = await getVehicleById(input.vehicleId);
+        if (!vehicle || vehicle.userId !== ctx.user.id) {
+          throw new Error("Vehicle not found");
+        }
+
+        // Creează diagnostic în baza de date
+        const result = await db.insert(diagnostics).values({
+          vehicleId: input.vehicleId,
+          userId: ctx.user.id,
+          symptomsText: input.symptoms,
+          symptomsSelected: input.errorCodes || [],
+          status: "in_progress",
+        });
+
+        const diagnosticId = (result as any).insertId || 0;
+
+        // Execută swarm-ul de agenți
+        const swarmResult = await executeDiagnosticSwarm(
+          {
+            vehicleMarque: vehicle.brand,
+            vehicleModel: vehicle.model,
+            vehicleYear: vehicle.year,
+            vehicleMileage: vehicle.mileage || 0,
+            symptoms: input.symptoms,
+            errorCodes: input.errorCodes,
+          },
+          diagnosticId.toString()
+        );
+
+        // Salvează rezultatele în baza de date
+        const updateData: Record<string, unknown> = {
+          kimiResponse: JSON.stringify(swarmResult),
+          status: "completed",
+        };
+        await db.update(diagnostics)
+          .set(updateData)
+          .where(eq(diagnostics.id, diagnosticId));
+
+        return swarmResult;
       }),
     create: protectedProcedure
       .input(z.object({
