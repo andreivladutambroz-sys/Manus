@@ -14,7 +14,8 @@ import {
   Download, ArrowLeft, CheckCircle2, AlertTriangle, XCircle,
   Wrench, Search, Shield, Clock, Zap, ChevronRight, ChevronDown,
   Target, ListChecks, Package, FileText, Brain, Activity,
-  Gauge, Info, ArrowRight, CircleDot, TriangleAlert, CircleCheck
+  Gauge, Info, ArrowRight, CircleDot, TriangleAlert, CircleCheck,
+  MessageSquare
 } from "lucide-react";
 
 // ============================================================
@@ -759,6 +760,14 @@ export default function DiagnosticDetail() {
             Înapoi la Dashboard
           </Button>
           <div className="flex gap-3">
+            <Button
+              variant="outline"
+              className="border-purple-300 text-purple-700 hover:bg-purple-50"
+              onClick={() => navigate(`/diagnostic/${diagnosticId}/feedback`)}
+            >
+              <MessageSquare className="w-4 h-4 mr-2" />
+              Trimite Feedback
+            </Button>
             <Button onClick={handleExportPDF} className="bg-orange-500 hover:bg-orange-600">
               <Download className="w-4 h-4 mr-2" />
               Export Raport PDF

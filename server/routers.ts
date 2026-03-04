@@ -10,6 +10,7 @@ import { generateDiagnosticPDF } from "./pdf-generator";
 import { runDiagnostic, runFallbackDiagnostic, ocrCertificateAgent } from "./diagnostic-orchestrator";
 import type { DiagnosticInput, DiagnosticReport } from "./diagnostic-orchestrator";
 import { storagePut } from "./storage";
+import { submitFeedback, getAccuracyDashboard, getFeedbackForDiagnostic, findSimilarPatterns, optimizePromptForAgent, getActivePromptForAgent } from "./learning-engine";
 
 export const appRouter = router({
   system: systemRouter,
@@ -312,6 +313,79 @@ export const appRouter = router({
       }))
       .mutation(async ({ input }) => {
         return await addDiagnosticImage(input.diagnosticId, input.imageUrl, input.description);
+      }),
+  }),
+
+  // Learning Engine procedures
+  learning: router({
+    // Submit feedback for a diagnostic
+    submitFeedback: protectedProcedure
+      .input(z.object({
+        diagnosticId: z.number(),
+        overallRating: z.number().min(1).max(5),
+        accuracyRating: z.number().min(1).max(5),
+        usefulnessRating: z.number().min(1).max(5),
+        causesFeedback: z.array(z.object({
+          causeId: z.string(),
+          cause: z.string(),
+          rating: z.enum(["correct", "partially_correct", "incorrect"]),
+          mechanicComment: z.string().optional(),
+        })).optional(),
+        actualCause: z.string().optional(),
+        actualParts: z.array(z.string()).optional(),
+        actualCost: z.number().optional(),
+        actualTime: z.string().optional(),
+        mechanicNotes: z.string().optional(),
+        wasResolved: z.boolean(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        return await submitFeedback({
+          ...input,
+          userId: ctx.user.id,
+        });
+      }),
+
+    // Get feedback for a specific diagnostic
+    getFeedback: protectedProcedure
+      .input(z.object({ diagnosticId: z.number() }))
+      .query(async ({ input }) => {
+        return await getFeedbackForDiagnostic(input.diagnosticId);
+      }),
+
+    // Get accuracy dashboard
+    accuracyDashboard: protectedProcedure
+      .query(async () => {
+        return await getAccuracyDashboard();
+      }),
+
+    // Find similar patterns for a new diagnostic
+    findPatterns: protectedProcedure
+      .input(z.object({
+        brand: z.string(),
+        symptoms: z.string(),
+        errorCodes: z.array(z.string()).optional(),
+      }))
+      .query(async ({ input }) => {
+        return await findSimilarPatterns(input.brand, input.symptoms, input.errorCodes);
+      }),
+
+    // Optimize prompt for an agent (admin only)
+    optimizePrompt: protectedProcedure
+      .input(z.object({ agentName: z.string() }))
+      .mutation(async ({ ctx, input }) => {
+        if (ctx.user.role !== "admin") throw new Error("Admin only");
+        return await optimizePromptForAgent(input.agentName);
+      }),
+
+    // Get active prompt for an agent
+    getActivePrompt: protectedProcedure
+      .input(z.object({
+        agentName: z.string(),
+        vehicleBrand: z.string().optional(),
+        symptoms: z.string().optional(),
+      }))
+      .query(async ({ input }) => {
+        return await getActivePromptForAgent(input.agentName, input.vehicleBrand, input.symptoms);
       }),
   }),
 });

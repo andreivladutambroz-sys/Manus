@@ -162,3 +162,29 @@
 - [ ] Upload manuale service (ELSA, ETKA, Autodata)
 - [ ] Gestionare bază de date piese
 - [ ] Import/export date tehnice
+
+
+## Sistem de Învățare Continuă AI (New)
+### Backend - Learning Engine
+- [x] Feedback Loop System - mecanicul confirmă/corectează diagnosticul
+- [x] Knowledge Accumulation Store - salvare diagnostic confirmate ca training data
+- [x] Prompt Optimizer - ajustare automată prompt-uri bazat pe feedback
+- [x] Diagnostic Accuracy Tracker - tracking acuratețe per marcă/model/simptom
+- [x] Pattern Recognition Engine - identificare pattern-uri din diagnostic-uri anterioare
+- [x] Context Injection - injectare cunoștințe acumulate în prompt-uri agenți
+- [x] Success/Failure Metrics - metrici per agent pentru optimizare
+- [x] Auto-tuning Temperature & Parameters - ajustare automată parametri Kimi
+
+### Frontend - Learning UI
+- [x] Feedback UI post-diagnostic (confirmare/corectare rezultat)
+- [x] Rating system per cauză identificată (corect/incorect/parțial)
+- [x] Admin Analytics Dashboard - vizualizare learning progress
+- [x] Accuracy trends per marcă/model
+- [x] Agent performance evolution charts
+- [x] Knowledge base auto-growth visualization
+
+### Database - Learning Tables
+- [x] Tabel diagnostic_feedback (rating, corecții, note mecanic)
+- [x] Tabel learned_patterns (pattern-uri validate)
+- [x] Tabel prompt_versions (versiuni prompt cu performance)
+- [x] Tabel accuracy_metrics (metrici acuratețe per categorie)

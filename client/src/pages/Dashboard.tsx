@@ -1,12 +1,12 @@
-import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { trpc } from "@/lib/trpc";
 import { useLocation } from "wouter";
-import { Plus, Search, Zap, User } from "lucide-react";
+import { Plus, Search, Zap, User, Brain } from "lucide-react";
 import { NotificationCenter } from "@/components/NotificationCenter";
+import { useAuth } from "@/_core/hooks/useAuth";
 import { useState } from "react";
 
 export default function Dashboard() {
@@ -61,6 +61,14 @@ export default function Dashboard() {
                 onClick={() => navigate("/knowledge-base")}
               >
                 Baza de Cunoștințe
+              </Button>
+              <Button
+                variant="outline"
+                className="border-purple-300 text-purple-700 hover:bg-purple-50"
+                onClick={() => navigate("/learning")}
+              >
+                <Brain className="w-4 h-4 mr-2" />
+                AI Learning
               </Button>
               <Button
                 onClick={() => navigate("/diagnostic/new")}

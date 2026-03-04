@@ -183,3 +183,142 @@ export const diagnosticsRelations = relations(diagnostics, ({ one }) => (
     }),
   }
 ));
+
+// ============================================================
+// LEARNING SYSTEM TABLES
+// ============================================================
+
+/**
+ * Diagnostic Feedback - mecanicul confirmă/corectează diagnosticul
+ */
+export const diagnosticFeedback = mysqlTable("diagnosticFeedback", {
+  id: int("id").autoincrement().primaryKey(),
+  diagnosticId: int("diagnosticId").notNull().references(() => diagnostics.id, { onDelete: "cascade" }),
+  userId: int("userId").notNull().references(() => users.id, { onDelete: "cascade" }),
+  
+  // Rating general
+  overallRating: int("overallRating").notNull(), // 1-5 stele
+  accuracyRating: int("accuracyRating").notNull(), // 1-5
+  usefulnessRating: int("usefulnessRating").notNull(), // 1-5
+  
+  // Feedback per cauză
+  causesFeedback: json("causesFeedback").$type<CauseFeedback[]>(),
+  
+  // Corecții mecanic
+  actualCause: text("actualCause"), // cauza reală dacă AI a greșit
+  actualParts: json("actualParts").$type<string[]>(), // piese reale folosite
+  actualCost: decimal("actualCost", { precision: 10, scale: 2 }),
+  actualTime: varchar("actualTime", { length: 50 }),
+  
+  // Note mecanic
+  mechanicNotes: text("mechanicNotes"),
+  wasResolved: boolean("wasResolved").default(false).notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export interface CauseFeedback {
+  causeId: string;
+  cause: string;
+  rating: "correct" | "partially_correct" | "incorrect";
+  mechanicComment?: string;
+}
+
+export type DiagnosticFeedbackRow = typeof diagnosticFeedback.$inferSelect;
+export type InsertDiagnosticFeedback = typeof diagnosticFeedback.$inferInsert;
+
+/**
+ * Learned Patterns - pattern-uri validate din diagnostic-uri confirmate
+ */
+export const learnedPatterns = mysqlTable("learnedPatterns", {
+  id: int("id").autoincrement().primaryKey(),
+  
+  // Identificare vehicul
+  brand: varchar("brand", { length: 50 }).notNull(),
+  model: varchar("model", { length: 100 }),
+  yearFrom: int("yearFrom"),
+  yearTo: int("yearTo"),
+  engineCode: varchar("engineCode", { length: 20 }),
+  
+  // Pattern
+  symptomPattern: text("symptomPattern").notNull(), // simptome normalizate
+  errorCodes: json("errorCodes").$type<string[]>(),
+  confirmedCause: text("confirmedCause").notNull(),
+  confirmedSolution: text("confirmedSolution").notNull(),
+  confirmedParts: json("confirmedParts").$type<string[]>(),
+  
+  // Metrici
+  timesConfirmed: int("timesConfirmed").default(1).notNull(),
+  avgAccuracy: decimal("avgAccuracy", { precision: 5, scale: 2 }),
+  avgCost: decimal("avgCost", { precision: 10, scale: 2 }),
+  avgRepairTime: varchar("avgRepairTime", { length: 50 }),
+  
+  // Sursă
+  sourceType: mysqlEnum("sourceType", ["mechanic_feedback", "manual_entry", "auto_detected"]).notNull(),
+  confidence: decimal("confidence", { precision: 5, scale: 2 }).notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type LearnedPattern = typeof learnedPatterns.$inferSelect;
+export type InsertLearnedPattern = typeof learnedPatterns.$inferInsert;
+
+/**
+ * Prompt Versions - versiuni prompt cu performance tracking
+ */
+export const promptVersions = mysqlTable("promptVersions", {
+  id: int("id").autoincrement().primaryKey(),
+  
+  agentName: varchar("agentName", { length: 50 }).notNull(),
+  version: int("version").notNull(),
+  promptText: text("promptText").notNull(),
+  
+  // Parametri
+  temperature: decimal("temperature", { precision: 3, scale: 2 }),
+  maxTokens: int("maxTokens"),
+  
+  // Performance
+  totalUses: int("totalUses").default(0).notNull(),
+  avgAccuracy: decimal("avgAccuracy", { precision: 5, scale: 2 }),
+  avgFeedbackScore: decimal("avgFeedbackScore", { precision: 3, scale: 2 }),
+  successRate: decimal("successRate", { precision: 5, scale: 2 }),
+  
+  isActive: boolean("isActive").default(true).notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type PromptVersion = typeof promptVersions.$inferSelect;
+export type InsertPromptVersion = typeof promptVersions.$inferInsert;
+
+/**
+ * Accuracy Metrics - metrici acuratețe per categorie
+ */
+export const accuracyMetrics = mysqlTable("accuracyMetrics", {
+  id: int("id").autoincrement().primaryKey(),
+  
+  // Dimensiune
+  dimension: mysqlEnum("dimension", ["brand", "model", "symptom_category", "error_code", "agent", "overall"]).notNull(),
+  dimensionValue: varchar("dimensionValue", { length: 200 }).notNull(),
+  
+  // Metrici
+  totalDiagnostics: int("totalDiagnostics").default(0).notNull(),
+  correctDiagnostics: int("correctDiagnostics").default(0).notNull(),
+  partiallyCorrect: int("partiallyCorrect").default(0).notNull(),
+  incorrectDiagnostics: int("incorrectDiagnostics").default(0).notNull(),
+  
+  avgAccuracy: decimal("avgAccuracy", { precision: 5, scale: 2 }),
+  avgFeedbackScore: decimal("avgFeedbackScore", { precision: 3, scale: 2 }),
+  trend: mysqlEnum("trend", ["improving", "stable", "declining"]).default("stable").notNull(),
+  
+  // Perioadă
+  periodStart: timestamp("periodStart").notNull(),
+  periodEnd: timestamp("periodEnd").notNull(),
+  
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type AccuracyMetric = typeof accuracyMetrics.$inferSelect;
+export type InsertAccuracyMetric = typeof accuracyMetrics.$inferInsert;
