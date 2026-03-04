@@ -14,10 +14,12 @@ import { submitFeedback, getAccuracyDashboard, getFeedbackForDiagnostic, findSim
 import { knowledgeDocuments, chatMessages } from "../drizzle/schema";
 import { desc, like, and, or, sql } from "drizzle-orm";
 import { aiRouter } from "./ai-router";
+import { collaborationRouter } from "./collaboration-router";
 
 export const appRouter = router({
   system: systemRouter,
   ai: aiRouter,
+  collaboration: collaborationRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
