@@ -40,12 +40,12 @@
 - [x] PDF generation setup (docx library)
 
 ## Configuration & Deployment
-- [ ] Environment variables setup (.env.example)
-- [ ] Kimi API key integration
-- [ ] Supabase connection and auth setup
-- [ ] vercel.json configuration
-- [ ] README.md with setup instructions
-- [ ] SUPABASE_SETUP.md with schema and seed data
+- [x] Environment variables setup (Supabase credentials)
+- [x] Kimi API key integration (validated)
+- [x] Supabase connection and auth setup (tested)
+- [x] vercel.json configuration (created)
+- [x] DEPLOYMENT.md with setup instructions (created)
+- [ ] GitHub repository setup
 - [ ] Test user creation (demo@mechanic.ro)
 
 ## Testing & Quality
@@ -58,9 +58,9 @@
 
 ## Deployment
 - [ ] GitHub repository setup
-- [ ] Vercel deployment configuration
-- [ ] Production environment variables
-- [ ] Demo deployment verification
+- [x] Vercel deployment configuration (vercel.json)
+- [x] Production environment variables (configured)
+- [ ] Demo deployment verification (pending)
 
 
 ## Advanced Features (In Progress)
