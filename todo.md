@@ -61,3 +61,14 @@
 - [ ] Vercel deployment configuration
 - [ ] Production environment variables
 - [ ] Demo deployment verification
+
+
+## Advanced Features (In Progress)
+- [x] Mechanic profile page with specialties and certifications
+- [x] Image upload for diagnostic symptoms
+- [x] Real-time notifications for diagnostic analysis
+- [ ] Diagnostic comparison between vehicles
+- [ ] Advanced filtering and sorting in history
+- [ ] Export diagnostic history as CSV
+- [ ] Mechanic statistics and performance metrics
+- [ ] Integration with OBD scanner data

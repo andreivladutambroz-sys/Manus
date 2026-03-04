@@ -2,7 +2,7 @@ import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
-import { getDb, getOrCreateProfile, getUserVehicles, getUserDiagnostics, getVehicleById, getDiagnosticById } from "./db";
+import { getDb, getOrCreateProfile, getUserVehicles, getUserDiagnostics, getVehicleById, getDiagnosticById, getUserNotifications, createNotification, markNotificationAsRead, getDiagnosticImages, addDiagnosticImage } from "./db";
 import { profiles, vehicles, diagnostics } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
@@ -240,6 +240,52 @@ export const appRouter = router({
           console.error("Error analyzing symptoms:", error);
           throw new Error("Failed to analyze symptoms");
         }
+      }),
+  }),
+
+  // Notifications procedures
+  notifications: router({
+    list: protectedProcedure.query(async ({ ctx }) => {
+      return await getUserNotifications(ctx.user.id);
+    }),
+    create: protectedProcedure
+      .input(z.object({
+        type: z.enum(["analysis_complete", "diagnostic_saved", "system_alert"]),
+        title: z.string(),
+        message: z.string().optional(),
+        diagnosticId: z.number().optional(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        return await createNotification(
+          ctx.user.id,
+          input.type,
+          input.title,
+          input.message,
+          input.diagnosticId
+        );
+      }),
+    markAsRead: protectedProcedure
+      .input(z.object({ notificationId: z.number() }))
+      .mutation(async ({ input }) => {
+        return await markNotificationAsRead(input.notificationId);
+      }),
+  }),
+
+  // Image procedures
+  images: router({
+    list: protectedProcedure
+      .input(z.object({ diagnosticId: z.number() }))
+      .query(async ({ input }) => {
+        return await getDiagnosticImages(input.diagnosticId);
+      }),
+    add: protectedProcedure
+      .input(z.object({
+        diagnosticId: z.number(),
+        imageUrl: z.string(),
+        description: z.string().optional(),
+      }))
+      .mutation(async ({ input }) => {
+        return await addDiagnosticImage(input.diagnosticId, input.imageUrl, input.description);
       }),
   }),
 });

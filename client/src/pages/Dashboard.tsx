@@ -5,7 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { trpc } from "@/lib/trpc";
 import { useLocation } from "wouter";
-import { Plus, Search, Zap } from "lucide-react";
+import { Plus, Search, Zap, User } from "lucide-react";
+import { NotificationCenter } from "@/components/NotificationCenter";
 import { useState } from "react";
 
 export default function Dashboard() {
@@ -45,7 +46,16 @@ export default function Dashboard() {
               <h1 className="text-3xl font-bold text-slate-900">Dashboard</h1>
               <p className="text-slate-600">Bun venit din nou, {user?.name || "Mecanic"}</p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 items-center">
+              <NotificationCenter />
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => navigate("/profile")}
+              >
+                <User className="w-4 h-4 mr-2" />
+                Profil
+              </Button>
               <Button
                 variant="outline"
                 onClick={() => navigate("/knowledge-base")}

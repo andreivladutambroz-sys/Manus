@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, json, decimal } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, json, decimal, boolean } from "drizzle-orm/mysql-core";
 import { relations } from "drizzle-orm";
 
 /**
@@ -83,6 +83,40 @@ export const diagnostics = mysqlTable("diagnostics", {
 
 export type Diagnostic = typeof diagnostics.$inferSelect;
 export type InsertDiagnostic = typeof diagnostics.$inferInsert;
+
+/**
+ * Knowledge base - common VAG vehicle problems and solutions
+ */
+/**
+ * Diagnostic images - images uploaded for diagnostics
+ */
+export const diagnosticImages = mysqlTable("diagnosticImages", {
+  id: int("id").autoincrement().primaryKey(),
+  diagnosticId: int("diagnosticId").notNull().references(() => diagnostics.id, { onDelete: "cascade" }),
+  imageUrl: varchar("imageUrl", { length: 500 }).notNull(),
+  description: text("description"),
+  uploadedAt: timestamp("uploadedAt").defaultNow().notNull(),
+});
+
+export type DiagnosticImage = typeof diagnosticImages.$inferSelect;
+export type InsertDiagnosticImage = typeof diagnosticImages.$inferInsert;
+
+/**
+ * Notifications - real-time notifications for mechanics
+ */
+export const notifications = mysqlTable("notifications", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id, { onDelete: "cascade" }),
+  diagnosticId: int("diagnosticId").references(() => diagnostics.id, { onDelete: "cascade" }),
+  type: mysqlEnum("type", ["analysis_complete", "diagnostic_saved", "system_alert"]).notNull(),
+  title: varchar("title", { length: 255 }).notNull(),
+  message: text("message"),
+  isRead: boolean("isRead").default(false).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type Notification = typeof notifications.$inferSelect;
+export type InsertNotification = typeof notifications.$inferInsert;
 
 /**
  * Knowledge base - common VAG vehicle problems and solutions

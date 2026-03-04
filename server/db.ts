@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { eq, desc } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, profiles, vehicles, diagnostics } from "../drizzle/schema";
+import { InsertUser, users, profiles, vehicles, diagnostics, diagnosticImages, notifications, knowledgeBase } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -125,4 +125,45 @@ export async function getDiagnosticById(diagnosticId: number) {
   if (!db) return undefined;
   const result = await db.select().from(diagnostics).where(eq(diagnostics.id, diagnosticId)).limit(1);
   return result[0];
+}
+
+export async function getDiagnosticImages(diagnosticId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(diagnosticImages).where(eq(diagnosticImages.diagnosticId, diagnosticId));
+}
+
+export async function addDiagnosticImage(diagnosticId: number, imageUrl: string, description?: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  return db.insert(diagnosticImages).values({ diagnosticId, imageUrl, description });
+}
+
+export async function getUserNotifications(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(notifications)
+    .where(eq(notifications.userId, userId))
+    .orderBy(desc(notifications.createdAt));
+}
+
+export async function createNotification(userId: number, type: "analysis_complete" | "diagnostic_saved" | "system_alert", title: string, message?: string, diagnosticId?: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  return db.insert(notifications).values({ userId, type, title, message, diagnosticId });
+}
+
+export async function markNotificationAsRead(notificationId: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  return db.update(notifications).set({ isRead: true }).where(eq(notifications.id, notificationId));
+}
+
+export async function searchKnowledgeBase(query: string, brand?: string) {
+  const db = await getDb();
+  if (!db) return [];
+  if (brand) {
+    return db.select().from(knowledgeBase).where(eq(knowledgeBase.brand, brand));
+  }
+  return db.select().from(knowledgeBase);
 }
