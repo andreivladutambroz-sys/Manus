@@ -5,8 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import DashboardLayout from '@/components/DashboardLayout';
 import { trpc } from '@/lib/trpc';
+import { AdminRoute } from '@/components/AdminRoute';
 
-export function AdminDashboard() {
+function AdminDashboardContent() {
   const { data: stats } = trpc.collaboration.getStats.useQuery();
   const { data: sessions } = trpc.collaboration.getActiveSessions.useQuery();
 
@@ -293,5 +294,13 @@ export function AdminDashboard() {
         )}
       </div>
     </DashboardLayout>
+  );
+}
+
+export function AdminDashboard() {
+  return (
+    <AdminRoute>
+      <AdminDashboardContent />
+    </AdminRoute>
   );
 }
