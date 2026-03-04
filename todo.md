@@ -200,3 +200,17 @@
 - [x] Context-aware responses based on diagnostic history
 - [x] Streaming responses for real-time chat
 - [x] Re-deploy all features to Vercel (LIVE!)
+
+## Multi-Language Support (i18n)
+- [x] Creare sistem i18n cu React Context și hook useTranslation
+- [x] Fișier traduceri Română (ro) - default
+- [x] Fișier traduceri Engleză (en)
+- [x] Fișier traduceri Franceză (fr)
+- [x] Fișier traduceri Germană (de)
+- [x] Fișier traduceri Italiană (it)
+- [x] Language selector component cu dropdown și steaguri
+- [x] Persistență limbă selectată (localStorage)
+- [x] Auto-detect browser language
+- [x] Integrare i18n în Home.tsx și Dashboard.tsx
+- [x] Teste vitest (8/8 trecute)
+- [x] Re-deploy pe Vercel (LIVE!)

@@ -1,13 +1,16 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Zap, Database, Shield } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight, Zap, Database, Shield, Brain } from "lucide-react";
 import { getLoginUrl } from "@/const";
 import { useLocation } from "wouter";
+import { useTranslation } from "@/lib/i18n";
+import LanguageSelector from "@/components/LanguageSelector";
 
 export default function Home() {
-  const { user, isAuthenticated } = useAuth();
+  const { isAuthenticated } = useAuth();
   const [, navigate] = useLocation();
+  const { t } = useTranslation();
 
   const handleGetStarted = () => {
     if (isAuthenticated) {
@@ -26,19 +29,20 @@ export default function Home() {
             <Zap className="w-6 h-6 text-orange-500" />
             <span className="text-xl font-bold text-white">Mechanic Helper</span>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-3 items-center">
+            <LanguageSelector />
             {isAuthenticated ? (
               <>
-                <Button variant="outline" onClick={() => navigate("/dashboard")}>
-                  Dashboard
+                <Button variant="outline" className="bg-transparent border-slate-600 text-slate-300 hover:bg-slate-700" onClick={() => navigate("/dashboard")}>
+                  {t("nav.dashboard")}
                 </Button>
-                <Button variant="outline" onClick={() => navigate("/knowledge-base")}>
-                  Baza de Cunoștințe
+                <Button variant="outline" className="bg-transparent border-slate-600 text-slate-300 hover:bg-slate-700" onClick={() => navigate("/knowledge-base")}>
+                  {t("nav.knowledgeBase")}
                 </Button>
               </>
             ) : (
-              <Button onClick={() => window.location.href = getLoginUrl()}>
-                Sign In
+              <Button className="bg-orange-500 hover:bg-orange-600" onClick={() => window.location.href = getLoginUrl()}>
+                {t("nav.login")}
               </Button>
             )}
           </div>
@@ -49,18 +53,18 @@ export default function Home() {
       <section className="container mx-auto px-4 py-20">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Professional Auto Diagnostics
-            <span className="block text-orange-500 mt-2">Powered by AI</span>
+            {t("home.title")}
+            <span className="block text-orange-500 mt-2">{t("home.titleHighlight")}</span>
           </h1>
           <p className="text-xl text-slate-300 mb-8">
-            Streamline your diagnostic workflow with intelligent symptom analysis, comprehensive history management, and instant AI-powered recommendations.
+            {t("home.subtitle")}
           </p>
           <Button
             size="lg"
             onClick={handleGetStarted}
             className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg"
           >
-            Get Started <ArrowRight className="ml-2 w-5 h-5" />
+            {t("home.cta")} <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>
       </section>
@@ -71,30 +75,30 @@ export default function Home() {
           <Card className="bg-slate-800 border-slate-700">
             <CardHeader>
               <Zap className="w-8 h-8 text-orange-500 mb-2" />
-              <CardTitle className="text-white">AI-Powered Analysis</CardTitle>
+              <CardTitle className="text-white">{t("home.feature1.title")}</CardTitle>
             </CardHeader>
             <CardContent className="text-slate-300">
-              Get intelligent diagnostic suggestions based on vehicle symptoms using advanced AI analysis.
+              {t("home.feature1.desc")}
             </CardContent>
           </Card>
 
           <Card className="bg-slate-800 border-slate-700">
             <CardHeader>
               <Database className="w-8 h-8 text-orange-500 mb-2" />
-              <CardTitle className="text-white">Complete History</CardTitle>
+              <CardTitle className="text-white">{t("home.feature2.title")}</CardTitle>
             </CardHeader>
             <CardContent className="text-slate-300">
-              Track all diagnostics with searchable history, filters, and detailed reports for every vehicle.
+              {t("home.feature2.desc")}
             </CardContent>
           </Card>
 
           <Card className="bg-slate-800 border-slate-700">
             <CardHeader>
-              <Shield className="w-8 h-8 text-orange-500 mb-2" />
-              <CardTitle className="text-white">Professional Reports</CardTitle>
+              <Brain className="w-8 h-8 text-orange-500 mb-2" />
+              <CardTitle className="text-white">{t("home.feature3.title")}</CardTitle>
             </CardHeader>
             <CardContent className="text-slate-300">
-              Generate and export comprehensive PDF reports for client communication and record-keeping.
+              {t("home.feature3.desc")}
             </CardContent>
           </Card>
         </div>
@@ -102,13 +106,13 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-20 text-center">
-        <h2 className="text-3xl font-bold text-white mb-6">Ready to transform your diagnostics?</h2>
+        <h2 className="text-3xl font-bold text-white mb-6">{t("home.cta")}</h2>
         <Button
           size="lg"
           onClick={handleGetStarted}
           className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg"
         >
-          Start Your Free Trial <ArrowRight className="ml-2 w-5 h-5" />
+          {t("nav.getStarted")} <ArrowRight className="ml-2 w-5 h-5" />
         </Button>
       </section>
 
