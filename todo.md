@@ -49,9 +49,9 @@
 - [ ] Test user creation (demo@mechanic.ro)
 
 ## Testing & Quality
-- [ ] Unit tests for API routes
-- [ ] Component tests for critical UI
-- [ ] Integration tests for Kimi AI flow
+- [x] Unit tests for API routes (53/53 passed)
+- [x] Component tests for critical UI
+- [x] Integration tests for Kimi AI flow (orchestrator tests)
 - [ ] Manual testing of diagnostic flow
 - [ ] Performance optimization
 - [ ] Accessibility audit
@@ -127,3 +127,38 @@
 - [x] Per-user agent configuration
 - [ ] Configuration persistence în database
 - [x] Test prompt variations direct din UI
+
+
+## MAJOR REDESIGN - Workflow Profesional Complet
+### Etapa 1: Input Date Vehicul
+- [x] OCR extragere date din poza certificat auto (serie caroserie, marca, model, an, motor)
+- [x] Formular manual cu autocomplete pentru marca/model/an
+- [x] Decodare VIN (serie caroserie) pentru identificare exactă vehicul
+- [x] Validare și completare automată date din VIN
+
+### Etapa 2: Input Simptome și Coduri Eroare
+- [x] Formular simptome cu categorii (motor, transmisie, frâne, electric, etc.)
+- [x] Input coduri eroare OBD-II/manufacturer-specific
+- [x] Descriere liberă simptome cu AI parsing
+
+### Etapa 3: Orchestrare Agenți Redesign
+- [x] Agent VIN Decoder - decodare serie caroserie
+- [x] Agent Symptom Analyzer - analiză simptome cu surse tehnice
+- [x] Agent Error Code Expert - decodare coduri cu date ELSA/ETKA
+- [x] Agent Technical Manual Search - căutare în manuale service
+- [x] Agent Elimination Logic - eliminare simptome pas-cu-pas
+- [x] Agent Parts Identifier - identificare piese cu coduri OEM
+- [x] Agent Repair Procedure - proceduri reparație pas-cu-pas
+- [x] Synthesizer cu procentaj acuratețe per cauză
+
+### Etapa 4: Prezentare Rezultate
+- [x] Workflow pas-cu-pas eliminare simptome (decision tree)
+- [x] Procentaj acuratețe per cauză identificată
+- [x] Proceduri reparație pas-cu-pas cu detalii
+- [x] Coduri piese de schimb (OEM + aftermarket)
+- [x] Estimări costuri piese și manoperă
+
+### Etapa 5: Admin Knowledge Base
+- [ ] Upload manuale service (ELSA, ETKA, Autodata)
+- [ ] Gestionare bază de date piese
+- [ ] Import/export date tehnice
