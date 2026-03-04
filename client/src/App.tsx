@@ -20,12 +20,16 @@ import AdminKnowledgeBase from "./pages/AdminKnowledgeBase";
 import DiagnosticChat from "./pages/DiagnosticChat";
 import OBDScanner from "./pages/OBDScanner";
 import { AIChatbot } from "./components/AIChatbot";
+import { Landing } from "./pages/Landing";
+import { AdminDashboard } from "./pages/AdminDashboard";
 
 function Router() {
   return (
     <Switch>
+      <Route path={"/landing"} component={Landing} />
       <Route path={"/"} component={Home} />
       <Route path={"/dashboard"} component={Dashboard} />
+      <Route path={"/admin"} component={AdminDashboard} />
       <Route path={"/diagnostic/new"} component={DiagnosticNew} />
       <Route path={"/diagnostic/:id"} component={DiagnosticDetail} />
       <Route path={"/vehicles"} component={VehicleList} />
