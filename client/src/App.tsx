@@ -10,6 +10,7 @@ import DiagnosticNew from "./pages/DiagnosticNew";
 import DiagnosticDetail from "./pages/DiagnosticDetail";
 import VehicleList from "./pages/VehicleList";
 import ProfilePage from "./pages/Profile";
+import KnowledgeBase from "./pages/KnowledgeBase";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
       <Route path={"/diagnostic/:id"} component={DiagnosticDetail} />
       <Route path={"/vehicles"} component={VehicleList} />
       <Route path={"/profile"} component={ProfilePage} />
+      <Route path={"/knowledge-base"} component={KnowledgeBase} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

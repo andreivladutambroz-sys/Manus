@@ -32,6 +32,9 @@ export default function Home() {
                 <Button variant="outline" onClick={() => navigate("/dashboard")}>
                   Dashboard
                 </Button>
+                <Button variant="outline" onClick={() => navigate("/knowledge-base")}>
+                  Baza de Cunoștințe
+                </Button>
               </>
             ) : (
               <Button onClick={() => window.location.href = getLoginUrl()}>

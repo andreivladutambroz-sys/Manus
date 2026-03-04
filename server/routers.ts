@@ -7,6 +7,7 @@ import { profiles, vehicles, diagnostics } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
 import { analyzeSymptoms, type KimiDiagnosticResponse } from "./kimi";
+import { generateDiagnosticPDF } from "./pdf-generator";
 
 export const appRouter = router({
   system: systemRouter,
@@ -150,6 +151,50 @@ export const appRouter = router({
           .where(eq(diagnostics.id, input.id));
 
         return { success: true };
+      }),
+  }),
+
+  export: router({
+    pdf: protectedProcedure
+      .input(z.object({
+        diagnosticId: z.number(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+
+        const diagnostic = await getDiagnosticById(input.diagnosticId);
+        if (!diagnostic || diagnostic.userId !== ctx.user.id) {
+          throw new Error("Diagnostic not found");
+        }
+
+        const vehicle = await getVehicleById(diagnostic.vehicleId);
+        if (!vehicle) throw new Error("Vehicle not found");
+
+        try {
+          const pdfUrl = await generateDiagnosticPDF({
+            diagnosticId: diagnostic.id,
+            vehicleBrand: vehicle.brand,
+            vehicleModel: vehicle.model,
+            vehicleYear: vehicle.year,
+            vehicleEngine: vehicle.engine || undefined,
+            vehicleMileage: vehicle.mileage || undefined,
+            symptomsText: diagnostic.symptomsText || "",
+            symptomsSelected: (diagnostic.symptomsSelected as string[]) || [],
+            kimiResponse: diagnostic.kimiResponse as any,
+            createdAt: diagnostic.createdAt,
+            mechanicName: ctx.user.name || undefined,
+          });
+
+          await db.update(diagnostics)
+            .set({ pdfUrl })
+            .where(eq(diagnostics.id, input.diagnosticId));
+
+          return { url: pdfUrl };
+        } catch (error) {
+          console.error("Error generating PDF:", error);
+          throw new Error("Failed to generate PDF");
+        }
       }),
   }),
 

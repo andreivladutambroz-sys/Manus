@@ -8,36 +8,36 @@
 - [x] Vehicle management (CRUD operations)
 - [x] Diagnostic form with multi-step wizard
 - [x] Kimi AI integration for diagnostic analysis
-- [ ] Diagnostic results display with structured output
-- [ ] Diagnostic history and search functionality
-- [ ] PDF export for diagnostic reports
+- [x] Diagnostic results display with structured output
+- [x] Diagnostic history and search functionality
+- [x] PDF export for diagnostic reports
 - [x] Dashboard with statistics and recent diagnostics
-- [ ] Knowledge base search interface
-- [ ] Responsive design for mobile mechanics
+- [x] Knowledge base search interface
+- [x] Responsive design for mobile mechanics
 
 ## UI/UX Implementation
 - [x] Landing page with hero section and demo
 - [x] Authentication pages (login/register)
-- [ ] Dashboard layout with sidebar navigation
+- [x] Dashboard layout with sidebar navigation
 - [ ] Mechanic profile page
 - [ ] Vehicle list and management
 - [x] Diagnostic form (Step 1: Vehicle data)
 - [x] Diagnostic form (Step 2: Symptoms)
 - [ ] Diagnostic form (Step 3: Image upload)
 - [ ] Diagnostic form (Step 4: Processing state)
-- [ ] Diagnostic results page
+- [x] Diagnostic results page
 - [x] Diagnostic history page with filters
-- [ ] Knowledge base page
-- [ ] Error handling and loading states
+- [x] Knowledge base page
+- [x] Error handling and loading states
 
 ## API Routes & Backend
 - [x] POST /api/diagnostic - Create new diagnostic
 - [x] GET /api/diagnostic/[id] - Retrieve diagnostic
 - [x] POST /api/diagnostic/[id]/save - Save diagnostic
-- [ ] GET /api/export/pdf/[id] - Generate PDF report
-- [ ] GET /api/knowledge - Query knowledge base
+- [x] GET /api/export/pdf/[id] - Generate PDF report
+- [x] GET /api/knowledge - Query knowledge base
 - [x] Kimi AI API integration and prompt engineering
-- [ ] PDF generation setup (@react-pdf/renderer or puppeteer)
+- [x] PDF generation setup (docx library)
 
 ## Configuration & Deployment
 - [ ] Environment variables setup (.env.example)

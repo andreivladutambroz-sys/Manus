@@ -43,15 +43,23 @@ export default function Dashboard() {
           <div className="flex justify-between items-center mb-6">
             <div>
               <h1 className="text-3xl font-bold text-slate-900">Dashboard</h1>
-              <p className="text-slate-600">Welcome back, {user?.name || "Mechanic"}</p>
+              <p className="text-slate-600">Bun venit din nou, {user?.name || "Mecanic"}</p>
             </div>
-            <Button
-              onClick={() => navigate("/diagnostic/new")}
-              className="bg-orange-500 hover:bg-orange-600"
-            >
-              <Plus className="w-4 h-4 mr-2" />
-              New Diagnostic
-            </Button>
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                onClick={() => navigate("/knowledge-base")}
+              >
+                Baza de Cunoștințe
+              </Button>
+              <Button
+                onClick={() => navigate("/diagnostic/new")}
+                className="bg-orange-500 hover:bg-orange-600"
+              >
+                <Plus className="w-4 h-4 mr-2" />
+                Diagnostic Nou
+              </Button>
+            </div>
           </div>
 
           {/* Stats */}
@@ -102,7 +110,7 @@ export default function Dashboard() {
 
         {/* Diagnostics List */}
         <div className="space-y-4">
-          <h2 className="text-xl font-bold text-slate-900">Recent Diagnostics</h2>
+            <h2 className="text-xl font-bold text-slate-900">Diagnostice Recente</h2>
           
           {isLoading ? (
             <div className="space-y-4">
