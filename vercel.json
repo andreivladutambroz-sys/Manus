@@ -4,16 +4,5 @@
   "installCommand": "pnpm install",
   "framework": "vite",
   "outputDirectory": "dist",
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "envPrefix": "VITE_",
-  "regions": ["iad1"],
-  "functions": {
-    "server/_core/index.ts": {
-      "runtime": "nodejs18.x",
-      "memory": 1024,
-      "maxDuration": 60
-    }
-  }
+  "regions": ["iad1"]
 }
