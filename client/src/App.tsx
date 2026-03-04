@@ -11,6 +11,8 @@ import DiagnosticDetail from "./pages/DiagnosticDetail";
 import VehicleList from "./pages/VehicleList";
 import ProfilePage from "./pages/Profile";
 import KnowledgeBase from "./pages/KnowledgeBase";
+import SwarmMonitoring from "./pages/SwarmMonitoring";
+import AgentFineTuning from "./pages/AgentFineTuning";
 
 function Router() {
   return (
@@ -22,6 +24,8 @@ function Router() {
       <Route path={"/vehicles"} component={VehicleList} />
       <Route path={"/profile"} component={ProfilePage} />
       <Route path={"/knowledge-base"} component={KnowledgeBase} />
+      <Route path={"/swarm-monitoring"} component={SwarmMonitoring} />
+      <Route path={"/agent-fine-tuning"} component={AgentFineTuning} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
