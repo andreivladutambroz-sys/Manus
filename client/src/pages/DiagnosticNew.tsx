@@ -17,7 +17,7 @@ import { toast } from "sonner";
 import {
   Car, Upload, Camera, FileText, Wrench, AlertTriangle, CheckCircle2,
   ArrowLeft, ArrowRight, Loader2, Zap, Search, Shield, Clock,
-  ChevronRight, X, Plus, Brain
+  ChevronRight, X, Plus, Brain, Bluetooth
 } from "lucide-react";
 
 // ============================================================
@@ -616,6 +616,18 @@ export default function DiagnosticNew() {
                 <CardDescription>Introduceți codurile de eroare citite cu testerul</CardDescription>
               </CardHeader>
               <CardContent>
+                <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg flex items-center justify-between">
+                  <p className="text-sm text-blue-700">💡 Conectați un scanner Bluetooth OBD-II pentru a citi codurile direct din vehicul</p>
+                  <Button
+                    onClick={() => navigate("/obd-scanner")}
+                    variant="outline"
+                    size="sm"
+                    className="border-blue-300 text-blue-700 hover:bg-blue-50"
+                  >
+                    <Bluetooth className="w-4 h-4 mr-2" />
+                    OBD Scanner
+                  </Button>
+                </div>
                 <div className="flex gap-2 mb-4">
                   <Input
                     value={newErrorCode}

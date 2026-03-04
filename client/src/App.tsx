@@ -18,6 +18,7 @@ import DiagnosticFeedback from "./pages/DiagnosticFeedback";
 import LearningDashboard from "./pages/LearningDashboard";
 import AdminKnowledgeBase from "./pages/AdminKnowledgeBase";
 import DiagnosticChat from "./pages/DiagnosticChat";
+import OBDScanner from "./pages/OBDScanner";
 
 function Router() {
   return (
@@ -35,6 +36,7 @@ function Router() {
       <Route path={"/learning"} component={LearningDashboard} />
       <Route path={"/admin/knowledge-base"} component={AdminKnowledgeBase} />
       <Route path={"/diagnostic-chat"} component={DiagnosticChat} />
+      <Route path={"/obd-scanner"} component={OBDScanner} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

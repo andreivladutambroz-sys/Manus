@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { trpc } from "@/lib/trpc";
 import { useLocation } from "wouter";
-import { Plus, Search, Zap, User, Brain } from "lucide-react";
+import { Plus, Search, Zap, User, Brain, Bluetooth } from "lucide-react";
 import { NotificationCenter } from "@/components/NotificationCenter";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useState } from "react";
@@ -87,6 +87,14 @@ export default function Dashboard() {
                 onClick={() => navigate("/admin/knowledge-base")}
               >
                 {t("nav.adminKB")}
+              </Button>
+              <Button
+                variant="outline"
+                className="border-cyan-300 text-cyan-700 hover:bg-cyan-50"
+                onClick={() => navigate("/obd-scanner")}
+              >
+                <Bluetooth className="w-4 h-4 mr-2" />
+                OBD Scanner
               </Button>
               <Button
                 onClick={() => navigate("/diagnostic/new")}
