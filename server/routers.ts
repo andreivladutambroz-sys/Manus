@@ -13,9 +13,11 @@ import { storagePut } from "./storage";
 import { submitFeedback, getAccuracyDashboard, getFeedbackForDiagnostic, findSimilarPatterns, optimizePromptForAgent, getActivePromptForAgent } from "./learning-engine";
 import { knowledgeDocuments, chatMessages } from "../drizzle/schema";
 import { desc, like, and, or, sql } from "drizzle-orm";
+import { aiRouter } from "./ai-router";
 
 export const appRouter = router({
   system: systemRouter,
+  ai: aiRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {

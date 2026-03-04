@@ -19,6 +19,7 @@ import LearningDashboard from "./pages/LearningDashboard";
 import AdminKnowledgeBase from "./pages/AdminKnowledgeBase";
 import DiagnosticChat from "./pages/DiagnosticChat";
 import OBDScanner from "./pages/OBDScanner";
+import { AIChatbot } from "./components/AIChatbot";
 
 function Router() {
   return (
@@ -52,6 +53,7 @@ function App() {
           <TooltipProvider>
             <Toaster />
             <Router />
+            <AIChatbot />
           </TooltipProvider>
         </ThemeProvider>
       </I18nProvider>

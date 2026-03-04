@@ -264,3 +264,30 @@
   - [x] Data validation tests (3 tests)
   - [x] All 102 tests passing
 - [ ] Deploy to Vercel
+
+
+## AI & Automations (COMPLETED)
+- [x] Automated Diagnostic Suggestions
+  - [x] ML model training pipeline
+  - [x] Symptom-to-cause prediction
+  - [x] Confidence scoring system
+  - [x] Learning from past diagnostics
+  - [x] A/B testing framework
+- [x] Predictive Maintenance Engine
+  - [x] Maintenance schedule generator
+  - [x] Parts replacement recommendations
+  - [x] Cost estimation
+  - [x] Mileage-based predictions
+  - [x] Age-based predictions
+- [x] Automated Report Generation
+  - [x] Custom templates per brand
+  - [x] Multi-language reports
+  - [x] Branded reports (logo, colors)
+  - [x] Email delivery
+  - [x] Scheduled report generation
+- [x] Chatbot pentru Clienți
+  - [x] FAQ automation
+  - [x] Diagnostic Q&A
+  - [x] Escalation to mechanic
+  - [x] Embed on mechanic website
+  - [x] Multi-language support

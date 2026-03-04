@@ -19,6 +19,8 @@ import {
   ArrowLeft, ArrowRight, Loader2, Zap, Search, Shield, Clock,
   ChevronRight, X, Plus, Brain, Bluetooth
 } from "lucide-react";
+import { AISuggestions } from "@/components/AISuggestions";
+import { MaintenanceRecommendations } from "@/components/MaintenanceRecommendations";
 
 // ============================================================
 // CONSTANTS
@@ -822,6 +824,30 @@ export default function DiagnosticNew() {
                     </div>
                   </CardContent>
                 </Card>
+
+                {/* AI Suggestions */}
+                {brand && model && year && mileage && (
+                  <div className="space-y-4">
+                    <AISuggestions
+                      symptoms={selectedSymptoms}
+                      brand={brand}
+                      model={model}
+                      year={parseInt(year)}
+                      mileage={parseInt(mileage)}
+                      category={category}
+                      errorCodes={errorCodes}
+                    />
+                    <MaintenanceRecommendations
+                      brand={brand}
+                      model={model}
+                      year={parseInt(year)}
+                      mileage={parseInt(mileage)}
+                      fuelType="Petrol"
+                      transmissionType="Manual"
+                      driveType="FWD"
+                    />
+                  </div>
+                )}
 
                 <div className="flex justify-center gap-4">
                   <Button
