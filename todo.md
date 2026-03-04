@@ -232,3 +232,35 @@
 - [x] Verificare network requests
 - [x] Test all routes și navigation
 - [x] Verificare authentication flow
+
+
+## OBD-II Bluetooth Scanner (NEW)
+- [x] Research OBD-II protocol și Web Bluetooth API
+- [x] Implement OBDScanner service class
+  - [x] Device discovery și connection
+  - [x] DTC code reading (Mode 0x03)
+  - [x] DTC code clearing (Mode 0x04)
+  - [x] Vehicle speed reading (PID 0x0D)
+  - [x] Engine RPM reading (PID 0x0C)
+  - [x] 1000+ DTC descriptions database
+  - [x] ELM327 AT command support
+- [x] Create OBD Scanner UI page
+  - [x] Device selection interface
+  - [x] Real-time connection status
+  - [x] DTC scanning și display
+  - [x] Severity classification (critical/warning/info)
+  - [x] Clear DTCs functionality
+  - [x] Vehicle speed monitoring
+  - [x] Engine RPM monitoring
+- [x] Integrate with diagnostic workflow
+  - [x] Add OBD Scanner link to Dashboard
+  - [x] Add OBD Scanner button in DiagnosticNew
+  - [x] Auto-populate error codes from scanner
+- [x] Testing
+  - [x] DTC parsing tests (12 tests)
+  - [x] Vehicle data parsing tests (6 tests)
+  - [x] Severity classification tests (4 tests)
+  - [x] Error handling tests (3 tests)
+  - [x] Data validation tests (3 tests)
+  - [x] All 102 tests passing
+- [ ] Deploy to Vercel
