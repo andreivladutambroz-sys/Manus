@@ -397,7 +397,7 @@
   - [x] Client role (future)
 
 
-## Next Steps Implementation (IN PROGRESS)
+## Next Steps Implementation (COMPLETED)
 - [x] Role-based Access Control
   - [x] Admin-only middleware
   - [x] Protect /admin route
