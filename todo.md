@@ -626,3 +626,46 @@
   - [ ] Fixes list display
   - [ ] Voting interface
   - [ ] Fix details view
+
+
+---
+
+## Source Tracking & Verification (COMPLETED - March 5, 2026)
+- [x] Diagnostic sources service with confidence levels (98% OEM, 90% manuals, 85% APIs, 60% Kimi, 50% user)
+- [x] Parts pricing integration service (Autodoc, Autodata, eBay, Emag)
+- [x] Enhanced diagnostic router with source tracing
+- [x] Source validation and trust score calculation (0-100%)
+- [x] 16 source tracking unit tests passing
+- [x] 6 diagnostic sources integration tests passing
+- [x] Comprehensive source tracking documentation (SOURCE_TRACKING_GUIDE.md)
+- [x] API response format with source attribution
+- [x] Kimi AI properly tracked as 60% confidence (supplementary)
+- [x] OEM databases as 98% confidence (primary)
+- [x] Forum sources with upvote-based confidence
+- [x] Parts pricing APIs as 85% confidence
+- [ ] Add actual API credentials to secrets (Autodoc, Autodata, eBay, Emag)
+- [ ] Test real API calls with live data
+- [ ] Implement price comparison UI
+- [ ] Add price history tracking
+- [ ] Integrate sources into diagnostic UI
+- [ ] Display trust score badges in results
+- [ ] Show source links in diagnostic results
+- [ ] Create audit trail logging
+
+## Implementation Summary
+**Total Tests Passing:** 127 (105 mobile + 16 sources + 6 integration)
+**Source Confidence Hierarchy:**
+- 98% OEM Database (Autodata, manufacturer specs)
+- 90% Technical Manuals (service guides)
+- 85% Parts APIs (Autodoc, eBay, Emag, Autodata)
+- 85% Community Forums (20+ upvotes)
+- 60% Kimi AI (supplementary analysis)
+- 50% User Input (context only)
+
+**Key Files Created:**
+- server/services/diagnostic-sources.ts (source tracking)
+- server/services/parts-pricing.ts (parts pricing APIs)
+- server/routers/diagnostic-with-sources.ts (enhanced router)
+- server/diagnostic-sources.test.ts (16 tests)
+- server/diagnostic-sources-integration.test.ts (6 tests)
+- SOURCE_TRACKING_GUIDE.md (comprehensive documentation)
