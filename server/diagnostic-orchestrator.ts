@@ -172,7 +172,7 @@ async function callKimi(
 ): Promise<string> {
   const { temperature = 0.3, maxTokens = 2000, jsonMode = false } = options;
 
-  const response = await fetch("https://api.moonshot.cn/v1/chat/completions", {
+  const response = await fetch("https://api.moonshot.ai/v1/chat/completions", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${ENV.kimiApiKey}`,
@@ -254,7 +254,7 @@ Returnează JSON cu structura:
  * OCR Agent - Extrage date din imagine certificat auto (folosește Kimi Vision)
  */
 export async function ocrCertificateAgent(imageUrl: string): Promise<Partial<VehicleData>> {
-  const response = await fetch("https://api.moonshot.cn/v1/chat/completions", {
+  const response = await fetch("https://api.moonshot.ai/v1/chat/completions", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${ENV.kimiApiKey}`,

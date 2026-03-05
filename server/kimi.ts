@@ -46,7 +46,7 @@ Analizează aceste simptome și oferă diagnostic profesional.
 `;
 
   try {
-    const response = await fetch("https://api.moonshot.cn/v1/chat/completions", {
+    const response = await fetch("https://api.moonshot.ai/v1/chat/completions", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${kimiApiKey}`,

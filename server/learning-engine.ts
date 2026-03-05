@@ -311,7 +311,7 @@ export async function optimizePromptForAgent(agentName: string): Promise<{
     .map(f => `Rating: ${f.overallRating}/5 - ${f.mechanicNotes || "Fără note"} - Cauza reală: ${f.actualCause || "N/A"}`)
     .join("\n");
 
-  const response = await fetch("https://api.moonshot.cn/v1/chat/completions", {
+  const response = await fetch("https://api.moonshot.ai/v1/chat/completions", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${ENV.kimiApiKey}`,
