@@ -332,7 +332,7 @@ class SwarmLauncherFixed {
 
           // Write to database in smaller batches
           if (recordsToInsert.length > 0) {
-            const batchSize = 20;
+            const batchSize = 5;
             for (let batch = 0; batch < recordsToInsert.length; batch += batchSize) {
               const chunk = recordsToInsert.slice(batch, batch + batchSize);
               try {
