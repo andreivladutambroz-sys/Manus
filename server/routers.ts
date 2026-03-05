@@ -25,7 +25,6 @@ import { knowledgeBaseRouter } from "./routers/knowledge-base";
 import { importProgressRouter } from "./routers/import-progress";
 import { diagnosticRouter } from "./routers/diagnostic.router";
 import { imageUploadRouter } from "./routers/image-upload.router";
-import { swarmMonitorRouter } from "./routers/swarm-monitor.router";
 
 export const appRouter = router({
   system: systemRouter,
@@ -41,7 +40,6 @@ export const appRouter = router({
   importProgress: importProgressRouter,
   diagnosticEngine: diagnosticRouter,
   imageUpload: imageUploadRouter,
-  swarmMonitor: swarmMonitorRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
