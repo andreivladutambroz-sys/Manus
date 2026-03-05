@@ -493,7 +493,7 @@ export default function DiagnosticNew() {
                             <SelectItem key={m} value={m}>{m}</SelectItem>
                           ))
                         ) : (
-                          <SelectItem value="">Selectați mai întâi marca</SelectItem>
+                          <div className="px-2 py-1.5 text-sm text-muted-foreground">Selectați mai întâi marca</div>
                         )}
                       </SelectContent>
                     </Select>
