@@ -1,0 +1,61 @@
+CREATE TABLE `apiRequestLog` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`provider` varchar(50) NOT NULL,
+	`endpoint` varchar(500) NOT NULL,
+	`method` varchar(10) NOT NULL,
+	`statusCode` int,
+	`responseTime` int,
+	`success` boolean NOT NULL,
+	`errorMessage` text,
+	`fromCache` boolean NOT NULL DEFAULT false,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	CONSTRAINT `apiRequestLog_id` PRIMARY KEY(`id`)
+);
+--> statement-breakpoint
+CREATE TABLE `vehicleApiCache` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`vin` varchar(50),
+	`make` varchar(50) NOT NULL,
+	`model` varchar(100) NOT NULL,
+	`year` int NOT NULL,
+	`engineCode` varchar(20),
+	`engineType` varchar(50),
+	`displacement` varchar(20),
+	`power` varchar(20),
+	`torque` varchar(20),
+	`cylinders` int,
+	`transmission` varchar(50),
+	`fuelType` varchar(20),
+	`fuelConsumption` varchar(50),
+	`co2Emissions` varchar(50),
+	`bodyType` varchar(50),
+	`dataSources` json,
+	`confidenceScore` decimal(3,2),
+	`lastUpdated` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	`expiresAt` timestamp,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	CONSTRAINT `vehicleApiCache_id` PRIMARY KEY(`id`),
+	CONSTRAINT `vehicleApiCache_vin_unique` UNIQUE(`vin`)
+);
+--> statement-breakpoint
+CREATE TABLE `vehicleRecalls` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`make` varchar(50) NOT NULL,
+	`model` varchar(100) NOT NULL,
+	`yearFrom` int NOT NULL,
+	`yearTo` int NOT NULL,
+	`recallId` varchar(50) NOT NULL,
+	`manufacturer` varchar(100) NOT NULL,
+	`description` text NOT NULL,
+	`riskLevel` enum('critical','high','medium','low') NOT NULL,
+	`fixProcedure` text,
+	`estimatedRepairTime` varchar(50),
+	`recallDate` timestamp,
+	`status` enum('open','closed','superseded') NOT NULL DEFAULT 'open',
+	`source` varchar(50) NOT NULL,
+	`sourceUrl` varchar(500),
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `vehicleRecalls_id` PRIMARY KEY(`id`),
+	CONSTRAINT `vehicleRecalls_recallId_unique` UNIQUE(`recallId`)
+);

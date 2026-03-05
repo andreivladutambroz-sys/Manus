@@ -155,6 +155,120 @@ export type InsertVehicleMotorization = typeof vehicleMotorizations.$inferInsert
  * Knowledge base - common VAG vehicle problems and solutions
  */
 /**
+ * Automotive API Cache - normalized vehicle data from external APIs
+ */
+export const vehicleApiCache = mysqlTable("vehicleApiCache", {
+  id: int("id").autoincrement().primaryKey(),
+  
+  // VIN or vehicle identifier
+  vin: varchar("vin", { length: 50 }).unique(),
+  make: varchar("make", { length: 50 }).notNull(),
+  model: varchar("model", { length: 100 }).notNull(),
+  year: int("year").notNull(),
+  
+  // Engine specifications
+  engineCode: varchar("engineCode", { length: 20 }),
+  engineType: varchar("engineType", { length: 50 }), // Petrol, Diesel, Hybrid, Electric
+  displacement: varchar("displacement", { length: 20 }), // e.g., "3.0"
+  power: varchar("power", { length: 20 }), // e.g., "171kW" or "232hp"
+  torque: varchar("torque", { length: 20 }), // e.g., "500Nm"
+  cylinders: int("cylinders"),
+  
+  // Transmission
+  transmission: varchar("transmission", { length: 50 }), // Manual, Automatic, CVT
+  
+  // Fuel and emissions
+  fuelType: varchar("fuelType", { length: 20 }),
+  fuelConsumption: varchar("fuelConsumption", { length: 50 }), // e.g., "7.5 L/100km"
+  co2Emissions: varchar("co2Emissions", { length: 50 }), // e.g., "195 g/km"
+  
+  // Body type
+  bodyType: varchar("bodyType", { length: 50 }), // Sedan, SUV, Truck, etc.
+  
+  // Source tracking
+  dataSources: json("dataSources").$type<DataSource[]>(), // Which APIs provided this data
+  confidenceScore: decimal("confidenceScore", { precision: 3, scale: 2 }), // 0.0-1.0
+  
+  // Cache management
+  lastUpdated: timestamp("lastUpdated").defaultNow().onUpdateNow().notNull(),
+  expiresAt: timestamp("expiresAt"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export interface DataSource {
+  provider: string; // "nhtsa", "carquery", "fueleconomy", etc.
+  confidence: number; // 0.0-1.0
+  lastFetched: string; // ISO timestamp
+  fields: string[]; // Which fields came from this provider
+}
+
+export type VehicleApiCache = typeof vehicleApiCache.$inferSelect;
+export type InsertVehicleApiCache = typeof vehicleApiCache.$inferInsert;
+
+/**
+ * Vehicle Recalls - safety recalls from NHTSA and other sources
+ */
+export const vehicleRecalls = mysqlTable("vehicleRecalls", {
+  id: int("id").autoincrement().primaryKey(),
+  
+  // Vehicle identification
+  make: varchar("make", { length: 50 }).notNull(),
+  model: varchar("model", { length: 100 }).notNull(),
+  yearFrom: int("yearFrom").notNull(),
+  yearTo: int("yearTo").notNull(),
+  
+  // Recall details
+  recallId: varchar("recallId", { length: 50 }).notNull().unique(), // NHTSA recall ID
+  manufacturer: varchar("manufacturer", { length: 100 }).notNull(),
+  description: text("description").notNull(),
+  riskLevel: mysqlEnum("riskLevel", ["critical", "high", "medium", "low"]).notNull(),
+  
+  // Recall procedure
+  fixProcedure: text("fixProcedure"),
+  estimatedRepairTime: varchar("estimatedRepairTime", { length: 50 }),
+  
+  // Status
+  recallDate: timestamp("recallDate"),
+  status: mysqlEnum("status", ["open", "closed", "superseded"]).default("open").notNull(),
+  
+  // Source
+  source: varchar("source", { length: 50 }).notNull(), // "nhtsa", "eu_database", etc.
+  sourceUrl: varchar("sourceUrl", { length: 500 }),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type VehicleRecall = typeof vehicleRecalls.$inferSelect;
+export type InsertVehicleRecall = typeof vehicleRecalls.$inferInsert;
+
+/**
+ * API Request Log - track API calls for monitoring and debugging
+ */
+export const apiRequestLog = mysqlTable("apiRequestLog", {
+  id: int("id").autoincrement().primaryKey(),
+  
+  // Request details
+  provider: varchar("provider", { length: 50 }).notNull(), // "nhtsa", "carquery", etc.
+  endpoint: varchar("endpoint", { length: 500 }).notNull(),
+  method: varchar("method", { length: 10 }).notNull(), // GET, POST
+  
+  // Response details
+  statusCode: int("statusCode"),
+  responseTime: int("responseTime"), // milliseconds
+  success: boolean("success").notNull(),
+  errorMessage: text("errorMessage"),
+  
+  // Cache info
+  fromCache: boolean("fromCache").default(false).notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type ApiRequestLog = typeof apiRequestLog.$inferSelect;
+export type InsertApiRequestLog = typeof apiRequestLog.$inferInsert;
+
+/**
  * Knowledge base - common VAG vehicle problems and solutions
  */
 export const knowledgeBase = mysqlTable("knowledgeBase", {
