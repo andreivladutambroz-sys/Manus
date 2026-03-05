@@ -32,6 +32,28 @@ const BRANDS = [
   "Honda", "Hyundai", "Kia", "Dacia", "Fiat", "Volvo", "Other"
 ];
 
+const MODELS_BY_BRAND: Record<string, string[]> = {
+  "Volkswagen": ["Golf", "Passat", "Tiguan", "Polo", "Jetta", "Touran", "Caddy", "Transporter"],
+  "Audi": ["A1", "A3", "A4", "A5", "A6", "A7", "A8", "Q2", "Q3", "Q5", "Q7", "Q8"],
+  "Skoda": ["Citigo", "Fabia", "Octavia", "Superb", "Rapid", "Yeti", "Karoq", "Kodiaq"],
+  "Seat": ["Mii", "Ibiza", "Leon", "Toledo", "Arona", "Tarraco", "Alhambra"],
+  "BMW": ["116", "118", "120", "130", "320", "330", "520", "530", "X1", "X3", "X5", "X7"],
+  "Mercedes-Benz": ["A-Class", "C-Class", "E-Class", "S-Class", "CLA", "GLA", "GLC", "GLE", "GLS"],
+  "Opel": ["Adam", "Astra", "Corsa", "Grandland", "Insignia", "Mokka", "Vectra", "Zafira"],
+  "Ford": ["Fiesta", "Focus", "Fusion", "Mondeo", "Kuga", "Edge", "Explorer", "Ranger"],
+  "Renault": ["Clio", "Megane", "Scenic", "Espace", "Laguna", "Captur", "Kadjar", "Koleos"],
+  "Peugeot": ["107", "207", "307", "308", "407", "508", "2008", "3008", "5008"],
+  "Citroen": ["C1", "C2", "C3", "C4", "C5", "C6", "Berlingo", "Picasso"],
+  "Toyota": ["Yaris", "Corolla", "Camry", "Avensis", "RAV4", "Highlander", "Land Cruiser", "Prius"],
+  "Honda": ["Jazz", "Civic", "Accord", "CR-V", "Pilot", "Odyssey", "Insight"],
+  "Hyundai": ["i10", "i20", "i30", "Elantra", "Sonata", "Tucson", "Santa Fe", "Kona"],
+  "Kia": ["Picanto", "Rio", "Ceed", "Optima", "Sorento", "Sportage", "Niro", "Telluride"],
+  "Dacia": ["Sandero", "Logan", "Duster", "Lodgy", "Dokker", "Spring"],
+  "Fiat": ["500", "Panda", "Punto", "Bravo", "Tipo", "Ducato", "500X"],
+  "Volvo": ["V40", "V60", "V90", "S60", "S90", "XC40", "XC60", "XC90"],
+  "Other": ["Model necunoscut"]
+};
+
 const CATEGORIES = [
   { value: "motor", label: "Motor", icon: "🔧" },
   { value: "transmisie", label: "Transmisie", icon: "⚙️" },
@@ -461,7 +483,20 @@ export default function DiagnosticNew() {
                   </div>
                   <div>
                     <Label htmlFor="model">Model *</Label>
-                    <Input id="model" value={model} onChange={(e) => setModel(e.target.value)} placeholder="ex: Golf, A4, Seria 3" />
+                    <Select value={model} onValueChange={setModel}>
+                      <SelectTrigger id="model">
+                        <SelectValue placeholder="Selectați modelul" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {brand && MODELS_BY_BRAND[brand] ? (
+                          MODELS_BY_BRAND[brand].map((m) => (
+                            <SelectItem key={m} value={m}>{m}</SelectItem>
+                          ))
+                        ) : (
+                          <SelectItem value="">Selectați mai întâi marca</SelectItem>
+                        )}
+                      </SelectContent>
+                    </Select>
                   </div>
                 </div>
 
