@@ -7,6 +7,7 @@ import DashboardLayout from '@/components/DashboardLayout';
 import { trpc } from '@/lib/trpc';
 import { AdminRoute } from '@/components/AdminRoute';
 import { DataImportDashboard } from '@/components/DataImportDashboard';
+import { ImportHistoryTable } from '@/components/ImportHistoryTable';
 
 export function AdminDashboard() {
   return (
@@ -93,13 +94,14 @@ function AdminDashboardContent() {
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="system" className="w-full">
-              <TabsList className="grid w-full grid-cols-6 bg-slate-700/50">
+              <TabsList className="grid w-full grid-cols-7 bg-slate-700/50">
                 <TabsTrigger value="system">System</TabsTrigger>
                 <TabsTrigger value="users">Users</TabsTrigger>
                 <TabsTrigger value="ai">AI Models</TabsTrigger>
                 <TabsTrigger value="knowledge">Knowledge</TabsTrigger>
                 <TabsTrigger value="analytics">Analytics</TabsTrigger>
                 <TabsTrigger value="import">Data Import</TabsTrigger>
+                <TabsTrigger value="history">Import History</TabsTrigger>
               </TabsList>
 
               {/* System Settings */}
@@ -279,6 +281,11 @@ function AdminDashboardContent() {
               {/* Data Import */}
               <TabsContent value="import" className="space-y-4 mt-6">
                 <DataImportDashboard />
+              </TabsContent>
+
+              {/* Import History */}
+              <TabsContent value="history" className="space-y-4 mt-6">
+                <ImportHistoryTable onRefresh={() => {}} />
               </TabsContent>
             </Tabs>
           </CardContent>
