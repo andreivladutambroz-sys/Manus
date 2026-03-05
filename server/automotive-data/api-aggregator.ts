@@ -6,6 +6,8 @@
 import { BaseProvider, VehicleData, RecallData, ProviderResponse, DataSource } from './providers/base-provider';
 import { NhtsaProvider } from './providers/nhtsa-provider';
 import { FuelEconomyProvider } from './providers/fuel-economy-provider';
+import { CarQueryProvider } from './providers/carquery-provider';
+import { EuDatasetProvider } from './providers/eu-dataset-provider';
 
 export interface AggregatedVehicleData extends VehicleData {
   sources: DataSource[];
@@ -26,7 +28,9 @@ export class ApiAggregator {
     // Initialize all providers
     this.providers.push(new NhtsaProvider());
     this.providers.push(new FuelEconomyProvider());
-    // Additional providers can be added here
+    this.providers.push(new CarQueryProvider());
+    this.providers.push(new EuDatasetProvider());
+    // Additional providers can be added here (TecDoc, Autodata, etc.)
   }
 
   /**

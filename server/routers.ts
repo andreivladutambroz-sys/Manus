@@ -15,11 +15,13 @@ import { knowledgeDocuments, chatMessages } from "../drizzle/schema";
 
 import { aiRouter } from "./ai-router";
 import { collaborationRouter } from "./collaboration-router";
+import { automotiveDataRouter } from "./routers/automotive-data";
 
 export const appRouter = router({
   system: systemRouter,
   ai: aiRouter,
   collaboration: collaborationRouter,
+  automotiveData: automotiveDataRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
