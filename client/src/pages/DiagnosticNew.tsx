@@ -24,6 +24,8 @@ import { MaintenanceRecommendations } from "@/components/MaintenanceRecommendati
 import { MotorizationSelector } from "@/components/MotorizationSelector";
 import { VINDecoder } from "@/components/VINDecoder";
 import { VehicleRecalls } from "@/components/VehicleRecalls";
+import { OBDScannerUI } from "@/components/OBDScannerUI";
+import { PartsPricingDisplay } from "@/components/PartsPricingDisplay";
 
 // ============================================================
 // CONSTANTS
@@ -695,6 +697,19 @@ export default function DiagnosticNew() {
               </CardContent>
             </Card>
 
+            {/* OBD-II Scanner Integration */}
+            <OBDScannerUI
+              onDTCsRead={(dtcs) => {
+                const codes = dtcs.map((d: any) => d.code);
+                const uniqueCodes = Array.from(new Set([...errorCodes, ...codes]));
+                setErrorCodes(uniqueCodes);
+                toast.success(`${codes.length} coduri citite din vehicul`);
+              }}
+              onParametersRead={(params) => {
+                toast.success(`${params.length} parametri motor citiți`);
+              }}
+            />
+
             {/* Error Codes */}
             <Card>
               <CardHeader>
@@ -705,18 +720,6 @@ export default function DiagnosticNew() {
                 <CardDescription>Introduceți codurile de eroare citite cu testerul</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg flex items-center justify-between">
-                  <p className="text-sm text-blue-700">💡 Conectați un scanner Bluetooth OBD-II pentru a citi codurile direct din vehicul</p>
-                  <Button
-                    onClick={() => navigate("/obd-scanner")}
-                    variant="outline"
-                    size="sm"
-                    className="border-blue-300 text-blue-700 hover:bg-blue-50"
-                  >
-                    <Bluetooth className="w-4 h-4 mr-2" />
-                    OBD Scanner
-                  </Button>
-                </div>
                 <div className="flex gap-2 mb-4">
                   <Input
                     value={newErrorCode}
@@ -911,6 +914,15 @@ export default function DiagnosticNew() {
                     </div>
                   </CardContent>
                 </Card>
+
+                {/* Parts Pricing */}
+                {diagnosticResult.report?.probableCauses && diagnosticResult.report.probableCauses.length > 0 && (
+                  <PartsPricingDisplay
+                    repairType={diagnosticResult.report.probableCauses[0]?.cause || "General Repair"}
+                    brand={brand}
+                    model={model}
+                  />
+                )}
 
                 {/* Safety Recalls */}
                 {brand && model && year && (
