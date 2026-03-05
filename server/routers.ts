@@ -23,6 +23,7 @@ import { dataImportRouter } from "./routers/data-import";
 import { importHistoryRouter } from "./routers/import-history";
 import { knowledgeBaseRouter } from "./routers/knowledge-base";
 import { importProgressRouter } from "./routers/import-progress";
+import { diagnosticRouter } from "./routers/diagnostic.router";
 
 export const appRouter = router({
   system: systemRouter,
@@ -36,6 +37,7 @@ export const appRouter = router({
   importHistory: importHistoryRouter,
   knowledgeBase: knowledgeBaseRouter,
   importProgress: importProgressRouter,
+  diagnosticEngine: diagnosticRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
