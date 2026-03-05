@@ -1,0 +1,205 @@
+{
+  "query": "SELECT TABLE_NAME, TABLE_ROWS, ROUND(DATA_LENGTH/1024/1024,2) as size_mb FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA=DATABASE() ORDER BY TABLE_ROWS DESC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user czn98hR1NJRAJqS.d1053c28687a --database f8JTLCpe9ZcHoBRdfShqpj --execute SELECT TABLE_NAME, TABLE_ROWS, ROUND(DATA_LENGTH/1024/1024,2) as size_mb FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA=DATABASE() ORDER BY TABLE_ROWS DESC;",
+  "rows": [
+    {
+      "TABLE_NAME": "knowledgeBase",
+      "TABLE_ROWS": "100000",
+      "size_mb": "25.64"
+    },
+    {
+      "TABLE_NAME": "models",
+      "TABLE_ROWS": "700",
+      "size_mb": "0.02"
+    },
+    {
+      "TABLE_NAME": "knowledgeBase_raw",
+      "TABLE_ROWS": "477",
+      "size_mb": "0.01"
+    },
+    {
+      "TABLE_NAME": "vehicleMotorizations",
+      "TABLE_ROWS": "206",
+      "size_mb": "0.01"
+    },
+    {
+      "TABLE_NAME": "manufacturers",
+      "TABLE_ROWS": "20",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "vehicles",
+      "TABLE_ROWS": "14",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "notifications",
+      "TABLE_ROWS": "12",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "diagnostics",
+      "TABLE_ROWS": "12",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "__drizzle_migrations",
+      "TABLE_ROWS": "11",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "users",
+      "TABLE_ROWS": "1",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "learnedPatterns",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "vinDecodeCache",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "vehicleRecalls",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "vehicleHistory",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "repairOutcomes",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "serviceProcedures",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "promptVersions",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "diagnosticFeedback",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "vinPatterns",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "dataImportStatus",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "vehicleVariants",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "sourceRegistry",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "diagnosticImages",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "repairCases",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "betaInvites",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "knowledgeDocuments",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "profiles",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "componentHealthScores",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "engines",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "accuracyMetrics",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "vehicleApiCache",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "maintenanceRecommendations",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "generations",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "failurePredictions",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "repairFeedback",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "torqueSpecifications",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "apiRequestLog",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "chatMessages",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    },
+    {
+      "TABLE_NAME": "betaUsers",
+      "TABLE_ROWS": "0",
+      "size_mb": "0.00"
+    }
+  ],
+  "messages": [],
+  "stdout": "TABLE_NAME\tTABLE_ROWS\tsize_mb\nknowledgeBase\t100000\t25.64\nmodels\t700\t0.02\nknowledgeBase_raw\t477\t0.01\nvehicleMotorizations\t206\t0.01\nmanufacturers\t20\t0.00\nvehicles\t14\t0.00\nnotifications\t12\t0.00\ndiagnostics\t12\t0.00\n__drizzle_migrations\t11\t0.00\nusers\t1\t0.00\nlearnedPatterns\t0\t0.00\nvinDecodeCache\t0\t0.00\nvehicleRecalls\t0\t0.00\nvehicleHistory\t0\t0.00\nrepairOutcomes\t0\t0.00\nserviceProcedures\t0\t0.00\npromptVersions\t0\t0.00\ndiagnosticFeedback\t0\t0.00\nvinPatterns\t0\t0.00\ndataImportStatus\t0\t0.00\nvehicleVariants\t0\t0.00\nsourceRegistry\t0\t0.00\ndiagnosticImages\t0\t0.00\nrepairCases\t0\t0.00\nbetaInvites\t0\t0.00\nknowledgeDocuments\t0\t0.00\nprofiles\t0\t0.00\ncomponentHealthScores\t0\t0.00\nengines\t0\t0.00\naccuracyMetrics\t0\t0.00\nvehicleApiCache\t0\t0.00\nmaintenanceRecommendations\t0\t0.00\ngenerations\t0\t0.00\nfailurePredictions\t0\t0.00\nrepairFeedback\t0\t0.00\ntorqueSpecifications\t0\t0.00\napiRequestLog\t0\t0.00\nchatMessages\t0\t0.00\nbetaUsers\t0\t0.00\n",
+  "stderr": "",
+  "execution_time_ms": 373
+}

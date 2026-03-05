@@ -262,5 +262,6 @@ class Pipeline {
   }
 }
 
+export { Pipeline };
 export const pipeline = new Pipeline();
 export type { RawRecord, NormalizedRecord, DeduplicatedRecord, ValidatedRecord };

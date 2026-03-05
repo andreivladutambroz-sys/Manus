@@ -160,4 +160,5 @@ Return results as a JSON array.`,
   }
 }
 
+export { KimiBatchProcessor };
 export const kimiBatchProcessor = new KimiBatchProcessor();

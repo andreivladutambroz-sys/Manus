@@ -1014,7 +1014,7 @@ export const repairOutcomes = mysqlTable("repairOutcomes", {
   avgRepairCost: decimal("avgRepairCost", { precision: 10, scale: 2 }),
   successCount: int("successCount").default(0),
   failureCount: int("failureCount").default(0),
-  timestamp: timestamp("timestamp").defaultNow().notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 export type RepairOutcome = typeof repairOutcomes.$inferSelect;
@@ -1044,7 +1044,7 @@ export const repairFeedback = mysqlTable("repairFeedback", {
   rating: int("rating"),
   issuesFound: json("issuesFound").$type<string[]>(),
   improvementsSuggested: json("improvementsSuggested").$type<string[]>(),
-  timestamp: timestamp("timestamp").defaultNow().notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 export type RepairFeedback = typeof repairFeedback.$inferSelect;

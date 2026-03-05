@@ -152,4 +152,5 @@ class WaveExecutor {
   }
 }
 
+export { WaveExecutor };
 export const waveExecutor = new WaveExecutor();

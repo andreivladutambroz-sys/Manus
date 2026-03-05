@@ -78,6 +78,13 @@
       "when": 1772743951199,
       "tag": "0010_conscious_ink",
       "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "5",
+      "when": 1772749442421,
+      "tag": "0011_lame_vision",
+      "breakpoints": true
     }
   ]
 }

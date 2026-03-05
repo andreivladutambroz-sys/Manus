@@ -171,4 +171,5 @@ class AgentPool {
   }
 }
 
+export { AgentPool };
 export const agentPool = new AgentPool();

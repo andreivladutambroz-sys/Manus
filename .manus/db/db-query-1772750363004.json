@@ -1,0 +1,90 @@
+{
+  "query": "SELECT TABLE_NAME, TABLE_ROWS FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = DATABASE() ORDER BY TABLE_ROWS DESC LIMIT 20;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user czn98hR1NJRAJqS.d1053c28687a --database f8JTLCpe9ZcHoBRdfShqpj --execute SELECT TABLE_NAME, TABLE_ROWS FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = DATABASE() ORDER BY TABLE_ROWS DESC LIMIT 20;",
+  "rows": [
+    {
+      "TABLE_NAME": "knowledgeBase",
+      "TABLE_ROWS": "100000"
+    },
+    {
+      "TABLE_NAME": "models",
+      "TABLE_ROWS": "700"
+    },
+    {
+      "TABLE_NAME": "knowledgeBase_raw",
+      "TABLE_ROWS": "477"
+    },
+    {
+      "TABLE_NAME": "vehicleMotorizations",
+      "TABLE_ROWS": "206"
+    },
+    {
+      "TABLE_NAME": "manufacturers",
+      "TABLE_ROWS": "20"
+    },
+    {
+      "TABLE_NAME": "vehicles",
+      "TABLE_ROWS": "14"
+    },
+    {
+      "TABLE_NAME": "diagnostics",
+      "TABLE_ROWS": "12"
+    },
+    {
+      "TABLE_NAME": "notifications",
+      "TABLE_ROWS": "12"
+    },
+    {
+      "TABLE_NAME": "__drizzle_migrations",
+      "TABLE_ROWS": "11"
+    },
+    {
+      "TABLE_NAME": "users",
+      "TABLE_ROWS": "1"
+    },
+    {
+      "TABLE_NAME": "repairOutcomes",
+      "TABLE_ROWS": "0"
+    },
+    {
+      "TABLE_NAME": "learnedPatterns",
+      "TABLE_ROWS": "0"
+    },
+    {
+      "TABLE_NAME": "sourceRegistry",
+      "TABLE_ROWS": "0"
+    },
+    {
+      "TABLE_NAME": "diagnosticFeedback",
+      "TABLE_ROWS": "0"
+    },
+    {
+      "TABLE_NAME": "promptVersions",
+      "TABLE_ROWS": "0"
+    },
+    {
+      "TABLE_NAME": "betaUsers",
+      "TABLE_ROWS": "0"
+    },
+    {
+      "TABLE_NAME": "repairCases",
+      "TABLE_ROWS": "0"
+    },
+    {
+      "TABLE_NAME": "vinDecodeCache",
+      "TABLE_ROWS": "0"
+    },
+    {
+      "TABLE_NAME": "vinPatterns",
+      "TABLE_ROWS": "0"
+    },
+    {
+      "TABLE_NAME": "serviceProcedures",
+      "TABLE_ROWS": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "TABLE_NAME\tTABLE_ROWS\nknowledgeBase\t100000\nmodels\t700\nknowledgeBase_raw\t477\nvehicleMotorizations\t206\nmanufacturers\t20\nvehicles\t14\ndiagnostics\t12\nnotifications\t12\n__drizzle_migrations\t11\nusers\t1\nrepairOutcomes\t0\nlearnedPatterns\t0\nsourceRegistry\t0\ndiagnosticFeedback\t0\npromptVersions\t0\nbetaUsers\t0\nrepairCases\t0\nvinDecodeCache\t0\nvinPatterns\t0\nserviceProcedures\t0\n",
+  "stderr": "",
+  "execution_time_ms": 483
+}
