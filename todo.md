@@ -527,3 +527,27 @@
   - [x] Link procedures to symptoms
   - [x] Generate repair plan from diagnostic
   - [x] Track repair status
+
+
+## Model-Specific Repair Procedures (NEW - HIGH PRIORITY)
+- [ ] Extend Repair Procedures Database
+  - [ ] VW Phaeton 2010-2018 specific procedures
+  - [ ] BMW 320i 2010-2024 specific procedures
+  - [ ] Mercedes C-Class 2010-2024 specific procedures
+  - [ ] Audi A4 2010-2024 specific procedures
+  - [ ] Ford Focus 2010-2024 specific procedures
+  - [ ] Toyota Corolla 2010-2024 specific procedures
+  - [ ] Procedures per engine type (TDI, TSI, Diesel, Petrol, Hybrid)
+  - [ ] Procedures per year range
+  - [ ] Model-specific part numbers and specifications
+  - [ ] Model-specific torque specs and procedures
+- [ ] Model Selector & Auto-Filter
+  - [ ] Filter procedures by exact model/year/engine
+  - [ ] Show only applicable procedures for selected vehicle
+  - [ ] Highlight model-specific variations
+  - [ ] Display part numbers specific to model
+- [ ] Model-Specific Procedure Matching
+  - [ ] Link diagnostic codes to model-specific procedures
+  - [ ] Show alternative procedures for different model years
+  - [ ] Display model-specific safety warnings
+  - [ ] Show model-specific tools required
