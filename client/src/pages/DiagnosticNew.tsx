@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { AISuggestions } from "@/components/AISuggestions";
 import { MaintenanceRecommendations } from "@/components/MaintenanceRecommendations";
+import { MotorizationSelector } from "@/components/MotorizationSelector";
 
 // ============================================================
 // CONSTANTS
@@ -562,16 +563,29 @@ export default function DiagnosticNew() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="engine">Motor</Label>
-                    <Input id="engine" value={engine} onChange={(e) => setEngine(e.target.value)} placeholder="ex: 2.0 TDI 150CP" />
+                <MotorizationSelector
+                  brand={brand}
+                  model={model}
+                  year={year ? parseInt(year) : undefined}
+                  onSelect={(motorization) => {
+                    setEngine(motorization.engineName);
+                    setEngineCode(motorization.engineCode);
+                  }}
+                />
+
+                {!brand || !model ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-3 rounded-lg bg-slate-100 border border-slate-200">
+                    <div>
+                      <Label htmlFor="engine">Motor (manual)</Label>
+                      <Input id="engine" value={engine} onChange={(e) => setEngine(e.target.value)} placeholder="ex: 2.0 TDI 150CP" />
+                      <p className="text-xs text-slate-500 mt-1">Selectati marca si modelul pentru a vedea motorizarile disponibile</p>
+                    </div>
+                    <div>
+                      <Label htmlFor="engineCode">Cod Motor</Label>
+                      <Input id="engineCode" value={engineCode} onChange={(e) => setEngineCode(e.target.value)} placeholder="ex: CBBB, N47D20" />
+                    </div>
                   </div>
-                  <div>
-                    <Label htmlFor="engineCode">Cod Motor</Label>
-                    <Input id="engineCode" value={engineCode} onChange={(e) => setEngineCode(e.target.value)} placeholder="ex: CBBB, N47D20" />
-                  </div>
-                </div>
+                ) : null}
 
                 {vehicleInputMode !== "vin" && (
                   <div>
