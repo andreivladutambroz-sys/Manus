@@ -442,3 +442,27 @@
   - [x] Maintenance recommendations
   - [x] Automated report generation
   - [x] Chatbot responses
+
+
+## Diagnostic Engine Optimization (COMPLETED)
+- [x] Identificare surse online
+  - [x] Reddit threads (r/cars, r/MechanicAdvice, brand-specific)
+  - [x] Specialist forums (CarGurus, Edmunds, BenzWorld, AudiWorld)
+  - [x] YouTube channels (diagnostic tutorials)
+  - [x] Manufacturer forums
+  - [x] Blog-uri mecanici
+- [x] Web scraping service
+  - [x] Reddit scraper
+  - [x] Forum scraper
+  - [x] YouTube comments extractor
+  - [x] Blog content extractor
+- [x] Enhanced Kimi API integration
+  - [x] Context-specific prompts per marca/model
+  - [x] Multi-source data aggregation
+  - [x] Confidence scoring
+  - [x] Source attribution
+- [x] Improved UI
+  - [x] Source references display
+  - [x] Confidence indicators
+  - [x] Related discussions links
+  - [x] Expert opinions section
