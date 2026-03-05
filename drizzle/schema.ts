@@ -121,6 +121,42 @@ export type InsertNotification = typeof notifications.$inferInsert;
 /**
  * Knowledge base - common VAG vehicle problems and solutions
  */
+/**
+ * Vehicle Motorizations - official engine variants per brand/model
+ */
+export const vehicleMotorizations = mysqlTable("vehicleMotorizations", {
+  id: int("id").autoincrement().primaryKey(),
+  brand: varchar("brand", { length: 50 }).notNull(),
+  model: varchar("model", { length: 100 }).notNull(),
+  yearFrom: int("yearFrom").notNull(),
+  yearTo: int("yearTo").notNull(),
+  
+  // Engine details
+  engineName: varchar("engineName", { length: 100 }).notNull(), // "3.0 TDI 171kW CARA"
+  engineCode: varchar("engineCode", { length: 20 }).notNull(), // "CARA"
+  engineType: varchar("engineType", { length: 50 }).notNull(), // "Diesel", "Petrol", "Hybrid"
+  displacement: varchar("displacement", { length: 20 }), // "3.0"
+  power: varchar("power", { length: 20 }), // "171kW"
+  torque: varchar("torque", { length: 20 }), // "500Nm"
+  
+  // Additional info
+  fuelType: varchar("fuelType", { length: 20 }), // "Diesel", "Petrol", "Hybrid"
+  transmission: varchar("transmission", { length: 50 }), // "Manual", "Automatic"
+  isActive: boolean("isActive").default(true).notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type VehicleMotorization = typeof vehicleMotorizations.$inferSelect;
+export type InsertVehicleMotorization = typeof vehicleMotorizations.$inferInsert;
+
+/**
+ * Knowledge base - common VAG vehicle problems and solutions
+ */
+/**
+ * Knowledge base - common VAG vehicle problems and solutions
+ */
 export const knowledgeBase = mysqlTable("knowledgeBase", {
   id: int("id").autoincrement().primaryKey(),
   brand: varchar("brand", { length: 50 }).notNull(),

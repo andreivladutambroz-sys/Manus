@@ -3,8 +3,8 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
 import { getDb, getOrCreateProfile, getUserVehicles, getUserDiagnostics, getVehicleById, getDiagnosticById, getUserNotifications, createNotification, markNotificationAsRead, getDiagnosticImages, addDiagnosticImage } from "./db";
-import { profiles, vehicles, diagnostics } from "../drizzle/schema";
-import { eq } from "drizzle-orm";
+import { profiles, vehicles, diagnostics, vehicleMotorizations } from "../drizzle/schema";
+import { eq, and, sql, desc, like, or } from "drizzle-orm";
 import { z } from "zod";
 import { generateDiagnosticPDF } from "./pdf-generator";
 import { runDiagnostic, runFallbackDiagnostic, ocrCertificateAgent } from "./diagnostic-orchestrator";
@@ -12,7 +12,7 @@ import type { DiagnosticInput, DiagnosticReport } from "./diagnostic-orchestrato
 import { storagePut } from "./storage";
 import { submitFeedback, getAccuracyDashboard, getFeedbackForDiagnostic, findSimilarPatterns, optimizePromptForAgent, getActivePromptForAgent } from "./learning-engine";
 import { knowledgeDocuments, chatMessages } from "../drizzle/schema";
-import { desc, like, and, or, sql } from "drizzle-orm";
+
 import { aiRouter } from "./ai-router";
 import { collaborationRouter } from "./collaboration-router";
 
@@ -80,6 +80,30 @@ export const appRouter = router({
         const vehicle = await getVehicleById(input.id);
         if (!vehicle || vehicle.userId !== ctx.user.id) throw new Error("Vehicle not found");
         return vehicle;
+      }),
+    getMotorizations: publicProcedure
+      .input(z.object({
+        brand: z.string(),
+        model: z.string(),
+        year: z.number().optional(),
+      }))
+      .query(async ({ input }) => {
+        const db = await getDb();
+        if (!db) return [];
+        
+        const year = input.year || new Date().getFullYear();
+        const motorizations = await db
+          .select()
+          .from(vehicleMotorizations)
+          .where(
+            and(
+              eq(vehicleMotorizations.brand, input.brand),
+              eq(vehicleMotorizations.model, input.model),
+              sql`${vehicleMotorizations.yearFrom} <= ${year} AND ${vehicleMotorizations.yearTo} >= ${year}`
+            )
+          );
+        
+        return motorizations;
       }),
   }),
 

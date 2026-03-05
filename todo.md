@@ -669,3 +669,13 @@
 - server/diagnostic-sources.test.ts (16 tests)
 - server/diagnostic-sources-integration.test.ts (6 tests)
 - SOURCE_TRACKING_GUIDE.md (comprehensive documentation)
+
+
+## Smart Motorization Selector (IN PROGRESS - March 5, 2026)
+- [x] Design motorization data model and database schema
+- [x] Populate database with official motorizations (31 variants seeded)
+- [x] Create motorization selector component (cascading dropdowns)
+- [ ] Integrate into diagnostic form
+- [x] Add API endpoints for motorizations (trpc.vehicle.getMotorizations)
+- [ ] Test end-to-end workflow
+- [ ] Deploy to production
