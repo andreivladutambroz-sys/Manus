@@ -1,11 +1,12 @@
 import React from 'react';
-import { Settings, Users, BarChart3, Database, Zap, Shield, FileText, Brain } from 'lucide-react';
+import { Settings, Users, BarChart3, Database, Zap, Shield, FileText, Brain, Download } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import DashboardLayout from '@/components/DashboardLayout';
 import { trpc } from '@/lib/trpc';
 import { AdminRoute } from '@/components/AdminRoute';
+import { DataImportDashboard } from '@/components/DataImportDashboard';
 
 export function AdminDashboard() {
   return (
@@ -92,12 +93,13 @@ function AdminDashboardContent() {
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="system" className="w-full">
-              <TabsList className="grid w-full grid-cols-5 bg-slate-700/50">
+              <TabsList className="grid w-full grid-cols-6 bg-slate-700/50">
                 <TabsTrigger value="system">System</TabsTrigger>
                 <TabsTrigger value="users">Users</TabsTrigger>
                 <TabsTrigger value="ai">AI Models</TabsTrigger>
                 <TabsTrigger value="knowledge">Knowledge</TabsTrigger>
                 <TabsTrigger value="analytics">Analytics</TabsTrigger>
+                <TabsTrigger value="import">Data Import</TabsTrigger>
               </TabsList>
 
               {/* System Settings */}
@@ -272,6 +274,11 @@ function AdminDashboardContent() {
                     </div>
                   </div>
                 </div>
+              </TabsContent>
+
+              {/* Data Import */}
+              <TabsContent value="import" className="space-y-4 mt-6">
+                <DataImportDashboard />
               </TabsContent>
             </Tabs>
           </CardContent>
