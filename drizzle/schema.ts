@@ -677,3 +677,194 @@ export const componentHealthScores = mysqlTable("componentHealthScores", {
 
 export type ComponentHealthScore = typeof componentHealthScores.$inferSelect;
 export type InsertComponentHealthScore = typeof componentHealthScores.$inferInsert;
+
+
+// ============================================================
+// GLOBAL VEHICLE DATABASE LAYER
+// ============================================================
+
+/**
+ * Manufacturers - Global vehicle manufacturers
+ */
+export const manufacturers = mysqlTable("manufacturers", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 100 }).notNull().unique(),
+  country: varchar("country", { length: 100 }),
+  carqueryId: varchar("carqueryId", { length: 100 }).unique(),
+  nhtsa_id: varchar("nhtsa_id", { length: 50 }).unique(),
+  logo_url: varchar("logo_url", { length: 500 }),
+  founded_year: int("founded_year"),
+  is_active: boolean("is_active").default(true).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Manufacturer = typeof manufacturers.$inferSelect;
+export type InsertManufacturer = typeof manufacturers.$inferInsert;
+
+/**
+ * Models - Vehicle models per manufacturer
+ */
+export const models = mysqlTable("models", {
+  id: int("id").autoincrement().primaryKey(),
+  manufacturer_id: int("manufacturer_id").notNull().references(() => manufacturers.id, { onDelete: "cascade" }),
+  name: varchar("name", { length: 100 }).notNull(),
+  carquery_id: varchar("carquery_id", { length: 100 }).unique(),
+  body_type: varchar("body_type", { length: 50 }), // Sedan, SUV, Truck, etc.
+  class: varchar("class", { length: 50 }), // Compact, Mid-size, Luxury, etc.
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Model = typeof models.$inferSelect;
+export type InsertModel = typeof models.$inferInsert;
+
+/**
+ * Generations - Vehicle generations/facelifts
+ */
+export const generations = mysqlTable("generations", {
+  id: int("id").autoincrement().primaryKey(),
+  model_id: int("model_id").notNull().references(() => models.id, { onDelete: "cascade" }),
+  generation_name: varchar("generation_name", { length: 100 }),
+  start_year: int("start_year").notNull(),
+  end_year: int("end_year"),
+  carquery_id: varchar("carquery_id", { length: 100 }).unique(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Generation = typeof generations.$inferSelect;
+export type InsertGeneration = typeof generations.$inferInsert;
+
+/**
+ * Engines - Engine specifications
+ */
+export const engines = mysqlTable("engines", {
+  id: int("id").autoincrement().primaryKey(),
+  engine_code: varchar("engine_code", { length: 50 }).unique(),
+  engine_name: varchar("engine_name", { length: 150 }).notNull(),
+  displacement_cc: int("displacement_cc"), // Cubic centimeters
+  displacement_liters: decimal("displacement_liters", { precision: 5, scale: 2 }),
+  power_kw: int("power_kw"),
+  power_hp: int("power_hp"),
+  torque_nm: int("torque_nm"),
+  fuel_type: varchar("fuel_type", { length: 50 }), // Petrol, Diesel, Hybrid, Electric, etc.
+  cylinders: int("cylinders"),
+  valves: int("valves"),
+  turbo: boolean("turbo").default(false),
+  supercharged: boolean("supercharged").default(false),
+  co2_emissions: int("co2_emissions"), // g/km
+  combined_consumption: decimal("combined_consumption", { precision: 5, scale: 2 }), // L/100km
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Engine = typeof engines.$inferSelect;
+export type InsertEngine = typeof engines.$inferInsert;
+
+/**
+ * Vehicle Variants - Specific vehicle configurations
+ */
+export const vehicleVariants = mysqlTable("vehicleVariants", {
+  id: int("id").autoincrement().primaryKey(),
+  generation_id: int("generation_id").notNull().references(() => generations.id, { onDelete: "cascade" }),
+  engine_id: int("engine_id").notNull().references(() => engines.id, { onDelete: "cascade" }),
+  
+  // Variant info
+  trim_name: varchar("trim_name", { length: 150 }), // "SE", "Limited", "Sport", etc.
+  transmission: varchar("transmission", { length: 50 }), // Manual, Automatic, CVT, etc.
+  drivetrain: varchar("drivetrain", { length: 50 }), // FWD, RWD, AWD, 4WD
+  
+  // Production dates
+  production_start: int("production_start"),
+  production_end: int("production_end"),
+  
+  // Specifications
+  seats: int("seats"),
+  doors: int("doors"),
+  length_mm: int("length_mm"),
+  width_mm: int("width_mm"),
+  height_mm: int("height_mm"),
+  wheelbase_mm: int("wheelbase_mm"),
+  curb_weight_kg: int("curb_weight_kg"),
+  gvwr_kg: int("gvwr_kg"), // Gross Vehicle Weight Rating
+  
+  // Carquery reference
+  carquery_id: varchar("carquery_id", { length: 100 }).unique(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type VehicleVariant = typeof vehicleVariants.$inferSelect;
+export type InsertVehicleVariant = typeof vehicleVariants.$inferInsert;
+
+/**
+ * VIN Patterns - WMI and VDS patterns for VIN decoding
+ */
+export const vinPatterns = mysqlTable("vinPatterns", {
+  id: int("id").autoincrement().primaryKey(),
+  wmi: varchar("wmi", { length: 3 }).notNull(), // World Manufacturer Identifier (positions 1-3)
+  vds_pattern: varchar("vds_pattern", { length: 100 }), // Vehicle Descriptor Section pattern
+  year_code: varchar("year_code", { length: 1 }), // Single character year code
+  vehicle_variant_id: int("vehicle_variant_id").references(() => vehicleVariants.id, { onDelete: "set null" }),
+  manufacturer_id: int("manufacturer_id").notNull().references(() => manufacturers.id, { onDelete: "cascade" }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type VinPattern = typeof vinPatterns.$inferSelect;
+export type InsertVinPattern = typeof vinPatterns.$inferInsert;
+
+/**
+ * VIN Decode Cache - Cache VIN decode results for performance
+ */
+export const vinDecodeCache = mysqlTable("vinDecodeCache", {
+  id: int("id").autoincrement().primaryKey(),
+  vin: varchar("vin", { length: 17 }).notNull().unique(),
+  manufacturer_id: int("manufacturer_id").references(() => manufacturers.id, { onDelete: "set null" }),
+  model_id: int("model_id").references(() => models.id, { onDelete: "set null" }),
+  generation_id: int("generation_id").references(() => generations.id, { onDelete: "set null" }),
+  variant_id: int("variant_id").references(() => vehicleVariants.id, { onDelete: "set null" }),
+  engine_id: int("engine_id").references(() => engines.id, { onDelete: "set null" }),
+  
+  // Decoded data
+  year: int("year"),
+  manufacturer_name: varchar("manufacturer_name", { length: 100 }),
+  model_name: varchar("model_name", { length: 100 }),
+  engine_name: varchar("engine_name", { length: 150 }),
+  trim_name: varchar("trim_name", { length: 150 }),
+  
+  // Source
+  source: varchar("source", { length: 50 }), // "nhtsa", "carquery", "manual"
+  raw_response: json("raw_response").$type<Record<string, unknown>>(),
+  
+  // Cache control
+  expires_at: timestamp("expires_at"),
+  hit_count: int("hit_count").default(0),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type VinDecodeCache = typeof vinDecodeCache.$inferSelect;
+export type InsertVinDecodeCache = typeof vinDecodeCache.$inferInsert;
+
+/**
+ * Data Import Status - Track progress of data imports
+ */
+export const dataImportStatus = mysqlTable("dataImportStatus", {
+  id: int("id").autoincrement().primaryKey(),
+  import_type: varchar("import_type", { length: 50 }).notNull(), // "manufacturers", "models", "engines", etc.
+  status: mysqlEnum("status", ["pending", "in_progress", "completed", "failed"]).notNull(),
+  total_records: int("total_records"),
+  processed_records: int("processed_records").default(0),
+  failed_records: int("failed_records").default(0),
+  error_message: text("error_message"),
+  started_at: timestamp("started_at").defaultNow().notNull(),
+  completed_at: timestamp("completed_at"),
+  duration_seconds: int("duration_seconds"),
+});
+
+export type DataImportStatus = typeof dataImportStatus.$inferSelect;
+export type InsertDataImportStatus = typeof dataImportStatus.$inferInsert;
