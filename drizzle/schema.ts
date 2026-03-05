@@ -534,3 +534,146 @@ export const chatMessages = mysqlTable("chatMessages", {
 
 export type ChatMessage = typeof chatMessages.$inferSelect;
 export type InsertChatMessage = typeof chatMessages.$inferInsert;
+
+
+// ============================================================
+// PREDICTIVE MAINTENANCE
+// ============================================================
+
+/**
+ * Vehicle History - agregat diagnostic-uri și reparații pentru fiecare vehicul
+ */
+export const vehicleHistory = mysqlTable("vehicleHistory", {
+  id: int("id").autoincrement().primaryKey(),
+  vehicleId: int("vehicleId").notNull().references(() => vehicles.id, { onDelete: "cascade" }),
+  
+  // Diagnostic history
+  totalDiagnostics: int("totalDiagnostics").default(0).notNull(),
+  lastDiagnosticDate: timestamp("lastDiagnosticDate"),
+  commonIssues: json("commonIssues").$type<string[]>(),
+  
+  // Repair history
+  totalRepairs: int("totalRepairs").default(0).notNull(),
+  lastRepairDate: timestamp("lastRepairDate"),
+  repairCost: decimal("repairCost", { precision: 10, scale: 2 }),
+  
+  // Mileage tracking
+  currentMileage: int("currentMileage"),
+  mileageHistory: json("mileageHistory").$type<Array<{date: string; mileage: number}>>(),
+  
+  // Health score
+  healthScore: decimal("healthScore", { precision: 5, scale: 2 }).default("100"),
+  lastHealthUpdate: timestamp("lastHealthUpdate"),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type VehicleHistory = typeof vehicleHistory.$inferSelect;
+export type InsertVehicleHistory = typeof vehicleHistory.$inferInsert;
+
+/**
+ * Failure Predictions - predicții AI despre defecte viitoare
+ */
+export const failurePredictions = mysqlTable("failurePredictions", {
+  id: int("id").autoincrement().primaryKey(),
+  vehicleId: int("vehicleId").notNull().references(() => vehicles.id, { onDelete: "cascade" }),
+  
+  // Component info
+  component: varchar("component", { length: 100 }).notNull(), // "Engine", "Transmission", "Brakes", etc.
+  componentCode: varchar("componentCode", { length: 50 }),
+  
+  // Prediction
+  failureRisk: decimal("failureRisk", { precision: 5, scale: 2 }).notNull(), // 0-100%
+  riskLevel: mysqlEnum("riskLevel", ["critical", "high", "medium", "low"]).notNull(),
+  predictedFailureDate: timestamp("predictedFailureDate"),
+  
+  // Reasoning
+  reason: text("reason"),
+  historicalPattern: json("historicalPattern").$type<Record<string, unknown>>(),
+  
+  // Recommendations
+  recommendedAction: text("recommendedAction"),
+  estimatedCost: decimal("estimatedCost", { precision: 10, scale: 2 }),
+  
+  // Confidence
+  confidence: decimal("confidence", { precision: 5, scale: 2 }).notNull(), // 0-100%
+  dataPoints: int("dataPoints").default(0), // Number of historical data points used
+  
+  // Status
+  status: mysqlEnum("status", ["active", "dismissed", "confirmed_failure", "preventive_maintenance_done"]).default("active").notNull(),
+  dismissedAt: timestamp("dismissedAt"),
+  dismissedReason: text("dismissedReason"),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type FailurePrediction = typeof failurePredictions.$inferSelect;
+export type InsertFailurePrediction = typeof failurePredictions.$inferInsert;
+
+/**
+ * Maintenance Recommendations - recomandări preventive
+ */
+export const maintenanceRecommendations = mysqlTable("maintenanceRecommendations", {
+  id: int("id").autoincrement().primaryKey(),
+  vehicleId: int("vehicleId").notNull().references(() => vehicles.id, { onDelete: "cascade" }),
+  
+  // Recommendation
+  maintenanceType: varchar("maintenanceType", { length: 100 }).notNull(), // "Oil Change", "Brake Pads", etc.
+  description: text("description"),
+  
+  // Trigger
+  triggerType: mysqlEnum("triggerType", ["mileage", "time", "prediction", "manual"]).notNull(),
+  triggerValue: int("triggerValue"), // Mileage or days
+  
+  // Scheduling
+  recommendedDate: timestamp("recommendedDate"),
+  urgency: mysqlEnum("urgency", ["critical", "high", "medium", "low"]).default("medium").notNull(),
+  
+  // Cost estimate
+  estimatedCost: decimal("estimatedCost", { precision: 10, scale: 2 }),
+  estimatedTime: varchar("estimatedTime", { length: 50 }), // "2 hours", "30 minutes"
+  
+  // Status
+  status: mysqlEnum("status", ["pending", "scheduled", "completed", "dismissed"]).default("pending").notNull(),
+  completedAt: timestamp("completedAt"),
+  
+  // Linked prediction
+  predictionId: int("predictionId").references(() => failurePredictions.id, { onDelete: "set null" }),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type MaintenanceRecommendation = typeof maintenanceRecommendations.$inferSelect;
+export type InsertMaintenanceRecommendation = typeof maintenanceRecommendations.$inferInsert;
+
+/**
+ * Component Health Scores - sănătate per component
+ */
+export const componentHealthScores = mysqlTable("componentHealthScores", {
+  id: int("id").autoincrement().primaryKey(),
+  vehicleId: int("vehicleId").notNull().references(() => vehicles.id, { onDelete: "cascade" }),
+  
+  // Component
+  component: varchar("component", { length: 100 }).notNull(),
+  componentCode: varchar("componentCode", { length: 50 }),
+  
+  // Health metrics
+  healthScore: decimal("healthScore", { precision: 5, scale: 2 }).notNull(), // 0-100
+  lastAssessmentDate: timestamp("lastAssessmentDate"),
+  
+  // Trend
+  trend: mysqlEnum("trend", ["improving", "stable", "degrading"]).default("stable").notNull(),
+  trendData: json("trendData").$type<Array<{date: string; score: number}>>(),
+  
+  // Issues
+  knownIssues: json("knownIssues").$type<string[]>(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type ComponentHealthScore = typeof componentHealthScores.$inferSelect;
+export type InsertComponentHealthScore = typeof componentHealthScores.$inferInsert;
