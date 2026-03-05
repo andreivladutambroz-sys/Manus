@@ -4,5 +4,51 @@
   "installCommand": "pnpm install",
   "framework": "vite",
   "outputDirectory": "dist",
-  "regions": ["iad1"]
+  "regions": ["iad1"],
+  "env": {
+    "DATABASE_URL": {
+      "description": "MySQL/TiDB connection string"
+    },
+    "KIMI_API_KEY": {
+      "description": "Kimi AI API key for diagnostics"
+    },
+    "SUPABASE_URL": {
+      "description": "Supabase project URL"
+    },
+    "SUPABASE_SERVICE_ROLE_KEY": {
+      "description": "Supabase service role key for data imports"
+    },
+    "SUPABASE_ANON_KEY": {
+      "description": "Supabase anonymous key for client"
+    },
+    "JWT_SECRET": {
+      "description": "JWT secret for session management"
+    },
+    "VITE_APP_ID": {
+      "description": "Manus OAuth app ID"
+    },
+    "OAUTH_SERVER_URL": {
+      "description": "Manus OAuth server URL"
+    },
+    "VITE_OAUTH_PORTAL_URL": {
+      "description": "Manus OAuth portal URL"
+    },
+    "BUILT_IN_FORGE_API_URL": {
+      "description": "Manus Forge API URL"
+    },
+    "BUILT_IN_FORGE_API_KEY": {
+      "description": "Manus Forge API key"
+    },
+    "VITE_FRONTEND_FORGE_API_URL": {
+      "description": "Frontend Forge API URL"
+    },
+    "VITE_FRONTEND_FORGE_API_KEY": {
+      "description": "Frontend Forge API key"
+    }
+  },
+  "functions": {
+    "api/**": {
+      "maxDuration": 60
+    }
+  }
 }
