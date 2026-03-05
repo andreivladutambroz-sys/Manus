@@ -18,6 +18,7 @@ import { collaborationRouter } from "./collaboration-router";
 import { automotiveDataRouter } from "./routers/automotive-data";
 import { servicesRouter } from "./routers/services";
 import { predictiveMaintenanceRouter } from "./routers/predictive-maintenance";
+import { vehicleDataRouter } from "./routers/vehicle-data";
 
 export const appRouter = router({
   system: systemRouter,
@@ -26,6 +27,7 @@ export const appRouter = router({
   automotiveData: automotiveDataRouter,
   services: servicesRouter,
   predictiveMaintenance: predictiveMaintenanceRouter,
+  vehicleData: vehicleDataRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
