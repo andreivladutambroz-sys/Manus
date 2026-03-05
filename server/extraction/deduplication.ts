@@ -206,7 +206,7 @@ export function aggregateMultipleSources(records: any[]): AggregatedRecord[] {
       const agg = aggregated.get(semanticKey)!;
 
       // Merge symptoms (avoid duplicates)
-      agg.symptoms = [...new Set([...agg.symptoms, ...record.symptoms])];
+      agg.symptoms = Array.from(new Set([...agg.symptoms, ...record.symptoms]));
 
       // Merge repair procedures (avoid duplicates)
       const existingActions = new Set(agg.repair_procedures.map(p => p.action.toLowerCase()));
@@ -219,7 +219,7 @@ export function aggregateMultipleSources(records: any[]): AggregatedRecord[] {
       ];
 
       // Merge tools (avoid duplicates)
-      agg.tools_required = [...new Set([...agg.tools_required, ...record.tools_required])];
+      agg.tools_required = Array.from(new Set([...agg.tools_required, ...record.tools_required]));
 
       // Merge torque specs (avoid duplicates)
       const existingSpecs = new Set(agg.torque_specs.map(s => s.component.toLowerCase()));

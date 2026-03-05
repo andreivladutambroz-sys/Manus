@@ -11,7 +11,40 @@
  * - YouTube (Automotive repair channels with transcript extraction)
  */
 
-import { ExtractedRecord, EvidenceSnippet } from './evidence-extractor';
+// ExtractedRecord is defined in enhanced-parser.ts
+export interface ExtractedRecord {
+  vehicle: {
+    make: string;
+    model: string;
+    year?: number;
+    engine?: string;
+    engine_code?: string;
+  };
+  error_code: {
+    code: string;
+    system?: string;
+    description?: string;
+  };
+  symptoms: string[];
+  repair_procedures: Array<{
+    step: number;
+    action: string;
+  }>;
+  tools_required: string[];
+  torque_specs?: Array<{
+    component: string;
+    value_nm?: number;
+  }>;
+  repair_action?: string;
+  repair_outcome?: 'success' | 'fail' | 'unknown';
+  confidence: number;
+  source_url: string;
+  source_domain: string;
+  evidence_snippets: Array<{
+    field: string;
+    snippet: string;
+  }>;
+}
 
 /**
  * REAL DATA SOURCES
@@ -132,7 +165,7 @@ export abstract class CollectorAgent {
   protected extractErrorCodes(text: string): string[] {
     const codeRegex = /\b([PUB][0-3]\d{3})\b/g;
     const matches = text.match(codeRegex) || [];
-    return [...new Set(matches)]; // Remove duplicates
+    return Array.from(new Set(matches)); // Remove duplicates
   }
 
   /**
@@ -157,7 +190,7 @@ export abstract class CollectorAgent {
       }
     }
 
-    return [...new Set(symptoms)]; // Remove duplicates
+    return Array.from(new Set(symptoms)); // Remove duplicates
   }
 
   /**
@@ -217,7 +250,7 @@ export abstract class CollectorAgent {
       }
     }
 
-    return [...new Set(tools)]; // Remove duplicates
+    return Array.from(new Set(tools)); // Remove duplicates
   }
 
   /**

@@ -6,7 +6,47 @@
  * Extracts deeper content from sources
  */
 
-import { ExtractedRecord, EvidenceSnippet } from './evidence-extractor';
+// Import types from validation-layer instead
+export interface ExtractedRecord {
+  vehicle: {
+    make: string;
+    model: string;
+    year?: number;
+    engine?: string;
+    engine_code?: string;
+  };
+  error_code: {
+    code: string;
+    system?: string;
+    description?: string;
+  };
+  symptoms: string[];
+  repair_procedures: Array<{
+    step: number;
+    action: string;
+  }>;
+  tools_required: string[];
+  torque_specs?: Array<{
+    component: string;
+    value_nm?: number;
+  }>;
+  repair_action?: string;
+  repair_outcome?: 'success' | 'fail' | 'unknown';
+  confidence: number;
+  source_url: string;
+  source_domain: string;
+  evidence_snippets: Array<{
+    field: string;
+    snippet: string;
+  }>;
+}
+
+export interface EvidenceSnippet {
+  field: string;
+  snippet: string;
+  confidence: number;
+  sourceLineNumber?: number;
+}
 
 export interface ParsedContent {
   title?: string;

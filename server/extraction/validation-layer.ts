@@ -158,7 +158,7 @@ const VALIDATION_RULES = {
   // Warning rules - record can pass but should be noted
   warnings: {
     torqueSpecsPreferred: (record: ExtractedRecord) => {
-      if (!record.torque_specs || record.torque_specs.length === 0) {
+      if (!record.torque_specs || (record.torque_specs?.length ?? 0) === 0) {
         return {
           field: 'torque_specs',
           message: 'Torque specifications are preferred but not required',
@@ -316,7 +316,7 @@ function calculateConfidenceScore(record: ExtractedRecord): number {
   if (record.tools_required?.length >= 3) score += 0.02;
 
   // Torque specs
-  if (record.torque_specs?.length > 0) score += 0.05;
+  if ((record.torque_specs?.length ?? 0) > 0) score += 0.05;
 
   // Evidence
   if (record.evidence_snippets?.length >= 1) score += 0.05;
