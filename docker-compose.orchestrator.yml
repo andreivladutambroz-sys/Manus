@@ -1,0 +1,176 @@
+version: "3.9"
+
+services:
+  # ============================================================================
+  # PostgreSQL with pgvector (Knowledge Base)
+  # ============================================================================
+  postgres-kb:
+    image: pgvector/pgvector:pg16-latest
+    container_name: mechanic-postgres-kb
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-kb_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-secure_password_change_me}
+      POSTGRES_DB: ${POSTGRES_DB:-mechanic_kb}
+      POSTGRES_INITDB_ARGS: "-c shared_preload_libraries=vector"
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/postgres-kb-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    networks:
+      - mechanic-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-kb_user}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # ============================================================================
+  # Redis (Rate Limiting + Job Queue)
+  # ============================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: mechanic-redis
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-redis_password_change_me}
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - mechanic-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # ============================================================================
+  # JSONL Ingestion Worker
+  # ============================================================================
+  ingestion-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    container_name: mechanic-ingestion-worker
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: ${DATABASE_URL}
+      POSTGRES_URL: postgresql://${POSTGRES_USER:-kb_user}:${POSTGRES_PASSWORD:-secure_password_change_me}@postgres-kb:5432/${POSTGRES_DB:-mechanic_kb}
+      REDIS_URL: redis://:${REDIS_PASSWORD:-redis_password_change_me}@redis:6379
+      JSONL_DIRECTORY: /app/knowledge-base
+      POLL_INTERVAL_MS: 5000
+      BATCH_SIZE: 100
+      LOG_LEVEL: info
+    volumes:
+      - ./knowledge-base:/app/knowledge-base:ro
+      - ./logs:/app/logs
+    networks:
+      - mechanic-network
+    depends_on:
+      postgres-kb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ============================================================================
+  # Product-Orchestrator API
+  # ============================================================================
+  orchestrator-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.orchestrator
+    container_name: mechanic-orchestrator-api
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      DATABASE_URL: ${DATABASE_URL}
+      POSTGRES_URL: postgresql://${POSTGRES_USER:-kb_user}:${POSTGRES_PASSWORD:-secure_password_change_me}@postgres-kb:5432/${POSTGRES_DB:-mechanic_kb}
+      REDIS_URL: redis://:${REDIS_PASSWORD:-redis_password_change_me}@redis:6379
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      KIMI_API_KEY: ${KIMI_API_KEY}
+      KIMI_API_URL: https://api.moonshot.ai/v1
+      RATE_LIMIT_MAX_REQUESTS: 5
+      RATE_LIMIT_WINDOW_MS: 60000
+      LOG_LEVEL: info
+    ports:
+      - "${ORCHESTRATOR_API_PORT:-3001}:3001"
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - mechanic-network
+    depends_on:
+      postgres-kb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ============================================================================
+  # Prometheus (Metrics Collection)
+  # ============================================================================
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: mechanic-prometheus
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    ports:
+      - "${PROMETHEUS_PORT:-9090}:9090"
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+    networks:
+      - mechanic-network
+    restart: unless-stopped
+
+  # ============================================================================
+  # Grafana (Visualization)
+  # ============================================================================
+  grafana:
+    image: grafana/grafana:latest
+    container_name: mechanic-grafana
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-admin}
+      GF_INSTALL_PLUGINS: grafana-piechart-panel
+    ports:
+      - "${GRAFANA_PORT:-3000}:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana-datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
+    networks:
+      - mechanic-network
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+networks:
+  mechanic-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local

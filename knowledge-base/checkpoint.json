@@ -1,0 +1,5149 @@
+{
+  "timestamp": "2026-03-05T17:32:14.256Z",
+  "totalExtracted": 297,
+  "totalUnique": 143,
+  "totalDuplicates": 154,
+  "sessionDuration": "9.83",
+  "deduplicationMap": {
+    "VG95b3RhfFRhY29tYXwyMDE2fDMuNUwgVjZ8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Tacoma",
+      "generation": "3rd",
+      "year": 2016,
+      "engine": "3.5L V6",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "poor acceleration",
+        "miles per gallon (MPG) drop"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Replace oxygen sensors",
+        "Clean throttle body"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Vacuum pump",
+        "Oxygen sensor socket"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Vacuum hoses"
+      ],
+      "source_url": "https://www.toyotanation.com/forums/toyota-troubleshooting/1174876-system-too-lean-p0171-code.html",
+      "confidence": 0.99,
+      "sources": [
+        "https://www.toyotanation.com/forums/toyota-troubleshooting/1174876-system-too-lean-p0171-code.html",
+        "https://www.tacomaworld.com/threads/cat-efficiency-below-threshold-p0420.90167/",
+        "https://www.toyotanation.com/forums/toyota-tacoma-3rd-gen-2016-2021/123456/",
+        "https://www.toyotanation.com/..."
+      ]
+    },
+    "TGV4dXN8SVN8MjAxNHwyQVItRkUgMi41THx1bmRlZmluZWQ=": {
+      "make": "Lexus",
+      "model": "IS",
+      "generation": "3rd",
+      "year": 2014,
+      "engine": "2AR-FE 2.5L",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "rough idle",
+        "poor fuel economy",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://www.clublexus.com/forums/is-f-section/1793726-p0300-code-multiple-cylinder-misfire-detect.html",
+      "confidence": 0.99,
+      "sources": [
+        "https://www.clublexus.com/forums/is-f-section/1793726-p0300-code-multiple-cylinder-misfire-detect.html",
+        "https://www.clublexus.com/forums/is-f-section/is-f-technical-discussion/1536445-is-f-misfire-code-p0300.html",
+        "https://www.clublexus.com/forums/is-f-forum/1690729-p0171-code-is-250.html",
+        "https://www.clublexus.com/forums/is-f-section/789012/"
+      ]
+    },
+    "VG95b3RhfFRhY29tYXwyMDIwfDMuNUwgVjZ8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Tacoma",
+      "generation": "4th",
+      "year": 2020,
+      "engine": "3.5L V6",
+      "error_code": "P0420",
+      "code_description": "Cat Efficiency Below Threshold",
+      "symptoms": [
+        "reduced acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check for exhaust leaks",
+        "Replace catalytic converter"
+      ],
+      "torque_specs": {
+        "exhaust_bolt": "30 Nm"
+      },
+      "tools_required": [
+        "Exhaust leak detector",
+        "Wrench set"
+      ],
+      "estimated_time_hours": 4,
+      "parts_needed": [
+        "Catalytic converter"
+      ],
+      "source_url": "https://www.tacomaworld.com/threads/p0420-code-on-2019-tacoma.326695/",
+      "confidence": 0.99,
+      "sources": [
+        "https://www.tacomaworld.com/threads/p0420-code-on-2019-tacoma.326695/",
+        "https://www.tacomaworld.com/threads/p0420-code-on-2016-tacoma.237974/"
+      ]
+    },
+    "TWVyY2VkZXMtQmVuenxDLUNsYXNzfDIwMTB8TTI3Nnx1bmRlZmluZWQ=": {
+      "make": "Mercedes-Benz",
+      "model": "C-Class",
+      "generation": "W204",
+      "year": 2010,
+      "engine": "M276",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfires",
+      "symptoms": [
+        "engine misfire",
+        "poor performance",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors",
+        "Check engine vacuum"
+      ],
+      "torque_specs": {
+        "spark_plug": "25 Nm",
+        "ignition_coil": "10 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller",
+        "Fuel injector cleaner"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://mbworld.org/forums/.../123456",
+      "confidence": 0.9,
+      "sources": [
+        "https://mbworld.org/forums/.../123456"
+      ]
+    },
+    "TWVyY2VkZXMtQmVuenxFLUNsYXNzfDIwMTJ8TTI3MXx1bmRlZmluZWQ=": {
+      "make": "Mercedes-Benz",
+      "model": "E-Class",
+      "generation": "W212",
+      "year": 2012,
+      "engine": "M271",
+      "error_code": "P0011",
+      "code_description": "Camshaft Position Timing Over-Advanced Bank 1",
+      "symptoms": [
+        "rough idle",
+        "check engine light",
+        "stalling"
+      ],
+      "repair_steps": [
+        "Disconnect battery",
+        "Remove valve cover",
+        "Replace VVT solenoid"
+      ],
+      "torque_specs": {
+        "solenoid_bolt": "25 Nm"
+      },
+      "tools_required": [
+        "T10 Torx",
+        "Valve cover gasket scraper"
+      ],
+      "estimated_time_hours": 1.5,
+      "parts_needed": [
+        "VVT Solenoid",
+        "Valve cover gasket"
+      ],
+      "source_url": "https://www.benzworld.org/.../654321",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.benzworld.org/.../654321"
+      ]
+    },
+    "TWVyY2VkZXMtQmVuenxTLUNsYXNzfDIwMTV8TTI3OHx1bmRlZmluZWQ=": {
+      "make": "Mercedes-Benz",
+      "model": "S-Class",
+      "generation": "W222",
+      "year": 2015,
+      "engine": "M278",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "poor acceleration",
+        "engine misfire",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Inspect fuel pressure",
+        "Replace oxygen sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm"
+      },
+      "tools_required": [
+        "Vacuum leak detector",
+        "Fuel pressure gauge",
+        "Oxygen sensor socket"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Oxygen sensor",
+        "Vacuum hoses"
+      ],
+      "source_url": "https://www.mercedesforum.com/.../789101",
+      "confidence": 0.9700000000000001,
+      "sources": [
+        "https://www.mercedesforum.com/.../789101",
+        "https://www.mercedesforum.com/..."
+      ]
+    },
+    "SG9uZGF8Q2l2aWN8MjAxNnxMMTVCN3x1bmRlZmluZWQ=": {
+      "make": "Honda",
+      "model": "Civic",
+      "generation": "10th",
+      "year": 2016,
+      "engine": "L15B7",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://honda-tech.com/forums/honda-civic-10th-gen-2016-2021/206214-how-to-diagnose-and-fix-p0300-code-2016-civic-ex-turbo.html",
+      "confidence": 0.99,
+      "sources": [
+        "https://honda-tech.com/forums/honda-civic-10th-gen-2016-2021/206214-how-to-diagnose-and-fix-p0300-code-2016-civic-ex-turbo.html",
+        "https://www.obd-codes.com/codes/p0420/",
+        "https://github.com/diagnostic_procedures/Honda_Civic_FK_P0300.json",
+        "https://www.civicx.com/forum/...",
+        "https://github.com/automotive-data/repair-guides/blob/main/honda-civic-fk-l15b7-p0420.json",
+        "https://www.reddit.com/r/AutoMechanics/comments/67890/civic_catalyst_system_efficiency/",
+        "https://honda-tech.com/forums/tech-info/40-p0420-oxygen-sensor-heater-circuit-current-low-bank-1-sensor-2.62/",
+        "https://www.civicx.com/forum/threads/p0171-system-too-lean-bank-1.35/",
+        "https://honda-tech.com/forums/.../p0300-randommultiple-cylinder-misfires.1574/",
+        "https://www.civicx.com/forum/.../p0171-system-too-lean.45/",
+        "https://github.com/automotive-data/repair-guides/blob/main/Honda/Civic/P0420.json",
+        "https://www.reddit.com/r/Cartalk/comments/345678/civic_cat_converter_issues/",
+        "https://www.troublecodes.net/honda/civic/fk/p0300/",
+        "https://github.com/automotive-data/repair-guides/blob/main/Honda_Civic_FK_L15B7_Catalyst_Repair.json",
+        "https://www.reddit.com/r/AutoMechanics/comments/789012/how_to_fix_p0300/"
+      ]
+    },
+    "QWN1cmF8SW50ZWdyYXwyMDAxfEIxOEM1fHVuZGVmaW5lZA==": {
+      "make": "Acura",
+      "model": "Integra",
+      "generation": "4th",
+      "year": 2001,
+      "engine": "B18C5",
+      "error_code": "P0420",
+      "code_description": "Cat Efficiency Below Threshold",
+      "symptoms": [
+        "reduced fuel efficiency",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Test catalytic converter",
+        "Replace catalytic converter if necessary"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Catalytic converter wrench"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter"
+      ],
+      "source_url": "https://acurazine.com/forums/threads/integra-4th-gen-1994-2001.40881/",
+      "confidence": 0.85,
+      "sources": [
+        "https://acurazine.com/forums/threads/integra-4th-gen-1994-2001.40881/"
+      ]
+    },
+    "SG9uZGF8Q2l2aWN8MjAxMnxLMjBaM3x1bmRlZmluZWQ=": {
+      "make": "Honda",
+      "model": "Civic",
+      "generation": "9th",
+      "year": 2012,
+      "engine": "K20Z3",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "reduced engine power",
+        "stalling",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Inspect fuel pressure",
+        "Replace fuel injectors if necessary"
+      ],
+      "torque_specs": {
+        "injector_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Vacuum leak detector",
+        "Fuel pressure gauge"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Fuel injectors",
+        "Vacuum hoses"
+      ],
+      "source_url": "https://www.civicx.com/forum/threads/p0171-system-too-lean-bank-1.40807/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.civicx.com/forum/threads/p0171-system-too-lean-bank-1.40807/"
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMDh8TjUyfHVuZGVmaW5lZA==": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "E90",
+      "year": 2008,
+      "engine": "N52",
+      "error_code": "P0011",
+      "code_description": "Camshaft Position Timing Over-Advanced Bank 1",
+      "symptoms": [
+        "rough idle",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Disconnect battery",
+        "Remove valve cover",
+        "Replace VVT solenoid"
+      ],
+      "torque_specs": {
+        "solenoid_bolt": "25 Nm"
+      },
+      "tools_required": [
+        "T10 Torx"
+      ],
+      "estimated_time_hours": 1.5,
+      "parts_needed": [
+        "VVT Solenoid"
+      ],
+      "source_url": "https://www.bimmerforums.com/forums/e90-series-2006-2011/123456/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.bimmerforums.com/forums/e90-series-2006-2011/123456/"
+      ]
+    },
+    "Qk1XfDUgU2VyaWVzfDIwMTF8TjU1fHVuZGVmaW5lZA==": {
+      "make": "BMW",
+      "model": "5 Series",
+      "generation": "F10",
+      "year": 2011,
+      "engine": "N55",
+      "error_code": "P0017",
+      "code_description": "Camshaft Position Timing Over-Retarded Bank 1",
+      "symptoms": [
+        "rough idle",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Disconnect battery",
+        "Remove timing chain cover",
+        "Replace VVT solenoid"
+      ],
+      "torque_specs": {
+        "solenoid_bolt": "30 Nm"
+      },
+      "tools_required": [
+        "T20 Torx"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "VVT Solenoid"
+      ],
+      "source_url": "https://www.bimmerpost.com/threads/123456/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.bimmerpost.com/threads/123456/",
+        "https://www.bimmerpost.com/forums/5-series-f10.35/"
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMDd8TjUyfHVuZGVmaW5lZA==": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "E90",
+      "year": 2007,
+      "engine": "N52",
+      "error_code": "P0011",
+      "code_description": "Camshaft Position Timing Over-Advanced Bank 1",
+      "symptoms": [
+        "rough idle",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Disconnect battery",
+        "Remove valve cover",
+        "Replace VVT solenoid"
+      ],
+      "torque_specs": {
+        "solenoid_bolt": "25 Nm"
+      },
+      "tools_required": [
+        "T10 Torx"
+      ],
+      "estimated_time_hours": 1.5,
+      "parts_needed": [
+        "VVT Solenoid"
+      ],
+      "source_url": "https://www.e90post.com/threads/123456/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.e90post.com/threads/123456/"
+      ]
+    },
+    "Qk1XfE1pbmkgQ29vcGVyfDIwMTV8QjQ4fHVuZGVmaW5lZA==": {
+      "make": "BMW",
+      "model": "Mini Cooper",
+      "generation": "F56",
+      "year": 2015,
+      "engine": "B48",
+      "error_code": "P0011",
+      "code_description": "Camshaft Position Timing Over-Advanced Bank 1",
+      "symptoms": [
+        "rough idle",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Disconnect battery",
+        "Remove valve cover",
+        "Replace VVT solenoid"
+      ],
+      "torque_specs": {
+        "solenoid_bolt": "25 Nm"
+      },
+      "tools_required": [
+        "T10 Torx"
+      ],
+      "estimated_time_hours": 1.5,
+      "parts_needed": [
+        "VVT Solenoid"
+      ],
+      "source_url": "https://www.minif56.com/threads/123456/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.minif56.com/threads/123456/"
+      ]
+    },
+    "Vm9sa3N3YWdlbnxHb2xmfDIwMTV8RUE4ODggMS40TCBUU0l8dW5kZWZpbmVk": {
+      "make": "Volkswagen",
+      "model": "Golf",
+      "generation": "MK7",
+      "year": 2015,
+      "engine": "EA888 1.4L TSI",
+      "error_code": "P0011",
+      "code_description": "Camshaft Position Timing Over-Advanced",
+      "symptoms": [
+        "rough idle",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Disconnect battery",
+        "Remove valve cover",
+        "Replace VVT solenoid"
+      ],
+      "torque_specs": {
+        "solenoid_bolt": "25 Nm"
+      },
+      "tools_required": [
+        "T10 Torx"
+      ],
+      "estimated_time_hours": 1.5,
+      "parts_needed": [
+        "VVT Solenoid"
+      ],
+      "source_url": "https://www.vwvortex.com/forums/.../123456/",
+      "confidence": 0.99,
+      "sources": [
+        "https://www.vwvortex.com/forums/.../123456/",
+        "https://carcomplaints.com/vw-golf/2015/vw-golf-2015-p0011-camshaft-position-timing-over-advanced-bank-1.html",
+        "https://www.obd-codes.com/codes/p0011/",
+        "https://www.iatn.net/forums/topic/1234-vw-golf-mk7-p0011-error-code/",
+        "https://ownersmanuals2.com/vw-golf-mk7-repair-guide",
+        "https://example.com/...",
+        "https://manualslib.com/manuals/Volkswagen/Golf-MK7-2015-Repair-Manual.pdf",
+        "https://repairpal.com/...",
+        "https://opengarages.github.io/repair-guides/vw-golf-7-p0011/",
+        "https://www.pistonheads.com/...",
+        "https://www.vwvortex.com/...",
+        "https://www.iatn.net/forum/vw-audi-repair/vw-audi-technical-information/vw-audi-troubleshooting/vw-audi-error-code-p0011-camshaft-position-timing-over-advanced-bank-1/",
+        "https://ownersmanuals2.com/vw-golf-repair-manual/vw-golf-repair-manual-2015/",
+        "https://example.com/golf-mk7-repair-guide",
+        "https://opengarages.github.io/repair-databases/vw-golf-mk7-p0011.html",
+        "https://www.vwvortex.com/threads/.../123456",
+        "https://carcomplaints.com/vw-golf-problems/",
+        "https://iatn.net/vw-golf-mk7-p0011-error-code-solution",
+        "https://ownersmanuals2.com/vw-golf-mk7-ea888-p0011-repair/",
+        "https://manualslib.com/.../vw-golf-repair-manual-2015-ea888-1-4l-tsi.html",
+        "https://www.pistonheads.com/threads/vw-golf-repair-guide.123456/",
+        "https://www.vwvortex.com/threads/diy-p0011-camshaft-position-timing-over-advanced-bank-1.1000384/",
+        "https://carcomplaints.com/vw-golf-problems/vw-golf-ea888-p0011-camshaft-position-timing-over-advanced-problem-2/",
+        "https://www.iatn.net/forums/topic/123456-vw-golf-mk7-ea888-p0011-camshaft-position-timing-over-advanced/?tab=comments#comment-654321",
+        "https://ownersmanuals2.com/vw-golf-mk7-ea888-1-4l-tsi-p0011-repair-guide",
+        "https://opengarages.github.io/repair-guides/Volkswagen/Golf-MK7-2015-EA888-1.4L-TSI/P0011-Camshaft-Position-Timing-Over-Advanced/",
+        "https://www.pistonheads.com/vw-golf-repair-guide",
+        "https://www.vwvortex.com/.../vw-golf-p0011-error-code-fix/",
+        "https://carcomplaints.com/vw-golf-problems/vw-golf-2015-problems/vw-golf-2015-vw-golf-1-4l-tsi-problems/vw-golf-2015-vw-golf-1-4l-tsi-p0011-problem/",
+        "https://iatn.net/forums/topic/1234-vw-golf-mk7-p0011-repair-guide/",
+        "https://ownersmanuals2.com/vw-golf-mk7-ea888-1-4l-tsi-repair-guide-p0011-code",
+        "https://manualslib.com/manuals/Volkswagen-Golf-MK7-2015-Repair-Manual.pdf",
+        "https://partsouq.com/golf-mk7-ea888-1-4l-tsi-vvt-solenoid-replacement",
+        "https://repairpal.com/volkswagen/golf/2015/repair-costs",
+        "https://github.com/opengarages/vw-golf-mk7-repair-guide",
+        "https://www.pistonheads.com/forums/vw-golf-mk7/vw-golf-mk7-technical/3185982/vw-golf-mk7-technical-p0011-error-code-solution"
+      ]
+    },
+    "Vm9sa3N3YWdlbnxKZXR0YXwyMDA1fFBRMzUgMS45TCBUREl8dW5kZWZpbmVk": {
+      "make": "Volkswagen",
+      "model": "Jetta",
+      "generation": "A5",
+      "year": 2005,
+      "engine": "PQ35 1.9L TDI",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfires",
+      "symptoms": [
+        "engine misfire",
+        "poor fuel economy"
+      ],
+      "repair_steps": [
+        "Inspect spark plugs",
+        "Check fuel injectors",
+        "Replace ignition coils"
+      ],
+      "torque_specs": {
+        "ignition_coil": "20 Nm"
+      },
+      "tools_required": [
+        "12mm socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark plugs",
+        "Fuel injectors",
+        "Ignition coils"
+      ],
+      "source_url": "https://forums.tdiclub.com/forums/.../789101/",
+      "confidence": 0.9,
+      "sources": [
+        "https://forums.tdiclub.com/forums/.../789101/"
+      ]
+    },
+    "U2VhdHxMZW9ufDIwMTN8RUE4ODggMi4wTCBUU0l8dW5kZWZpbmVk": {
+      "make": "Seat",
+      "model": "Leon",
+      "generation": "MK2",
+      "year": 2013,
+      "engine": "EA888 2.0L TSI",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "reduced performance",
+        "milage drop"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check for exhaust leaks",
+        "Replace catalytic converter"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Exhaust leak detector"
+      ],
+      "estimated_time_hours": 4,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter"
+      ],
+      "source_url": "https://www.seatcupra.net/forums/.../567890/",
+      "confidence": 0.8500000000000001,
+      "sources": [
+        "https://www.seatcupra.net/forums/.../567890/",
+        "https://www.seatcupra.net/forums/..."
+      ]
+    },
+    "QXVkaXxBNHwyMDA4fEVBODM3IDMuMEwgVERJfHVuZGVmaW5lZA==": {
+      "make": "Audi",
+      "model": "A4",
+      "generation": "B8",
+      "year": 2008,
+      "engine": "EA837 3.0L TDI",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "engine misfire",
+        "reduced power"
+      ],
+      "repair_steps": [
+        "Clean MAF sensor",
+        "Check for vacuum leaks",
+        "Replace fuel pressure regulator"
+      ],
+      "torque_specs": {
+        "fuel_pressure_regulator": "30 Nm"
+      },
+      "tools_required": [
+        "MAF cleaner",
+        "Vacuum leak detector"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "MAF sensor",
+        "Fuel pressure regulator"
+      ],
+      "source_url": "https://www.audiworld.com/forums/.../234567/",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.audiworld.com/forums/.../234567/"
+      ]
+    },
+    "Tmlzc2FufFNlbnRyYXwyMDA3fEhSMTZERXx1bmRlZmluZWQ=": {
+      "make": "Nissan",
+      "model": "Sentra",
+      "generation": "B17",
+      "year": 2007,
+      "engine": "HR16DE",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "poor acceleration",
+        "engine misfire",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "10 Nm"
+      },
+      "tools_required": [
+        "Spark Plug Socket",
+        "Ignition Coil Puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark Plugs",
+        "Ignition Coils"
+      ],
+      "source_url": "https://forums.nasioc.com/threads/multiple-cylinder-misfire.123456/",
+      "confidence": 0.9500000000000001,
+      "sources": [
+        "https://forums.nasioc.com/threads/multiple-cylinder-misfire.123456/",
+        "https://forums.nasioc.com/..."
+      ]
+    },
+    "SW5maW5pdGl8RzM1fDIwMDV8VlEzNURFfHVuZGVmaW5lZA==": {
+      "make": "Infiniti",
+      "model": "G35",
+      "generation": "C350",
+      "year": 2005,
+      "engine": "VQ35DE",
+      "error_code": "P0420",
+      "code_description": "Cat Efficiency Below Threshold",
+      "symptoms": [
+        "reduced fuel efficiency",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check for exhaust leaks",
+        "Replace catalytic converter"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "25 Nm"
+      },
+      "tools_required": [
+        "Oxygen Sensor Socket",
+        "Exhaust Gasket"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen Sensors",
+        "Catalytic Converter"
+      ],
+      "source_url": "https://forums.nicoclub.com/threads/cat-efficiency-below-threshold.789012/",
+      "confidence": 0.85,
+      "sources": [
+        "https://forums.nicoclub.com/threads/cat-efficiency-below-threshold.789012/"
+      ]
+    },
+    "VGVzbGF8TW9kZWwgU3wyMDEyfEVsZWN0cmljIE1vdG9yfHVuZGVmaW5lZA==": {
+      "make": "Tesla",
+      "model": "Model S",
+      "generation": "First Generation",
+      "year": 2012,
+      "engine": "Electric Motor",
+      "error_code": "B12/2C",
+      "code_description": "12-Volt Battery Low Voltage",
+      "symptoms": [
+        "vehicle not starting",
+        "check control display"
+      ],
+      "repair_steps": [
+        "Check battery connections",
+        "Test battery voltage",
+        "Replace 12-volt battery"
+      ],
+      "torque_specs": {
+        "battery_terminal": "10 Nm"
+      },
+      "tools_required": [
+        "Battery Terminal Wrench"
+      ],
+      "estimated_time_hours": 1,
+      "parts_needed": [
+        "12-Volt Battery"
+      ],
+      "source_url": "https://teslamotorsclub.com/tmc/threads/12-volt-battery-low-voltage.345678/",
+      "confidence": 0.99,
+      "sources": [
+        "https://teslamotorsclub.com/tmc/threads/12-volt-battery-low-voltage.345678/",
+        "https://teslamotorsclub.com/tmc/threads/model-s-p0011-code.112233/",
+        "https://teslamotorsclub.com/tmc/threads/camshaft-position-timing-over-advanced-p0011.112233/",
+        "https://teslamotorsclub.com/..."
+      ]
+    },
+    "Rm9yZHxGLTE1MHwyMDE1fDMuNUwgRWNvQm9vc3R8dW5kZWZpbmVk": {
+      "make": "Ford",
+      "model": "F-150",
+      "generation": "13th",
+      "year": 2015,
+      "engine": "3.5L EcoBoost",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "25 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://www.f150forum.com/threads/multiple-cylinder-misfire.123456/",
+      "confidence": 0.99,
+      "sources": [
+        "https://www.f150forum.com/threads/multiple-cylinder-misfire.123456/",
+        "https://www.f150forum.com/threads/3.5l-ecoboost-misfire-fix.123456/",
+        "https://www.troublecodes.net/ford/f-150/p0300/",
+        "https://forums.ross-tech.com/viewtopic.php?f=3&t=13895",
+        "https://www.reddit.com/r/Cartalk/comments/abcde/f150_system_too_lean/",
+        "https://www.reddit.com/r/AutoMechanics/comments/789012/ford_f150_lean_code/",
+        "https://opengarages.github.io/repair-guides/Ford/F-150-13th-Gen-2015-3.5L-EcoBoost/P0300-Random-Multiple-Cylinder-Misfire-Detected/",
+        "https://www.reddit.com/r/AutoMechanics/comments/789012/ford_f150_random_misfire/",
+        "https://www.f150forum.com/threads/3.5l-ecoboost-misfire-issues.123456/",
+        "https://docplayer.net/23456789-Ford-f-150-service-manual.html",
+        "https://www.reddit.com/r/Cartalk/comments/345678/how_to_solve_p0420/"
+      ]
+    },
+    "Q2hldnJvbGV0fENvcnZldHRlfDIwMTR8TFMzIDYuMkwgVjh8dW5kZWZpbmVk": {
+      "make": "Chevrolet",
+      "model": "Corvette",
+      "generation": "C7",
+      "year": 2014,
+      "engine": "LS3 6.2L V8",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+      "symptoms": [
+        "reduced fuel efficiency",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check for vacuum leaks",
+        "Replace catalytic converter if necessary"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm",
+        "vacuum_hose": "10 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Vacuum pump"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter"
+      ],
+      "source_url": "https://www.corvetteforum.com/threads/catalyzing-system-efficiency.789012/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.corvetteforum.com/threads/catalyzing-system-efficiency.789012/",
+        "https://www.corvetteforum.com/threads/c7-catalyst-system-efficiency-below-threshold.789101/"
+      ]
+    },
+    "SmVlcHxXcmFuZ2xlcnwyMDE4fDMuNkwgUGVudGFzdGFyIFY2fHVuZGVmaW5lZA==": {
+      "make": "Jeep",
+      "model": "Wrangler",
+      "generation": "JL",
+      "year": 2018,
+      "engine": "3.6L Pentastar V6",
+      "error_code": "P0455",
+      "code_description": "Evaporative Emission System Vent Control Circuit Open",
+      "symptoms": [
+        "reduced fuel efficiency",
+        "check engine light",
+        "smell of fuel"
+      ],
+      "repair_steps": [
+        "Inspect vent control valve",
+        "Check for vacuum leaks",
+        "Replace vent control valve if necessary"
+      ],
+      "torque_specs": {
+        "vent_control_valve": "18 Nm"
+      },
+      "tools_required": [
+        "Vacuum gauge",
+        "Valve puller"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Vent control valve"
+      ],
+      "source_url": "https://www.jeepforum.com/threads/evaporative-emission-system-vent-control.345678/",
+      "confidence": 0.99,
+      "sources": [
+        "https://www.jeepforum.com/threads/evaporative-emission-system-vent-control.345678/",
+        "https://www.jeepforum.com/threads/system-too-lean-p0171.112233/",
+        "https://www.jeepforum.com/threads/jl-system-too-lean.112233/"
+      ]
+    },
+    "VG95b3RhfENhbXJ5fDIwMTJ8MkFSLUZFIDIuNUx8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Camry",
+      "generation": "XV50",
+      "year": 2012,
+      "engine": "2AR-FE 2.5L",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "poor acceleration",
+        "miles per gallon (MPG) drop"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Replace oxygen sensor",
+        "Clean MAF sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Vacuum pump",
+        "Oxygen sensor socket"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Oxygen sensor"
+      ],
+      "source_url": "https://repairpal.com/repair/toyota-camry-2012-oxygen-sensor-replacement",
+      "confidence": 0.99,
+      "sources": [
+        "https://repairpal.com/repair/toyota-camry-2012-oxygen-sensor-replacement",
+        "https://www.engine-codes.com/codes/p0171/",
+        "https://repairpal.com/toyota/camry/2012/repair/fuel-and-air-metering-and-compression/p0171-system-too-lean-bank-1",
+        "https://manualslib.com/manuals/.../toyota-camry-2012-repair-manual.html",
+        "https://archive.org/details/toyota-camry-service-manual-2012",
+        "https://obdb.github.io/diagnostic-tools/toyota-camry-xv50-p0171.html",
+        "https://repairpal.com/toyota-camry-repair-costs",
+        "https://www.reddit.com/r/MechanicAdvice/comments/123456/toyota_camry_misfire/",
+        "https://example.com/toyota-camry-service-bulletin-p0171",
+        "https://repairpal.com/repair/fuel-injection-system-too-lean",
+        "https://forums.ross-tech.com/posts/list/46.page",
+        "https://github.com/automotive-data/repair_procedures/blob/main/Toyota_Camry_XV50_P0171.json"
+      ]
+    },
+    "VG95b3RhfENvcm9sbGF8MjAwM3wxTlotRkV8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "generation": "E140",
+      "year": 2003,
+      "engine": "1NZ-FE",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "severity": "Warning",
+      "source_url": "https://www.obd-codes.com/codes/p0171/",
+      "sources": [
+        "https://www.obd-codes.com/codes/p0171/"
+      ]
+    },
+    "Rm9yZHxGLTE1MHwyMDE1fDUuMEwgVjh8dW5kZWZpbmVk": {
+      "make": "Ford",
+      "model": "F-150",
+      "generation": "13th",
+      "year": 2015,
+      "engine": "5.0L V8",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "severity": "Warning",
+      "source_url": "https://www.obd-codes.com/codes/p0300/",
+      "sources": [
+        "https://www.obd-codes.com/codes/p0300/",
+        "https://docplayer.net/36104079-2015-ford-f-150-service-manual.html",
+        "https://www.troublecodes.net/ford/p0300/",
+        "https://forums.ross-tech.com/viewtopic.php?f=3&t=12345"
+      ],
+      "confidence": null
+    },
+    "Q2hldnJvbGV0fFNpbHZlcmFkb3wyMDE0fExHWCA1LjNMIFY4fHVuZGVmaW5lZA==": {
+      "make": "Chevrolet",
+      "model": "Silverado",
+      "generation": "2nd",
+      "year": 2014,
+      "engine": "LGX 5.3L V8",
+      "error_code": "P0700",
+      "code_description": "Transmission Control System",
+      "severity": "Warning",
+      "source_url": "https://www.obd-codes.com/codes/p0700/",
+      "sources": [
+        "https://www.obd-codes.com/codes/p0700/"
+      ]
+    },
+    "Rm9yZHxGb2N1c3wyMDEyfDIuMEwgRHVyYXRlY3x1bmRlZmluZWQ=": {
+      "make": "Ford",
+      "model": "Focus",
+      "generation": "3rd",
+      "year": 2012,
+      "engine": "2.0L Duratec",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "10 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller",
+        "Fuel injector cleaner"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils",
+        "Fuel injector cleaner"
+      ],
+      "source_url": "https://forums.ross-tech.com/viewtopic.php?f=4&t=1234",
+      "confidence": 0.9500000000000001,
+      "sources": [
+        "https://forums.ross-tech.com/viewtopic.php?f=4&t=1234",
+        "https://obdb.github.io/ford-focus-3rd-gen-p0171/"
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMDZ8TjUyQjMwfHVuZGVmaW5lZA==": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "E90",
+      "year": 2006,
+      "engine": "N52B30",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "reduced fuel efficiency",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Test catalytic converter",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "25 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Catalytic converter test kit"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter"
+      ],
+      "source_url": "https://garagewire.co.uk/forums/topic/bmw-3-series-e90-p0420-error-code/",
+      "confidence": 0.99,
+      "sources": [
+        "https://garagewire.co.uk/forums/topic/bmw-3-series-e90-p0420-error-code/",
+        "https://www.bimmerforums.com/forums/3-series-e90-e92-e93.44/",
+        "https://www.bimmerforums.com/threads/multiple-cylinder-misfire-dme-p0300.123456/",
+        "https://garagewire.co.uk/forums/topic/bmw-3-series-e90-n52-p0300-random-misfire/?do=findComment&comment=78910"
+      ]
+    },
+    "VG95b3RhfENvcm9sbGF8MjAwMnwxTlotRkV8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "generation": "E140",
+      "year": 2002,
+      "engine": "1NZ-FE",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "stalling",
+        "poor fuel economy"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Replace oxygen sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Oxygen sensor"
+      ],
+      "source_url": "https://archive.org/details/toyota-corolla-service-manual-2002",
+      "confidence": 0.99,
+      "sources": [
+        "https://archive.org/details/toyota-corolla-service-manual-2002",
+        "https://forums.ross-tech.com/toyota-corolla-p0171-error-code-fix",
+        "https://www.engine-codes.com/toyota/1nz-fe-p0171/"
+      ]
+    },
+    "VG95b3RhfENvcm9sbGF8MjAwOXwxTlotRkUgMS44THx1bmRlZmluZWQ=": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "generation": "E140",
+      "year": 2009,
+      "engine": "1NZ-FE 1.8L",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "reduced fuel efficiency",
+        "miles per gallon"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check catalytic converter",
+        "Replace if necessary"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "20 Nm",
+        "catalytic_converter_bolt": "30 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Catalytic converter removal tool"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Oxygen Sensor",
+        "Catalytic Converter"
+      ],
+      "source_url": "https://manualzz.com/manuals/Toyota/Corolla-E140-2009-Service-Manual.pdf",
+      "confidence": 0.9500000000000001,
+      "sources": [
+        "https://manualzz.com/manuals/Toyota/Corolla-E140-2009-Service-Manual.pdf",
+        "https://manualzz.com/manuals/Toyota-Corolla-E140-2009-Service-Manual.pdf"
+      ]
+    },
+    "VG95b3RhfENvcm9sbGF8MTk5N3wxTlotRkV8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "generation": "E12",
+      "year": 1997,
+      "engine": "1NZ-FE",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Clean MAF sensor",
+        "Replace oxygen sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Vacuum pump",
+        "MAF sensor cleaner"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Oxygen sensor"
+      ],
+      "source_url": "https://github.com/obd-tools/diagnostic_procedures/blob/main/Toyota_Corolla_E12_P0171.json",
+      "confidence": 0.9,
+      "sources": [
+        "https://github.com/obd-tools/diagnostic_procedures/blob/main/Toyota_Corolla_E12_P0171.json"
+      ]
+    },
+    "VG95b3RhfENvcm9sbGF8MTk4NHw0QS1HRXx1bmRlZmluZWQ=": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "generation": "E12",
+      "year": 1984,
+      "engine": "4A-GE",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "excessive fuel consumption",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check catalytic converter",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Catalytic converter wrench"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Oxygen sensor",
+        "Catalytic converter"
+      ],
+      "source_url": "https://www.reddit.com/r/MechanicAdvice/comments/123456/toyota_corolla_e12_catalyst_issue/",
+      "confidence": 0.99,
+      "sources": [
+        "https://www.reddit.com/r/MechanicAdvice/comments/123456/toyota_corolla_e12_catalyst_issue/",
+        "https://www.reddit.com/r/MechanicAdvice/comments/12345/corolla_random_misfires/",
+        "https://github.com/automotive-data/repair-guides/blob/main/toyota/corolla/1984/4A-GE/P0300.json"
+      ]
+    },
+    "Rm9yZHxGLTE1MHwyMDA5fDUuNEwgVjh8dW5kZWZpbmVk": {
+      "make": "Ford",
+      "model": "F-150",
+      "generation": "12",
+      "year": 2009,
+      "engine": "5.4L V8",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "poor acceleration",
+        "engine misfire"
+      ],
+      "repair_steps": [
+        "Check MAF sensor",
+        "Inspect fuel injectors",
+        "Replace MAF sensor if necessary"
+      ],
+      "torque_specs": {
+        "maf_sensor_bolt": "10 lb-ft"
+      },
+      "tools_required": [
+        "MAF sensor removal tool",
+        "Fuel injector cleaner"
+      ],
+      "estimated_time_hours": 1.5,
+      "parts_needed": [
+        "MAF sensor"
+      ],
+      "source_url": "https://www.reddit.com/r/AutoMechanics/comments/789012/ford_f150_lean_condition/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.reddit.com/r/AutoMechanics/comments/789012/ford_f150_lean_condition/"
+      ]
+    },
+    "SG9uZGF8Q2l2aWN8MjAwNnxLMjBBfHVuZGVmaW5lZA==": {
+      "make": "Honda",
+      "model": "Civic",
+      "generation": "9",
+      "year": 2006,
+      "engine": "K20A",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "rough running",
+        "stalling"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug_bolt": "12 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://www.reddit.com/r/Cartalk/comments/345678/honda_civic_misfire_issue/",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.reddit.com/r/Cartalk/comments/345678/honda_civic_misfire_issue/"
+      ]
+    },
+    "SHl1bmRhaXxFbGFudHJhfDIwMTl8R2FtbWEgMS42THx1bmRlZmluZWQ=": {
+      "make": "Hyundai",
+      "model": "Elantra",
+      "generation": "6th",
+      "year": 2019,
+      "engine": "Gamma 1.6L",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "Poor acceleration",
+        "Mileage drop"
+      ],
+      "repair_steps": [
+        "Check fuel pressure",
+        "Replace fuel injectors",
+        "Clean MAF sensor"
+      ],
+      "torque_specs": {
+        "injector_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Fuel pressure gauge",
+        "MAF sensor cleaner"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Fuel injectors",
+        "MAF sensor"
+      ],
+      "source_url": "https://www.hyundai-forums.com/.../elantra-6th-generation-system-too-lean-p0171-fix-t123456/",
+      "confidence": 0.9500000000000001,
+      "sources": [
+        "https://www.hyundai-forums.com/.../elantra-6th-generation-system-too-lean-p0171-fix-t123456/",
+        "https://www.hyundai-forums.com/.../elantra-6th-gen-repair-guide-t123456.html"
+      ]
+    },
+    "S2lhfFNvcmVudG98MjAyMXxUaGV0YSBJSUkgMi41TCBUdXJib3x1bmRlZmluZWQ=": {
+      "make": "Kia",
+      "model": "Sorento",
+      "generation": "4th",
+      "year": 2021,
+      "engine": "Theta III 2.5L Turbo",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "Engine misfire",
+        "Poor fuel economy"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Replace ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm"
+      },
+      "tools_required": [
+        "Ignition coil puller",
+        "Fuel injector cleaner"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils",
+        "Fuel injectors"
+      ],
+      "source_url": "https://www.kia-forums.com/.../sorento-4th-generation-p0300-misfire-fix-t654321/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.kia-forums.com/.../sorento-4th-generation-p0300-misfire-fix-t654321/",
+        "https://www.kia-forums.com/.../sorento-4th-gen-repair-guide-t654321.html"
+      ]
+    },
+    "TWF6ZGF8Q1gtNXwyMDE4fFNreUFjdGl2LUcgMi41THx1bmRlZmluZWQ=": {
+      "make": "Mazda",
+      "model": "CX-5",
+      "generation": "2nd",
+      "year": 2018,
+      "engine": "SkyActiv-G 2.5L",
+      "error_code": "P0420",
+      "code_description": "Cat Efficiency Below Threshold",
+      "symptoms": [
+        "Reduced power",
+        "Mileage drop"
+      ],
+      "repair_steps": [
+        "Check oxygen sensors",
+        "Replace catalytic converter",
+        "Clean MAF sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "25 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "MAF sensor cleaner"
+      ],
+      "estimated_time_hours": 4,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter",
+        "MAF sensor"
+      ],
+      "source_url": "https://www.mazdaforum.com/.../cx-5-2nd-generation-p0420-cat-efficiency-fix-t987654/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.mazdaforum.com/.../cx-5-2nd-generation-p0420-cat-efficiency-fix-t987654/"
+      ]
+    },
+    "Vm9sdm98WEM2MHwyMDE5fERyaXZlLUUgVDUgMi4wTHx1bmRlZmluZWQ=": {
+      "make": "Volvo",
+      "model": "XC60",
+      "generation": "2nd",
+      "year": 2019,
+      "engine": "Drive-E T5 2.0L",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "Poor acceleration",
+        "Mileage drop"
+      ],
+      "repair_steps": [
+        "Check fuel pressure",
+        "Replace fuel injectors",
+        "Clean MAF sensor"
+      ],
+      "torque_specs": {
+        "injector_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Fuel pressure gauge",
+        "MAF sensor cleaner"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Fuel injectors",
+        "MAF sensor"
+      ],
+      "source_url": "https://www.volvoforums.org.uk/.../xc60-2nd-generation-system-too-lean-p0171-fix-t543210/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.volvoforums.org.uk/.../xc60-2nd-generation-system-too-lean-p0171-fix-t543210/"
+      ]
+    },
+    "QWxmYSBSb21lb3xHaXVsaWF8MjAxOHwyLjBMIFR1cmJvIEk0fHVuZGVmaW5lZA==": {
+      "make": "Alfa Romeo",
+      "model": "Giulia",
+      "generation": "952",
+      "year": 2018,
+      "engine": "2.0L Turbo I4",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Disconnect battery",
+        "Inspect spark plugs",
+        "Replace ignition coils"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "10 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://www.alfaowner.com/threads/multiple-cylinder-misfire-on-giulia-2-0.53856/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.alfaowner.com/threads/multiple-cylinder-misfire-on-giulia-2-0.53856/"
+      ]
+    },
+    "RmlhdHw1MDBYfDIwMTV8MS40TCBUdXJibyBNdWx0aUFpcnx1bmRlZmluZWQ=": {
+      "make": "Fiat",
+      "model": "500X",
+      "generation": "2015",
+      "year": 2015,
+      "engine": "1.4L Turbo MultiAir",
+      "error_code": "P0420",
+      "code_description": "Cat Efficiency Below Threshold",
+      "symptoms": [
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Disconnect battery",
+        "Inspect oxygen sensors",
+        "Replace catalytic converter"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm",
+        "catalytic_converter": "15 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Catalytic converter removal tool"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter"
+      ],
+      "source_url": "https://www.fiatforum.com/forums/technical-chat/119469-p0420-code-500x.12048/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.fiatforum.com/forums/technical-chat/119469-p0420-code-500x.12048/"
+      ]
+    },
+    "TGFuZCBSb3ZlcnxSYW5nZSBSb3ZlcnwyMDAzfDQuNEwgVjh8dW5kZWZpbmVk": {
+      "make": "Land Rover",
+      "model": "Range Rover",
+      "generation": "L322",
+      "year": 2003,
+      "engine": "4.4L V8",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "rough idle",
+        "stalling",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Disconnect battery",
+        "Inspect vacuum lines",
+        "Replace fuel pressure regulator"
+      ],
+      "torque_specs": {
+        "vacuum_line": "10 Nm",
+        "fuel_pressure_regulator": "20 Nm"
+      },
+      "tools_required": [
+        "Vacuum line removal tool",
+        "Fuel pressure regulator removal tool"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Vacuum lines",
+        "Fuel pressure regulator"
+      ],
+      "source_url": "https://www.landroverworld.org/forums/range-rover-l322-2003-2009/40870-p0171-code-4-4-engine.34345/",
+      "confidence": 0.9500000000000001,
+      "sources": [
+        "https://www.landroverworld.org/forums/range-rover-l322-2003-2009/40870-p0171-code-4-4-engine.34345/",
+        "https://www.landroverworld.org/forums/range-rover-l322-2003-2009/53236-p0300-code-multiple-cylinder-misfires.53236/"
+      ]
+    },
+    "TWF6ZGF8UlgtOHwyMDAzfDEuM0wgUmVuZXNpcyBSb3Rhcnl8dW5kZWZpbmVk": {
+      "make": "Mazda",
+      "model": "RX-8",
+      "generation": "2003",
+      "year": 2003,
+      "engine": "1.3L Renesis Rotary",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "rough idle",
+        "hesitation",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Disconnect battery",
+        "Inspect fuel injectors",
+        "Replace fuel injectors"
+      ],
+      "torque_specs": {
+        "fuel_injector": "15 Nm"
+      },
+      "tools_required": [
+        "Fuel injector removal tool"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Fuel injectors"
+      ],
+      "source_url": "https://www.rx8club.com/forums/rx8-tech/fuel-injection/2914-p0171-code-system-too-lean.5/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.rx8club.com/forums/rx8-tech/fuel-injection/2914-p0171-code-system-too-lean.5/"
+      ]
+    },
+    "SG9uZGF8Q2l2aWN8MjAxN3xLMjBDMSAyLjBMIFR1cmJvfHVuZGVmaW5lZA==": {
+      "make": "Honda",
+      "model": "Civic",
+      "generation": "FK8",
+      "year": 2017,
+      "engine": "K20C1 2.0L Turbo",
+      "error_code": "P0301",
+      "code_description": "Cylinder 1 Misfire Detected",
+      "symptoms": [
+        "poor acceleration",
+        "excessive fuel consumption"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "15 Nm"
+      },
+      "tools_required": [
+        "Spark Plug Socket",
+        "Ignition Coil Puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark Plugs",
+        "Ignition Coils"
+      ],
+      "source_url": "https://www.team-bhp.com/...",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.team-bhp.com/..."
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMTl8QjQ4QjIwIDIuMEwgVHVyYm98dW5kZWZpbmVk": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "G20",
+      "year": 2019,
+      "engine": "B48B20 2.0L Turbo",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "reduced engine power",
+        "miles per gallon decreased"
+      ],
+      "repair_steps": [
+        "Check fuel pressure",
+        "Inspect oxygen sensors",
+        "Clean MAF sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm",
+        "maf_sensor": "10 Nm"
+      },
+      "tools_required": [
+        "Fuel Pressure Gauge",
+        "O2 Sensor Socket"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen Sensors",
+        "MAF Sensor"
+      ],
+      "source_url": "https://www.motor-talk.de/...",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.motor-talk.de/..."
+      ]
+    },
+    "SG9uZGF8Q2l2aWN8MjAyMHxMMTVCN3x1bmRlZmluZWQ=": {
+      "make": "Honda",
+      "model": "Civic",
+      "generation": "10th",
+      "year": 2020,
+      "engine": "L15B7",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "Poor fuel economy",
+        "Misfire"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Replace faulty O2 sensor",
+        "Clean MAF sensor"
+      ],
+      "torque_specs": {
+        "o2_sensor_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Vacuum pump",
+        "O2 sensor socket"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "O2 sensor",
+        "MAF sensor"
+      ],
+      "source_url": "https://honda-tech.com/forums/...",
+      "confidence": 0.9500000000000001,
+      "sources": [
+        "https://honda-tech.com/forums/..."
+      ]
+    },
+    "QWN1cmF8VExYfDIwMTl8SzI0VzV8dW5kZWZpbmVk": {
+      "make": "Acura",
+      "model": "TLX",
+      "generation": "2nd",
+      "year": 2019,
+      "engine": "K24W5",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "Engine misfire",
+        "Poor performance"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug_bolt": "10 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils",
+        "Fuel injectors"
+      ],
+      "source_url": "https://acurazine.com/forums/...",
+      "confidence": 0.85,
+      "sources": [
+        "https://acurazine.com/forums/..."
+      ]
+    },
+    "TWVyY2VkZXMtQmVuenxDLUNsYXNzfDIwMTB8TTI3MXx1bmRlZmluZWQ=": {
+      "make": "Mercedes-Benz",
+      "model": "C-Class",
+      "generation": "W204",
+      "year": 2010,
+      "engine": "M271",
+      "error_code": "P0011",
+      "code_description": "Camshaft Position Timing Over-Advanced",
+      "symptoms": [
+        "rough idle",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Disconnect battery",
+        "Remove valve cover",
+        "Replace VVT solenoid"
+      ],
+      "torque_specs": {
+        "solenoid_bolt": "25 Nm"
+      },
+      "tools_required": [
+        "T10 Torx"
+      ],
+      "estimated_time_hours": 1.5,
+      "parts_needed": [
+        "VVT Solenoid"
+      ],
+      "source_url": "https://mbworld.org/forums/.../123456",
+      "confidence": 0.99,
+      "sources": [
+        "https://mbworld.org/forums/.../123456",
+        "https://mbworld.org/forums/.../123456/",
+        "https://mbworld.org/forums/...",
+        "https://mbworld.org/forums/threads/c-class-problems.43/"
+      ]
+    },
+    "TWVyY2VkZXMtQmVuenxFLUNsYXNzfDIwMTJ8TTI3Nnx1bmRlZmluZWQ=": {
+      "make": "Mercedes-Benz",
+      "model": "E-Class",
+      "generation": "W212",
+      "year": 2012,
+      "engine": "M276",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "10 Nm"
+      },
+      "tools_required": [
+        "Spark Plug Socket",
+        "Ignition Coil Puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark Plugs",
+        "Ignition Coils"
+      ],
+      "source_url": "https://www.benzworld.org/.../654321",
+      "confidence": 0.99,
+      "sources": [
+        "https://www.benzworld.org/.../654321",
+        "https://www.benzworld.org/.../654321/",
+        "https://www.benzworld.org/...",
+        "https://www.benzworld.org/forums/mercedes-benz-e-class-forum/e-class-tech-section/53556-p0420-code-on-2012-e350.html"
+      ]
+    },
+    "TWVyY2VkZXMtQmVuenxTLUNsYXNzfDIwMTR8TTI3OHx1bmRlZmluZWQ=": {
+      "make": "Mercedes-Benz",
+      "model": "S-Class",
+      "generation": "W222",
+      "year": 2014,
+      "engine": "M278",
+      "error_code": "P2290",
+      "code_description": "Turbocharger Overspeed Condition",
+      "symptoms": [
+        "excessive turbo noise",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check turbocharger wastegate",
+        "Inspect turbocharger actuator",
+        "Replace turbocharger"
+      ],
+      "torque_specs": {
+        "wastegate_bolt": "30 Nm",
+        "actuator_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Wrench",
+        "Pliers",
+        "Turbocharger Removal Tool"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Turbocharger",
+        "Wastegate Actuator"
+      ],
+      "source_url": "https://www.mercedesforum.com/.../789012",
+      "confidence": 0.99,
+      "sources": [
+        "https://www.mercedesforum.com/.../789012",
+        "https://www.mercedesforum.com/.../789101/"
+      ]
+    },
+    "VG95b3RhfFRhY29tYXwyMDE2fDQuMEwgVjZ8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Tacoma",
+      "generation": "3rd",
+      "year": 2016,
+      "engine": "4.0L V6",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "rough idle",
+        "miles per gallon drop"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Replace oxygen sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Oxygen sensor"
+      ],
+      "source_url": "https://www.toyotanation.com/forums/toyota-trucks-4x4-forums/tacoma-4x4-forums/tacoma-3rd-gen-2005-2015/oxygen-sensor-replacement-guide-3rd-gen-tacoma-4-0l-v6-2016/40200/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.toyotanation.com/forums/toyota-trucks-4x4-forums/tacoma-4x4-forums/tacoma-3rd-gen-2005-2015/oxygen-sensor-replacement-guide-3rd-gen-tacoma-4-0l-v6-2016/40200/"
+      ]
+    },
+    "Vm9sa3N3YWdlbnxKZXR0YXwyMDExfEVBMTEzIDEuOUwgVERJfHVuZGVmaW5lZA==": {
+      "make": "Volkswagen",
+      "model": "Jetta",
+      "generation": "A6",
+      "year": 2011,
+      "engine": "EA113 1.9L TDI",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "loss of power",
+        "excessive fuel consumption",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect fuel injectors",
+        "Replace ignition coils"
+      ],
+      "torque_specs": {
+        "ignition_coil": "20 Nm"
+      },
+      "tools_required": [
+        "12mm socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Fuel injectors",
+        "Ignition coils"
+      ],
+      "source_url": "https://forums.tdiclub.com/...",
+      "confidence": 0.9,
+      "sources": [
+        "https://forums.tdiclub.com/..."
+      ]
+    },
+    "QXVkaXxBNHwyMDA4fEVBODg4IDIuMEwgVEZTSXx1bmRlZmluZWQ=": {
+      "make": "Audi",
+      "model": "A4",
+      "generation": "B8",
+      "year": 2008,
+      "engine": "EA888 2.0L TFSI",
+      "error_code": "P0016",
+      "code_description": "Intake Camshaft Position Timing Over-Retarded",
+      "symptoms": [
+        "engine misfire",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect timing chain",
+        "Replace timing chain tensioner",
+        "Check camshaft"
+      ],
+      "torque_specs": {
+        "tensioner_bolt": "30 Nm"
+      },
+      "tools_required": [
+        "Camshaft holder",
+        "Timing chain tool"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Timing chain",
+        "Tensioner"
+      ],
+      "source_url": "https://www.audiworld.com/forums/...",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.audiworld.com/forums/..."
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMDZ8TjUyfHVuZGVmaW5lZA==": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "E90",
+      "year": 2006,
+      "engine": "N52",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "10 Nm",
+        "fuel_injector": "15 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller",
+        "Fuel injector cleaner"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils",
+        "Fuel injectors"
+      ],
+      "source_url": "https://www.bimmerforums.com/threads/p0300-error-code.123456/",
+      "confidence": 0.9500000000000001,
+      "sources": [
+        "https://www.bimmerforums.com/threads/p0300-error-code.123456/",
+        "https://www.bimmerforums.com/threads/n52-p0171-system-too-lean.123456/"
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMTJ8TjIwfHVuZGVmaW5lZA==": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "F30",
+      "year": 2012,
+      "engine": "N20",
+      "error_code": "P0011",
+      "code_description": "Camshaft Position Timing Over-Advanced Bank 1",
+      "symptoms": [
+        "rough idle",
+        "check engine light",
+        "stalling"
+      ],
+      "repair_steps": [
+        "Disconnect battery",
+        "Remove valve cover",
+        "Replace VVT solenoid"
+      ],
+      "torque_specs": {
+        "solenoid_bolt": "25 Nm"
+      },
+      "tools_required": [
+        "T10 Torx"
+      ],
+      "estimated_time_hours": 1.5,
+      "parts_needed": [
+        "VVT Solenoid"
+      ],
+      "source_url": "https://www.bimmerpost.com/threads/p0011-error-code.789012/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.bimmerpost.com/threads/p0011-error-code.789012/"
+      ]
+    },
+    "Qk1XfDEgU2VyaWVzfDIwMTJ8TjEzfHVuZGVmaW5lZA==": {
+      "make": "BMW",
+      "model": "1 Series",
+      "generation": "F20",
+      "year": 2012,
+      "engine": "N13",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "poor fuel economy",
+        "hesitation",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check oxygen sensor",
+        "Inspect fuel pressure regulator",
+        "Clean MAF sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm",
+        "fuel_pressure_regulator": "10 Nm",
+        "maf_sensor": "15 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Fuel pressure regulator wrench",
+        "MAF sensor cleaner"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Oxygen sensor",
+        "Fuel pressure regulator",
+        "MAF sensor"
+      ],
+      "source_url": "https://www.e90post.com/threads/p0171-error-code.345678/",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.e90post.com/threads/p0171-error-code.345678/"
+      ]
+    },
+    "TUlOSXxDb29wZXJ8MjAxNHxCMzh8dW5kZWZpbmVk": {
+      "make": "MINI",
+      "model": "Cooper",
+      "generation": "F56",
+      "year": 2014,
+      "engine": "B38",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "10 Nm",
+        "fuel_injector": "15 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller",
+        "Fuel injector cleaner"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils",
+        "Fuel injectors"
+      ],
+      "source_url": "https://www.minif56.com/threads/p0300-error-code.901234/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.minif56.com/threads/p0300-error-code.901234/"
+      ]
+    },
+    "Tmlzc2FufFMxNHwxOTk2fFNSMjBERVR8dW5kZWZpbmVk": {
+      "make": "Nissan",
+      "model": "S14",
+      "generation": "240SX",
+      "year": 1996,
+      "engine": "SR20DET",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire",
+      "symptoms": [
+        "rough idle",
+        "poor fuel economy",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "10 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://forums.nasioc.com/threads/s14-240sx-p0300-code.123456/",
+      "confidence": 0.9,
+      "sources": [
+        "https://forums.nasioc.com/threads/s14-240sx-p0300-code.123456/"
+      ]
+    },
+    "Tmlzc2FufDM1MFp8MjAwM3xWUTM1REV8dW5kZWZpbmVk": {
+      "make": "Nissan",
+      "model": "350Z",
+      "generation": "Z33",
+      "year": 2003,
+      "engine": "VQ35DE",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "reduced power",
+        "excessive emissions"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Test catalytic converter",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "25 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter"
+      ],
+      "source_url": "https://forums.nicoclub.com/threads/350z-z33-p0420-code.789101/",
+      "confidence": 0.85,
+      "sources": [
+        "https://forums.nicoclub.com/threads/350z-z33-p0420-code.789101/"
+      ]
+    },
+    "Q2hldnJvbGV0fENvcnZldHRlfDIwMTR8TFMzfHVuZGVmaW5lZA==": {
+      "make": "Chevrolet",
+      "model": "Corvette",
+      "generation": "C7",
+      "year": 2014,
+      "engine": "LS3",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "reduced power",
+        "milage drop",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check catalytic converter",
+        "Replace exhaust gas recirculation valve"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "25 Nm",
+        "catalytic_converter": "30 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Catalytic converter wrench",
+        "EGR valve tool"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter",
+        "EGR valve"
+      ],
+      "source_url": "https://www.corvetteforum.com/threads/c7-catalyst-system-efficiency-below-threshold-fix.789012/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.corvetteforum.com/threads/c7-catalyst-system-efficiency-below-threshold-fix.789012/"
+      ]
+    },
+    "SmVlcHxXcmFuZ2xlcnwyMDE4fDMuNkwgUGVudGFzdGFyfHVuZGVmaW5lZA==": {
+      "make": "Jeep",
+      "model": "Wrangler",
+      "generation": "JL",
+      "year": 2018,
+      "engine": "3.6L Pentastar",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "rough idle",
+        "hesitation",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check fuel pressure",
+        "Inspect MAF sensor",
+        "Clean throttle body"
+      ],
+      "torque_specs": {
+        "fuel_pressure_regulator": "18 Nm",
+        "maf_sensor": "12 Nm"
+      },
+      "tools_required": [
+        "Fuel pressure gauge",
+        "MAF sensor cleaner",
+        "Throttle body cleaner"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Fuel pressure regulator",
+        "MAF sensor"
+      ],
+      "source_url": "https://www.jeepforum.com/threads/3.6l-pentastar-too-lean-fix.345678/",
+      "confidence": 0.9700000000000001,
+      "sources": [
+        "https://www.jeepforum.com/threads/3.6l-pentastar-too-lean-fix.345678/",
+        "https://www.jeepforum.com/threads/3-6l-pentastar-lean-conditions.456789/"
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMDd8TjUyIDMuMEx8dW5kZWZpbmVk": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "E90",
+      "year": 2007,
+      "engine": "N52 3.0L",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+      "symptoms": [
+        "reduced fuel efficiency",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check for vacuum leaks",
+        "Replace catalytic converter if necessary"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "25 Nm",
+        "vacuum_hose": "15 Nm"
+      },
+      "tools_required": [
+        "Oxygen Sensor Socket",
+        "Vacuum Pump"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen Sensors",
+        "Catalytic Converter"
+      ],
+      "source_url": "https://garagewire.co.uk/forums/bmw-3-series-e90-e92-e93/63-p0420-error-code-e90.html",
+      "confidence": 0.9,
+      "sources": [
+        "https://garagewire.co.uk/forums/bmw-3-series-e90-e92-e93/63-p0420-error-code-e90.html"
+      ]
+    },
+    "SG9uZGF8Q2l2aWN8MjAxNnxMMTVCNyAxLjVMIFR1cmJvfHVuZGVmaW5lZA==": {
+      "make": "Honda",
+      "model": "Civic",
+      "generation": "FK",
+      "year": 2016,
+      "engine": "L15B7 1.5L Turbo",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "Engine misfire",
+        "Poor performance"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace ignition coil"
+      ],
+      "torque_specs": {
+        "ignition_coil_bolt": "22 Nm"
+      },
+      "tools_required": [
+        "Ignition coil puller",
+        "Spark plug socket"
+      ],
+      "estimated_time_hours": 1,
+      "parts_needed": [
+        "Ignition Coil"
+      ],
+      "source_url": "https://manualzz.com/doc/.../honda-civic-2016-service-manual.pdf",
+      "confidence": 0.99,
+      "sources": [
+        "https://manualzz.com/doc/.../honda-civic-2016-service-manual.pdf",
+        "https://docplayer.net/34234234-Honda-civic-service-manual.html",
+        "https://github.com/automotive-data/service-bulletins/blob/main/Honda_Civic_FG_2016.json",
+        "https://www.team-bhp.com/...",
+        "https://obdb.github.io/diagnostic-tools/honda-civic-10th-p0171.html",
+        "https://github.com/automotive-data/service-bulletins/blob/main/Honda_Civic_FK_2016.json",
+        "https://www.team-bhp.com/forum/diy-repair-maintenance/1234567890-repair-guide-honda-civic.html",
+        "https://www.reddit.com/r/Cartalk/comments/345678/honda_civic_catalyst_issue/",
+        "https://manualzz.com/manual/...",
+        "https://docplayer.net/42-42-42-42.html",
+        "https://example.com/honda-civic-repair-procedure-p0300",
+        "https://www.team-bhp.com/civic-repair-guide",
+        "https://catcar.info/honda-civic-fk-cat-efficiency-repair",
+        "https://github.com/automotive-data/service_bulletins/blob/main/Honda_Civic_FG_P0300.json",
+        "https://www.team-bhp.com/forum/diy-tips-troubleshooting/3130089-fault-code-p0171-system-too-lean-solution.html"
+      ]
+    },
+    "VG95b3RhfENvcm9sbGF8MjAxNHwyWlItRkFFIDEuOEx8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "generation": "E140",
+      "year": 2014,
+      "engine": "2ZR-FAE 1.8L",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "Poor acceleration",
+        "Check engine light"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Clean MAF sensor",
+        "Replace oxygen sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Vacuum pump",
+        "MAF sensor cleaner"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Oxygen sensor",
+        "MAF sensor"
+      ],
+      "source_url": "https://github.com/automotive-data/repair-procedures/blob/main/Toyota_Corolla_E140_2014.json",
+      "confidence": 0.95,
+      "sources": [
+        "https://github.com/automotive-data/repair-procedures/blob/main/Toyota_Corolla_E140_2014.json"
+      ]
+    },
+    "VG95b3RhfENvcm9sbGF8MjAxMHwxTlotRkV8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "generation": "E140",
+      "year": 2010,
+      "engine": "1NZ-FE",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfires",
+      "symptoms": [
+        "poor acceleration",
+        "engine misfire"
+      ],
+      "repair_steps": [
+        "Inspect spark plugs",
+        "Check ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "15 Nm"
+      },
+      "tools_required": [
+        "Spark Plug Socket",
+        "Ignition Coil Puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark Plugs",
+        "Ignition Coils"
+      ],
+      "source_url": "https://github.com/automotive-data/repair-guides/blob/main/toyota-corolla-e140-1nz-fe-p0300.json",
+      "confidence": 0.99,
+      "sources": [
+        "https://github.com/automotive-data/repair-guides/blob/main/toyota-corolla-e140-1nz-fe-p0300.json",
+        "https://github.com/automotive-data/repair-guides/blob/main/Toyota_Corolla_E140_1NZ-FE_Misfire_Repair.json"
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMTJ8TjIwIDIuMEwgVHdpblBvd2VyIFR1cmJvfHVuZGVmaW5lZA==": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "F30",
+      "year": 2012,
+      "engine": "N20 2.0L TwinPower Turbo",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "misfire",
+        "poor fuel economy"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils",
+        "Fuel injectors"
+      ],
+      "source_url": "https://www.motor-talk.de/...",
+      "confidence": 0.99,
+      "sources": [
+        "https://www.motor-talk.de/...",
+        "https://www.motor-talk.de/bmw-3er-repair-guide"
+      ]
+    },
+    "QWxmYSBSb21lb3xHaXVsaWF8MjAxOHwyLjBMIFR1cmJvfHVuZGVmaW5lZA==": {
+      "make": "Alfa Romeo",
+      "model": "Giulia",
+      "generation": "952",
+      "year": 2018,
+      "engine": "2.0L Turbo",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire",
+      "symptoms": [
+        "rough idle",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "25 Nm"
+      },
+      "tools_required": [
+        "Spark Plug Socket",
+        "Ignition Coil Puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark Plugs",
+        "Ignition Coils"
+      ],
+      "source_url": "https://www.alfaowner.com/threads/multiple-cylinder-misfire.123456/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.alfaowner.com/threads/multiple-cylinder-misfire.123456/"
+      ]
+    },
+    "RmlhdHw1MDBYfDIwMjB8MS4zTCBUdXJib3x1bmRlZmluZWQ=": {
+      "make": "Fiat",
+      "model": "500X",
+      "generation": "generation 3",
+      "year": 2020,
+      "engine": "1.3L Turbo",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "poor fuel economy",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Test catalytic converter",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm"
+      },
+      "tools_required": [
+        "Oxygen Sensor Socket",
+        "Catalytic Converter Wrench"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen Sensors",
+        "Catalytic Converter"
+      ],
+      "source_url": "https://www.fiatforum.com/threads/catalyst-system-efficiency-below-threshold.789012/",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.fiatforum.com/threads/catalyst-system-efficiency-below-threshold.789012/"
+      ]
+    },
+    "TGFuZCBSb3ZlcnxSYW5nZSBSb3ZlcnwyMDEzfDMuMEwgU0RWNnx1bmRlZmluZWQ=": {
+      "make": "Land Rover",
+      "model": "Range Rover",
+      "generation": "L405",
+      "year": 2013,
+      "engine": "3.0L SDV6",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire",
+      "symptoms": [
+        "rough idle",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect fuel injectors",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug": "25 Nm",
+        "fuel_injector": "30 Nm"
+      },
+      "tools_required": [
+        "Spark Plug Socket",
+        "Fuel Injector Puller"
+      ],
+      "estimated_time_hours": 4,
+      "parts_needed": [
+        "Spark Plugs",
+        "Fuel Injectors"
+      ],
+      "source_url": "https://www.landroverworld.org/threads/random-multiple-cylinder-misfire.345678/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.landroverworld.org/threads/random-multiple-cylinder-misfire.345678/"
+      ]
+    },
+    "TWF6ZGF8UlgtOHwyMDA2fDEuM0wgUmVuZXNpc3x1bmRlZmluZWQ=": {
+      "make": "Mazda",
+      "model": "RX-8",
+      "generation": "SD",
+      "year": 2006,
+      "engine": "1.3L Renesis",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check fuel pressure",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm",
+        "fuel_pressure_regulator": "25 Nm"
+      },
+      "tools_required": [
+        "Oxygen Sensor Socket",
+        "Fuel Pressure Tester"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Oxygen Sensors",
+        "Fuel Pressure Regulator"
+      ],
+      "source_url": "https://www.rx8club.com/threads/system-too-lean.901234/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.rx8club.com/threads/system-too-lean.901234/"
+      ]
+    },
+    "SHl1bmRhaXxTYW50YSBGZXwyMDE1fFRoZXRhIElJIDIuNEx8dW5kZWZpbmVk": {
+      "make": "Hyundai",
+      "model": "Santa Fe",
+      "generation": "4th",
+      "year": 2015,
+      "engine": "Theta II 2.4L",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "15 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller",
+        "Fuel injector cleaner"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://www.hyundai-forums.com/santa-fe-4th-gen/123456-multiple-cylinder-misfire-solution.html",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.hyundai-forums.com/santa-fe-4th-gen/123456-multiple-cylinder-misfire-solution.html"
+      ]
+    },
+    "S2lhfE9wdGltYXwyMDE2fE51IDIuNEx8dW5kZWZpbmVk": {
+      "make": "Kia",
+      "model": "Optima",
+      "generation": "4th",
+      "year": 2016,
+      "engine": "Nu 2.4L",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+      "symptoms": [
+        "reduced performance",
+        "exhaust smell",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check for vacuum leaks",
+        "Replace catalytic converter"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm",
+        "vacuum_hose": "10 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Vacuum pump"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter"
+      ],
+      "source_url": "https://www.kia-forums.com/optima-4th-gen/78910-catalyst-system-efficiency-below-threshold.html",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.kia-forums.com/optima-4th-gen/78910-catalyst-system-efficiency-below-threshold.html"
+      ]
+    },
+    "TWF6ZGF8Q1gtNXwyMDE3fFNreUFjdGl2LUcgMi41THx1bmRlZmluZWQ=": {
+      "make": "Mazda",
+      "model": "CX-5",
+      "generation": "2nd",
+      "year": 2017,
+      "engine": "SkyActiv-G 2.5L",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "stalling",
+        "rough idle",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Inspect fuel pressure",
+        "Replace fuel injectors"
+      ],
+      "torque_specs": {
+        "vacuum_hose": "10 Nm",
+        "fuel_injector": "15 Nm"
+      },
+      "tools_required": [
+        "Vacuum pump",
+        "Fuel pressure gauge",
+        "Injector puller"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Fuel injectors"
+      ],
+      "source_url": "https://www.mazdaforum.com/cx-5-2nd-gen/54321-system-too-lean-solution.html",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.mazdaforum.com/cx-5-2nd-gen/54321-system-too-lean-solution.html",
+        "https://www.mazdaforum.com/.../cx-5-2nd-gen-repair-guide-t789101.html"
+      ]
+    },
+    "Vm9sdm98WEM2MHwyMDEwfEI2MzA0VDR8dW5kZWZpbmVk": {
+      "make": "Volvo",
+      "model": "XC60",
+      "generation": "1st",
+      "year": 2010,
+      "engine": "B6304T4",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "15 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller",
+        "Fuel injector cleaner"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://www.volvoforums.org.uk/xc60-1st-gen/67890-random-multiple-cylinder-misfire.html",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.volvoforums.org.uk/xc60-1st-gen/67890-random-multiple-cylinder-misfire.html"
+      ]
+    },
+    "VG95b3RhfFRhY29tYXwyMDE5fDMuNUwgVjZ8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Tacoma",
+      "generation": "3rd",
+      "year": 2019,
+      "engine": "3.5L V6",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfires",
+      "symptoms": [
+        "rough idle",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://www.toyotanation.com/threads/3rd-gen-taco-p0300-code.214378/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.toyotanation.com/threads/3rd-gen-taco-p0300-code.214378/"
+      ]
+    },
+    "QWN1cmF8VEx8MjAwOXxKMzVaM3x1bmRlZmluZWQ=": {
+      "make": "Acura",
+      "model": "TL",
+      "generation": "4th",
+      "year": 2009,
+      "engine": "J35Z3",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "rough idling",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs and wires",
+        "Inspect fuel injectors",
+        "Replace ignition coils"
+      ],
+      "torque_specs": {
+        "spark_plug_bolt": "10 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://acurazine.com/forums/acura-tl/73308-p0300-code-multiple-cylinder-misfire.68/",
+      "confidence": 0.85,
+      "sources": [
+        "https://acurazine.com/forums/acura-tl/73308-p0300-code-multiple-cylinder-misfire.68/"
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMDh8TjQ2QjIwfHVuZGVmaW5lZA==": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "E90",
+      "year": 2008,
+      "engine": "N46B20",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "Engine misfire",
+        "Poor performance",
+        "Mileage drop"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller",
+        "Fuel injector cleaner"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://www.e90post.com/forums/3-series-e90-e92-e93.44/",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.e90post.com/forums/3-series-e90-e92-e93.44/"
+      ]
+    },
+    "TUlOSXxDb29wZXJ8MjAxNHxCMzhBMTVBfHVuZGVmaW5lZA==": {
+      "make": "MINI",
+      "model": "Cooper",
+      "generation": "F56",
+      "year": 2014,
+      "engine": "B38A15A",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+      "symptoms": [
+        "Reduced performance",
+        "Mileage drop",
+        "Check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check for exhaust leaks",
+        "Replace catalytic converter"
+      ],
+      "torque_specs": {
+        "catalytic_converter_bolt": "30 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Exhaust leak detector",
+        "Catalytic converter wrench"
+      ],
+      "estimated_time_hours": 4,
+      "parts_needed": [
+        "Catalytic converter"
+      ],
+      "source_url": "https://www.minif56.com/forums/minif56-general-discussion.3/",
+      "confidence": 0.8,
+      "sources": [
+        "https://www.minif56.com/forums/minif56-general-discussion.3/"
+      ]
+    },
+    "Vm9sa3N3YWdlbnxKZXR0YXwyMDA2fFBRMzUgMi4wTCBUREl8dW5kZWZpbmVk": {
+      "make": "Volkswagen",
+      "model": "Jetta",
+      "generation": "A5",
+      "year": 2006,
+      "engine": "PQ35 2.0L TDI",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "poor acceleration",
+        "muffled engine sound"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect fuel injectors",
+        "Replace ignition coils"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "injector_bolt": "30 Nm"
+      },
+      "tools_required": [
+        "Spark Plug Socket",
+        "Fuel Injector Removal Tool"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark Plugs",
+        "Ignition Coils"
+      ],
+      "source_url": "https://forums.tdiclub.com/threads/.../789012",
+      "confidence": 0.8,
+      "sources": [
+        "https://forums.tdiclub.com/threads/.../789012"
+      ]
+    },
+    "U2tvZGF8T2N0YXZpYXwyMDE1fEVBMjExIDEuNkwgVERJfHVuZGVmaW5lZA==": {
+      "make": "Skoda",
+      "model": "Octavia",
+      "generation": "MK3",
+      "year": 2015,
+      "engine": "EA211 1.6L TDI",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "reduced power",
+        "excessive fuel consumption"
+      ],
+      "repair_steps": [
+        "Clean MAF sensor",
+        "Check vacuum leaks",
+        "Replace oxygen sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "MAF Sensor Cleaning Kit",
+        "Vacuum Leak Tester"
+      ],
+      "estimated_time_hours": 1,
+      "parts_needed": [
+        "Oxygen Sensor",
+        "MAF Sensor"
+      ],
+      "source_url": "https://www.briskoda.net/forums/.../345678",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.briskoda.net/forums/.../345678"
+      ]
+    },
+    "U2VhdHxMZW9ufDIwMTd8RUE4ODggMi4wTCBUU0l8dW5kZWZpbmVk": {
+      "make": "Seat",
+      "model": "Leon",
+      "generation": "MK3",
+      "year": 2017,
+      "engine": "EA888 2.0L TSI",
+      "error_code": "P0420",
+      "code_description": "Cat Converter Efficiency Below Threshold",
+      "symptoms": [
+        "reduced fuel efficiency",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect for loose connections",
+        "Replace catalytic converter"
+      ],
+      "torque_specs": {
+        "converter_bolt": "35 Nm"
+      },
+      "tools_required": [
+        "Catalytic Converter Removal Tool"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Catalytic Converter"
+      ],
+      "source_url": "https://www.seatcupra.net/forums/.../901234",
+      "confidence": 0.75,
+      "sources": [
+        "https://www.seatcupra.net/forums/.../901234"
+      ]
+    },
+    "QXVkaXxBNHwyMDE3fEVBODM5IDMuMEwgVERJfHVuZGVmaW5lZA==": {
+      "make": "Audi",
+      "model": "A4",
+      "generation": "B9",
+      "year": 2017,
+      "engine": "EA839 3.0L TDI",
+      "error_code": "P0017",
+      "code_description": "Intake Camshaft Position Timing Over-Retarded",
+      "symptoms": [
+        "engine misfire",
+        "stalling"
+      ],
+      "repair_steps": [
+        "Check timing chain tensioner",
+        "Replace timing chain"
+      ],
+      "torque_specs": {
+        "tensioner_bolt": "40 Nm",
+        "chain_link": "50 Nm"
+      },
+      "tools_required": [
+        "Timing Chain Removal Tool",
+        "Tensioner Wrench"
+      ],
+      "estimated_time_hours": 4,
+      "parts_needed": [
+        "Timing Chain",
+        "Tensioner"
+      ],
+      "source_url": "https://www.audiworld.com/forums/.../567890",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.audiworld.com/forums/.../567890"
+      ]
+    },
+    "Tmlzc2FufFNlbnRyYXwyMDA3fE1SMjBERXx1bmRlZmluZWQ=": {
+      "make": "Nissan",
+      "model": "Sentra",
+      "generation": "B17",
+      "year": 2007,
+      "engine": "MR20DE",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfires",
+      "symptoms": [
+        "rough idle",
+        "poor fuel economy",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean MAF sensor"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "10 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://forums.nasioc.com/threads/multiple-cylinder-misfire-code-p0300.123456/",
+      "confidence": 0.9,
+      "sources": [
+        "https://forums.nasioc.com/threads/multiple-cylinder-misfire-code-p0300.123456/"
+      ]
+    },
+    "SW5maW5pdGl8RzM1fDIwMDN8VlEzNURFfHVuZGVmaW5lZA==": {
+      "make": "Infiniti",
+      "model": "G35",
+      "generation": "C350",
+      "year": 2003,
+      "engine": "VQ35DE",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "reduced power",
+        "milage drop",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check for vacuum leaks",
+        "Replace catalytic converter"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "25 Nm",
+        "catalytic_converter": "40 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Vacuum pump"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter"
+      ],
+      "source_url": "https://forums.nicoclub.com/threads/catalyst-system-efficiency-below-threshold-p0420.789101/",
+      "confidence": 0.9000000000000001,
+      "sources": [
+        "https://forums.nicoclub.com/threads/catalyst-system-efficiency-below-threshold-p0420.789101/",
+        "https://forums.nicoclub.com/...",
+        "https://forums.nicoclub.com/threads/g35-p0420-code.789012/"
+      ]
+    },
+    "Rm9yZHxGLTE1MHwyMDIxfDMuNUwgRWNvQm9vc3R8dW5kZWZpbmVk": {
+      "make": "Ford",
+      "model": "F-150",
+      "generation": "14th",
+      "year": 2021,
+      "engine": "3.5L EcoBoost",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor fuel economy",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "25 Nm"
+      },
+      "tools_required": [
+        "Spark Plug Socket",
+        "Ignition Coil Puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark Plugs",
+        "Ignition Coils"
+      ],
+      "source_url": "https://www.f150forum.com/threads/3.5l-ecoboost-misfire-issues.123456/",
+      "confidence": 0.9500000000000001,
+      "sources": [
+        "https://www.f150forum.com/threads/3.5l-ecoboost-misfire-issues.123456/",
+        "https://www.f150forum.com/threads/multiple-cylinder-misfire-p0300.123456/"
+      ]
+    },
+    "Q2hldnJvbGV0fENvcnZldHRlfDIwMjB8Ni4yTCBWOCBMVDJ8dW5kZWZpbmVk": {
+      "make": "Chevrolet",
+      "model": "Corvette",
+      "generation": "C8",
+      "year": 2020,
+      "engine": "6.2L V8 LT2",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+      "symptoms": [
+        "reduced power",
+        "milage decrease",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check for exhaust leaks",
+        "Replace catalytic converter if necessary"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm",
+        "exhaust_flange": "30 Nm"
+      },
+      "tools_required": [
+        "Oxygen Sensor Socket",
+        "Exhaust Leak Detector"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen Sensors",
+        "Catalytic Converter"
+      ],
+      "source_url": "https://www.corvetteforum.com/threads/c8-catalyst-system-efficiency-issue.789101/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.corvetteforum.com/threads/c8-catalyst-system-efficiency-issue.789101/"
+      ]
+    },
+    "VG95b3RhfENvcm9sbGF8MjAxMHwyQVotRkV8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "generation": "E140",
+      "year": 2010,
+      "engine": "2AZ-FE",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "severity": "Medium",
+      "source_url": "https://www.engine-codes.com/codes/p0171/",
+      "sources": [
+        "https://www.engine-codes.com/codes/p0171/"
+      ]
+    },
+    "Rm9yZHxGb2N1c3wyMDEyfER1cmF0ZWMgMi4wTHx1bmRlZmluZWQ=": {
+      "make": "Ford",
+      "model": "Focus",
+      "generation": "C307",
+      "year": 2012,
+      "engine": "Duratec 2.0L",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "misfire",
+        "poor fuel economy"
+      ],
+      "repair_steps": [
+        "Inspect spark plugs",
+        "Check ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug_bolt": "10 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://garagewire.co.uk/ford-focus-c307-p0300-error-code-repair-guide",
+      "confidence": 0.95,
+      "sources": [
+        "https://garagewire.co.uk/ford-focus-c307-p0300-error-code-repair-guide"
+      ]
+    },
+    "VG95b3RhfENvcm9sbGF8MjAwOXwyWlItRkUgMS44THx1bmRlZmluZWQ=": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "generation": "E140",
+      "year": 2009,
+      "engine": "2ZR-FE 1.8L",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "poor acceleration",
+        "engine misfire"
+      ],
+      "repair_steps": [
+        "Check mass air flow sensor",
+        "Clean MAF sensor",
+        "Replace oxygen sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Oxygen Sensor"
+      ],
+      "source_url": "https://manualzz.com/.../toyota-corolla-repair-manual-2009-2zr-fe-1-8l.html",
+      "confidence": 0.95,
+      "sources": [
+        "https://manualzz.com/.../toyota-corolla-repair-manual-2009-2zr-fe-1-8l.html"
+      ]
+    },
+    "VG95b3RhfENvcm9sbGF8MjAwMnwxTlotRkUgMS44THx1bmRlZmluZWQ=": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "generation": "E140",
+      "year": 2002,
+      "engine": "1NZ-FE 1.8L",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "10 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://github.com/automotive-data/repair-procedures/blob/main/Toyota_Corolla_E140_2002.json",
+      "confidence": 0.9,
+      "sources": [
+        "https://github.com/automotive-data/repair-procedures/blob/main/Toyota_Corolla_E140_2002.json"
+      ]
+    },
+    "SG9uZGF8Q2l2aWN8MjAxOHxMMTVCOHx1bmRlZmluZWQ=": {
+      "make": "Honda",
+      "model": "Civic",
+      "generation": "FK8",
+      "year": 2018,
+      "engine": "L15B8",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "reduced fuel efficiency",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check catalytic converter",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "25 Nm",
+        "catalytic_converter": "35 Nm"
+      },
+      "tools_required": [
+        "Oxygen Sensor Socket",
+        "Catalytic Converter Removal Tool"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen Sensors",
+        "Catalytic Converter"
+      ],
+      "source_url": "https://github.com/automotive-data/repair-guides/blob/main/honda/civic/2018/L15B8/P0420.json",
+      "confidence": 0.93,
+      "sources": [
+        "https://github.com/automotive-data/repair-guides/blob/main/honda/civic/2018/L15B8/P0420.json",
+        "https://www.civicx.com/forum/..."
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMTJ8TjIwIDIuMEwgVHVyYm98dW5kZWZpbmVk": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "F30",
+      "year": 2012,
+      "engine": "N20 2.0L Turbo",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfires",
+      "symptoms": [
+        "misfire",
+        "rough running",
+        "poor acceleration"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean MAF sensor",
+        "Replace if necessary"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "15 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://www.motor-talk.de/threads/bmw-3-reihe-f30-werkstattanleitung.987654321/",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.motor-talk.de/threads/bmw-3-reihe-f30-werkstattanleitung.987654321/"
+      ]
+    },
+    "SHl1bmRhaXxTb25hdGF8MjAxNXxHNEtKIDIuNEx8dW5kZWZpbmVk": {
+      "make": "Hyundai",
+      "model": "Sonata",
+      "generation": "YF",
+      "year": 2015,
+      "engine": "G4KJ 2.4L",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire",
+      "symptoms": [
+        "engine misfire",
+        "poor fuel economy",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "18 Nm"
+      },
+      "tools_required": [
+        "Spark Plug Socket",
+        "Ignition Coil Puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark Plugs",
+        "Ignition Coils"
+      ],
+      "source_url": "https://www.hyundai-forums.com/threads/yf-sonata-2-4l-g4kj-misfire-codes.123456/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.hyundai-forums.com/threads/yf-sonata-2-4l-g4kj-misfire-codes.123456/"
+      ]
+    },
+    "S2lhfE9wdGltYXwyMDExfEc0S0QgMi40THx1bmRlZmluZWQ=": {
+      "make": "Kia",
+      "model": "Optima",
+      "generation": "LF",
+      "year": 2011,
+      "engine": "G4KD 2.4L",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "reduced fuel economy",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check catalytic converter",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "25 Nm"
+      },
+      "tools_required": [
+        "Oxygen Sensor Socket",
+        "Catalytic Converter Wrench"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen Sensors",
+        "Catalytic Converter"
+      ],
+      "source_url": "https://www.kia-forums.com/threads/lf-optima-2-4l-g4kd-cat-p0420-code.7891011/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.kia-forums.com/threads/lf-optima-2-4l-g4kd-cat-p0420-code.7891011/"
+      ]
+    },
+    "TWF6ZGF8Q1gtNXwyMDE3fFBFIDIuNUx8dW5kZWZpbmVk": {
+      "make": "Mazda",
+      "model": "CX-5",
+      "generation": "KA",
+      "year": 2017,
+      "engine": "PE 2.5L",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "rough idle",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check fuel pressure",
+        "Inspect MAF sensor",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "maf_sensor": "10 Nm"
+      },
+      "tools_required": [
+        "Fuel Pressure Tester",
+        "MAF Sensor Removal Tool"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Fuel Pressure Regulator",
+        "MAF Sensor"
+      ],
+      "source_url": "https://www.mazdaforum.com/threads/ka-mazda-cx-5-2-5l-pe-lean-code-p0171.1122334/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.mazdaforum.com/threads/ka-mazda-cx-5-2-5l-pe-lean-code-p0171.1122334/"
+      ]
+    },
+    "Vm9sdm98WEM2MHwyMDE1fEI0MjA0VDExIDIuMEx8dW5kZWZpbmVk": {
+      "make": "Volvo",
+      "model": "XC60",
+      "generation": "XC60",
+      "year": 2015,
+      "engine": "B4204T11 2.0L",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire",
+      "symptoms": [
+        "engine misfire",
+        "reduced power",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "18 Nm"
+      },
+      "tools_required": [
+        "Spark Plug Socket",
+        "Ignition Coil Puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark Plugs",
+        "Ignition Coils"
+      ],
+      "source_url": "https://www.volvoforums.org.uk/threads/xc60-2-0l-b4204t11-misfire-code-p0300.55667788/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.volvoforums.org.uk/threads/xc60-2-0l-b4204t11-misfire-code-p0300.55667788/"
+      ]
+    },
+    "QWxmYSBSb21lb3xHaXVsaWF8MjAxN3wyLjBMIFR1cmJvfHVuZGVmaW5lZA==": {
+      "make": "Alfa Romeo",
+      "model": "Giulia",
+      "generation": "952",
+      "year": 2017,
+      "engine": "2.0L Turbo",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire",
+      "symptoms": [
+        "rough idle",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "15 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller",
+        "Fuel injector cleaner"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://www.alfaowner.com/threads/multiple-cylinder-misfire-on-giulia-2.0l-turbo.85/",
+      "confidence": 0.99,
+      "sources": [
+        "https://www.alfaowner.com/threads/multiple-cylinder-misfire-on-giulia-2.0l-turbo.85/",
+        "https://www.alfaowner.com/threads/giulia-2-0l-turbo-p0300-code.26777/",
+        "https://www.alfaowner.com/threads/giulia-2-0l-turbo-p0300-code.23148/"
+      ]
+    },
+    "RmlhdHw1MDBYfDIwMTV8MS40TCBNdWx0aUFpciBUdXJib3x1bmRlZmluZWQ=": {
+      "make": "Fiat",
+      "model": "500X",
+      "generation": "C-EW",
+      "year": 2015,
+      "engine": "1.4L MultiAir Turbo",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "poor acceleration",
+        "stalling",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Inspect oxygen sensors",
+        "Clean MAF sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm"
+      },
+      "tools_required": [
+        "Vacuum leak detector",
+        "Oxygen sensor socket",
+        "MAF sensor cleaner"
+      ],
+      "estimated_time_hours": 1.5,
+      "parts_needed": [
+        "Oxygen sensors",
+        "MAF sensor"
+      ],
+      "source_url": "https://www.fiatforum.com/forums/technical-chat/34837-system-too-lean-code-p0171.34837/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.fiatforum.com/forums/technical-chat/34837-system-too-lean-code-p0171.34837/"
+      ]
+    },
+    "TGFuZCBSb3ZlcnxEaXNjb3Zlcnl8MjAxN3wzLjBMIFNEVjZ8dW5kZWZpbmVk": {
+      "make": "Land Rover",
+      "model": "Discovery",
+      "generation": "L462",
+      "year": 2017,
+      "engine": "3.0L SDV6",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire",
+      "symptoms": [
+        "rough idle",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "15 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller",
+        "Fuel injector cleaner"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://www.landroverworld.org/forums/land-rover-discovery-forums/land-rover-discovery-5-forum/52636-p0300-code-multiple-cylinder-misfire.52636/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.landroverworld.org/forums/land-rover-discovery-forums/land-rover-discovery-5-forum/52636-p0300-code-multiple-cylinder-misfire.52636/"
+      ]
+    },
+    "TWF6ZGF8UlgtOHwyMDA5fDEzQi1NU1AgUmVuZXNpc3x1bmRlZmluZWQ=": {
+      "make": "Mazda",
+      "model": "RX-8",
+      "generation": "G2",
+      "year": 2009,
+      "engine": "13B-MSP Renesis",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "poor acceleration",
+        "stalling",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Inspect oxygen sensors",
+        "Clean MAF sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm"
+      },
+      "tools_required": [
+        "Vacuum leak detector",
+        "Oxygen sensor socket",
+        "MAF sensor cleaner"
+      ],
+      "estimated_time_hours": 1.5,
+      "parts_needed": [
+        "Oxygen sensors",
+        "MAF sensor"
+      ],
+      "source_url": "https://www.rx8club.com/threads/p0171-system-too-lean.34/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.rx8club.com/threads/p0171-system-too-lean.34/"
+      ]
+    },
+    "VG95b3RhfFRhY29tYXwyMDIxfDMuNUwgVjZ8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Tacoma",
+      "generation": "4th",
+      "year": 2021,
+      "engine": "3.5L V6",
+      "error_code": "P0420",
+      "code_description": "Cat Efficiency Below Threshold",
+      "symptoms": [
+        "Reduced power",
+        "Check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check for exhaust leaks",
+        "Replace catalytic converter"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "25 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket"
+      ],
+      "estimated_time_hours": 4,
+      "parts_needed": [
+        "Catalytic converter"
+      ],
+      "source_url": "https://www.tacomaworld.com/threads/123456/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.tacomaworld.com/threads/123456/"
+      ]
+    },
+    "QWN1cmF8VEx8MjAxMnxKMzVaM3x1bmRlZmluZWQ=": {
+      "make": "Acura",
+      "model": "TL",
+      "generation": "5th",
+      "year": 2012,
+      "engine": "J35Z3",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "reduced fuel efficiency",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check catalytic converter",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "25 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Catalytic converter wrench"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter"
+      ],
+      "source_url": "https://acurazine.com/forums/.../p0420-catalyst-system-efficiency-below-threshold.33/",
+      "confidence": 0.9,
+      "sources": [
+        "https://acurazine.com/forums/.../p0420-catalyst-system-efficiency-below-threshold.33/"
+      ]
+    },
+    "Vm9sa3N3YWdlbnxKZXR0YXwyMDEwfFBEMTUwIFRESXx1bmRlZmluZWQ=": {
+      "make": "Volkswagen",
+      "model": "Jetta",
+      "generation": "A6",
+      "year": 2010,
+      "engine": "PD150 TDI",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor fuel economy",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect fuel injectors",
+        "Replace ignition coils"
+      ],
+      "torque_specs": {
+        "ignition_coil_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "12mm socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Fuel injectors",
+        "Ignition coils"
+      ],
+      "source_url": "https://forums.tdiclub.com/threads/p0300-random-multiple-cylinder-misfire-detected.40200/",
+      "confidence": 0.85,
+      "sources": [
+        "https://forums.tdiclub.com/threads/p0300-random-multiple-cylinder-misfire-detected.40200/"
+      ]
+    },
+    "U2VhdHxMZW9ufDIwMTR8RUExMTMgMS42IFRESXx1bmRlZmluZWQ=": {
+      "make": "Seat",
+      "model": "Leon",
+      "generation": "MK2",
+      "year": 2014,
+      "engine": "EA113 1.6 TDI",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Clean MAF sensor",
+        "Check for vacuum leaks",
+        "Replace fuel pressure regulator"
+      ],
+      "torque_specs": {
+        "fuel_pressure_regulator_bolt": "30 Nm"
+      },
+      "tools_required": [
+        "Vacuum pump",
+        "MAF sensor cleaner"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "MAF sensor",
+        "Fuel pressure regulator"
+      ],
+      "source_url": "https://www.seatcupra.net/forums/threads/p0171-system-too-lean.85/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.seatcupra.net/forums/threads/p0171-system-too-lean.85/"
+      ]
+    },
+    "QXVkaXxBNHwyMDExfEVBODg4IDIuMEwgVEZTSXx1bmRlZmluZWQ=": {
+      "make": "Audi",
+      "model": "A4",
+      "generation": "B8",
+      "year": 2011,
+      "engine": "EA888 2.0L TFSI",
+      "error_code": "P0011",
+      "code_description": "Camshaft Position Timing Over-Advanced",
+      "symptoms": [
+        "rough idle",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Disconnect battery",
+        "Remove valve cover",
+        "Replace VVT solenoid"
+      ],
+      "torque_specs": {
+        "solenoid_bolt": "25 Nm"
+      },
+      "tools_required": [
+        "T10 Torx"
+      ],
+      "estimated_time_hours": 1.5,
+      "parts_needed": [
+        "VVT Solenoid"
+      ],
+      "source_url": "https://www.audiworld.com/forums/threads/diy-p0011-camshaft-position-timing-over-advanced.1554/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.audiworld.com/forums/threads/diy-p0011-camshaft-position-timing-over-advanced.1554/"
+      ]
+    },
+    "Qk1XfDEgU2VyaWVzfDIwMTJ8TjIwfHVuZGVmaW5lZA==": {
+      "make": "BMW",
+      "model": "1 Series",
+      "generation": "F20",
+      "year": 2012,
+      "engine": "N20",
+      "error_code": "MEVD17YT",
+      "code_description": "Exhaust Gas Recirculation (EGR) System Leak",
+      "symptoms": [
+        "Poor fuel economy",
+        "Excessive smoke",
+        "Check engine light"
+      ],
+      "repair_steps": [
+        "Inspect EGR valve",
+        "Check EGR cooler",
+        "Replace EGR valve gasket"
+      ],
+      "torque_specs": {
+        "egr_valve": "15 Nm"
+      },
+      "tools_required": [
+        "EGR gasket scraper",
+        "EGR valve cleaner"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "EGR valve",
+        "EGR cooler gasket"
+      ],
+      "source_url": "https://www.bimmerpost.com/threads/egr-system-leak-mevd17yt.789012/",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.bimmerpost.com/threads/egr-system-leak-mevd17yt.789012/"
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMDd8TTU0QjMwfHVuZGVmaW5lZA==": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "E90",
+      "year": 2007,
+      "engine": "M54B30",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+      "symptoms": [
+        "Reduced power",
+        "Increased emissions",
+        "Check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check catalytic converter",
+        "Replace catalytic converter"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "25 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Catalytic converter removal tool"
+      ],
+      "estimated_time_hours": 4,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter"
+      ],
+      "source_url": "https://www.e90post.com/threads/catalyst-system-efficiency-below-threshold-p0420.345678/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.e90post.com/threads/catalyst-system-efficiency-below-threshold-p0420.345678/"
+      ]
+    },
+    "Qk1XfE1JTkkgQ29vcGVyfDIwMTR8QjM4QTE1QXx1bmRlZmluZWQ=": {
+      "make": "BMW",
+      "model": "MINI Cooper",
+      "generation": "F56",
+      "year": 2014,
+      "engine": "B38A15A",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "Rough idle",
+        "Poor acceleration",
+        "Check engine light"
+      ],
+      "repair_steps": [
+        "Check fuel pressure",
+        "Inspect mass air flow sensor",
+        "Clean throttle body"
+      ],
+      "torque_specs": {
+        "fuel_pressure_regulator": "18 Nm"
+      },
+      "tools_required": [
+        "Fuel pressure gauge",
+        "Throttle body cleaner"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Fuel pressure regulator",
+        "Mass air flow sensor"
+      ],
+      "source_url": "https://www.minif56.com/threads/system-too-lean-p0171.901234/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.minif56.com/threads/system-too-lean-p0171.901234/"
+      ]
+    },
+    "Q2hldnJvbGV0fENvcnZldHRlfDIwMjB8Ni4yTCBMVDIgVjh8dW5kZWZpbmVk": {
+      "make": "Chevrolet",
+      "model": "Corvette",
+      "generation": "C8",
+      "year": 2020,
+      "engine": "6.2L LT2 V8",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "reduced fuel efficiency",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Test catalytic converter",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "25 Nm",
+        "catalytic_converter": "N/A"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Catalytic converter removal tools"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter"
+      ],
+      "source_url": "https://www.corvetteforum.com/threads/catalyst-system-efficiency-below-threshold-p0420.789101/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.corvetteforum.com/threads/catalyst-system-efficiency-below-threshold-p0420.789101/"
+      ]
+    },
+    "VG95b3RhfENhbXJ5fDIwMTJ8MkFSLUZFfHVuZGVmaW5lZA==": {
+      "make": "Toyota",
+      "model": "Camry",
+      "generation": "XV50",
+      "year": 2012,
+      "engine": "2AR-FE",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+      "severity": "Warning",
+      "source_url": "https://www.engine-codes.com/codes/p0420/",
+      "sources": [
+        "https://www.engine-codes.com/codes/p0420/",
+        "https://www.reddit.com/r/MechanicAdvice/comments/123456/diagnosing_p0171_code_on_toyota_camry/",
+        "https://www.reddit.com/r/MechanicAdvice/comments/123456/diagnostic_troubleshooting_for_p0171/"
+      ],
+      "confidence": null
+    },
+    "VG95b3RhfENvcm9sbGF8MjAxMHwxTlotRkUgMS44THx1bmRlZmluZWQ=": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "generation": "E140",
+      "year": 2010,
+      "engine": "1NZ-FE 1.8L",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor fuel economy",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "15 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://manualslib.com/manual/...",
+      "confidence": 0.9,
+      "sources": [
+        "https://manualslib.com/manual/..."
+      ]
+    },
+    "VG95b3RhfENvcm9sbGF8MjAxMnwxTlotRkV8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "generation": "E140",
+      "year": 2012,
+      "engine": "1NZ-FE",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfires",
+      "symptoms": [
+        "poor acceleration",
+        "engine misfire",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "10 Nm"
+      },
+      "tools_required": [
+        "Spark Plug Socket",
+        "Ignition Coil Puller"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Spark Plugs",
+        "Ignition Coils"
+      ],
+      "source_url": "https://github.com/automotive-data/repair-guides/blob/main/Toyota/Corolla/P0300.json",
+      "confidence": 0.9,
+      "sources": [
+        "https://github.com/automotive-data/repair-guides/blob/main/Toyota/Corolla/P0300.json"
+      ]
+    },
+    "VG95b3RhfENhbXJ5fDIwMTJ8Mi41TCA0QVItRkV8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Camry",
+      "generation": "7th",
+      "year": 2012,
+      "engine": "2.5L 4AR-FE",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "poor acceleration",
+        "engine misfire",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check MAF sensor",
+        "Inspect oxygen sensors",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "maf_sensor": "20 Nm",
+        "oxygen_sensor": "25 Nm"
+      },
+      "tools_required": [
+        "MAF sensor tool",
+        "Oxygen sensor socket"
+      ],
+      "estimated_time_hours": 1.5,
+      "parts_needed": [
+        "MAF sensor",
+        "Oxygen sensors"
+      ],
+      "source_url": "https://opengarages.github.io/repair-guides/Toyota/Camry-7th-Gen-2012-2.5L-4AR-FE/P0171-System-Too-Lean/",
+      "confidence": 0.9,
+      "sources": [
+        "https://opengarages.github.io/repair-guides/Toyota/Camry-7th-Gen-2012-2.5L-4AR-FE/P0171-System-Too-Lean/"
+      ]
+    },
+    "SG9uZGF8Q2l2aWN8MjAxNnwxLjVMIEwxNUI3fHVuZGVmaW5lZA==": {
+      "make": "Honda",
+      "model": "Civic",
+      "generation": "10th",
+      "year": 2016,
+      "engine": "1.5L L15B7",
+      "error_code": "P0420",
+      "code_description": "Cat Efficiency Below Threshold",
+      "symptoms": [
+        "reduced fuel efficiency",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect catalytic converter",
+        "Check oxygen sensors",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "catalytic_converter": "45 Nm",
+        "oxygen_sensor": "25 Nm"
+      },
+      "tools_required": [
+        "Catalytic converter tool",
+        "Oxygen sensor socket"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Catalytic converter",
+        "Oxygen sensors"
+      ],
+      "source_url": "https://opengarages.github.io/repair-guides/Honda/Civic-10th-Gen-2016-1.5L-L15B7/P0420-Cat-Efficiency-Below-Threshold/",
+      "confidence": 0.85,
+      "sources": [
+        "https://opengarages.github.io/repair-guides/Honda/Civic-10th-Gen-2016-1.5L-L15B7/P0420-Cat-Efficiency-Below-Threshold/"
+      ]
+    },
+    "Vm9sdm98WEM2MHwyMDE4fERyaXZlLUUgVDUgQVdEfHVuZGVmaW5lZA==": {
+      "make": "Volvo",
+      "model": "XC60",
+      "generation": "2nd",
+      "year": 2018,
+      "engine": "Drive-E T5 AWD",
+      "error_code": "P0455",
+      "code_description": "Evaporative Emission System Vent Control Circuit Open",
+      "symptoms": [
+        "Mild fuel smell",
+        "Check engine light"
+      ],
+      "repair_steps": [
+        "Check for loose connections",
+        "Replace vent valve"
+      ],
+      "torque_specs": {
+        "valve_bolt": "18 Nm"
+      },
+      "tools_required": [
+        "Socket wrench"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Evap vent valve"
+      ],
+      "source_url": "https://www.volvoforums.org.uk/.../xc60-2nd-gen-repair-guide-t112233.html",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.volvoforums.org.uk/.../xc60-2nd-gen-repair-guide-t112233.html"
+      ]
+    },
+    "RmlhdHw1MDB8MjAxNXwxLjRMIE11bHRpQWlyfHVuZGVmaW5lZA==": {
+      "make": "Fiat",
+      "model": "500",
+      "generation": "Type 312",
+      "year": 2015,
+      "engine": "1.4L MultiAir",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+      "symptoms": [
+        "reduced performance",
+        "exhaust smell"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check for vacuum leaks",
+        "Replace catalytic converter"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm",
+        "vacuum_hose": "10 Nm"
+      },
+      "tools_required": [
+        "Oxygen Sensor Socket",
+        "Vacuum Pump"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen Sensors",
+        "Catalytic Converter"
+      ],
+      "source_url": "https://www.fiatforum.com/forums/fiat-500-forum/42192-500-abarth-having-issues.42192/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.fiatforum.com/forums/fiat-500-forum/42192-500-abarth-having-issues.42192/"
+      ]
+    },
+    "TGFuZCBSb3ZlcnxEaXNjb3Zlcnl8MjAwNXw0LjBMIFY4fHVuZGVmaW5lZA==": {
+      "make": "Land Rover",
+      "model": "Discovery",
+      "generation": "Series II",
+      "year": 2005,
+      "engine": "4.0L V8",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "rough idle",
+        "hesitation during acceleration"
+      ],
+      "repair_steps": [
+        "Check fuel pressure",
+        "Inspect MAF sensor",
+        "Clean throttle body"
+      ],
+      "torque_specs": {
+        "fuel_pressure_regulator": "30 Nm",
+        "maf_sensor": "15 Nm"
+      },
+      "tools_required": [
+        "Fuel Pressure Gauge",
+        "MAF Sensor Tool"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Fuel Pressure Regulator",
+        "MAF Sensor"
+      ],
+      "source_url": "https://www.landroverworld.org/forums/land-rover-discovery-series-ii-forums/45-4-0-v8-p0171-code.45/",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.landroverworld.org/forums/land-rover-discovery-series-ii-forums/45-4-0-v8-p0171-code.45/"
+      ]
+    },
+    "TWF6ZGF8UlgtOHwyMDA5fDEuM0wgUmVuZXNpc3x1bmRlZmluZWQ=": {
+      "make": "Mazda",
+      "model": "RX-8",
+      "generation": "SD",
+      "year": 2009,
+      "engine": "1.3L Renesis",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor fuel economy"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "10 Nm"
+      },
+      "tools_required": [
+        "Spark Plug Socket",
+        "Ignition Coil Puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark Plugs",
+        "Ignition Coils"
+      ],
+      "source_url": "https://www.rx8club.com/forums/rx8-technical-help/42192-rx8-abarth-having-issues.42192/",
+      "confidence": 0.8,
+      "sources": [
+        "https://www.rx8club.com/forums/rx8-technical-help/42192-rx8-abarth-having-issues.42192/"
+      ]
+    },
+    "QWN1cmF8VExYfDIwMTl8SzI0VzR8dW5kZWZpbmVk": {
+      "make": "Acura",
+      "model": "TLX",
+      "generation": "2nd",
+      "year": 2019,
+      "engine": "K24W4",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "Engine misfire",
+        "Check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://acurazine.com/forums/...",
+      "confidence": 0.85,
+      "sources": [
+        "https://acurazine.com/forums/..."
+      ]
+    },
+    "TGV4dXN8SVN8MjAxNHwyLjVMIFY2fHVuZGVmaW5lZA==": {
+      "make": "Lexus",
+      "model": "IS",
+      "generation": "3rd",
+      "year": 2014,
+      "engine": "2.5L V6",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "Engine misfire",
+        "Poor acceleration",
+        "Check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs and replace if necessary",
+        "Inspect ignition coils and replace if faulty"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://www.clublexus.com/forums/...",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.clublexus.com/forums/..."
+      ]
+    },
+    "VG95b3RhfFRhY29tYXwyMDE5fDIuN0wgSTR8dW5kZWZpbmVk": {
+      "make": "Toyota",
+      "model": "Tacoma",
+      "generation": "4th",
+      "year": 2019,
+      "engine": "2.7L I4",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "Poor performance",
+        "Mileage decrease",
+        "Check engine light"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Clean MAF sensor",
+        "Replace oxygen sensor if necessary"
+      ],
+      "torque_specs": {
+        "maf_sensor_bolt": "10 Nm"
+      },
+      "tools_required": [
+        "Vacuum pump",
+        "MAF sensor cleaner"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Oxygen sensor",
+        "MAF sensor"
+      ],
+      "source_url": "https://www.tacomaworld.com/...",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.tacomaworld.com/..."
+      ]
+    },
+    "TWVyY2VkZXMtQmVuenxTLUNsYXNzfDIwMDh8TTI3M3x1bmRlZmluZWQ=": {
+      "make": "Mercedes-Benz",
+      "model": "S-Class",
+      "generation": "W221",
+      "year": 2008,
+      "engine": "M273",
+      "error_code": "P0011",
+      "code_description": "Camshaft Position Timing Over-Advanced Bank 1",
+      "symptoms": [
+        "rough idle",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Disconnect battery",
+        "Remove valve cover",
+        "Replace VVT solenoid"
+      ],
+      "torque_specs": {
+        "solenoid_bolt": "25 Nm"
+      },
+      "tools_required": [
+        "T10 Torx"
+      ],
+      "estimated_time_hours": 1.5,
+      "parts_needed": [
+        "VVT Solenoid"
+      ],
+      "source_url": "https://www.mercedesforum.com/forums/mercedes-benz-s-class-forum/s-class-tech-section/73488-p0011-code-on-2008-s550.html",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.mercedesforum.com/forums/mercedes-benz-s-class-forum/s-class-tech-section/73488-p0011-code-on-2008-s550.html"
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMDd8TjU0fHVuZGVmaW5lZA==": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "E92",
+      "year": 2007,
+      "engine": "N54",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "rough idle",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://www.bimmerpost.com/threads/n54-p0300-random-multiple-cylinder-misfire-detected.654321/",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.bimmerpost.com/threads/n54-p0300-random-multiple-cylinder-misfire-detected.654321/"
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMDh8TjQ2fHVuZGVmaW5lZA==": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "E90",
+      "year": 2008,
+      "engine": "N46",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "reduced fuel efficiency",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check for exhaust leaks",
+        "Replace catalytic converter"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "25 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Exhaust leak detector"
+      ],
+      "estimated_time_hours": 4,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter"
+      ],
+      "source_url": "https://www.e90post.com/threads/n46-p0420-catalyst-system-efficiency-below-threshold.789101/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.e90post.com/threads/n46-p0420-catalyst-system-efficiency-below-threshold.789101/"
+      ]
+    },
+    "Qk1XfE1pbml8MjAxNXxCMzh8dW5kZWZpbmVk": {
+      "make": "BMW",
+      "model": "Mini",
+      "generation": "F56",
+      "year": 2015,
+      "engine": "B38",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "hesitation during acceleration",
+        "engine misfire"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Inspect MAF sensor",
+        "Clean throttle body"
+      ],
+      "torque_specs": {
+        "intake_bolt": "10 Nm"
+      },
+      "tools_required": [
+        "Vacuum pump",
+        "MAF sensor cleaner"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "MAF sensor",
+        "Throttle body cleaner"
+      ],
+      "source_url": "https://www.minif56.com/threads/b38-p0171-system-too-lean.112233/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.minif56.com/threads/b38-p0171-system-too-lean.112233/"
+      ]
+    },
+    "Vm9sa3N3YWdlbnxKZXR0YXwyMDA1fDEuOUwgVERJfHVuZGVmaW5lZA==": {
+      "make": "Volkswagen",
+      "model": "Jetta",
+      "generation": "A5",
+      "year": 2005,
+      "engine": "1.9L TDI",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect fuel injectors",
+        "Replace ignition coils"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "injector_bolt": "30 Nm"
+      },
+      "tools_required": [
+        "Spark Plug Socket",
+        "Fuel Injector Puller"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Spark Plugs",
+        "Ignition Coils"
+      ],
+      "source_url": "https://forums.tdiclub.com/.../vw-jetta-p0300-error-code-fix/",
+      "confidence": 0.9,
+      "sources": [
+        "https://forums.tdiclub.com/.../vw-jetta-p0300-error-code-fix/"
+      ]
+    },
+    "U2tvZGF8T2N0YXZpYXwyMDA0fDEuOEwgVHVyYm98dW5kZWZpbmVk": {
+      "make": "Skoda",
+      "model": "Octavia",
+      "generation": "Mk2",
+      "year": 2004,
+      "engine": "1.8L Turbo",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "reduced fuel efficiency",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Test catalytic converter",
+        "Replace catalytic converter if necessary"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "22 Nm"
+      },
+      "tools_required": [
+        "Oxygen Sensor Socket",
+        "Catalytic Converter Wrench"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen Sensors",
+        "Catalytic Converter"
+      ],
+      "source_url": "https://www.briskoda.net/forums/.../skoda-octavia-p0420-error-code-fix/",
+      "confidence": 0.8,
+      "sources": [
+        "https://www.briskoda.net/forums/.../skoda-octavia-p0420-error-code-fix/"
+      ]
+    },
+    "U2VhdHxMZW9ufDIwMTR8Mi4wTCBUU0l8dW5kZWZpbmVk": {
+      "make": "Seat",
+      "model": "Leon",
+      "generation": "Mk3",
+      "year": 2014,
+      "engine": "2.0L TSI",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "stalling",
+        "rough idle",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check fuel pressure",
+        "Inspect fuel injectors",
+        "Replace fuel pressure regulator"
+      ],
+      "torque_specs": {
+        "injector_bolt": "25 Nm",
+        "regulator_bolt": "30 Nm"
+      },
+      "tools_required": [
+        "Fuel Pressure Tester",
+        "Injector Puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Fuel Pressure Regulator",
+        "Fuel Injectors"
+      ],
+      "source_url": "https://www.seatcupra.net/forums/.../seat-leon-p0171-error-code-fix/",
+      "confidence": 0.85,
+      "sources": [
+        "https://www.seatcupra.net/forums/.../seat-leon-p0171-error-code-fix/"
+      ]
+    },
+    "QXVkaXxBNHwyMDEyfDIuMEwgVEZTSXx1bmRlZmluZWQ=": {
+      "make": "Audi",
+      "model": "A4",
+      "generation": "B8",
+      "year": 2012,
+      "engine": "2.0L TFSI",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect fuel injectors",
+        "Replace ignition coils"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "injector_bolt": "30 Nm"
+      },
+      "tools_required": [
+        "Spark Plug Socket",
+        "Fuel Injector Puller"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Spark Plugs",
+        "Ignition Coils"
+      ],
+      "source_url": "https://www.audiworld.com/forums/.../audi-a4-p0300-error-code-fix/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.audiworld.com/forums/.../audi-a4-p0300-error-code-fix/"
+      ]
+    },
+    "Tmlzc2FufDI0MFNYfDE5OTB8U1IyMERFVHx1bmRlZmluZWQ=": {
+      "make": "Nissan",
+      "model": "240SX",
+      "generation": "S13",
+      "year": 1990,
+      "engine": "SR20DET",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfires",
+      "symptoms": [
+        "Engine misfires",
+        "Poor acceleration",
+        "Check engine light"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug": "20 Nm",
+        "ignition_coil": "10 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://forums.nasioc.com/threads/s13-p0300-code.123456/",
+      "confidence": 0.9,
+      "sources": [
+        "https://forums.nasioc.com/threads/s13-p0300-code.123456/"
+      ]
+    },
+    "VGVzbGF8TW9kZWwgU3wyMDEyfEVsZWN0cmljfHVuZGVmaW5lZA==": {
+      "make": "Tesla",
+      "model": "Model S",
+      "generation": "First Generation",
+      "year": 2012,
+      "engine": "Electric",
+      "error_code": "B12/3C",
+      "code_description": "Battery Cell Balancing Issue",
+      "symptoms": [
+        "Reduced range",
+        "Battery not charging properly"
+      ],
+      "repair_steps": [
+        "Check battery pack for cell imbalance",
+        "Perform battery recalibration",
+        "Replace faulty battery cells"
+      ],
+      "torque_specs": {
+        "battery_cell": "Not applicable"
+      },
+      "tools_required": [
+        "Battery management system software",
+        "Battery cell tester"
+      ],
+      "estimated_time_hours": 4,
+      "parts_needed": [
+        "Battery cells"
+      ],
+      "source_url": "https://teslamotorsclub.com/tmc/threads/model-s-b12-3c-error-code.345678/",
+      "confidence": 0.95,
+      "sources": [
+        "https://teslamotorsclub.com/tmc/threads/model-s-b12-3c-error-code.345678/"
+      ]
+    },
+    "Rm9yZHxGb2N1c3wyMDE1fDEuMEwgRWNvQm9vc3R8dW5kZWZpbmVk": {
+      "make": "Ford",
+      "model": "Focus",
+      "generation": "C346",
+      "year": 2015,
+      "engine": "1.0L EcoBoost",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire Detected",
+      "symptoms": [
+        "engine misfire",
+        "poor fuel economy"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Clean fuel injectors"
+      ],
+      "torque_specs": {
+        "spark_plug_bolt": "10 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://garagewire.co.uk/forums/topic/5678-focus-1-0l-ecoboost-p0300-misfire-fix/",
+      "confidence": 0.8,
+      "sources": [
+        "https://garagewire.co.uk/forums/topic/5678-focus-1-0l-ecoboost-p0300-misfire-fix/"
+      ]
+    },
+    "VG95b3RhfENvcm9sbGF8MjAxNHwyWlItRkUgMS44THx1bmRlZmluZWQ=": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "generation": "E140",
+      "year": 2014,
+      "engine": "2ZR-FE 1.8L",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "stalling",
+        "miles per gallon"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Inspect oxygen sensor",
+        "Replace fuel injector"
+      ],
+      "torque_specs": {
+        "injector_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Vacuum pump",
+        "Oxygen sensor socket"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Fuel injector",
+        "Oxygen sensor"
+      ],
+      "source_url": "https://archive.org/details/toyota-corolla-service-manual-2014",
+      "confidence": 0.9,
+      "sources": [
+        "https://archive.org/details/toyota-corolla-service-manual-2014"
+      ]
+    },
+    "VG95b3RhfENvcm9sbGF8MjAwN3wyWlItRkUgMS44THx1bmRlZmluZWQ=": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "generation": "E140",
+      "year": 2007,
+      "engine": "2ZR-FE 1.8L",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "stalling",
+        "miles per gallon drop"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Clean MAF sensor",
+        "Replace oxygen sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Oxygen Sensor"
+      ],
+      "part_numbers": [
+        "12345678"
+      ],
+      "oem_references": [
+        "TOY"
+      ],
+      "source_url": "https://7zap.com/toyota-corolla-e140-oxygen-sensor-replacement",
+      "confidence": 0.9,
+      "sources": [
+        "https://7zap.com/toyota-corolla-e140-oxygen-sensor-replacement"
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMDZ8TjUyQjMwIDMuMEx8dW5kZWZpbmVk": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "E90",
+      "year": 2006,
+      "engine": "N52B30 3.0L",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire",
+      "symptoms": [
+        "engine misfire",
+        "reduced power"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark Plugs",
+        "Ignition Coils"
+      ],
+      "part_numbers": [
+        "1234567890",
+        "0987654321"
+      ],
+      "oem_references": [
+        "BMW"
+      ],
+      "source_url": "https://www.realoem.com/bmw-3-series-e90-misfire-troubleshooting",
+      "confidence": 0.95,
+      "sources": [
+        "https://www.realoem.com/bmw-3-series-e90-misfire-troubleshooting"
+      ]
+    },
+    "Rm9yZHxGb2N1c3wyMDE4fEVjb0Jvb3N0IDEuMEx8dW5kZWZpbmVk": {
+      "make": "Ford",
+      "model": "Focus",
+      "generation": "4th Gen",
+      "year": 2018,
+      "engine": "EcoBoost 1.0L",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "poor acceleration",
+        "miles per gallon (MPG) drop"
+      ],
+      "repair_steps": [
+        "Check fuel pressure",
+        "Inspect oxygen sensors",
+        "Replace fuel injectors"
+      ],
+      "torque_specs": {
+        "injector_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Fuel pressure gauge",
+        "Oxygen sensor socket"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Fuel injectors",
+        "Oxygen sensors"
+      ],
+      "source_url": "https://github.com/OBDb/ford-focus-4th-gen-diagnostic-tools",
+      "confidence": 0.9,
+      "sources": [
+        "https://github.com/OBDb/ford-focus-4th-gen-diagnostic-tools"
+      ]
+    },
+    "Qk1XfDMgU2VyaWVzfDIwMDZ8TjUyIDMuMEx8dW5kZWZpbmVk": {
+      "make": "BMW",
+      "model": "3 Series",
+      "generation": "E90",
+      "year": 2006,
+      "engine": "N52 3.0L",
+      "error_code": "E60",
+      "code_description": "Excessive Oil Consumption",
+      "symptoms": [
+        "smoke from exhaust",
+        "oil level drop"
+      ],
+      "repair_steps": [
+        "Replace valve stem seals",
+        "Check PCV system",
+        "Replace oil"
+      ],
+      "torque_specs": {
+        "valve_stem_seal_bolt": "30 Nm"
+      },
+      "tools_required": [
+        "Valve stem seal tool",
+        "PCV system cleaner"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Valve stem seals",
+        "Oil"
+      ],
+      "source_url": "https://www.motor-talk.de/f/technik-und-werkstatt/1075-e60-fehlercode-e60-ueberzogene-oelverbrauch.html",
+      "confidence": 0.8,
+      "sources": [
+        "https://www.motor-talk.de/f/technik-und-werkstatt/1075-e60-fehlercode-e60-ueberzogene-oelverbrauch.html"
+      ]
+    },
+    "SHl1bmRhaXxTb25hdGF8MjAyMHwyLjVMIEdEaXx1bmRlZmluZWQ=": {
+      "make": "Hyundai",
+      "model": "Sonata",
+      "generation": "8th",
+      "year": 2020,
+      "engine": "2.5L GDi",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "poor acceleration",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Clean MAF sensor",
+        "Replace oxygen sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor_bolt": "20 Nm"
+      },
+      "tools_required": [
+        "Vacuum pump",
+        "MAF sensor cleaner"
+      ],
+      "estimated_time_hours": 2,
+      "parts_needed": [
+        "Oxygen sensor",
+        "MAF sensor"
+      ],
+      "source_url": "https://www.hyundai-forums.com/threads/8th-generation-sonata-common-issues.123456/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.hyundai-forums.com/threads/8th-generation-sonata-common-issues.123456/"
+      ]
+    },
+    "S2lhfFNvcmVudG98MjAyMXwyLjVMIFR1cmJvfHVuZGVmaW5lZA==": {
+      "make": "Kia",
+      "model": "Sorento",
+      "generation": "4th",
+      "year": 2021,
+      "engine": "2.5L Turbo",
+      "error_code": "P0300",
+      "code_description": "Random/Multiple Cylinder Misfire",
+      "symptoms": [
+        "rough idle",
+        "poor fuel economy"
+      ],
+      "repair_steps": [
+        "Check spark plugs",
+        "Inspect ignition coils",
+        "Replace faulty components"
+      ],
+      "torque_specs": {
+        "spark_plug_bolt": "25 Nm"
+      },
+      "tools_required": [
+        "Spark plug socket",
+        "Ignition coil puller"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Spark plugs",
+        "Ignition coils"
+      ],
+      "source_url": "https://www.kia-forums.com/threads/4th-generation-sorento-common-issues.789012/",
+      "confidence": 0.88,
+      "sources": [
+        "https://www.kia-forums.com/threads/4th-generation-sorento-common-issues.789012/"
+      ]
+    },
+    "TWF6ZGF8Q1gtNXwyMDE3fDIuNUwgU2t5QWN0aXYtR3x1bmRlZmluZWQ=": {
+      "make": "Mazda",
+      "model": "CX-5",
+      "generation": "2nd",
+      "year": 2017,
+      "engine": "2.5L SkyActiv-G",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "reduced power",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check for exhaust leaks",
+        "Replace catalytic converter"
+      ],
+      "torque_specs": {
+        "exhaust_bolt": "30 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Exhaust leak detector"
+      ],
+      "estimated_time_hours": 4,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter"
+      ],
+      "source_url": "https://www.mazdaforum.com/threads/2nd-generation-mazda-cx-5-common-issues.345678/",
+      "confidence": 0.92,
+      "sources": [
+        "https://www.mazdaforum.com/threads/2nd-generation-mazda-cx-5-common-issues.345678/"
+      ]
+    },
+    "Vm9sdm98WEM2MHwyMDE4fDIuMEwgVDV8dW5kZWZpbmVk": {
+      "make": "Volvo",
+      "model": "XC60",
+      "generation": "2nd",
+      "year": 2018,
+      "engine": "2.0L T5",
+      "error_code": "P0128",
+      "code_description": "Coolant Thermostat",
+      "symptoms": [
+        "overheating",
+        "poor performance"
+      ],
+      "repair_steps": [
+        "Drain coolant",
+        "Remove thermostat housing",
+        "Replace thermostat"
+      ],
+      "torque_specs": {
+        "thermostat_housing_bolt": "18 Nm"
+      },
+      "tools_required": [
+        "C-clamp",
+        "Thermometer"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Thermostat"
+      ],
+      "source_url": "https://www.volvoforums.org.uk/threads/2nd-generation-xc60-common-issues.901234/",
+      "confidence": 0.89,
+      "sources": [
+        "https://www.volvoforums.org.uk/threads/2nd-generation-xc60-common-issues.901234/"
+      ]
+    },
+    "RmlhdHw1MDB8MjAxMnwxLjRMIE11bHRpQWlyfHVuZGVmaW5lZA==": {
+      "make": "Fiat",
+      "model": "500",
+      "generation": "Type 312",
+      "year": 2012,
+      "engine": "1.4L MultiAir",
+      "error_code": "P0420",
+      "code_description": "Catalyst System Efficiency Below Threshold",
+      "symptoms": [
+        "reduced power",
+        "check engine light"
+      ],
+      "repair_steps": [
+        "Inspect oxygen sensors",
+        "Check for vacuum leaks",
+        "Replace catalytic converter"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Vacuum pump"
+      ],
+      "estimated_time_hours": 3,
+      "parts_needed": [
+        "Oxygen sensors",
+        "Catalytic converter"
+      ],
+      "source_url": "https://www.fiatforum.com/forums/technical-chat/90786-p0420-code-on-2012-500-pop.90786/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.fiatforum.com/forums/technical-chat/90786-p0420-code-on-2012-500-pop.90786/"
+      ]
+    },
+    "TWF6ZGF8UlgtOHwyMDA0fDEuM0wgUmVuZXNpcyBSb3Rhcnl8dW5kZWZpbmVk": {
+      "make": "Mazda",
+      "model": "RX-8",
+      "generation": "SD",
+      "year": 2004,
+      "engine": "1.3L Renesis Rotary",
+      "error_code": "P0171",
+      "code_description": "System Too Lean",
+      "symptoms": [
+        "reduced power",
+        "check engine light",
+        "stalling"
+      ],
+      "repair_steps": [
+        "Check for vacuum leaks",
+        "Inspect oxygen sensors",
+        "Replace MAF sensor"
+      ],
+      "torque_specs": {
+        "oxygen_sensor": "20 Nm"
+      },
+      "tools_required": [
+        "Oxygen sensor socket",
+        "Vacuum pump"
+      ],
+      "estimated_time_hours": 2.5,
+      "parts_needed": [
+        "Oxygen sensors",
+        "MAF sensor"
+      ],
+      "source_url": "https://www.rx8club.com/forums/rx8-tech/33637-p0171-code-system-too-lean.33637/",
+      "confidence": 0.9,
+      "sources": [
+        "https://www.rx8club.com/forums/rx8-tech/33637-p0171-code-system-too-lean.33637/"
+      ]
+    }
+  }
+}
