@@ -22,6 +22,8 @@ import {
 import { AISuggestions } from "@/components/AISuggestions";
 import { MaintenanceRecommendations } from "@/components/MaintenanceRecommendations";
 import { MotorizationSelector } from "@/components/MotorizationSelector";
+import { VINDecoder } from "@/components/VINDecoder";
+import { VehicleRecalls } from "@/components/VehicleRecalls";
 
 // ============================================================
 // CONSTANTS
@@ -483,27 +485,16 @@ export default function DiagnosticNew() {
               </Card>
             )}
 
-            {/* VIN Input */}
+            {/* VIN Input with Auto-Decode */}
             {vehicleInputMode === "vin" && (
-              <Card>
-                <CardContent className="pt-6">
-                  <Label htmlFor="vin" className="text-base font-semibold">Serie Caroserie (VIN)</Label>
-                  <p className="text-sm text-slate-500 mb-3">17 caractere - se găsește pe certificatul de înmatriculare sau pe ușa șoferului</p>
-                  <Input
-                    id="vin"
-                    value={vin}
-                    onChange={(e) => setVin(e.target.value.toUpperCase())}
-                    placeholder="WVWZZZ3CZWE123456"
-                    maxLength={17}
-                    className="text-lg font-mono tracking-wider"
-                  />
-                  {vin.length === 17 && (
-                    <p className="text-sm text-green-600 mt-2 flex items-center gap-1">
-                      <CheckCircle2 className="w-4 h-4" /> VIN valid - datele vor fi decodate automat la analiză
-                    </p>
-                  )}
-                </CardContent>
-              </Card>
+              <VINDecoder
+                initialVin={vin}
+                onDecoded={(data) => {
+                  setBrand(data.brand);
+                  setModel(data.model);
+                  setYear(data.year.toString());
+                }}
+              />
             )}
 
             {/* Vehicle Data Form */}
@@ -920,6 +911,16 @@ export default function DiagnosticNew() {
                     </div>
                   </CardContent>
                 </Card>
+
+                {/* Safety Recalls */}
+                {brand && model && year && (
+                  <VehicleRecalls
+                    brand={brand}
+                    model={model}
+                    year={parseInt(year)}
+                    vin={vin}
+                  />
+                )}
 
                 {/* AI Suggestions */}
                 {brand && model && year && mileage && (
