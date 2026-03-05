@@ -598,3 +598,31 @@
   - [ ] Payment tracking
   - [ ] Tax calculation
   - [ ] Payment integration
+
+
+## Technician-Confirmed Fixes Crowdsourcing (NEW - PRIORITY)
+- [ ] Database Schema
+  - [ ] confirmed_fixes table
+  - [ ] fix_votes table
+  - [ ] fix_comments table
+  - [ ] fix_ratings table
+- [ ] Fix Submission System
+  - [ ] Submit fix for error code
+  - [ ] Attach photos/videos
+  - [ ] Add tools/parts list
+  - [ ] Estimated time/cost
+- [ ] Community Voting
+  - [ ] Upvote/downvote fixes
+  - [ ] Comment on fixes
+  - [ ] Accuracy rating
+  - [ ] Helpful counter
+- [ ] Integration
+  - [ ] Show fixes in diagnostic results
+  - [ ] Rank by votes/rating
+  - [ ] Filter by vehicle model
+  - [ ] Search fixes
+- [ ] UI Components
+  - [ ] Fix submission form
+  - [ ] Fixes list display
+  - [ ] Voting interface
+  - [ ] Fix details view
