@@ -19,6 +19,7 @@ import { automotiveDataRouter } from "./routers/automotive-data";
 import { servicesRouter } from "./routers/services";
 import { predictiveMaintenanceRouter } from "./routers/predictive-maintenance";
 import { vehicleDataRouter } from "./routers/vehicle-data";
+import { dataImportRouter } from "./routers/data-import";
 
 export const appRouter = router({
   system: systemRouter,
@@ -28,6 +29,7 @@ export const appRouter = router({
   services: servicesRouter,
   predictiveMaintenance: predictiveMaintenanceRouter,
   vehicleData: vehicleDataRouter,
+  dataImport: dataImportRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
