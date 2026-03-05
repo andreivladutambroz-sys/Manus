@@ -7,6 +7,14 @@ import DashboardLayout from '@/components/DashboardLayout';
 import { trpc } from '@/lib/trpc';
 import { AdminRoute } from '@/components/AdminRoute';
 
+export function AdminDashboard() {
+  return (
+    <AdminRoute>
+      <AdminDashboardContent />
+    </AdminRoute>
+  );
+}
+
 function AdminDashboardContent() {
   const { data: stats } = trpc.collaboration.getStats.useQuery();
   const { data: sessions } = trpc.collaboration.getActiveSessions.useQuery();
@@ -294,13 +302,5 @@ function AdminDashboardContent() {
         )}
       </div>
     </DashboardLayout>
-  );
-}
-
-export function AdminDashboard() {
-  return (
-    <AdminRoute>
-      <AdminDashboardContent />
-    </AdminRoute>
   );
 }
