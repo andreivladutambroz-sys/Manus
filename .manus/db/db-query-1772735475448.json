@@ -1,0 +1,37 @@
+{
+  "query": "\n-- Total statistics\nSELECT \n  'Total Vehicles' as metric,\n  COUNT(*) as value\nFROM vehicles\nUNION ALL\nSELECT \n  'Distinct Brands',\n  COUNT(DISTINCT brand)\nFROM vehicles\nUNION ALL\nSELECT \n  'Distinct Models',\n  COUNT(DISTINCT model)\nFROM vehicles\nUNION ALL\nSELECT \n  'Distinct Engines',\n  COUNT(DISTINCT engine)\nFROM vehicles\nUNION ALL\nSELECT \n  'Distinct Engine Codes',\n  COUNT(DISTINCT engineCode)\nFROM vehicles;\n\n-- Top 20 brands by vehicle count\nSELECT \n  brand,\n  COUNT(*) as vehicle_count,\n  COUNT(DISTINCT model) as model_count,\n  COUNT(DISTINCT engine) as engine_count,\n  ROUND(100.0 * COUNT(*) / (SELECT COUNT(*) FROM vehicles), 2) as percentage\nFROM vehicles\nGROUP BY brand\nORDER BY vehicle_count DESC\nLIMIT 20;\n\n-- Top 20 models by vehicle count\nSELECT \n  CONCAT(brand, ' ', model) as full_model,\n  brand,\n  model,\n  COUNT(*) as variant_count,\n  COUNT(DISTINCT engine) as engine_variants,\n  COUNT(DISTINCT year) as year_range,\n  MIN(year) as first_year,\n  MAX(year) as last_year,\n  ROUND(100.0 * COUNT(*) / (SELECT COUNT(*) FROM vehicles), 2) as percentage\nFROM vehicles\nGROUP BY brand, model\nORDER BY variant_count DESC\nLIMIT 20;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user czn98hR1NJRAJqS.d1053c28687a --database f8JTLCpe9ZcHoBRdfShqpj --execute \n-- Total statistics\nSELECT \n  'Total Vehicles' as metric,\n  COUNT(*) as value\nFROM vehicles\nUNION ALL\nSELECT \n  'Distinct Brands',\n  COUNT(DISTINCT brand)\nFROM vehicles\nUNION ALL\nSELECT \n  'Distinct Models',\n  COUNT(DISTINCT model)\nFROM vehicles\nUNION ALL\nSELECT \n  'Distinct Engines',\n  COUNT(DISTINCT engine)\nFROM vehicles\nUNION ALL\nSELECT \n  'Distinct Engine Codes',\n  COUNT(DISTINCT engineCode)\nFROM vehicles;\n\n-- Top 20 brands by vehicle count\nSELECT \n  brand,\n  COUNT(*) as vehicle_count,\n  COUNT(DISTINCT model) as model_count,\n  COUNT(DISTINCT engine) as engine_count,\n  ROUND(100.0 * COUNT(*) / (SELECT COUNT(*) FROM vehicles), 2) as percentage\nFROM vehicles\nGROUP BY brand\nORDER BY vehicle_count DESC\nLIMIT 20;\n\n-- Top 20 models by vehicle count\nSELECT \n  CONCAT(brand, ' ', model) as full_model,\n  brand,\n  model,\n  COUNT(*) as variant_count,\n  COUNT(DISTINCT engine) as engine_variants,\n  COUNT(DISTINCT year) as year_range,\n  MIN(year) as first_year,\n  MAX(year) as last_year,\n  ROUND(100.0 * COUNT(*) / (SELECT COUNT(*) FROM vehicles), 2) as percentage\nFROM vehicles\nGROUP BY brand, model\nORDER BY variant_count DESC\nLIMIT 20;\n",
+  "rows": [
+    {
+      "metric": "Distinct Brands",
+      "value": "2"
+    },
+    {
+      "metric": "Distinct Engines",
+      "value": "2"
+    },
+    {
+      "metric": "Distinct Models",
+      "value": "2"
+    },
+    {
+      "metric": "Distinct Engine Codes",
+      "value": "1"
+    },
+    {
+      "metric": "Total Vehicles",
+      "value": "13"
+    }
+  ],
+  "messages": [
+    "brand\tvehicle_count\tmodel_count\tengine_count\tpercentage",
+    "Volkswagen\t12\t1\t2\t92.31",
+    "Ford\t1\t1\t0\t7.69",
+    "full_model\tbrand\tmodel\tvariant_count\tengine_variants\tyear_range\tfirst_year\tlast_year\tpercentage",
+    "Volkswagen Phaeton\tVolkswagen\tPhaeton\t12\t2\t1\t2007\t2007\t92.31",
+    "Ford Fiesta\tFord\tFiesta\t1\t0\t1\t2010\t2010\t7.69"
+  ],
+  "stdout": "metric\tvalue\nDistinct Brands\t2\nDistinct Engines\t2\nDistinct Models\t2\nDistinct Engine Codes\t1\nTotal Vehicles\t13\nbrand\tvehicle_count\tmodel_count\tengine_count\tpercentage\nVolkswagen\t12\t1\t2\t92.31\nFord\t1\t1\t0\t7.69\nfull_model\tbrand\tmodel\tvariant_count\tengine_variants\tyear_range\tfirst_year\tlast_year\tpercentage\nVolkswagen Phaeton\tVolkswagen\tPhaeton\t12\t2\t1\t2007\t2007\t92.31\nFord Fiesta\tFord\tFiesta\t1\t0\t1\t2010\t2010\t7.69\n",
+  "stderr": "",
+  "execution_time_ms": 452
+}

@@ -397,6 +397,231 @@
   - [x] Client role (future)
 
 
+## PHASE 1: FUNCTIONAL MVP (This Week) - NEW IMPLEMENTATION
+
+### 1.1 Database & Backend Setup
+- [ ] Create repair_cases table (MySQL)
+- [ ] Create service_procedures table
+- [ ] Create torque_specifications table
+- [ ] Create tools_required table
+- [ ] Create source_registry table
+- [ ] Create repair_outcomes table (RSI)
+- [ ] Create repair_feedback table
+- [ ] Create beta_invites table
+- [ ] Create beta_users table
+- [ ] Verify all tables in Supabase
+
+### 1.2 /diagnose Endpoint Implementation
+- [ ] Load Bayesian model from bayesian-model.json
+- [ ] Implement tRPC procedure: diagnostic.diagnose
+- [ ] Input validation (vehicle, error_code, symptoms)
+- [ ] Query knowledgeBase table
+- [ ] Calculate Bayesian probabilities
+- [ ] Return structured output
+- [ ] Add error handling and logging
+- [ ] Test endpoint locally
+
+### 1.3 Diagnostic UI Page
+- [ ] Create DiagnosticPage component
+- [ ] Vehicle input form (make, model, year, engine)
+- [ ] Error code input (dropdown/search)
+- [ ] Symptoms multi-select
+- [ ] Submit button
+- [ ] Loading state
+- [ ] Results display component
+- [ ] Share/Export button
+
+### 1.4 VIN Decode Integration
+- [ ] Implement VIN decode API call
+- [ ] Extract vehicle data from VIN
+- [ ] Auto-fill vehicle fields
+- [ ] Validate VIN format
+- [ ] Handle decode errors
+
+### 1.5 Certificate Image Upload (Kimi Vision)
+- [ ] Create image upload component
+- [ ] Call Kimi Vision API
+- [ ] Extract VIN from image
+- [ ] Auto-fill vehicle form
+- [ ] Handle upload errors
+
+### 1.6 Outcome Tracking
+- [ ] Add "Did this fix your problem?" button
+- [ ] Implement YES/NO outcome capture
+- [ ] Create diagnostics.submitOutcome tRPC procedure
+- [ ] Store outcome in repair_feedback table
+- [ ] Update repair_outcomes RSI metrics
+
+### 1.7 Beta Mode / Invite System
+- [ ] Create invite code generation
+- [ ] Create invite validation endpoint
+- [ ] Create beta user tracking
+- [ ] Create feedback form component
+- [ ] Create analytics dashboard (beta only)
+
+## PHASE 2: LOCAL TESTING (2-3 Days) - NEW
+
+### 2.1 Manual Testing
+- [ ] Test login flow
+- [ ] Test diagnostic form submission
+- [ ] Test /diagnose endpoint response
+- [ ] Test results display
+- [ ] Test VIN decode
+- [ ] Test image upload
+- [ ] Test outcome tracking
+- [ ] Test database updates
+
+### 2.2 Browser DevTools Testing
+- [ ] Check console for errors
+- [ ] Check network requests (200 status)
+- [ ] Check API response times (< 500ms)
+- [ ] Check local storage
+- [ ] Check session persistence
+
+### 2.3 Manus Logs Testing
+- [ ] Check server startup logs
+- [ ] Check tRPC procedure execution
+- [ ] Check database query logs
+- [ ] Check error logs
+- [ ] Check memory usage
+
+### 2.4 Performance Testing
+- [ ] Measure /diagnose response time (target: < 500ms)
+- [ ] Measure page load time (target: < 2s)
+- [ ] Measure database query time (target: < 100ms)
+- [ ] Measure memory usage (target: < 500MB)
+
+## PHASE 3: INFRASTRUCTURE UPGRADE (Day 4) - NEW
+
+### 3.1 Request Tier 2 Upgrade
+- [ ] Send upgrade request to https://help.manus.im
+- [ ] Wait for confirmation (24-48h)
+- [ ] Verify new resources (8GB RAM, 8 CPU, 100GB disk)
+
+### 3.2 Create GitHub Repository
+- [ ] Create GitHub account (if needed)
+- [ ] Create "mechanic-helper" repository
+- [ ] Push code to GitHub
+- [ ] Verify code is accessible
+
+### 3.3 Create Vercel Account
+- [ ] Go to https://vercel.com
+- [ ] Sign up with GitHub
+- [ ] Authorize Vercel
+- [ ] Connect to GitHub account
+
+## PHASE 4: PRODUCTION DEPLOYMENT (Day 5) - NEW
+
+### 4.1 Deploy to Vercel
+- [ ] Go to Vercel dashboard
+- [ ] Import "mechanic-helper" repository
+- [ ] Configure build settings
+- [ ] Click Deploy
+- [ ] Verify deployment success
+
+### 4.2 Configure Environment Variables
+- [ ] Add VITE_FRONTEND_FORGE_API_KEY
+- [ ] Add VITE_FRONTEND_FORGE_API_URL
+- [ ] Add VITE_OAUTH_PORTAL_URL
+- [ ] Add VITE_APP_ID
+- [ ] Add VITE_API_URL (backend endpoint)
+
+### 4.3 Test Production App
+- [ ] Test login
+- [ ] Test diagnostic form
+- [ ] Test results display
+- [ ] Check console for errors
+- [ ] Verify database updates
+
+## PHASE 5: SWARM INFRASTRUCTURE (Days 6-10) - NEW
+
+### 5.1 Swarm Core Components
+- [ ] Create Agent Pool Manager (spawn/monitor/kill)
+- [ ] Create Wave-Based Executor (sequential waves)
+- [ ] Create Kimi Batch Processor (50 records per call)
+- [ ] Create Checkpoint System (save/resume)
+- [ ] Create Monitoring Dashboard (real-time metrics)
+- [ ] Create Daily Report Generator
+
+### 5.2 Source Discovery System
+- [ ] Create seeds.json (initial sources)
+- [ ] Create blacklist.json (blocked sources)
+- [ ] Create cooldown.json (rate-limited sources)
+- [ ] Implement source discovery agents (Team SD1)
+- [ ] Implement source scoring agents (Team SD2)
+- [ ] Implement seed manager (Team SD3)
+
+### 5.3 Collector Teams Implementation
+- [ ] Team A: Forum crawlers (30 agents)
+- [ ] Team B: Reddit miners (25 agents)
+- [ ] Team C: Manual extractors (20 agents)
+- [ ] Team D: OBD collectors (15 agents)
+- [ ] Team E: Blog miners (20 agents)
+- [ ] Team F: Video extractors (20 agents)
+
+### 5.4 5-Layer Pipeline Implementation
+- [ ] Layer 1: Collectors (parallel waves)
+- [ ] Layer 2: Normalizers (streaming)
+- [ ] Layer 3: Deduplicators (2-pass)
+- [ ] Layer 4: Validators (quality checks)
+- [ ] Layer 5: DB Writers (idempotent upserts)
+
+### 5.5 Data Processing
+- [ ] Implement HTML/DOM parsing (regex + heuristics)
+- [ ] Implement Kimi batch calling (50 records per call)
+- [ ] Implement hash-based dedup (Pass 1)
+- [ ] Implement semantic dedup (Pass 2, batch Kimi)
+- [ ] Implement contradiction detection
+- [ ] Implement confidence scoring
+
+## PHASE 6: SWARM EXECUTION (Days 6-10) - NEW
+
+### 6.1 Wave 1: Forums + Reddit (6 hours)
+- [ ] Deploy 55 agents
+- [ ] Monitor collection (15,000 raw records)
+- [ ] Monitor dedup (12,000 unique)
+- [ ] Monitor validation (10,200 production-ready)
+- [ ] Generate daily report
+
+### 6.2 Wave 2: Manuals + OBD (4 hours)
+- [ ] Deploy 35 agents
+- [ ] Monitor collection (10,000 raw records)
+- [ ] Monitor dedup (8,500 unique)
+- [ ] Monitor validation (7,225 production-ready)
+
+### 6.3 Wave 3: Blogs + Videos (5 hours)
+- [ ] Deploy 40 agents
+- [ ] Monitor collection (8,000 raw records)
+- [ ] Monitor dedup (6,000 unique)
+- [ ] Monitor validation (5,100 production-ready)
+
+### 6.4 Wave 4: Source Discovery (3 hours)
+- [ ] Deploy 28 agents
+- [ ] Discover 500+ new sources
+- [ ] Score candidates
+- [ ] Add top 100 to seeds.json
+
+### 6.5 Wave 5: Normalize + Dedup + Validate (4 hours)
+- [ ] Process all 33,000 collected records
+- [ ] Normalize to unified schema
+- [ ] 2-pass dedup (26,500 unique)
+- [ ] Validate (22,525 production-ready)
+
+## PHASE 7: MONITORING & OPTIMIZATION (Days 11+) - NEW
+
+### 7.1 Daily Monitoring
+- [ ] Check record count
+- [ ] Check for errors
+- [ ] Monitor memory usage
+- [ ] Monitor disk usage
+- [ ] Monitor Kimi token usage
+
+### 7.2 Data Quality Verification
+- [ ] Check for duplicates
+- [ ] Check field completeness
+- [ ] Check confidence scores
+- [ ] Verify sources
+
 ## Next Steps Implementation (COMPLETED)
 - [x] Role-based Access Control
   - [x] Admin-only middleware
@@ -415,6 +640,28 @@
   - [ ] OBD Scanner mobile
   - [ ] Offline sync
 
+## CHECKPOINTS - NEW
+
+- [ ] Checkpoint 1: MVP functional (Phase 1 complete)
+- [ ] Checkpoint 2: MVP tested (Phase 2 complete)
+- [ ] Checkpoint 3: Infrastructure upgraded (Phase 3 complete)
+- [ ] Checkpoint 4: Production deployed (Phase 4 complete)
+- [ ] Checkpoint 5: Swarm running (Phase 5 complete)
+- [ ] Checkpoint 6: Data collected (Phase 6 complete)
+- [ ] Checkpoint 7: Optimized (Phase 7 complete)
+
+
+## STATUS: FULL AUTO IMPLEMENTATION STARTING 🚀
+
+**Target:** Build functional MVP + Deploy full swarm (158 agents) in 2 weeks
+
+**Expected Results:**
+- 22,525 production-ready repair records
+- 26,500 unique records
+- 95% cost reduction (Kimi batching)
+- 5x speed improvement
+- 99.8% uptime
+- Full traceability (source + evidence)
 
 ## E2E Testing & Verification (COMPLETED)
 - [x] UI Verification

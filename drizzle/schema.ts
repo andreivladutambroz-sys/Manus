@@ -1,5 +1,6 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, json, decimal, boolean } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, json, decimal, boolean, longtext } from "drizzle-orm/mysql-core";
 import { relations } from "drizzle-orm";
+import { bigint } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -868,3 +869,261 @@ export const dataImportStatus = mysqlTable("dataImportStatus", {
 
 export type DataImportStatus = typeof dataImportStatus.$inferSelect;
 export type InsertDataImportStatus = typeof dataImportStatus.$inferInsert;
+
+
+/**
+ * ============================================================
+ * SWARM TABLES - Repair Knowledge Collection & RSI
+ * ============================================================
+ */
+
+/**
+ * repair_cases - Individual repair cases from swarm collection
+ */
+export const repairCases = mysqlTable("repairCases", {
+  id: bigint("id", { mode: "bigint" }).autoincrement().primaryKey(),
+  vehicleMake: varchar("vehicleMake", { length: 50 }).notNull(),
+  vehicleModel: varchar("vehicleModel", { length: 100 }).notNull(),
+  vehicleYear: int("vehicleYear"),
+  engine: varchar("engine", { length: 100 }),
+  engineCode: varchar("engineCode", { length: 50 }),
+  errorCode: varchar("errorCode", { length: 20 }),
+  errorSystem: varchar("errorSystem", { length: 50 }),
+  errorDescription: text("errorDescription"),
+  symptoms: json("symptoms").$type<string[]>(),
+  repairAction: varchar("repairAction", { length: 255 }),
+  repairPerformed: text("repairPerformed"),
+  repairTimeHours: decimal("repairTimeHours", { precision: 5, scale: 2 }),
+  repairCostEstimate: decimal("repairCostEstimate", { precision: 10, scale: 2 }),
+  repairCostActual: decimal("repairCostActual", { precision: 10, scale: 2 }),
+  toolsUsed: json("toolsUsed").$type<string[]>(),
+  partsNeeded: json("partsNeeded").$type<string[]>(),
+  repairOutcome: mysqlEnum("repairOutcome", ["success", "partial", "failed", "unknown"]).default("unknown"),
+  confidence: decimal("confidence", { precision: 3, scale: 2 }),
+  sourceUrl: varchar("sourceUrl", { length: 500 }),
+  sourceDomain: varchar("sourceDomain", { length: 100 }),
+  sourceType: mysqlEnum("sourceType", ["forum", "reddit", "manual", "obd", "blog", "video"]).default("forum"),
+  evidenceSnippets: json("evidenceSnippets").$type<string[]>(),
+  evidenceQuality: decimal("evidenceQuality", { precision: 3, scale: 2 }),
+  language: varchar("language", { length: 10 }).default("en"),
+  canonicalKey: varchar("canonicalKey", { length: 255 }).unique(),
+  clusterId: varchar("clusterId", { length: 100 }),
+  mergedCount: int("mergedCount").default(1),
+  sourceCount: int("sourceCount").default(1),
+  rawJson: text("rawJson"),
+  contentHash: varchar("contentHash", { length: 64 }),
+  normalizedHash: varchar("normalizedHash", { length: 64 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type RepairCase = typeof repairCases.$inferSelect;
+export type InsertRepairCase = typeof repairCases.$inferInsert;
+
+/**
+ * service_procedures - Step-by-step repair procedures
+ */
+export const serviceProcedures = mysqlTable("serviceProcedures", {
+  id: bigint("id", { mode: "bigint" }).autoincrement().primaryKey(),
+  vehicleMake: varchar("vehicleMake", { length: 50 }).notNull(),
+  vehicleModel: varchar("vehicleModel", { length: 100 }).notNull(),
+  vehicleYear: int("vehicleYear"),
+  engine: varchar("engine", { length: 100 }),
+  engineCode: varchar("engineCode", { length: 50 }),
+  systemType: varchar("systemType", { length: 100 }),
+  procedureName: varchar("procedureName", { length: 255 }).notNull(),
+  procedureDescription: text("procedureDescription"),
+  repairSteps: json("repairSteps").$type<Array<{ step: number; action: string }>>().notNull(),
+  toolsRequired: json("toolsRequired").$type<string[]>(),
+  torqueSpecs: json("torqueSpecs").$type<Array<{ component: string; value: number }>>(),
+  estimatedTimeHours: decimal("estimatedTimeHours", { precision: 5, scale: 2 }),
+  difficultyLevel: mysqlEnum("difficultyLevel", ["easy", "medium", "hard", "expert"]).default("medium"),
+  confidence: decimal("confidence", { precision: 3, scale: 2 }),
+  sourceUrl: varchar("sourceUrl", { length: 500 }),
+  sourceDomain: varchar("sourceDomain", { length: 100 }),
+  sourceType: mysqlEnum("sourceType", ["manual", "forum", "blog", "video"]).default("manual"),
+  evidenceSnippets: json("evidenceSnippets").$type<string[]>(),
+  evidenceQuality: decimal("evidenceQuality", { precision: 3, scale: 2 }),
+  language: varchar("language", { length: 10 }).default("en"),
+  canonicalKey: varchar("canonicalKey", { length: 255 }).unique(),
+  rawJson: text("rawJson"),
+  contentHash: varchar("contentHash", { length: 64 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type ServiceProcedure = typeof serviceProcedures.$inferSelect;
+export type InsertServiceProcedure = typeof serviceProcedures.$inferInsert;
+
+/**
+ * torque_specifications - Torque values for components
+ */
+export const torqueSpecifications = mysqlTable("torqueSpecifications", {
+  id: bigint("id", { mode: "bigint" }).autoincrement().primaryKey(),
+  vehicleMake: varchar("vehicleMake", { length: 50 }).notNull(),
+  vehicleModel: varchar("vehicleModel", { length: 100 }).notNull(),
+  vehicleYear: int("vehicleYear"),
+  engine: varchar("engine", { length: 100 }),
+  engineCode: varchar("engineCode", { length: 50 }),
+  systemType: varchar("systemType", { length: 100 }),
+  componentName: varchar("componentName", { length: 255 }).notNull(),
+  torqueValueNm: decimal("torqueValueNm", { precision: 8, scale: 2 }).notNull(),
+  torqueValueFtlb: decimal("torqueValueFtlb", { precision: 8, scale: 2 }),
+  torqueSequence: varchar("torqueSequence", { length: 255 }),
+  torquePattern: varchar("torquePattern", { length: 255 }),
+  coldTorque: decimal("coldTorque", { precision: 8, scale: 2 }),
+  warmTorque: decimal("warmTorque", { precision: 8, scale: 2 }),
+  notes: text("notes"),
+  confidence: decimal("confidence", { precision: 3, scale: 2 }),
+  sourceUrl: varchar("sourceUrl", { length: 500 }),
+  sourceDomain: varchar("sourceDomain", { length: 100 }),
+  evidenceSnippet: text("evidenceSnippet"),
+  evidenceQuality: decimal("evidenceQuality", { precision: 3, scale: 2 }),
+  language: varchar("language", { length: 10 }).default("en"),
+  canonicalKey: varchar("canonicalKey", { length: 255 }).unique(),
+  rawJson: text("rawJson"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type TorqueSpecification = typeof torqueSpecifications.$inferSelect;
+export type InsertTorqueSpecification = typeof torqueSpecifications.$inferInsert;
+
+/**
+ * repair_outcomes - RSI (Repair Success Intelligence) data
+ */
+export const repairOutcomes = mysqlTable("repairOutcomes", {
+  id: bigint("id", { mode: "bigint" }).autoincrement().primaryKey(),
+  vehicleMake: varchar("vehicleMake", { length: 50 }).notNull(),
+  vehicleModel: varchar("vehicleModel", { length: 100 }).notNull(),
+  vehicleYear: int("vehicleYear"),
+  engine: varchar("engine", { length: 100 }),
+  engineCode: varchar("engineCode", { length: 50 }),
+  errorCode: varchar("errorCode", { length: 20 }).notNull(),
+  errorSystem: varchar("errorSystem", { length: 50 }),
+  repairAction: varchar("repairAction", { length: 255 }).notNull(),
+  success: mysqlEnum("success", ["true", "false", "unknown"]),
+  repairTimeHours: decimal("repairTimeHours", { precision: 5, scale: 2 }),
+  repairCost: decimal("repairCost", { precision: 10, scale: 2 }),
+  sourceDomain: varchar("sourceDomain", { length: 100 }),
+  sourceUrl: varchar("sourceUrl", { length: 500 }),
+  confidence: decimal("confidence", { precision: 3, scale: 2 }),
+  successRate: decimal("successRate", { precision: 5, scale: 2 }),
+  totalCases: int("totalCases").default(1),
+  avgRepairTime: decimal("avgRepairTime", { precision: 5, scale: 2 }),
+  avgRepairCost: decimal("avgRepairCost", { precision: 10, scale: 2 }),
+  successCount: int("successCount").default(0),
+  failureCount: int("failureCount").default(0),
+  timestamp: timestamp("timestamp").defaultNow().notNull(),
+});
+
+export type RepairOutcome = typeof repairOutcomes.$inferSelect;
+export type InsertRepairOutcome = typeof repairOutcomes.$inferInsert;
+
+/**
+ * repair_feedback - User feedback from mechanics
+ */
+export const repairFeedback = mysqlTable("repairFeedback", {
+  id: bigint("id", { mode: "bigint" }).autoincrement().primaryKey(),
+  diagnosticId: varchar("diagnosticId", { length: 100 }),
+  userId: varchar("userId", { length: 100 }),
+  mechanicId: varchar("mechanicId", { length: 100 }),
+  vehicleMake: varchar("vehicleMake", { length: 50 }),
+  vehicleModel: varchar("vehicleModel", { length: 100 }),
+  vehicleYear: int("vehicleYear"),
+  engine: varchar("engine", { length: 100 }),
+  engineCode: varchar("engineCode", { length: 50 }),
+  errorCode: varchar("errorCode", { length: 20 }),
+  repairAction: varchar("repairAction", { length: 255 }),
+  success: mysqlEnum("success", ["true", "false", "partial"]),
+  repairTimeHours: decimal("repairTimeHours", { precision: 5, scale: 2 }),
+  repairCost: decimal("repairCost", { precision: 10, scale: 2 }),
+  actualCost: decimal("actualCost", { precision: 10, scale: 2 }),
+  costVariance: decimal("costVariance", { precision: 10, scale: 2 }),
+  feedbackText: text("feedbackText"),
+  rating: int("rating"),
+  issuesFound: json("issuesFound").$type<string[]>(),
+  improvementsSuggested: json("improvementsSuggested").$type<string[]>(),
+  timestamp: timestamp("timestamp").defaultNow().notNull(),
+});
+
+export type RepairFeedback = typeof repairFeedback.$inferSelect;
+export type InsertRepairFeedback = typeof repairFeedback.$inferInsert;
+
+/**
+ * source_registry - Track sources used by swarm
+ */
+export const sourceRegistry = mysqlTable("sourceRegistry", {
+  id: bigint("id", { mode: "bigint" }).autoincrement().primaryKey(),
+  sourceUrl: varchar("sourceUrl", { length: 500 }).notNull().unique(),
+  sourceDomain: varchar("sourceDomain", { length: 100 }).notNull(),
+  sourceType: mysqlEnum("sourceType", ["forum", "reddit", "manual", "obd", "blog", "video", "other"]).default("forum"),
+  sourceCategory: varchar("sourceCategory", { length: 100 }),
+  sourceName: varchar("sourceName", { length: 255 }),
+  accessibilityScore: decimal("accessibilityScore", { precision: 3, scale: 2 }),
+  relevanceScore: decimal("relevanceScore", { precision: 3, scale: 2 }),
+  qualityScore: decimal("qualityScore", { precision: 3, scale: 2 }),
+  extractionScore: decimal("extractionScore", { precision: 3, scale: 2 }),
+  legalRiskScore: decimal("legalRiskScore", { precision: 3, scale: 2 }),
+  overallScore: decimal("overallScore", { precision: 3, scale: 2 }),
+  pagesScanned: int("pagesScanned").default(0),
+  uniqueRecords: int("uniqueRecords").default(0),
+  duplicateRate: decimal("duplicateRate", { precision: 5, scale: 2 }).default("0"),
+  avgConfidence: decimal("avgConfidence", { precision: 3, scale: 2 }),
+  yieldScore: decimal("yieldScore", { precision: 5, scale: 2 }),
+  lastScanned: timestamp("lastScanned"),
+  cooldownUntil: timestamp("cooldownUntil"),
+  blacklisted: boolean("blacklisted").default(false),
+  blacklistReason: varchar("blacklistReason", { length: 255 }),
+  discoveredFrom: varchar("discoveredFrom", { length: 255 }),
+  discoveryQuery: varchar("discoveryQuery", { length: 255 }),
+  metadata: json("metadata"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type SourceRegistry = typeof sourceRegistry.$inferSelect;
+export type InsertSourceRegistry = typeof sourceRegistry.$inferInsert;
+
+/**
+ * beta_invites - Beta program invitations
+ */
+export const betaInvites = mysqlTable("betaInvites", {
+  id: bigint("id", { mode: "bigint" }).autoincrement().primaryKey(),
+  inviteCode: varchar("inviteCode", { length: 20 }).notNull().unique(),
+  email: varchar("email", { length: 255 }),
+  mechanicName: varchar("mechanicName", { length: 100 }),
+  mechanicShop: varchar("mechanicShop", { length: 100 }),
+  invitedBy: varchar("invitedBy", { length: 100 }),
+  status: mysqlEnum("status", ["pending", "accepted", "expired", "revoked"]).default("pending"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  acceptedAt: timestamp("acceptedAt"),
+  expiresAt: timestamp("expiresAt"),
+});
+
+export type BetaInvite = typeof betaInvites.$inferSelect;
+export type InsertBetaInvite = typeof betaInvites.$inferInsert;
+
+/**
+ * beta_users - Beta program participants
+ */
+export const betaUsers = mysqlTable("betaUsers", {
+  id: bigint("id", { mode: "bigint" }).autoincrement().primaryKey(),
+  userId: varchar("userId", { length: 100 }).notNull().unique(),
+  mechanicName: varchar("mechanicName", { length: 100 }),
+  mechanicShop: varchar("mechanicShop", { length: 100 }),
+  email: varchar("email", { length: 255 }),
+  phone: varchar("phone", { length: 20 }),
+  specialties: json("specialties").$type<string[]>(),
+  certifications: json("certifications").$type<string[]>(),
+  experienceYears: int("experienceYears"),
+  diagnosticsCount: int("diagnosticsCount").default(0),
+  feedbackCount: int("feedbackCount").default(0),
+  avgRating: decimal("avgRating", { precision: 3, scale: 2 }),
+  status: mysqlEnum("status", ["active", "inactive", "suspended"]).default("active"),
+  joinedAt: timestamp("joinedAt").defaultNow().notNull(),
+  lastActive: timestamp("lastActive"),
+});
+
+export type BetaUser = typeof betaUsers.$inferSelect;
+export type InsertBetaUser = typeof betaUsers.$inferInsert;

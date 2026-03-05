@@ -1,0 +1,15 @@
+{
+  "query": "SELECT COUNT(*) as total_vehicles, COUNT(DISTINCT brand) as brands, COUNT(DISTINCT model) as models FROM vehicles;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user czn98hR1NJRAJqS.d1053c28687a --database f8JTLCpe9ZcHoBRdfShqpj --execute SELECT COUNT(*) as total_vehicles, COUNT(DISTINCT brand) as brands, COUNT(DISTINCT model) as models FROM vehicles;",
+  "rows": [
+    {
+      "total_vehicles": "13",
+      "brands": "2",
+      "models": "2"
+    }
+  ],
+  "messages": [],
+  "stdout": "total_vehicles\tbrands\tmodels\n13\t2\t2\n",
+  "stderr": "",
+  "execution_time_ms": 378
+}

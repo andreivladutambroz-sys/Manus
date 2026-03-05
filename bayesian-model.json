@@ -1,0 +1,2135 @@
+{
+  "summary": {
+    "timestamp": "2026-03-05T19:15:13.961Z",
+    "totalRecords": 117758,
+    "errorCodes": 62,
+    "vehicles": 17,
+    "symptoms": 144,
+    "priors": {
+      "P0011": 13562,
+      "P030A": 1802,
+      "DME1E01": 327,
+      "4F0D1": 327,
+      "P0300": 28084,
+      "P0420": 31532,
+      "P300": 873,
+      "P0455": 3894,
+      "P0171": 8148,
+      "U0140": 1208,
+      "U0121": 2476,
+      "2E90": 319,
+      "P0128": 3104,
+      "U0101": 2681,
+      "DME1": 2494,
+      "4FA9": 317,
+      "B12/2C": 1699,
+      "P0700": 1212,
+      "B12/3C": 3267,
+      "P000AE": 307,
+      "4FAA": 987,
+      "DME P0300": 546,
+      "DME P0011": 1067,
+      "P2E8": 267,
+      "P0301": 460,
+      "U0100": 1071,
+      "C1218": 253,
+      "P0A0B": 252,
+      "B12/7": 379,
+      "2E08": 384,
+      "4B3C": 242,
+      "P0A0F": 237,
+      "B2367": 222,
+      "4F7D": 212,
+      "E60": 207,
+      "4F01": 202,
+      "N20 Vanos System": 197,
+      "B12/5": 269,
+      "DME2": 192,
+      "P0452": 187,
+      "B12/4": 473,
+      "N84": 157,
+      "BMS-12": 189,
+      "DME E60 2C5F": 147,
+      "DME F10 2D36": 147,
+      "N20 Vanos Error": 137,
+      "4F5": 127,
+      "P0001": 107,
+      "U1082": 105,
+      "DME E60 16BF": 97,
+      "DME F10 2D01": 97,
+      "B2661": 97,
+      "B1164": 78,
+      "U0126": 78,
+      "B12/2B": 62,
+      "P0201": 52,
+      "B12/6": 47,
+      "B12/3": 42,
+      "DME E60 2B0D": 17,
+      "2C01": 17,
+      "B12/9": 17,
+      "B12/22": 2
+    },
+    "confidenceScores": {
+      "P0011": {
+        "average": 0.9164872437693168,
+        "count": 13562,
+        "min": 0.86,
+        "max": 0.99
+      },
+      "P030A": {
+        "average": 0.9415205327414166,
+        "count": 1802,
+        "min": 0.87,
+        "max": 0.99
+      },
+      "DME1E01": {
+        "average": 0.9499999999999942,
+        "count": 327,
+        "min": 0.95,
+        "max": 0.95
+      },
+      "4F0D1": {
+        "average": 0.9000000000000006,
+        "count": 327,
+        "min": 0.9,
+        "max": 0.9
+      },
+      "P0300": {
+        "average": 0.9334599772114112,
+        "count": 28084,
+        "min": 0.82,
+        "max": 0.99
+      },
+      "P0420": {
+        "average": 0.9163703539261662,
+        "count": 31532,
+        "min": 0.78,
+        "max": 0.99
+      },
+      "P300": {
+        "average": 0.8512943871706742,
+        "count": 873,
+        "min": 0.8,
+        "max": 0.92
+      },
+      "P0455": {
+        "average": 0.914368258859775,
+        "count": 3894,
+        "min": 0.78,
+        "max": 0.99
+      },
+      "P0171": {
+        "average": 0.8947569955817274,
+        "count": 8148,
+        "min": 0.84,
+        "max": 0.99
+      },
+      "U0140": {
+        "average": 0.9373592715231861,
+        "count": 1208,
+        "min": 0.87,
+        "max": 0.99
+      },
+      "U0121": {
+        "average": 0.8967649434571945,
+        "count": 2476,
+        "min": 0.78,
+        "max": 0.99
+      },
+      "2E90": {
+        "average": 0.9499999999999943,
+        "count": 319,
+        "min": 0.95,
+        "max": 0.95
+      },
+      "P0128": {
+        "average": 0.9018298969072549,
+        "count": 3104,
+        "min": 0.85,
+        "max": 0.9800000000000001
+      },
+      "U0101": {
+        "average": 0.92910108168593,
+        "count": 2681,
+        "min": 0.82,
+        "max": 0.99
+      },
+      "DME1": {
+        "average": 0.9242662389735596,
+        "count": 2494,
+        "min": 0.9,
+        "max": 0.99
+      },
+      "4FA9": {
+        "average": 0.9702839116719271,
+        "count": 317,
+        "min": 0.87,
+        "max": 0.99
+      },
+      "B12/2C": {
+        "average": 0.8913949381989429,
+        "count": 1699,
+        "min": 0.85,
+        "max": 0.9800000000000001
+      },
+      "P0700": {
+        "average": 0.8956600660065918,
+        "count": 1212,
+        "min": 0.78,
+        "max": 0.99
+      },
+      "B12/3C": {
+        "average": 0.8961799816345151,
+        "count": 3267,
+        "min": 0.85,
+        "max": 0.9800000000000001
+      },
+      "P000AE": {
+        "average": 0.9499999999999945,
+        "count": 307,
+        "min": 0.95,
+        "max": 0.95
+      },
+      "4FAA": {
+        "average": 0.9020364741641316,
+        "count": 987,
+        "min": 0.87,
+        "max": 0.99
+      },
+      "DME P0300": {
+        "average": 0.9452930402930398,
+        "count": 546,
+        "min": 0.9,
+        "max": 0.99
+      },
+      "DME P0011": {
+        "average": 0.8993908153701979,
+        "count": 1067,
+        "min": 0.87,
+        "max": 0.9800000000000001
+      },
+      "P2E8": {
+        "average": 0.879999999999997,
+        "count": 267,
+        "min": 0.88,
+        "max": 0.88
+      },
+      "P0301": {
+        "average": 0.9346956521739138,
+        "count": 460,
+        "min": 0.9,
+        "max": 0.9700000000000001
+      },
+      "U0100": {
+        "average": 0.9159010270775013,
+        "count": 1071,
+        "min": 0.85,
+        "max": 0.99
+      },
+      "C1218": {
+        "average": 0.8899999999999944,
+        "count": 253,
+        "min": 0.89,
+        "max": 0.89
+      },
+      "P0A0B": {
+        "average": 0.8799999999999971,
+        "count": 252,
+        "min": 0.88,
+        "max": 0.88
+      },
+      "B12/7": {
+        "average": 0.8865171503957727,
+        "count": 379,
+        "min": 0.88,
+        "max": 0.89
+      },
+      "2E08": {
+        "average": 0.9315104166666616,
+        "count": 384,
+        "min": 0.9,
+        "max": 0.95
+      },
+      "4B3C": {
+        "average": 0.9000000000000037,
+        "count": 242,
+        "min": 0.9,
+        "max": 0.9
+      },
+      "P0A0F": {
+        "average": 0.8899999999999949,
+        "count": 237,
+        "min": 0.89,
+        "max": 0.89
+      },
+      "B2367": {
+        "average": 0.9000000000000035,
+        "count": 222,
+        "min": 0.9,
+        "max": 0.9
+      },
+      "4F7D": {
+        "average": 0.8700000000000025,
+        "count": 212,
+        "min": 0.87,
+        "max": 0.87
+      },
+      "E60": {
+        "average": 0.8700000000000024,
+        "count": 207,
+        "min": 0.87,
+        "max": 0.87
+      },
+      "4F01": {
+        "average": 0.8799999999999976,
+        "count": 202,
+        "min": 0.88,
+        "max": 0.88
+      },
+      "N20 Vanos System": {
+        "average": 0.9000000000000032,
+        "count": 197,
+        "min": 0.9,
+        "max": 0.9
+      },
+      "B12/5": {
+        "average": 0.899293680297397,
+        "count": 269,
+        "min": 0.87,
+        "max": 0.91
+      },
+      "DME2": {
+        "average": 0.9306249999999987,
+        "count": 192,
+        "min": 0.88,
+        "max": 0.99
+      },
+      "P0452": {
+        "average": 0.8700000000000022,
+        "count": 187,
+        "min": 0.87,
+        "max": 0.87
+      },
+      "B12/4": {
+        "average": 0.8981395348837212,
+        "count": 473,
+        "min": 0.87,
+        "max": 0.95
+      },
+      "N84": {
+        "average": 0.8799999999999981,
+        "count": 157,
+        "min": 0.88,
+        "max": 0.88
+      },
+      "BMS-12": {
+        "average": 0.9000000000000031,
+        "count": 189,
+        "min": 0.9,
+        "max": 0.9
+      },
+      "DME E60 2C5F": {
+        "average": 0.9000000000000024,
+        "count": 147,
+        "min": 0.9,
+        "max": 0.9
+      },
+      "DME F10 2D36": {
+        "average": 0.8499999999999976,
+        "count": 147,
+        "min": 0.85,
+        "max": 0.85
+      },
+      "N20 Vanos Error": {
+        "average": 0.8700000000000015,
+        "count": 137,
+        "min": 0.87,
+        "max": 0.87
+      },
+      "4F5": {
+        "average": 0.8700000000000013,
+        "count": 127,
+        "min": 0.87,
+        "max": 0.87
+      },
+      "P0001": {
+        "average": 0.8700000000000007,
+        "count": 107,
+        "min": 0.87,
+        "max": 0.87
+      },
+      "U1082": {
+        "average": 0.9080952380952394,
+        "count": 105,
+        "min": 0.87,
+        "max": 0.92
+      },
+      "DME E60 16BF": {
+        "average": 0.9000000000000007,
+        "count": 97,
+        "min": 0.9,
+        "max": 0.9
+      },
+      "DME F10 2D01": {
+        "average": 0.8799999999999997,
+        "count": 97,
+        "min": 0.88,
+        "max": 0.88
+      },
+      "B2661": {
+        "average": 0.8700000000000003,
+        "count": 97,
+        "min": 0.87,
+        "max": 0.87
+      },
+      "B1164": {
+        "average": 0.8800000000000008,
+        "count": 78,
+        "min": 0.88,
+        "max": 0.88
+      },
+      "U0126": {
+        "average": 0.8500000000000006,
+        "count": 78,
+        "min": 0.85,
+        "max": 0.85
+      },
+      "B12/2B": {
+        "average": 0.8699999999999991,
+        "count": 62,
+        "min": 0.87,
+        "max": 0.87
+      },
+      "P0201": {
+        "average": 0.8699999999999994,
+        "count": 52,
+        "min": 0.87,
+        "max": 0.87
+      },
+      "B12/6": {
+        "average": 0.8699999999999997,
+        "count": 47,
+        "min": 0.87,
+        "max": 0.87
+      },
+      "B12/3": {
+        "average": 0.87,
+        "count": 42,
+        "min": 0.87,
+        "max": 0.87
+      },
+      "DME E60 2B0D": {
+        "average": 0.9000000000000002,
+        "count": 17,
+        "min": 0.9,
+        "max": 0.9
+      },
+      "2C01": {
+        "average": 0.8499999999999998,
+        "count": 17,
+        "min": 0.85,
+        "max": 0.85
+      },
+      "B12/9": {
+        "average": 0.8699999999999997,
+        "count": 17,
+        "min": 0.87,
+        "max": 0.87
+      },
+      "B12/22": {
+        "average": 0.87,
+        "count": 2,
+        "min": 0.87,
+        "max": 0.87
+      }
+    }
+  },
+  "errorCodePriors": {
+    "P0011": 13562,
+    "P030A": 1802,
+    "DME1E01": 327,
+    "4F0D1": 327,
+    "P0300": 28084,
+    "P0420": 31532,
+    "P300": 873,
+    "P0455": 3894,
+    "P0171": 8148,
+    "U0140": 1208,
+    "U0121": 2476,
+    "2E90": 319,
+    "P0128": 3104,
+    "U0101": 2681,
+    "DME1": 2494,
+    "4FA9": 317,
+    "B12/2C": 1699,
+    "P0700": 1212,
+    "B12/3C": 3267,
+    "P000AE": 307,
+    "4FAA": 987,
+    "DME P0300": 546,
+    "DME P0011": 1067,
+    "P2E8": 267,
+    "P0301": 460,
+    "U0100": 1071,
+    "C1218": 253,
+    "P0A0B": 252,
+    "B12/7": 379,
+    "2E08": 384,
+    "4B3C": 242,
+    "P0A0F": 237,
+    "B2367": 222,
+    "4F7D": 212,
+    "E60": 207,
+    "4F01": 202,
+    "N20 Vanos System": 197,
+    "B12/5": 269,
+    "DME2": 192,
+    "P0452": 187,
+    "B12/4": 473,
+    "N84": 157,
+    "BMS-12": 189,
+    "DME E60 2C5F": 147,
+    "DME F10 2D36": 147,
+    "N20 Vanos Error": 137,
+    "4F5": 127,
+    "P0001": 107,
+    "U1082": 105,
+    "DME E60 16BF": 97,
+    "DME F10 2D01": 97,
+    "B2661": 97,
+    "B1164": 78,
+    "U0126": 78,
+    "B12/2B": 62,
+    "P0201": 52,
+    "B12/6": 47,
+    "B12/3": 42,
+    "DME E60 2B0D": 17,
+    "2C01": 17,
+    "B12/9": 17,
+    "B12/22": 2
+  },
+  "errorCodeByVehicle": {
+    "Mercedes-Benz": {
+      "P0011": 2480,
+      "P030A": 1535,
+      "P0300": 1397,
+      "P0420": 801
+    },
+    "BMW": {
+      "DME1E01": 327,
+      "4F0D1": 327,
+      "P0171": 322,
+      "P0300": 3008,
+      "P0011": 2179,
+      "2E90": 319,
+      "DME1": 2494,
+      "4FA9": 317,
+      "P0420": 771,
+      "4FAA": 987,
+      "DME P0300": 546,
+      "DME P0011": 1067,
+      "P030A": 267,
+      "2E08": 384,
+      "4B3C": 242,
+      "4F7D": 212,
+      "E60": 207,
+      "4F01": 202,
+      "N20 Vanos System": 197,
+      "DME2": 192,
+      "N84": 157,
+      "DME E60 2C5F": 147,
+      "DME F10 2D36": 147,
+      "N20 Vanos Error": 137,
+      "4F5": 127,
+      "DME E60 16BF": 97,
+      "DME F10 2D01": 97,
+      "DME E60 2B0D": 17,
+      "2C01": 17
+    },
+    "Volkswagen": {
+      "P0300": 3290,
+      "P0420": 4610,
+      "P0011": 2951,
+      "P0171": 3582,
+      "P0455": 781,
+      "P0452": 187,
+      "P0700": 174,
+      "P0201": 52,
+      "U0121": 52
+    },
+    "Honda": {
+      "P0300": 3391,
+      "P0420": 4078,
+      "P0128": 318,
+      "P0171": 392,
+      "P0301": 174
+    },
+    "Acura": {
+      "P0420": 3493,
+      "P0300": 3107,
+      "P0128": 404,
+      "P0171": 204
+    },
+    "Toyota": {
+      "P0300": 1811
+    },
+    "Lexus": {
+      "P0420": 3864,
+      "P0011": 723,
+      "B2367": 222,
+      "B2661": 97
+    },
+    "Ford": {
+      "P0300": 5938,
+      "P0011": 1255,
+      "P0420": 3955,
+      "U0140": 1020,
+      "U0121": 755,
+      "U0101": 1162,
+      "P0171": 1396,
+      "P0301": 286,
+      "U0100": 155,
+      "U1082": 105,
+      "P0128": 85
+    },
+    "Chevrolet": {
+      "P0420": 3313,
+      "P0455": 2276,
+      "P0700": 470,
+      "P0128": 1126,
+      "P0300": 1299,
+      "U0100": 663,
+      "P0171": 493,
+      "U0121": 433,
+      "U0101": 196,
+      "P0011": 81
+    },
+    "Subaru": {
+      "P0420": 327,
+      "P0300": 322
+    },
+    "Tesla": {
+      "P300": 873,
+      "P0011": 1070,
+      "B12/2C": 1699,
+      "B12/3C": 3267,
+      "P000AE": 307,
+      "P2E8": 267,
+      "P0A0B": 252,
+      "B12/7": 379,
+      "P0A0F": 237,
+      "B12/5": 269,
+      "B12/4": 473,
+      "BMS-12": 189,
+      "P0001": 107,
+      "B12/2B": 62,
+      "B12/6": 47,
+      "B12/3": 42,
+      "B12/9": 17,
+      "B12/22": 2
+    },
+    "Hyundai": {
+      "P0300": 2774,
+      "P0011": 246,
+      "P0171": 291
+    },
+    "Mazda": {
+      "P0420": 2212,
+      "P0171": 306,
+      "P0011": 258,
+      "U0100": 253,
+      "P0300": 291,
+      "B1164": 78
+    },
+    "Volvo": {
+      "P0011": 1349,
+      "U0101": 1323,
+      "P0700": 541,
+      "P0455": 837,
+      "P0128": 1171,
+      "U0121": 1236,
+      "P0420": 1146,
+      "C1218": 253,
+      "P0300": 361,
+      "P0171": 379,
+      "U0140": 188,
+      "U0126": 78
+    },
+    "Audi": {
+      "P0011": 970,
+      "P0420": 304
+    },
+    "Nissan": {
+      "P0300": 1095,
+      "P0420": 319,
+      "P0171": 479
+    },
+    "Skoda": {
+      "P0420": 2339,
+      "P0171": 304,
+      "P0700": 27
+    }
+  },
+  "symptomsByErrorCode": {
+    "P0011": {
+      "engine misfires": 2580,
+      "check engine light on": 3522,
+      "engine misfire": 7624,
+      "engine stalling": 2804,
+      "rough idling": 326,
+      "poor acceleration": 326,
+      "reduced power": 3490,
+      "milkshake check engine light": 326,
+      "engine knocking": 323,
+      "reduced engine power": 1462,
+      "overheating": 322,
+      "reduced range": 322,
+      "warning lights on dashboard": 399,
+      "engine check light on": 321,
+      "rough idle": 312,
+      "check engine light": 1067,
+      "reduced acceleration": 369,
+      "error displayed on the central screen": 292,
+      "stalling": 344,
+      "engine hesitates during acceleration": 254,
+      "miles per gallon (MPG) decreases": 254,
+      "Engine misfire": 233,
+      "Poor engine performance": 470,
+      "loss of power": 512,
+      "Engine misfires": 237,
+      "harsh shifting": 137,
+      "engine check light": 67
+    },
+    "P030A": {
+      "excessive exhaust smoke": 604,
+      "check engine light on": 629,
+      "engine knocking": 317,
+      "reduced power": 317,
+      "engine misfires": 312,
+      "check engine light": 312,
+      "engine stalling": 302,
+      "reduced engine power": 277,
+      "Engine misfires": 267,
+      "Engine check light": 267,
+      "Reduced power and performance": 267
+    },
+    "DME1E01": {
+      "misfire": 327,
+      "engine check light on": 327
+    },
+    "4F0D1": {
+      "shuddering": 327,
+      "inconsistent gear shifts": 327
+    },
+    "P0300": {
+      "rough idling": 26041,
+      "poor fuel economy": 20057,
+      "engine misfire": 3706,
+      "rough idle": 610,
+      "rough engine idle": 457,
+      "poor performance": 727,
+      "reduced engine power": 676,
+      "engine misfires": 1500,
+      "engine stalling": 896,
+      "poor acceleration": 1245,
+      "reduced power": 959,
+      "stalling": 504,
+      "check engine light on": 1111,
+      "check engine light": 541,
+      "poor engine performance": 282,
+      "Engine shaking": 233,
+      "Check engine light on": 361,
+      "Rough idling": 227,
+      "Poor fuel economy": 227,
+      "reduced fuel efficiency": 211,
+      "reduced engine performance": 162,
+      "Engine rough idle": 128,
+      "hesitation during acceleration": 123,
+      "excessive fuel consumption": 107,
+      "excessive emissions": 92,
+      "Engine rough idling": 32,
+      "Reduced power": 32
+    },
+    "P0420": {
+      "check engine light": 10759,
+      "reduced performance": 5731,
+      "reduced engine performance": 6270,
+      "excessive emissions": 1171,
+      "reduced engine power": 1571,
+      "check engine light on": 16458,
+      "reduced fuel efficiency": 6094,
+      "reduced fuel economy": 3145,
+      "reduced acceleration": 1461,
+      "possible engine damage": 321,
+      "excessive fuel consumption": 1254,
+      "reduced power": 5878,
+      "milage decrease": 2783,
+      "increased emissions": 467,
+      "miles per gallon decrease": 381,
+      "possible loss of power": 235,
+      "poor acceleration": 140,
+      "possible engine misfire": 137,
+      "mil light on": 117,
+      "possible smell of exhaust": 107,
+      "increased fuel consumption": 42,
+      "excessive exhaust smoke": 18,
+      "exhaust smell": 3
+    },
+    "P300": {
+      "vehicle will not start": 327,
+      "check engine light": 327,
+      "reduced range": 546,
+      "battery not charging": 489,
+      "warning lights on dashboard": 57
+    },
+    "P0455": {
+      "check engine light": 2097,
+      "reduced fuel efficiency": 2606,
+      "odor of fuel": 310,
+      "check engine light on": 1797,
+      "fuel smell": 308,
+      "reduced fuel economy": 241,
+      "possible stalling": 241,
+      "smell of fuel": 226,
+      "fuel odor": 203
+    },
+    "P0171": {
+      "hesitation during acceleration": 3834,
+      "increased fuel consumption": 801,
+      "poor acceleration": 4032,
+      "drop in fuel economy": 4032,
+      "stalling": 1057,
+      "excessive smoke from exhaust": 621,
+      "check engine light": 755,
+      "rough idling": 397,
+      "engine misfire": 208,
+      "reduced fuel efficiency": 232,
+      "engine stalling": 116,
+      "reduced power": 203,
+      "miles per gallon drop": 8
+    },
+    "U0140": {
+      "harsh gear shifts": 724,
+      "check engine light on": 321,
+      "inability to change gears": 403,
+      "infotainment system malfunction": 188,
+      "electric windows not working": 188,
+      "warning lights on dashboard": 296,
+      "reduced braking performance": 181,
+      "warning light on": 133,
+      "inability to shift gears": 115
+    },
+    "U0121": {
+      "electric windows not working": 319,
+      "central locking failure": 319,
+      "ABS light on": 304,
+      "reduced braking performance": 304,
+      "warning messages on dashboard": 304,
+      "infotainment system malfunction": 581,
+      "multiple warning lights on": 293,
+      "warning lights on dashboard": 694,
+      "vehicle performance issues": 248,
+      "harsh gear shifts": 226,
+      "transmission not shifting": 226,
+      "inability to shift gears": 201,
+      "check engine light": 282,
+      "multiple warning lights": 288,
+      "infotainment system unresponsive": 356,
+      "malfunction indicator lamp (MIL) on": 81,
+      "inoperative infotainment system": 90,
+      "cruise control not functioning": 51,
+      "warning light on dashboard": 51,
+      "Instrument cluster not working": 13,
+      "Infotainment system unresponsive": 13,
+      "harsh shifting": 6,
+      "inability to change gears": 6
+    },
+    "2E90": {
+      "excessive exhaust smoke": 319,
+      "reduced engine power": 319
+    },
+    "P0128": {
+      "poor acceleration": 1874,
+      "rough idling": 1658,
+      "hesitation during acceleration": 1067,
+      "check engine light on": 303,
+      "heater not blowing hot air": 293,
+      "engine temperature gauge not rising": 293,
+      "overheating": 263,
+      "poor engine performance": 263,
+      "engine hesitation": 168,
+      "check engine light": 147,
+      "engine overheating": 91,
+      "poor fuel efficiency": 91
+    },
+    "U0101": {
+      "gear shifting issues": 561,
+      "check engine light on": 1057,
+      "malfunction indicator lamp (MIL) on": 300,
+      "harsh gear shifts": 298,
+      "inability to change gears": 298,
+      "inability to shift gears": 421,
+      "transmission warning light": 298,
+      "inoperative transmission": 279,
+      "warning light on": 279,
+      "malfunction indicator lamp on": 275,
+      "instrument cluster not working": 275,
+      "instrument cluster malfunction": 223,
+      "warning lights on": 223,
+      "vehicle not starting": 314,
+      "transmission not engaging": 123,
+      "check engine light": 118,
+      "electric windows not working": 10,
+      "central locking system failure": 10
+    },
+    "DME1": {
+      "rough idling": 1504,
+      "hesitation during acceleration": 723,
+      "excessive fuel consumption": 282,
+      "reduced power": 252,
+      "check engine light": 449,
+      "Engine misfires": 631,
+      "Check engine light on": 631,
+      "engine misfire": 202,
+      "misfire": 157,
+      "engine check light on": 157
+    },
+    "4FA9": {
+      "shuddering during acceleration": 317,
+      "transmission slipping": 317
+    },
+    "B12/2C": {
+      "reduced range": 1699,
+      "inability to charge": 317,
+      "warning lights on dashboard": 439,
+      "slow charging": 302,
+      "battery not charging properly": 272,
+      "error displayed on the dashboard": 257,
+      "inconsistent acceleration": 217,
+      "battery not charging": 212
+    },
+    "P0700": {
+      "harsh gear shifts": 1200,
+      "delayed acceleration": 945,
+      "delay in gear engagement": 240,
+      "transmission slip": 27,
+      "shifting issues": 12
+    },
+    "B12/3C": {
+      "reduced range": 3267,
+      "error displayed on the central screen": 312,
+      "battery not charging": 903,
+      "check battery light": 504,
+      "error on display": 262,
+      "check engine light": 222,
+      "battery not charging properly": 461,
+      "slow charging": 476,
+      "warning lights on dashboard": 127
+    },
+    "P000AE": {
+      "reduced range": 307,
+      "error displayed on the dashboard": 307
+    },
+    "4FAA": {
+      "shuddering during acceleration": 529,
+      "inconsistent gear shifts": 299,
+      "delayed gear changes": 252,
+      "shifting delays": 222,
+      "harsh gear changes": 222,
+      "shuddering during shifts": 162,
+      "inability to change gears": 162,
+      "harsh gear shifts": 52,
+      "transmission slip": 52,
+      "shudder during acceleration": 22
+    },
+    "DME P0300": {
+      "rough idling": 546,
+      "poor fuel economy": 534,
+      "check engine light": 534,
+      "engine misfire": 12,
+      "reduced fuel efficiency": 12
+    },
+    "DME P0011": {
+      "engine misfires": 504,
+      "check engine light": 1055,
+      "reduced power": 838,
+      "engine misfire": 551,
+      "loss of power": 229,
+      "engine stalling": 12,
+      "check engine light on": 12
+    },
+    "P2E8": {
+      "reduced range": 267,
+      "error displayed on the central screen": 267
+    },
+    "P0301": {
+      "engine misfires": 258,
+      "poor fuel economy": 258,
+      "engine misfire": 202,
+      "rough idle": 174,
+      "rough idling": 28
+    },
+    "U0100": {
+      "no power windows": 253,
+      "central locking not working": 253,
+      "inability to shift gears": 451,
+      "transmission slipping": 251,
+      "inoperative transmission": 246,
+      "check engine light on": 567,
+      "harsh gear shifts": 121
+    },
+    "C1218": {
+      "gear shifting issues": 253,
+      "transmission slipping": 253
+    },
+    "P0A0B": {
+      "reduced range": 252,
+      "battery not charging": 252
+    },
+    "B12/7": {
+      "reduced range": 379,
+      "warning lights on dashboard": 247,
+      "slow charging": 132
+    },
+    "2E08": {
+      "smoke from exhaust": 242,
+      "oil burning smell": 242,
+      "harsh gear changes": 142,
+      "inability to shift into certain gears": 142
+    },
+    "4B3C": {
+      "harsh gear shifts": 242,
+      "transmission slipping": 242
+    },
+    "P0A0F": {
+      "reduced range": 237,
+      "inconsistent acceleration": 237
+    },
+    "B2367": {
+      "airbag light on": 222,
+      "front passenger airbag deployed": 222
+    },
+    "4F7D": {
+      "Harsh gear shifts": 212,
+      "Delayed acceleration": 212
+    },
+    "E60": {
+      "shuddering": 207,
+      "inability to shift gears": 207
+    },
+    "4F01": {
+      "shuddering during acceleration": 202,
+      "delayed gear changes": 202
+    },
+    "N20 Vanos System": {
+      "engine misfire": 197,
+      "engine check light": 197,
+      "poor acceleration": 197
+    },
+    "B12/5": {
+      "reduced range": 269,
+      "battery not charging": 269
+    },
+    "DME2": {
+      "Engine stalls": 192,
+      "Hard starting": 192
+    },
+    "P0452": {
+      "check engine light on": 187,
+      "reduced fuel efficiency": 187
+    },
+    "B12/4": {
+      "reduced range": 473,
+      "battery not charging properly": 162,
+      "slow charging": 152,
+      "error on display": 147,
+      "check engine light on": 12
+    },
+    "N84": {
+      "harsh gear shifts": 157,
+      "transmission warning light": 157
+    },
+    "BMS-12": {
+      "reduced range": 189,
+      "slow charging": 189
+    },
+    "DME E60 2C5F": {
+      "Engine misfires": 147,
+      "Engine Check Light Illuminated": 147
+    },
+    "DME F10 2D36": {
+      "Excessive white smoke": 147,
+      "Milk-like engine oil": 147
+    },
+    "N20 Vanos Error": {
+      "engine misfire": 137,
+      "check engine light": 137,
+      "poor performance": 137
+    },
+    "4F5": {
+      "shudder during acceleration": 127,
+      "inability to shift into gear": 127
+    },
+    "P0001": {
+      "reduced power": 107,
+      "engine misfire": 107
+    },
+    "U1082": {
+      "transmission not shifting properly": 105,
+      "check engine light on": 105
+    },
+    "DME E60 16BF": {
+      "engine misfire": 97,
+      "check engine light on": 97
+    },
+    "DME F10 2D01": {
+      "rough idle": 97,
+      "poor fuel economy": 97
+    },
+    "B2661": {
+      "airbag light on": 97,
+      "front passenger airbag deployed": 97
+    },
+    "B1164": {
+      "headlights dim": 78,
+      "vehicle not starting": 78
+    },
+    "U0126": {
+      "harsh gear shifts": 78,
+      "check engine light on": 78
+    },
+    "B12/2B": {
+      "reduced range": 62,
+      "slow charging": 62
+    },
+    "P0201": {
+      "engine misfire": 52,
+      "reduced power": 52
+    },
+    "B12/6": {
+      "reduced range": 47,
+      "error on display": 47,
+      "inability to charge": 47
+    },
+    "B12/3": {
+      "reduced range": 42,
+      "vehicle not charging": 42
+    },
+    "DME E60 2B0D": {
+      "Engine misfires": 17,
+      "Check engine light on": 17
+    },
+    "2C01": {
+      "Poor fuel economy": 17,
+      "Check engine light on": 17
+    },
+    "B12/9": {
+      "reduced range": 17,
+      "slow charging": 17
+    },
+    "B12/22": {
+      "reduced range": 2,
+      "error displayed on the center screen": 2
+    }
+  },
+  "errorCodeBySymptom": {
+    "engine misfires": {
+      "P0011": 0.021909339492858237,
+      "P030A": 0.0026495015200665773,
+      "P0300": 0.01273798807724316,
+      "DME P0011": 0.004279963993953702,
+      "P0301": 0.002190933949285823
+    },
+    "check engine light on": {
+      "P0011": 0.029908796005366937,
+      "P030A": 0.005341463000390631,
+      "P0300": 0.009434603169211435,
+      "P0420": 0.13976120518351193,
+      "P0455": 0.015260109716537304,
+      "U0140": 0.0027259294485300362,
+      "P0128": 0.0025730735916031184,
+      "U0101": 0.00897603559843068,
+      "DME P0011": 0.00010190390461794528,
+      "U0100": 0.0048149594931979145,
+      "P0452": 0.0015880025136296473,
+      "B12/4": 0.00010190390461794527,
+      "U1082": 0.0008916591654070211,
+      "DME E60 16BF": 0.0008237232289950577,
+      "U0126": 0.0006623753800166443
+    },
+    "engine misfire": {
+      "P0011": 0.06474294740060124,
+      "P0300": 0.0314713225428421,
+      "P0171": 0.0017663343467110514,
+      "DME1": 0.0017153823944020788,
+      "DME P0300": 0.00010190390461794528,
+      "DME P0011": 0.004679087620373988,
+      "P0301": 0.0017153823944020788,
+      "N20 Vanos System": 0.0016729224341446016,
+      "N20 Vanos Error": 0.0011634029110548752,
+      "P0001": 0.0009086431495100121,
+      "DME E60 16BF": 0.0008237232289950577,
+      "P0201": 0.00044158358667776285
+    },
+    "engine stalling": {
+      "P0011": 0.023811545712393217,
+      "P030A": 0.0025645815995516226,
+      "P0300": 0.007608824878139913,
+      "P0171": 0.000985071077973471,
+      "DME P0011": 0.00010190390461794528
+    },
+    "rough idling": {
+      "P0011": 0.0027683894087875134,
+      "P0300": 0.22113996501299274,
+      "P0171": 0.0033713208444436896,
+      "P0128": 0.01407972282137944,
+      "DME1": 0.012771956045449142,
+      "DME P0300": 0.00463662766011651,
+      "P0301": 0.0002377757774418723
+    },
+    "poor acceleration": {
+      "P0011": 0.0027683894087875134,
+      "P0300": 0.010572530104111822,
+      "P0420": 0.0011888788872093615,
+      "P0171": 0.034239711951629614,
+      "P0128": 0.015913993104502453,
+      "N20 Vanos System": 0.0016729224341446016
+    },
+    "reduced power": {
+      "P0011": 0.029637052259719087,
+      "P030A": 0.0026919614803240545,
+      "P0300": 0.008143820377384127,
+      "P0420": 0.049915929278690194,
+      "P0171": 0.0017238743864535742,
+      "DME1": 0.002139981996976851,
+      "DME P0011": 0.007116289339153178,
+      "P0001": 0.0009086431495100121,
+      "P0201": 0.00044158358667776285
+    },
+    "milkshake check engine light": {
+      "P0011": 0.0027683894087875134
+    },
+    "engine knocking": {
+      "P0011": 0.0027429134326330275,
+      "P030A": 0.0026919614803240545
+    },
+    "reduced engine power": {
+      "P0011": 0.012415292379286333,
+      "P030A": 0.0023522817982642367,
+      "P0300": 0.005740586626810917,
+      "P0420": 0.013340919512899336,
+      "2E90": 0.0027089454644270454
+    },
+    "overheating": {
+      "P0011": 0.0027344214405815317,
+      "P0128": 0.0022333939095433007
+    },
+    "reduced range": {
+      "P0011": 0.0027344214405815317,
+      "P300": 0.00463662766011651,
+      "B12/2C": 0.014427894495490753,
+      "B12/3C": 0.027743338032235602,
+      "P000AE": 0.0026070415598091,
+      "P2E8": 0.0022673618777492824,
+      "P0A0B": 0.002139981996976851,
+      "B12/7": 0.003218464987516772,
+      "P0A0F": 0.0020126021162044194,
+      "B12/5": 0.0022843458618522733,
+      "B12/4": 0.004016712240357343,
+      "BMS-12": 0.0016049864977326382,
+      "B12/2B": 0.0005265035071927173,
+      "B12/6": 0.0003991236264202857,
+      "B12/3": 0.00035666366616280847,
+      "B12/9": 0.00014436386487542247,
+      "B12/22": 0.00001698398410299088
+    },
+    "warning lights on dashboard": {
+      "P0011": 0.003388304828546681,
+      "P300": 0.00048404354693524007,
+      "U0140": 0.0025136296472426504,
+      "U0121": 0.005893442483737834,
+      "B12/2C": 0.003727984510606498,
+      "B12/3C": 0.0010784829905399209,
+      "B12/7": 0.0020975220367193737
+    },
+    "engine check light on": {
+      "P0011": 0.0027259294485300362,
+      "DME1E01": 0.002776881400839009,
+      "DME1": 0.001333242752084784
+    },
+    "rough idle": {
+      "P0011": 0.0026495015200665773,
+      "P0300": 0.005180115151412219,
+      "P0301": 0.0014776066169602062,
+      "DME F10 2D01": 0.0008237232289950577
+    },
+    "check engine light": {
+      "P0011": 0.009060955518945635,
+      "P030A": 0.0026495015200665773,
+      "P0300": 0.004594167699859033,
+      "P0420": 0.09136534248203942,
+      "P300": 0.002776881400839009,
+      "P0455": 0.017807707331985938,
+      "P0171": 0.006411453998879057,
+      "U0121": 0.002394741758521714,
+      "P0128": 0.0012483228315698295,
+      "U0101": 0.0010020550620764618,
+      "DME1": 0.003812904431121452,
+      "B12/3C": 0.0018852222354319877,
+      "DME P0300": 0.004534723755498565,
+      "DME P0011": 0.008959051614327689,
+      "N20 Vanos Error": 0.0011634029110548752
+    },
+    "reduced acceleration": {
+      "P0011": 0.0031335450670018175,
+      "P0420": 0.012406800387234835
+    },
+    "error displayed on the central screen": {
+      "P0011": 0.0024796616790366687,
+      "B12/3C": 0.0026495015200665773,
+      "P2E8": 0.0022673618777492824
+    },
+    "stalling": {
+      "P0011": 0.002921245265714431,
+      "P0300": 0.004279963993953702,
+      "P0171": 0.00897603559843068
+    },
+    "engine hesitates during acceleration": {
+      "P0011": 0.0021569659810798418
+    },
+    "miles per gallon (MPG) decreases": {
+      "P0011": 0.0021569659810798418
+    },
+    "Engine misfire": {
+      "P0011": 0.0019786341479984372
+    },
+    "Poor engine performance": {
+      "P0011": 0.003991236264202857
+    },
+    "loss of power": {
+      "P0011": 0.004347899930365665,
+      "DME P0011": 0.0019446661797924557
+    },
+    "Engine misfires": {
+      "P0011": 0.0020126021162044194,
+      "P030A": 0.002267361877749282,
+      "DME1": 0.005358446984493622,
+      "DME E60 2C5F": 0.0012483228315698295,
+      "DME E60 2B0D": 0.00014436386487542247
+    },
+    "harsh shifting": {
+      "P0011": 0.0011634029110548754,
+      "U0121": 0.00005095195230897263
+    },
+    "engine check light": {
+      "P0011": 0.0005689634674501945,
+      "N20 Vanos System": 0.0016729224341446016
+    },
+    "excessive exhaust smoke": {
+      "P030A": 0.005129163199103245,
+      "P0420": 0.0001528558569269179,
+      "2E90": 0.0027089454644270454
+    },
+    "Engine check light": {
+      "P030A": 0.002267361877749282
+    },
+    "Reduced power and performance": {
+      "P030A": 0.002267361877749282
+    },
+    "misfire": {
+      "DME1E01": 0.002776881400839009,
+      "DME1": 0.001333242752084784
+    },
+    "shuddering": {
+      "4F0D1": 0.002776881400839009,
+      "E60": 0.001757842354659556
+    },
+    "inconsistent gear shifts": {
+      "4F0D1": 0.002776881400839009,
+      "4FAA": 0.0025391056233971363
+    },
+    "poor fuel economy": {
+      "P0300": 0.17032388457684405,
+      "DME P0300": 0.004534723755498565,
+      "P0301": 0.002190933949285823,
+      "DME F10 2D01": 0.0008237232289950577
+    },
+    "rough engine idle": {
+      "P0300": 0.003880840367533416
+    },
+    "poor performance": {
+      "P0300": 0.006173678221437185,
+      "N20 Vanos Error": 0.0011634029110548752
+    },
+    "poor engine performance": {
+      "P0300": 0.0023947417585217143,
+      "P0128": 0.0022333939095433007
+    },
+    "Engine shaking": {
+      "P0300": 0.0019786341479984372
+    },
+    "Check engine light on": {
+      "P0300": 0.0030656091305898536,
+      "DME1": 0.005358446984493622,
+      "DME E60 2B0D": 0.00014436386487542247,
+      "2C01": 0.00014436386487542247
+    },
+    "Rough idling": {
+      "P0300": 0.0019276821956894649
+    },
+    "Poor fuel economy": {
+      "P0300": 0.0019276821956894649,
+      "2C01": 0.00014436386487542247
+    },
+    "reduced fuel efficiency": {
+      "P0300": 0.0017918103228655377,
+      "P0420": 0.051750199561813204,
+      "P0455": 0.022130131286197112,
+      "P0171": 0.001970142155946942,
+      "DME P0300": 0.00010190390461794528,
+      "P0452": 0.0015880025136296473
+    },
+    "reduced engine performance": {
+      "P0300": 0.0013757027123422613,
+      "P0420": 0.05324479016287641
+    },
+    "Engine rough idle": {
+      "P0300": 0.0010869749825914163
+    },
+    "hesitation during acceleration": {
+      "P0300": 0.0010445150223339392,
+      "P0171": 0.032558297525433516,
+      "P0128": 0.009060955518945634,
+      "DME1": 0.006139710253231202
+    },
+    "excessive fuel consumption": {
+      "P0300": 0.0009086431495100121,
+      "P0420": 0.01064895803257528,
+      "DME1": 0.002394741758521714
+    },
+    "excessive emissions": {
+      "P0300": 0.0007812632687375804,
+      "P0420": 0.009944122692301159
+    },
+    "Engine rough idling": {
+      "P0300": 0.0002717437456478541
+    },
+    "Reduced power": {
+      "P0300": 0.0002717437456478541
+    },
+    "reduced performance": {
+      "P0420": 0.048667606447120364
+    },
+    "reduced fuel economy": {
+      "P0420": 0.026707315001953155,
+      "P0455": 0.0020465700844104007
+    },
+    "possible engine damage": {
+      "P0420": 0.002725929448530036
+    },
+    "milage decrease": {
+      "P0420": 0.023633213879311804
+    },
+    "increased emissions": {
+      "P0420": 0.00396576028804837
+    },
+    "miles per gallon decrease": {
+      "P0420": 0.0032354489716197622
+    },
+    "possible loss of power": {
+      "P0420": 0.001995618132101428
+    },
+    "possible engine misfire": {
+      "P0420": 0.001163402911054875
+    },
+    "mil light on": {
+      "P0420": 0.0009935630700249663
+    },
+    "possible smell of exhaust": {
+      "P0420": 0.000908643149510012
+    },
+    "increased fuel consumption": {
+      "P0420": 0.00035666366616280847,
+      "P0171": 0.006802085633247847
+    },
+    "exhaust smell": {
+      "P0420": 0.000025475976154486317
+    },
+    "vehicle will not start": {
+      "P300": 0.002776881400839009
+    },
+    "battery not charging": {
+      "P300": 0.00415258411318127,
+      "B12/2C": 0.0018003023149170334,
+      "B12/3C": 0.007668268822500382,
+      "P0A0B": 0.002139981996976851,
+      "B12/5": 0.0022843458618522733
+    },
+    "odor of fuel": {
+      "P0455": 0.002632517535963586
+    },
+    "fuel smell": {
+      "P0455": 0.0026155335518605956
+    },
+    "possible stalling": {
+      "P0455": 0.0020465700844104007
+    },
+    "smell of fuel": {
+      "P0455": 0.0019191902036379692
+    },
+    "fuel odor": {
+      "P0455": 0.0017238743864535742
+    },
+    "drop in fuel economy": {
+      "P0171": 0.034239711951629614
+    },
+    "excessive smoke from exhaust": {
+      "P0171": 0.005273527063978668
+    },
+    "miles per gallon drop": {
+      "P0171": 0.00006793593641196352
+    },
+    "harsh gear shifts": {
+      "U0140": 0.006148202245282698,
+      "U0121": 0.0019191902036379694,
+      "U0101": 0.0025306136313456413,
+      "P0700": 0.010190390461794529,
+      "4FAA": 0.0004415835866777629,
+      "U0100": 0.001027531038230948,
+      "4B3C": 0.0020550620764618966,
+      "N84": 0.001333242752084784,
+      "U0126": 0.0006623753800166443
+    },
+    "inability to change gears": {
+      "U0140": 0.0034222727967526626,
+      "U0121": 0.00005095195230897263,
+      "U0101": 0.0025306136313456413,
+      "4FAA": 0.0013757027123422613
+    },
+    "infotainment system malfunction": {
+      "U0140": 0.0015964945056811427,
+      "U0121": 0.004933847381918851
+    },
+    "electric windows not working": {
+      "U0140": 0.0015964945056811427,
+      "U0121": 0.0027089454644270454,
+      "U0101": 0.0000849199205149544
+    },
+    "reduced braking performance": {
+      "U0140": 0.0015370505613206745,
+      "U0121": 0.0025815655836546134
+    },
+    "warning light on": {
+      "U0140": 0.0011294349428488935,
+      "U0101": 0.002369265782367228
+    },
+    "inability to shift gears": {
+      "U0140": 0.0009765790859219757,
+      "U0121": 0.0017068904023505834,
+      "U0101": 0.0035751286536795804,
+      "U0100": 0.003829888415224443,
+      "E60": 0.001757842354659556
+    },
+    "central locking failure": {
+      "U0121": 0.0027089454644270454
+    },
+    "ABS light on": {
+      "U0121": 0.0025815655836546134
+    },
+    "warning messages on dashboard": {
+      "U0121": 0.0025815655836546134
+    },
+    "multiple warning lights on": {
+      "U0121": 0.0024881536710881637
+    },
+    "vehicle performance issues": {
+      "U0121": 0.002106014028770869
+    },
+    "transmission not shifting": {
+      "U0121": 0.0019191902036379694
+    },
+    "multiple warning lights": {
+      "U0121": 0.0024456937108306865
+    },
+    "infotainment system unresponsive": {
+      "U0121": 0.0030231491703323764
+    },
+    "malfunction indicator lamp (MIL) on": {
+      "U0121": 0.0006878513561711306,
+      "U0101": 0.002547597615448632
+    },
+    "inoperative infotainment system": {
+      "U0121": 0.0007642792846345895
+    },
+    "cruise control not functioning": {
+      "U0121": 0.00043309159462626736
+    },
+    "warning light on dashboard": {
+      "U0121": 0.00043309159462626736
+    },
+    "Instrument cluster not working": {
+      "U0121": 0.00011039589666944071
+    },
+    "Infotainment system unresponsive": {
+      "U0121": 0.00011039589666944071
+    },
+    "heater not blowing hot air": {
+      "P0128": 0.0024881536710881637
+    },
+    "engine temperature gauge not rising": {
+      "P0128": 0.0024881536710881637
+    },
+    "engine hesitation": {
+      "P0128": 0.0014266546646512339
+    },
+    "engine overheating": {
+      "P0128": 0.0007727712766860851
+    },
+    "poor fuel efficiency": {
+      "P0128": 0.0007727712766860851
+    },
+    "gear shifting issues": {
+      "U0101": 0.004764007540888942,
+      "C1218": 0.0021484739890283463
+    },
+    "transmission warning light": {
+      "U0101": 0.0025306136313456413,
+      "N84": 0.001333242752084784
+    },
+    "inoperative transmission": {
+      "U0101": 0.002369265782367228,
+      "U0100": 0.002089030044667878
+    },
+    "malfunction indicator lamp on": {
+      "U0101": 0.002335297814161246
+    },
+    "instrument cluster not working": {
+      "U0101": 0.002335297814161246
+    },
+    "instrument cluster malfunction": {
+      "U0101": 0.0018937142274834831
+    },
+    "warning lights on": {
+      "U0101": 0.0018937142274834831
+    },
+    "vehicle not starting": {
+      "U0101": 0.002666485504169568,
+      "B1164": 0.0006623753800166443
+    },
+    "transmission not engaging": {
+      "U0101": 0.0010445150223339392
+    },
+    "central locking system failure": {
+      "U0101": 0.0000849199205149544
+    },
+    "shuddering during acceleration": {
+      "4FA9": 0.0026919614803240545,
+      "4FAA": 0.004492263795241088,
+      "4F01": 0.0017153823944020788
+    },
+    "transmission slipping": {
+      "4FA9": 0.0026919614803240545,
+      "U0100": 0.0021314900049253555,
+      "C1218": 0.0021484739890283463,
+      "4B3C": 0.0020550620764618966
+    },
+    "inability to charge": {
+      "B12/2C": 0.0026919614803240545,
+      "B12/6": 0.0003991236264202857
+    },
+    "slow charging": {
+      "B12/2C": 0.002564581599551623,
+      "B12/3C": 0.00404218821651183,
+      "B12/7": 0.0011209429507973983,
+      "B12/4": 0.0012907827918273067,
+      "BMS-12": 0.0016049864977326382,
+      "B12/2B": 0.0005265035071927173,
+      "B12/9": 0.00014436386487542247
+    },
+    "battery not charging properly": {
+      "B12/2C": 0.0023098218380067596,
+      "B12/3C": 0.003914808335739398,
+      "B12/4": 0.0013757027123422613
+    },
+    "error displayed on the dashboard": {
+      "B12/2C": 0.002182441957234328,
+      "P000AE": 0.0026070415598091
+    },
+    "inconsistent acceleration": {
+      "B12/2C": 0.0018427622751745103,
+      "P0A0F": 0.0020126021162044194
+    },
+    "delayed acceleration": {
+      "P0700": 0.008024932488663192
+    },
+    "delay in gear engagement": {
+      "P0700": 0.0020380780923589057
+    },
+    "transmission slip": {
+      "P0700": 0.00022928378539037689,
+      "4FAA": 0.0004415835866777629
+    },
+    "shifting issues": {
+      "P0700": 0.00010190390461794528
+    },
+    "check battery light": {
+      "B12/3C": 0.004279963993953702
+    },
+    "error on display": {
+      "B12/3C": 0.0022249019174918052,
+      "B12/4": 0.0012483228315698298,
+      "B12/6": 0.0003991236264202857
+    },
+    "delayed gear changes": {
+      "4FAA": 0.0021399819969768505,
+      "4F01": 0.0017153823944020788
+    },
+    "shifting delays": {
+      "4FAA": 0.0018852222354319877
+    },
+    "harsh gear changes": {
+      "4FAA": 0.0018852222354319877,
+      "2E08": 0.0012058628713123526
+    },
+    "shuddering during shifts": {
+      "4FAA": 0.0013757027123422613
+    },
+    "shudder during acceleration": {
+      "4FAA": 0.00018682382513289967,
+      "4F5": 0.0010784829905399209
+    },
+    "no power windows": {
+      "U0100": 0.002148473989028346
+    },
+    "central locking not working": {
+      "U0100": 0.002148473989028346
+    },
+    "smoke from exhaust": {
+      "2E08": 0.0020550620764618966
+    },
+    "oil burning smell": {
+      "2E08": 0.0020550620764618966
+    },
+    "inability to shift into certain gears": {
+      "2E08": 0.0012058628713123526
+    },
+    "airbag light on": {
+      "B2367": 0.0018852222354319877,
+      "B2661": 0.0008237232289950577
+    },
+    "front passenger airbag deployed": {
+      "B2367": 0.0018852222354319877,
+      "B2661": 0.0008237232289950577
+    },
+    "Harsh gear shifts": {
+      "4F7D": 0.0018003023149170331
+    },
+    "Delayed acceleration": {
+      "4F7D": 0.0018003023149170331
+    },
+    "Engine stalls": {
+      "DME2": 0.0016304624738871245
+    },
+    "Hard starting": {
+      "DME2": 0.0016304624738871245
+    },
+    "Engine Check Light Illuminated": {
+      "DME E60 2C5F": 0.0012483228315698295
+    },
+    "Excessive white smoke": {
+      "DME F10 2D36": 0.0012483228315698295
+    },
+    "Milk-like engine oil": {
+      "DME F10 2D36": 0.0012483228315698295
+    },
+    "inability to shift into gear": {
+      "4F5": 0.0010784829905399209
+    },
+    "transmission not shifting properly": {
+      "U1082": 0.0008916591654070211
+    },
+    "headlights dim": {
+      "B1164": 0.0006623753800166443
+    },
+    "vehicle not charging": {
+      "B12/3": 0.00035666366616280847
+    },
+    "error displayed on the center screen": {
+      "B12/22": 0.00001698398410299088
+    }
+  },
+  "confidenceScores": {
+    "P0011": {
+      "average": 0.9164872437693168,
+      "count": 13562,
+      "min": 0.86,
+      "max": 0.99
+    },
+    "P030A": {
+      "average": 0.9415205327414166,
+      "count": 1802,
+      "min": 0.87,
+      "max": 0.99
+    },
+    "DME1E01": {
+      "average": 0.9499999999999942,
+      "count": 327,
+      "min": 0.95,
+      "max": 0.95
+    },
+    "4F0D1": {
+      "average": 0.9000000000000006,
+      "count": 327,
+      "min": 0.9,
+      "max": 0.9
+    },
+    "P0300": {
+      "average": 0.9334599772114112,
+      "count": 28084,
+      "min": 0.82,
+      "max": 0.99
+    },
+    "P0420": {
+      "average": 0.9163703539261662,
+      "count": 31532,
+      "min": 0.78,
+      "max": 0.99
+    },
+    "P300": {
+      "average": 0.8512943871706742,
+      "count": 873,
+      "min": 0.8,
+      "max": 0.92
+    },
+    "P0455": {
+      "average": 0.914368258859775,
+      "count": 3894,
+      "min": 0.78,
+      "max": 0.99
+    },
+    "P0171": {
+      "average": 0.8947569955817274,
+      "count": 8148,
+      "min": 0.84,
+      "max": 0.99
+    },
+    "U0140": {
+      "average": 0.9373592715231861,
+      "count": 1208,
+      "min": 0.87,
+      "max": 0.99
+    },
+    "U0121": {
+      "average": 0.8967649434571945,
+      "count": 2476,
+      "min": 0.78,
+      "max": 0.99
+    },
+    "2E90": {
+      "average": 0.9499999999999943,
+      "count": 319,
+      "min": 0.95,
+      "max": 0.95
+    },
+    "P0128": {
+      "average": 0.9018298969072549,
+      "count": 3104,
+      "min": 0.85,
+      "max": 0.9800000000000001
+    },
+    "U0101": {
+      "average": 0.92910108168593,
+      "count": 2681,
+      "min": 0.82,
+      "max": 0.99
+    },
+    "DME1": {
+      "average": 0.9242662389735596,
+      "count": 2494,
+      "min": 0.9,
+      "max": 0.99
+    },
+    "4FA9": {
+      "average": 0.9702839116719271,
+      "count": 317,
+      "min": 0.87,
+      "max": 0.99
+    },
+    "B12/2C": {
+      "average": 0.8913949381989429,
+      "count": 1699,
+      "min": 0.85,
+      "max": 0.9800000000000001
+    },
+    "P0700": {
+      "average": 0.8956600660065918,
+      "count": 1212,
+      "min": 0.78,
+      "max": 0.99
+    },
+    "B12/3C": {
+      "average": 0.8961799816345151,
+      "count": 3267,
+      "min": 0.85,
+      "max": 0.9800000000000001
+    },
+    "P000AE": {
+      "average": 0.9499999999999945,
+      "count": 307,
+      "min": 0.95,
+      "max": 0.95
+    },
+    "4FAA": {
+      "average": 0.9020364741641316,
+      "count": 987,
+      "min": 0.87,
+      "max": 0.99
+    },
+    "DME P0300": {
+      "average": 0.9452930402930398,
+      "count": 546,
+      "min": 0.9,
+      "max": 0.99
+    },
+    "DME P0011": {
+      "average": 0.8993908153701979,
+      "count": 1067,
+      "min": 0.87,
+      "max": 0.9800000000000001
+    },
+    "P2E8": {
+      "average": 0.879999999999997,
+      "count": 267,
+      "min": 0.88,
+      "max": 0.88
+    },
+    "P0301": {
+      "average": 0.9346956521739138,
+      "count": 460,
+      "min": 0.9,
+      "max": 0.9700000000000001
+    },
+    "U0100": {
+      "average": 0.9159010270775013,
+      "count": 1071,
+      "min": 0.85,
+      "max": 0.99
+    },
+    "C1218": {
+      "average": 0.8899999999999944,
+      "count": 253,
+      "min": 0.89,
+      "max": 0.89
+    },
+    "P0A0B": {
+      "average": 0.8799999999999971,
+      "count": 252,
+      "min": 0.88,
+      "max": 0.88
+    },
+    "B12/7": {
+      "average": 0.8865171503957727,
+      "count": 379,
+      "min": 0.88,
+      "max": 0.89
+    },
+    "2E08": {
+      "average": 0.9315104166666616,
+      "count": 384,
+      "min": 0.9,
+      "max": 0.95
+    },
+    "4B3C": {
+      "average": 0.9000000000000037,
+      "count": 242,
+      "min": 0.9,
+      "max": 0.9
+    },
+    "P0A0F": {
+      "average": 0.8899999999999949,
+      "count": 237,
+      "min": 0.89,
+      "max": 0.89
+    },
+    "B2367": {
+      "average": 0.9000000000000035,
+      "count": 222,
+      "min": 0.9,
+      "max": 0.9
+    },
+    "4F7D": {
+      "average": 0.8700000000000025,
+      "count": 212,
+      "min": 0.87,
+      "max": 0.87
+    },
+    "E60": {
+      "average": 0.8700000000000024,
+      "count": 207,
+      "min": 0.87,
+      "max": 0.87
+    },
+    "4F01": {
+      "average": 0.8799999999999976,
+      "count": 202,
+      "min": 0.88,
+      "max": 0.88
+    },
+    "N20 Vanos System": {
+      "average": 0.9000000000000032,
+      "count": 197,
+      "min": 0.9,
+      "max": 0.9
+    },
+    "B12/5": {
+      "average": 0.899293680297397,
+      "count": 269,
+      "min": 0.87,
+      "max": 0.91
+    },
+    "DME2": {
+      "average": 0.9306249999999987,
+      "count": 192,
+      "min": 0.88,
+      "max": 0.99
+    },
+    "P0452": {
+      "average": 0.8700000000000022,
+      "count": 187,
+      "min": 0.87,
+      "max": 0.87
+    },
+    "B12/4": {
+      "average": 0.8981395348837212,
+      "count": 473,
+      "min": 0.87,
+      "max": 0.95
+    },
+    "N84": {
+      "average": 0.8799999999999981,
+      "count": 157,
+      "min": 0.88,
+      "max": 0.88
+    },
+    "BMS-12": {
+      "average": 0.9000000000000031,
+      "count": 189,
+      "min": 0.9,
+      "max": 0.9
+    },
+    "DME E60 2C5F": {
+      "average": 0.9000000000000024,
+      "count": 147,
+      "min": 0.9,
+      "max": 0.9
+    },
+    "DME F10 2D36": {
+      "average": 0.8499999999999976,
+      "count": 147,
+      "min": 0.85,
+      "max": 0.85
+    },
+    "N20 Vanos Error": {
+      "average": 0.8700000000000015,
+      "count": 137,
+      "min": 0.87,
+      "max": 0.87
+    },
+    "4F5": {
+      "average": 0.8700000000000013,
+      "count": 127,
+      "min": 0.87,
+      "max": 0.87
+    },
+    "P0001": {
+      "average": 0.8700000000000007,
+      "count": 107,
+      "min": 0.87,
+      "max": 0.87
+    },
+    "U1082": {
+      "average": 0.9080952380952394,
+      "count": 105,
+      "min": 0.87,
+      "max": 0.92
+    },
+    "DME E60 16BF": {
+      "average": 0.9000000000000007,
+      "count": 97,
+      "min": 0.9,
+      "max": 0.9
+    },
+    "DME F10 2D01": {
+      "average": 0.8799999999999997,
+      "count": 97,
+      "min": 0.88,
+      "max": 0.88
+    },
+    "B2661": {
+      "average": 0.8700000000000003,
+      "count": 97,
+      "min": 0.87,
+      "max": 0.87
+    },
+    "B1164": {
+      "average": 0.8800000000000008,
+      "count": 78,
+      "min": 0.88,
+      "max": 0.88
+    },
+    "U0126": {
+      "average": 0.8500000000000006,
+      "count": 78,
+      "min": 0.85,
+      "max": 0.85
+    },
+    "B12/2B": {
+      "average": 0.8699999999999991,
+      "count": 62,
+      "min": 0.87,
+      "max": 0.87
+    },
+    "P0201": {
+      "average": 0.8699999999999994,
+      "count": 52,
+      "min": 0.87,
+      "max": 0.87
+    },
+    "B12/6": {
+      "average": 0.8699999999999997,
+      "count": 47,
+      "min": 0.87,
+      "max": 0.87
+    },
+    "B12/3": {
+      "average": 0.87,
+      "count": 42,
+      "min": 0.87,
+      "max": 0.87
+    },
+    "DME E60 2B0D": {
+      "average": 0.9000000000000002,
+      "count": 17,
+      "min": 0.9,
+      "max": 0.9
+    },
+    "2C01": {
+      "average": 0.8499999999999998,
+      "count": 17,
+      "min": 0.85,
+      "max": 0.85
+    },
+    "B12/9": {
+      "average": 0.8699999999999997,
+      "count": 17,
+      "min": 0.87,
+      "max": 0.87
+    },
+    "B12/22": {
+      "average": 0.87,
+      "count": 2,
+      "min": 0.87,
+      "max": 0.87
+    }
+  }
+}

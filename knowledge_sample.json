@@ -1,0 +1,1732 @@
+[
+  {
+    "vehicle_make": "BMW",
+    "vehicle_model": "3 Series",
+    "vehicle_year": 2010,
+    "engine_code": "N55",
+    "engine": "3.0L L6",
+    "error_code": "2E08",
+    "code_system": "Engine",
+    "code_description": "Excessive Oil Consumption",
+    "symptoms": [
+      "smoke from exhaust",
+      "oil burning smell"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check for any oil leaks"
+      },
+      {
+        "step": 2,
+        "action": "Inspect PCV system for blockages"
+      },
+      {
+        "step": 3,
+        "action": "Replace valve seals if necessary"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "oil pressure gauge",
+      "valve seal removal tool"
+    ],
+    "torque_specs": [
+      {
+        "component": "valve cover",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.95,
+    "source_url": "https://www.bimmerforums.com/..."
+  },
+  {
+    "vehicle_make": "Chevrolet",
+    "vehicle_model": "Malibu",
+    "vehicle_year": 2017,
+    "engine_code": "LFX",
+    "engine": "3.6L V6",
+    "error_code": "P0171",
+    "code_system": "Fuel System",
+    "code_description": "System Too Lean",
+    "symptoms": [
+      "poor acceleration",
+      "drop in fuel economy"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect intake system for vacuum leaks"
+      },
+      {
+        "step": 2,
+        "action": "Test mass airflow sensor"
+      },
+      {
+        "step": 3,
+        "action": "Replace upstream oxygen sensor if faulty"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "vacuum pump",
+      "O2 sensor socket"
+    ],
+    "torque_specs": [
+      {
+        "component": "oxygen sensor",
+        "value_nm": 20
+      }
+    ],
+    "confidence": 0.84,
+    "source_url": "https://example.com/..."
+  },
+  {
+    "vehicle_make": "Volkswagen",
+    "vehicle_model": "Jetta",
+    "vehicle_year": 2005,
+    "engine_code": "BFW",
+    "engine": "1.9L TDI",
+    "error_code": "P0171",
+    "code_system": "Fuel System",
+    "code_description": "System Too Lean",
+    "symptoms": [
+      "hesitation during acceleration",
+      "excessive smoke from exhaust"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect for fuel leaks in the fuel lines"
+      },
+      {
+        "step": 2,
+        "action": "Check fuel pressure with a gauge"
+      },
+      {
+        "step": 3,
+        "action": "Clean or replace the mass airflow sensor"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "fuel pressure gauge",
+      "mass airflow sensor cleaner"
+    ],
+    "torque_specs": [
+      {
+        "component": "fuel pressure regulator",
+        "value_nm": 22
+      }
+    ],
+    "confidence": 0.88,
+    "source_url": "https://forums.tdiclub.com/..."
+  },
+  {
+    "vehicle_make": "Volkswagen",
+    "vehicle_model": "Golf",
+    "vehicle_year": 2015,
+    "engine_code": "CSR",
+    "engine": "1.4L Turbo",
+    "error_code": "P0171",
+    "code_system": "Fuel System",
+    "code_description": "System Too Lean",
+    "symptoms": [
+      "hesitation during acceleration",
+      "stalling"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check for fuel pressure issues"
+      },
+      {
+        "step": 2,
+        "action": "Inspect fuel injectors for clogging"
+      },
+      {
+        "step": 3,
+        "action": "Clean or replace fuel injectors"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "fuel pressure gauge",
+      "fuel injector cleaner"
+    ],
+    "torque_specs": [
+      {
+        "component": "fuel injector",
+        "value_nm": 20
+      }
+    ],
+    "confidence": 0.88,
+    "source_url": "https://forums.ross-tech.com/vw-golf-2015-p0171-error-code-fuel-system/"
+  },
+  {
+    "vehicle_make": "Mazda",
+    "vehicle_model": "CX-5",
+    "vehicle_year": 2018,
+    "engine_code": "P5",
+    "engine": "2.5L I4",
+    "error_code": "P0420",
+    "code_system": "Exhaust System",
+    "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "symptoms": [
+      "reduced fuel economy",
+      "check engine light on"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect oxygen sensors for proper operation"
+      },
+      {
+        "step": 2,
+        "action": "Check for exhaust leaks"
+      },
+      {
+        "step": 3,
+        "action": "Replace catalytic converter if damaged"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "O2 sensor socket",
+      "exhaust leak detector"
+    ],
+    "torque_specs": [
+      {
+        "component": "oxygen sensor",
+        "value_nm": 22
+      }
+    ],
+    "confidence": 0.87,
+    "source_url": "https://www.mazdaforum.com/..."
+  },
+  {
+    "vehicle_make": "Hyundai",
+    "vehicle_model": "Sonata",
+    "vehicle_year": 2019,
+    "engine_code": "G4NK",
+    "engine": "2.0L Turbo",
+    "error_code": "P0300",
+    "code_system": "Ignition System",
+    "code_description": "Random/Multiple Cylinder Misfire Detected",
+    "symptoms": [
+      "rough idling",
+      "poor fuel economy"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check spark plugs and replace if necessary"
+      },
+      {
+        "step": 2,
+        "action": "Inspect ignition coils for damage"
+      },
+      {
+        "step": 3,
+        "action": "Clean fuel injectors"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "spark plug socket",
+      "ignition coil tester"
+    ],
+    "torque_specs": [
+      {
+        "component": "spark plugs",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.99,
+    "source_url": "https://www.hyundai-forums.com/..."
+  },
+  {
+    "vehicle_make": "Ford",
+    "vehicle_model": "F-150",
+    "vehicle_year": 2012,
+    "engine_code": "3.5L EcoBoost",
+    "engine": "3.5L V6",
+    "error_code": "U0140",
+    "code_system": "Communication",
+    "code_description": "Lost Communication with Transmission Control Module (TCM)",
+    "symptoms": [
+      "harsh gear shifts",
+      "inability to change gears",
+      "warning light on"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check for loose or damaged wiring to TCM"
+      },
+      {
+        "step": 2,
+        "action": "Inspect TCM for physical damage"
+      },
+      {
+        "step": 3,
+        "action": "Replace TCM if communication cannot be re-established"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "wiring diagram",
+      "multimeter"
+    ],
+    "torque_specs": [
+      {
+        "component": "TCM connector",
+        "value_nm": 10
+      }
+    ],
+    "confidence": 0.89,
+    "source_url": "https://www.reddit.com/r/Cartalk/comments/789012/u0140_error_code/"
+  },
+  {
+    "vehicle_make": "Lexus",
+    "vehicle_model": "IS350",
+    "vehicle_year": 2014,
+    "engine_code": "2GR-FSE",
+    "engine": "3.5L V6",
+    "error_code": "P0420",
+    "code_system": "Emission Control",
+    "code_description": "Cat Efficiency Below Threshold",
+    "symptoms": [
+      "check engine light",
+      "reduced fuel efficiency"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect oxygen sensors for proper function"
+      },
+      {
+        "step": 2,
+        "action": "Check for exhaust leaks"
+      },
+      {
+        "step": 3,
+        "action": "Replace catalytic converter if necessary"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "oxygen sensor socket",
+      "exhaust leak detector"
+    ],
+    "torque_specs": [
+      {
+        "component": "catalytic converter",
+        "value_nm": 40
+      }
+    ],
+    "confidence": 0.87,
+    "source_url": "https://www.clublexus.com/forums/is-f-forum/27934-p0420-cat-efficiency-below-threshold.1233168/"
+  },
+  {
+    "vehicle_make": "Volkswagen",
+    "vehicle_model": "Passat",
+    "vehicle_year": 2013,
+    "engine_code": "CXAA",
+    "engine": "2.0L TDI",
+    "error_code": "P0420",
+    "code_system": "Exhaust System",
+    "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "symptoms": [
+      "reduced power",
+      "excessive emissions"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect oxygen sensors for damage"
+      },
+      {
+        "step": 2,
+        "action": "Check for exhaust leaks"
+      },
+      {
+        "step": 3,
+        "action": "Replace catalytic converter if necessary"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "oxygen sensor socket",
+      "exhaust leak detector"
+    ],
+    "torque_specs": [
+      {
+        "component": "oxygen sensor",
+        "value_nm": 20
+      }
+    ],
+    "confidence": 0.87,
+    "source_url": "https://forums.tdiclub.com/..."
+  },
+  {
+    "vehicle_make": "Tesla",
+    "vehicle_model": "Model S",
+    "vehicle_year": 2018,
+    "engine_code": "N/A",
+    "engine": "Electric",
+    "error_code": "P0011",
+    "code_system": "Drive Motor",
+    "code_description": "Coolant Temperature Sensor Circuit Range/Performance",
+    "symptoms": [
+      "reduced acceleration",
+      "error displayed on the central screen"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check coolant level and condition"
+      },
+      {
+        "step": 2,
+        "action": "Inspect coolant temperature sensor for damage"
+      },
+      {
+        "step": 3,
+        "action": "Replace coolant temperature sensor if faulty"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "sensor removal tool",
+      "coolant temperature sensor socket"
+    ],
+    "torque_specs": [
+      {
+        "component": "coolant temperature sensor",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.88,
+    "source_url": "https://teslamotorsclub.com/tmc/threads/p0011-error-code.789012/"
+  },
+  {
+    "vehicle_make": "Lexus",
+    "vehicle_model": "IS 350",
+    "vehicle_year": 2018,
+    "engine_code": "2GR-FSE",
+    "engine": "3.5L V6",
+    "error_code": "P0420",
+    "code_system": "Emission Control",
+    "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "symptoms": [
+      "reduced engine performance",
+      "check engine light on"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect oxygen sensors for proper operation"
+      },
+      {
+        "step": 2,
+        "action": "Check for exhaust leaks"
+      },
+      {
+        "step": 3,
+        "action": "Replace catalytic converter if damaged"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "oxygen sensor socket",
+      "exhaust leak detector"
+    ],
+    "torque_specs": [
+      {
+        "component": "catalytic converter",
+        "value_nm": 30
+      }
+    ],
+    "confidence": 0.99,
+    "source_url": "https://www.clublexus.com/forums/is-f-forums/is-f-tech-section/123456/"
+  },
+  {
+    "vehicle_make": "Acura",
+    "vehicle_model": "TLX",
+    "vehicle_year": 2019,
+    "engine_code": "K20C1",
+    "engine": "2.0L Turbo",
+    "error_code": "P0300",
+    "code_system": "Powertrain",
+    "code_description": "Random/Multiple Cylinder Misfire Detected",
+    "symptoms": [
+      "rough idling",
+      "engine misfire",
+      "reduced power"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check spark plugs and wires"
+      },
+      {
+        "step": 2,
+        "action": "Inspect fuel injectors"
+      },
+      {
+        "step": 3,
+        "action": "Check for compression in cylinders"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "spark plug socket",
+      "fuel injector cleaner"
+    ],
+    "torque_specs": [
+      {
+        "component": "spark plug",
+        "value_nm": 20
+      }
+    ],
+    "confidence": 0.87,
+    "source_url": "https://acurazine.com/forums/..."
+  },
+  {
+    "vehicle_make": "Mercedes-Benz",
+    "vehicle_model": "C-Class",
+    "vehicle_year": 2010,
+    "engine_code": "272",
+    "engine": "3.5L V6",
+    "error_code": "P0300",
+    "code_system": "Ignition System",
+    "code_description": "Random/Multiple Cylinder Misfires Detected",
+    "symptoms": [
+      "rough idling",
+      "poor fuel economy",
+      "check engine light"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check spark plugs and replace if necessary"
+      },
+      {
+        "step": 2,
+        "action": "Inspect ignition coils for any signs of damage"
+      },
+      {
+        "step": 3,
+        "action": "Check fuel injectors for proper operation"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "spark plug socket",
+      "ignition coil puller"
+    ],
+    "torque_specs": [
+      {
+        "component": "spark plugs",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.95,
+    "source_url": "https://mbworld.org/forums/..."
+  },
+  {
+    "vehicle_make": "Mercedes-Benz",
+    "vehicle_model": "E-Class",
+    "vehicle_year": 2015,
+    "engine_code": "276",
+    "engine": "3.0L V6 BiTurbo",
+    "error_code": "P030A",
+    "code_system": "Turbocharger",
+    "code_description": "Turbocharger over-speed",
+    "symptoms": [
+      "excessive exhaust smoke",
+      "check engine light on"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect for boost leaks"
+      },
+      {
+        "step": 2,
+        "action": "Check turbocharger wastegate operation"
+      },
+      {
+        "step": 3,
+        "action": "Replace turbocharger if damaged"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "boost pressure gauge",
+      "torque wrench"
+    ],
+    "torque_specs": [
+      {
+        "component": "turbocharger",
+        "value_nm": 60
+      }
+    ],
+    "confidence": 0.93,
+    "source_url": "https://www.benzworld.org/..."
+  },
+  {
+    "vehicle_make": "Chevrolet",
+    "vehicle_model": "Corvette",
+    "vehicle_year": 2020,
+    "engine_code": "LT2",
+    "engine": "6.2L V8",
+    "error_code": "P0420",
+    "code_system": "Emission Control",
+    "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "symptoms": [
+      "reduced engine power",
+      "check engine light on"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect oxygen sensors for damage"
+      },
+      {
+        "step": 2,
+        "action": "Check for exhaust leaks"
+      },
+      {
+        "step": 3,
+        "action": "Replace catalytic converter if necessary"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "oxygen sensor socket",
+      "exhaust leak detector"
+    ],
+    "torque_specs": [
+      {
+        "component": "catalytic converter",
+        "value_nm": 40
+      }
+    ],
+    "confidence": 0.99,
+    "source_url": "https://www.corvetteforum.com/threads/p0420-error-code.789012/"
+  },
+  {
+    "vehicle_make": "BMW",
+    "vehicle_model": "M3",
+    "vehicle_year": 2018,
+    "engine_code": "S55",
+    "engine": "3.0L I6",
+    "error_code": "P0300",
+    "code_system": "Ignition System",
+    "code_description": "Random/Multiple Cylinder Misfire Detected",
+    "symptoms": [
+      "rough idling",
+      "poor fuel economy"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check spark plugs and replace if necessary"
+      },
+      {
+        "step": 2,
+        "action": "Inspect ignition coils for damage"
+      },
+      {
+        "step": 3,
+        "action": "Clean fuel injectors"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "spark plug socket",
+      "ignition coil puller"
+    ],
+    "torque_specs": [
+      {
+        "component": "spark plug",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.9,
+    "source_url": "https://www.bimmerforums.com/..."
+  },
+  {
+    "vehicle_make": "BMW",
+    "vehicle_model": "X5",
+    "vehicle_year": 2015,
+    "engine_code": "N55",
+    "engine": "3.0L I6",
+    "error_code": "DME P0011",
+    "code_system": "Camshaft Position Timing Over-Retarded",
+    "code_description": "Bank 1",
+    "symptoms": [
+      "engine misfire",
+      "reduced power",
+      "check engine light"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check camshaft position sensor for proper operation"
+      },
+      {
+        "step": 2,
+        "action": "Inspect timing chain tensioner for wear"
+      },
+      {
+        "step": 3,
+        "action": "Replace timing chain if stretched or damaged"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "timing tool",
+      "sensor socket"
+    ],
+    "torque_specs": [
+      {
+        "component": "camshaft position sensor",
+        "value_nm": 30
+      }
+    ],
+    "confidence": 0.93,
+    "source_url": "https://www.bimmerpost.com/..."
+  },
+  {
+    "vehicle_make": "Honda",
+    "vehicle_model": "Civic",
+    "vehicle_year": 2015,
+    "engine_code": "R18Z2",
+    "engine": "1.8L",
+    "error_code": "P0420",
+    "code_system": "Exhaust System",
+    "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "symptoms": [
+      "reduced acceleration",
+      "check engine light on"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect oxygen sensors for proper operation"
+      },
+      {
+        "step": 2,
+        "action": "Check for exhaust leaks"
+      },
+      {
+        "step": 3,
+        "action": "Replace catalytic converter if damaged"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "oxygen sensor socket",
+      "exhaust leak detector"
+    ],
+    "torque_specs": [
+      {
+        "component": "oxygen sensor",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.87,
+    "source_url": "https://www.team-bhp.com/..."
+  },
+  {
+    "vehicle_make": "Acura",
+    "vehicle_model": "TL",
+    "vehicle_year": 2008,
+    "engine_code": "K24Z1",
+    "engine": "2.4L I4",
+    "error_code": "P0300",
+    "code_system": "Ignition System",
+    "code_description": "Random/Multiple Cylinder Misfires Detected",
+    "symptoms": [
+      "rough idling",
+      "poor acceleration"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check spark plugs and wires for wear"
+      },
+      {
+        "step": 2,
+        "action": "Inspect ignition coils for damage"
+      },
+      {
+        "step": 3,
+        "action": "Clean fuel injectors"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "spark plug socket",
+      "ignition coil tester"
+    ],
+    "torque_specs": [
+      {
+        "component": "spark plug",
+        "value_nm": 20
+      }
+    ],
+    "confidence": 0.87,
+    "source_url": "https://acurazine.com/forums/..."
+  },
+  {
+    "vehicle_make": "BMW",
+    "vehicle_model": "X3",
+    "vehicle_year": 2015,
+    "engine_code": "N55",
+    "engine": "3.0L I6",
+    "error_code": "DME P0011",
+    "code_system": "Camshaft Position Timing Over-Advanced Bank 1",
+    "code_description": "Timing Over-Advanced or System Performance",
+    "symptoms": [
+      "engine misfires",
+      "check engine light",
+      "reduced power"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check the timing chain for wear or damage"
+      },
+      {
+        "step": 2,
+        "action": "Inspect the camshaft position sensor for proper operation"
+      },
+      {
+        "step": 3,
+        "action": "Replace the variable camshaft timing (VANOS) solenoid if necessary"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "timing chain tensioner",
+      "VANOS removal tool"
+    ],
+    "torque_specs": [
+      {
+        "component": "camshaft position sensor",
+        "value_nm": 30
+      }
+    ],
+    "confidence": 0.87,
+    "source_url": "https://www.bimmerpost.com/..."
+  },
+  {
+    "vehicle_make": "Volvo",
+    "vehicle_model": "XC60",
+    "vehicle_year": 2018,
+    "engine_code": "B4204T11",
+    "engine": "2.0L Turbo",
+    "error_code": "P0300",
+    "code_system": "Random/Multiple Cylinder Misfire Detected",
+    "code_description": "Misfire in more than one cylinder",
+    "symptoms": [
+      "Engine shaking",
+      "Check engine light on"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check spark plugs and replace if necessary"
+      },
+      {
+        "step": 2,
+        "action": "Inspect ignition coils for damage"
+      },
+      {
+        "step": 3,
+        "action": "Clean fuel injectors"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "spark plug socket",
+      "ignition coil puller"
+    ],
+    "torque_specs": [
+      {
+        "component": "spark plugs",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.92,
+    "source_url": "https://www.volvoforums.org.uk/threads/p0300-error-code.789012/"
+  },
+  {
+    "vehicle_make": "Nissan",
+    "vehicle_model": "Sentra",
+    "vehicle_year": 2019,
+    "engine_code": "HR16DE",
+    "engine": "1.6L L4",
+    "error_code": "P0171",
+    "code_system": "Fuel System",
+    "code_description": "System Too Lean",
+    "symptoms": [
+      "hesitation during acceleration",
+      "increased fuel consumption"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check for vacuum leaks in the intake manifold"
+      },
+      {
+        "step": 2,
+        "action": "Inspect the mass airflow sensor for proper operation"
+      },
+      {
+        "step": 3,
+        "action": "Replace the upstream oxygen sensor if it tests faulty"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "digital multimeter",
+      "oxygen sensor socket"
+    ],
+    "torque_specs": [
+      {
+        "component": "oxygen sensor",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.9500000000000001,
+    "source_url": "https://forums.nasioc.com/..."
+  },
+  {
+    "vehicle_make": "Subaru",
+    "vehicle_model": "WRX",
+    "vehicle_year": 2015,
+    "engine_code": "FA20",
+    "engine": "2.0L Turbocharged",
+    "error_code": "P0300",
+    "code_system": "Ignition System",
+    "code_description": "Random/Multiple Cylinder Misfires Detected",
+    "symptoms": [
+      "rough idling",
+      "engine misfires",
+      "poor fuel economy"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check spark plugs for wear or damage"
+      },
+      {
+        "step": 2,
+        "action": "Inspect ignition coils for proper function"
+      },
+      {
+        "step": 3,
+        "action": "Clean or replace fuel injectors"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "spark plug socket",
+      "ignition coil tester"
+    ],
+    "torque_specs": [
+      {
+        "component": "spark plugs",
+        "value_nm": 20
+      }
+    ],
+    "confidence": 0.99,
+    "source_url": "https://forums.nasioc.com/threads/p0300-error-code-multiple-cylinder-misfires.63033/"
+  },
+  {
+    "vehicle_make": "Ford",
+    "vehicle_model": "Focus",
+    "vehicle_year": 2018,
+    "engine_code": "EB",
+    "engine": "1.0L EcoBoost",
+    "error_code": "P0300",
+    "code_system": "Ignition System",
+    "code_description": "Random/Multiple Cylinder Misfire Detected",
+    "symptoms": [
+      "rough idling",
+      "reduced power"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check spark plugs and replace if necessary"
+      },
+      {
+        "step": 2,
+        "action": "Inspect ignition coils for damage"
+      },
+      {
+        "step": 3,
+        "action": "Clean fuel injectors"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "spark plug socket",
+      "ignition coil puller"
+    ],
+    "torque_specs": [
+      {
+        "component": "spark plugs",
+        "value_nm": 20
+      }
+    ],
+    "confidence": 0.9500000000000001,
+    "source_url": "https://www.pistonheads.com/..."
+  },
+  {
+    "vehicle_make": "Lexus",
+    "vehicle_model": "IS300",
+    "vehicle_year": 2006,
+    "engine_code": "2GR-FE",
+    "engine": "3.0L V6",
+    "error_code": "P0420",
+    "code_system": "Exhaust System",
+    "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "symptoms": [
+      "reduced engine performance",
+      "miles per gallon decrease"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect oxygen sensors for damage"
+      },
+      {
+        "step": 2,
+        "action": "Check for exhaust leaks"
+      },
+      {
+        "step": 3,
+        "action": "Replace catalytic converter if necessary"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "oxygen sensor socket",
+      "exhaust leak detector"
+    ],
+    "torque_specs": [
+      {
+        "component": "oxygen sensor",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.87,
+    "source_url": "https://www.clublexus.com/forums/is-f-forums/is-f-tech-section/70874-p0420-code-bank-1.html"
+  },
+  {
+    "vehicle_make": "Chevrolet",
+    "vehicle_model": "Silverado",
+    "vehicle_year": 2014,
+    "engine_code": "LGX",
+    "engine": "4.3L V6",
+    "error_code": "P0455",
+    "code_system": "Evaporative Emission System",
+    "code_description": "Evaporative Emission Control System Vent Control Circuit/Open",
+    "symptoms": [
+      "check engine light on",
+      "reduced fuel economy",
+      "possible stalling"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect vent control valve for damage"
+      },
+      {
+        "step": 2,
+        "action": "Check for vacuum leaks in the system"
+      },
+      {
+        "step": 3,
+        "action": "Replace vent control valve if necessary"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "vacuum pump",
+      "valve socket"
+    ],
+    "torque_specs": [
+      {
+        "component": "vent control valve",
+        "value_nm": 22
+      }
+    ],
+    "confidence": 0.9500000000000001,
+    "source_url": "https://www.troublecodes.net/chevrolet/silverado/4-3l-v6/2014/p0455"
+  },
+  {
+    "vehicle_make": "Tesla",
+    "vehicle_model": "Model 3",
+    "vehicle_year": 2018,
+    "engine_code": "EMD",
+    "engine": "Electric Motor Drive",
+    "error_code": "B12/3C",
+    "code_system": "Battery",
+    "code_description": "Battery Cell Voltage Imbalance",
+    "symptoms": [
+      "reduced range",
+      "slow charging"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect battery pack for physical damage"
+      },
+      {
+        "step": 2,
+        "action": "Run battery balance procedure"
+      },
+      {
+        "step": 3,
+        "action": "Replace battery module if necessary"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "torque wrench",
+      "battery module removal tool"
+    ],
+    "torque_specs": [
+      {
+        "component": "battery module",
+        "value_nm": 30
+      }
+    ],
+    "confidence": 0.89,
+    "source_url": "https://teslamotorsclub.com/..."
+  },
+  {
+    "vehicle_make": "Hyundai",
+    "vehicle_model": "Elantra",
+    "vehicle_year": 2019,
+    "engine_code": "G4LD",
+    "engine": "2.0L I4",
+    "error_code": "P0300",
+    "code_system": "Ignition System",
+    "code_description": "Random/Multiple Cylinder Misfire Detected",
+    "symptoms": [
+      "engine misfire",
+      "rough idling"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check spark plugs and replace if necessary"
+      },
+      {
+        "step": 2,
+        "action": "Inspect ignition coils for any signs of damage"
+      },
+      {
+        "step": 3,
+        "action": "Test fuel injectors for proper operation"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "spark plug wrench",
+      "fuel pressure gauge"
+    ],
+    "torque_specs": [
+      {
+        "component": "spark plugs",
+        "value_nm": 20
+      }
+    ],
+    "confidence": 0.99,
+    "source_url": "https://www.hyundai-forums.com/..."
+  },
+  {
+    "vehicle_make": "Lexus",
+    "vehicle_model": "ES350",
+    "vehicle_year": 2007,
+    "engine_code": "2GR-FE",
+    "engine": "3.5L V6",
+    "error_code": "P0420",
+    "code_system": "Emission Control",
+    "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "symptoms": [
+      "reduced engine performance",
+      "check engine light on"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect oxygen sensors for proper operation"
+      },
+      {
+        "step": 2,
+        "action": "Check for exhaust leaks"
+      },
+      {
+        "step": 3,
+        "action": "Replace catalytic converter if necessary"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "oxygen sensor socket",
+      "exhaust leak detector"
+    ],
+    "torque_specs": [
+      {
+        "component": "oxygen sensor",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.9400000000000001,
+    "source_url": "https://www.clublexus.com/forums/es-series-2007-2012/123456/"
+  },
+  {
+    "vehicle_make": "BMW",
+    "vehicle_model": "5 Series",
+    "vehicle_year": 2015,
+    "engine_code": "N20",
+    "engine": "2.0L I4",
+    "error_code": "DME F10 2D01",
+    "code_system": "Engine Control Module",
+    "code_description": "Intake air temperature sensor 1, circuit high",
+    "symptoms": [
+      "rough idle",
+      "poor fuel economy"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Clean intake air temperature sensor"
+      },
+      {
+        "step": 2,
+        "action": "Check sensor wiring for damage"
+      },
+      {
+        "step": 3,
+        "action": "Replace intake air temperature sensor if faulty"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "screwdriver",
+      "multimeter"
+    ],
+    "torque_specs": [
+      {
+        "component": "intake air temperature sensor",
+        "value_nm": 20
+      }
+    ],
+    "confidence": 0.88,
+    "source_url": "https://www.bimmerpost.com/threads/.../2d01-error-code.789012/"
+  },
+  {
+    "vehicle_make": "Lexus",
+    "vehicle_model": "IS 250",
+    "vehicle_year": 2010,
+    "engine_code": "2AR-FE",
+    "engine": "2.5L V6",
+    "error_code": "P0420",
+    "code_system": "Exhaust System",
+    "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "symptoms": [
+      "reduced fuel efficiency",
+      "check engine light on"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect oxygen sensors for proper operation"
+      },
+      {
+        "step": 2,
+        "action": "Check for exhaust leaks"
+      },
+      {
+        "step": 3,
+        "action": "Replace catalytic converter if necessary"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "oxygen sensor socket",
+      "exhaust leak detector"
+    ],
+    "torque_specs": [
+      {
+        "component": "oxygen sensor",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.88,
+    "source_url": "https://www.clublexus.com/forums/..."
+  },
+  {
+    "vehicle_make": "Volvo",
+    "vehicle_model": "XC90",
+    "vehicle_year": 2019,
+    "engine_code": "B6304T4",
+    "engine": "2.0L Turbo/Supercharger",
+    "error_code": "U0101",
+    "code_system": "Communication",
+    "code_description": "Lost Communication With Gearbox Control Module",
+    "symptoms": [
+      "gear shifting issues",
+      "check engine light on"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check for loose or damaged wiring to the gearbox control module"
+      },
+      {
+        "step": 2,
+        "action": "Inspect fuses related to the gearbox control module"
+      },
+      {
+        "step": 3,
+        "action": "Replace gearbox control module if necessary"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "wiring diagram",
+      "multimeter"
+    ],
+    "torque_specs": [
+      {
+        "component": "control module",
+        "value_nm": 30
+      }
+    ],
+    "confidence": 0.82,
+    "source_url": "https://www.volvoforums.org.uk/threads/lost-communication-with-gearbox-control-module-error-code-u0101.4567890/"
+  },
+  {
+    "vehicle_make": "Acura",
+    "vehicle_model": "RDX",
+    "vehicle_year": 2015,
+    "engine_code": "K24W5",
+    "engine": "2.4L Turbo",
+    "error_code": "P0420",
+    "code_system": "Emission Control",
+    "code_description": "Catalyst System Efficiency Below Threshold",
+    "symptoms": [
+      "check engine light",
+      "reduced performance"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect oxygen sensors for proper operation"
+      },
+      {
+        "step": 2,
+        "action": "Check for exhaust leaks"
+      },
+      {
+        "step": 3,
+        "action": "Replace catalytic converter if damaged"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "O2 sensor socket",
+      "exhaust leak detector"
+    ],
+    "torque_specs": [
+      {
+        "component": "oxygen sensor",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.91,
+    "source_url": "https://acurazine.com/forums/..."
+  },
+  {
+    "vehicle_make": "Acura",
+    "vehicle_model": "MDX",
+    "vehicle_year": 2017,
+    "engine_code": "K24W7",
+    "engine": "2.4L Turbo",
+    "error_code": "P0300",
+    "code_system": "Ignition System",
+    "code_description": "Random/Multiple Cylinder Misfire Detected",
+    "symptoms": [
+      "rough idling",
+      "poor fuel economy"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check spark plugs and wires for wear"
+      },
+      {
+        "step": 2,
+        "action": "Inspect ignition coils for damage"
+      },
+      {
+        "step": 3,
+        "action": "Replace faulty ignition components"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "spark plug socket",
+      "ignition coil tester"
+    ],
+    "torque_specs": [
+      {
+        "component": "spark plug",
+        "value_nm": 20
+      }
+    ],
+    "confidence": 0.85,
+    "source_url": "https://acurazine.com/forums/..."
+  },
+  {
+    "vehicle_make": "Toyota",
+    "vehicle_model": "Camry",
+    "vehicle_year": 2015,
+    "engine_code": "2AR-FE",
+    "engine": "2.5L I4",
+    "error_code": "P0300",
+    "code_system": "Ignition System",
+    "code_description": "Random/Multiple Cylinder Misfire Detected",
+    "symptoms": [
+      "rough idling",
+      "poor fuel economy"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check spark plugs and replace if necessary"
+      },
+      {
+        "step": 2,
+        "action": "Inspect ignition coils for proper operation"
+      },
+      {
+        "step": 3,
+        "action": "Check fuel injectors for clogging or malfunction"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "spark plug socket",
+      "ignition coil tester"
+    ],
+    "torque_specs": [
+      {
+        "component": "spark plugs",
+        "value_nm": 22
+      }
+    ],
+    "confidence": 0.92,
+    "source_url": "https://www.toyotanation.com/forums/toyota-camry/123456-ignition-system-trouble-code-p0300.html"
+  },
+  {
+    "vehicle_make": "Ford",
+    "vehicle_model": "Mustang",
+    "vehicle_year": 2021,
+    "engine_code": "5.0L",
+    "engine": "5.0L V8",
+    "error_code": "P0420",
+    "code_system": "Emission Control",
+    "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "symptoms": [
+      "reduced power",
+      "check engine light"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect oxygen sensors for proper operation"
+      },
+      {
+        "step": 2,
+        "action": "Check for exhaust leaks"
+      },
+      {
+        "step": 3,
+        "action": "Replace catalytic converter if damaged"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "oxygen sensor socket",
+      "exhaust leak detector"
+    ],
+    "torque_specs": [
+      {
+        "component": "oxygen sensor",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.87,
+    "source_url": "https://www.team-bhp.com/..."
+  },
+  {
+    "vehicle_make": "Toyota",
+    "vehicle_model": "Corolla",
+    "vehicle_year": 2019,
+    "engine_code": "2ZR-FAE",
+    "engine": "1.8L 4-cylinder",
+    "error_code": "P0300",
+    "code_system": "Ignition System",
+    "code_description": "Random/Multiple Cylinder Misfire Detected",
+    "symptoms": [
+      "rough idling",
+      "reduced power",
+      "excessive fuel consumption"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check for spark plug fouling or damage"
+      },
+      {
+        "step": 2,
+        "action": "Inspect ignition coils for proper function"
+      },
+      {
+        "step": 3,
+        "action": "Replace faulty spark plugs or ignition coils"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "spark plug socket",
+      "ignition coil tester"
+    ],
+    "torque_specs": [
+      {
+        "component": "spark plug",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.9500000000000001,
+    "source_url": "https://www.toyotanation.com/forums/toyota-corolla/123456-p0300-error-code-fix.html"
+  },
+  {
+    "vehicle_make": "Skoda",
+    "vehicle_model": "Octavia",
+    "vehicle_year": 2012,
+    "engine_code": "CXP",
+    "engine": "1.6L TDI",
+    "error_code": "P0420",
+    "code_system": "Emission Control",
+    "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "symptoms": [
+      "check engine light",
+      "reduced power"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check for exhaust leaks"
+      },
+      {
+        "step": 2,
+        "action": "Inspect oxygen sensors for proper operation"
+      },
+      {
+        "step": 3,
+        "action": "Replace catalytic converter if damaged"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "exhaust leak detector",
+      "O2 sensor socket"
+    ],
+    "torque_specs": [
+      {
+        "component": "oxygen sensor",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.78,
+    "source_url": "https://www.briskoda.net/forums/..."
+  },
+  {
+    "vehicle_make": "Audi",
+    "vehicle_model": "A4",
+    "vehicle_year": 2010,
+    "engine_code": "BFW",
+    "engine": "2.0L TFSI",
+    "error_code": "P0011",
+    "code_system": "Camshaft Position Timing Over-Advanced Bank 1",
+    "code_description": "Timing Over-Advanced or System Performance",
+    "symptoms": [
+      "engine misfire",
+      "check engine light on"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check timing chain for wear and proper tension"
+      },
+      {
+        "step": 2,
+        "action": "Inspect camshaft position sensor for damage"
+      },
+      {
+        "step": 3,
+        "action": "Replace timing chain if stretched or damaged"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "timing tool",
+      "camshaft position sensor socket"
+    ],
+    "torque_specs": [
+      {
+        "component": "timing chain tensioner",
+        "value_nm": 45
+      }
+    ],
+    "confidence": 0.9,
+    "source_url": "https://www.briskoda.net/forums/..."
+  },
+  {
+    "vehicle_make": "Hyundai",
+    "vehicle_model": "Santa Fe",
+    "vehicle_year": 2015,
+    "engine_code": "G4KJ",
+    "engine": "2.4L I4",
+    "error_code": "P0300",
+    "code_system": "Ignition",
+    "code_description": "Random/Multiple Cylinder Misfire Detected",
+    "symptoms": [
+      "rough idling",
+      "poor fuel economy"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check spark plugs and replace if necessary"
+      },
+      {
+        "step": 2,
+        "action": "Inspect ignition coils for damage"
+      },
+      {
+        "step": 3,
+        "action": "Check fuel injectors for proper operation"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "spark plug socket",
+      "ignition coil tester"
+    ],
+    "torque_specs": [
+      {
+        "component": "spark plug",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.99,
+    "source_url": "https://www.hyundai-forums.com/threads/ignition-system-troubleshooting.123456/"
+  },
+  {
+    "vehicle_make": "Lexus",
+    "vehicle_model": "IS",
+    "vehicle_year": 2018,
+    "engine_code": "8AR-FTS",
+    "engine": "2.0L L4 Turbo",
+    "error_code": "P0011",
+    "code_system": "Camshaft Position Timing Over-Retarded Bank 1",
+    "code_description": "Timing Over-Retarded or System Performance",
+    "symptoms": [
+      "engine misfire",
+      "reduced power"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Check timing chain tensioner for wear"
+      },
+      {
+        "step": 2,
+        "action": "Inspect camshaft position sensor for damage"
+      },
+      {
+        "step": 3,
+        "action": "Replace timing chain if stretched"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "timing tool",
+      "camshaft position sensor socket"
+    ],
+    "torque_specs": [
+      {
+        "component": "camshaft",
+        "value_nm": 45
+      }
+    ],
+    "confidence": 0.88,
+    "source_url": "https://www.clublexus.com/forums/lexus-is-series-forums/is-f-section/789012-p0011-code-camshaft-timing.html"
+  },
+  {
+    "vehicle_make": "Lexus",
+    "vehicle_model": "ES 350",
+    "vehicle_year": 2010,
+    "engine_code": "2GR-FE",
+    "engine": "3.5L V6",
+    "error_code": "P0420",
+    "code_system": "Exhaust System",
+    "code_description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "symptoms": [
+      "reduced fuel efficiency",
+      "check engine light on"
+    ],
+    "repair_steps": [
+      {
+        "step": 1,
+        "action": "Inspect oxygen sensors for proper function"
+      },
+      {
+        "step": 2,
+        "action": "Check for exhaust leaks"
+      },
+      {
+        "step": 3,
+        "action": "Replace catalytic converter if necessary"
+      }
+    ],
+    "parts_needed": [],
+    "tools_required": [
+      "O2 sensor socket",
+      "exhaust leak detector"
+    ],
+    "torque_specs": [
+      {
+        "component": "oxygen sensor",
+        "value_nm": 25
+      }
+    ],
+    "confidence": 0.87,
+    "source_url": "https://www.clublexus.com/forums/lexus-es-forum/987654-catalytict-converter-replacement-guide.5678/"
+  }
+]
