@@ -21,6 +21,8 @@ import { predictiveMaintenanceRouter } from "./routers/predictive-maintenance";
 import { vehicleDataRouter } from "./routers/vehicle-data";
 import { dataImportRouter } from "./routers/data-import";
 import { importHistoryRouter } from "./routers/import-history";
+import { knowledgeBaseRouter } from "./routers/knowledge-base";
+import { importProgressRouter } from "./routers/import-progress";
 
 export const appRouter = router({
   system: systemRouter,
@@ -32,6 +34,8 @@ export const appRouter = router({
   vehicleData: vehicleDataRouter,
   dataImport: dataImportRouter,
   importHistory: importHistoryRouter,
+  knowledgeBase: knowledgeBaseRouter,
+  importProgress: importProgressRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
