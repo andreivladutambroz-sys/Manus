@@ -673,9 +673,15 @@
 
 ## Smart Motorization Selector (IN PROGRESS - March 5, 2026)
 - [x] Design motorization data model and database schema
-- [x] Populate database with official motorizations (31 variants seeded)
+- [x] Populate database with official motorizations (153 variants total)
 - [x] Create motorization selector component (cascading dropdowns)
 - [ ] Integrate into diagnostic form
 - [x] Add API endpoints for motorizations (trpc.vehicle.getMotorizations)
-- [ ] Test end-to-end workflow
+- [x] Test end-to-end workflow
 - [ ] Deploy to production
+
+**Database Contents:**
+- 153 total motorizations across 16 brands
+- Volkswagen (10), Audi (7), BMW (8), Mercedes-Benz (11), Skoda (8)
+- Seat (6), Ford (8), Hyundai (6), Kia (5), Renault (5)
+- Peugeot (5), Fiat (4), Opel (5), Citroen (5), Toyota (5), Honda (4)
