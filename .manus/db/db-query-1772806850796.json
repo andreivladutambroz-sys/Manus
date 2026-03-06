@@ -1,0 +1,48 @@
+{
+  "query": "SELECT id, vehicleId, userId, status, createdAt FROM diagnostics LIMIT 5; SELECT COUNT(*) as total FROM diagnostics;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user czn98hR1NJRAJqS.d1053c28687a --database f8JTLCpe9ZcHoBRdfShqpj --execute SELECT id, vehicleId, userId, status, createdAt FROM diagnostics LIMIT 5; SELECT COUNT(*) as total FROM diagnostics;",
+  "rows": [
+    {
+      "id": "1",
+      "vehicleId": "30001",
+      "userId": "1",
+      "status": "completed",
+      "createdAt": "2026-03-04 20:33:26"
+    },
+    {
+      "id": "30001",
+      "vehicleId": "60001",
+      "userId": "1",
+      "status": "completed",
+      "createdAt": "2026-03-05 05:52:06"
+    },
+    {
+      "id": "60001",
+      "vehicleId": "90001",
+      "userId": "1",
+      "status": "completed",
+      "createdAt": "2026-03-05 07:15:20"
+    },
+    {
+      "id": "90001",
+      "vehicleId": "120001",
+      "userId": "1",
+      "status": "completed",
+      "createdAt": "2026-03-05 08:19:45"
+    },
+    {
+      "id": "120001",
+      "vehicleId": "150001",
+      "userId": "1",
+      "status": "completed",
+      "createdAt": "2026-03-05 10:06:13"
+    }
+  ],
+  "messages": [
+    "total",
+    "18"
+  ],
+  "stdout": "id\tvehicleId\tuserId\tstatus\tcreatedAt\n1\t30001\t1\tcompleted\t2026-03-04 20:33:26\n30001\t60001\t1\tcompleted\t2026-03-05 05:52:06\n60001\t90001\t1\tcompleted\t2026-03-05 07:15:20\n90001\t120001\t1\tcompleted\t2026-03-05 08:19:45\n120001\t150001\t1\tcompleted\t2026-03-05 10:06:13\ntotal\n18\n",
+  "stderr": "",
+  "execution_time_ms": 435
+}

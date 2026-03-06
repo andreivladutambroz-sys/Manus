@@ -10,6 +10,7 @@ import { trpc } from "@/lib/trpc";
 import { useLocation, useParams } from "wouter";
 import { useState } from "react";
 import { toast } from "sonner";
+import { DiagnosticFeatures } from "@/components/DiagnosticFeatures";
 import {
   Download, ArrowLeft, CheckCircle2, AlertTriangle, XCircle,
   Wrench, Search, Shield, Clock, Zap, ChevronRight, ChevronDown,
@@ -279,6 +280,11 @@ export default function DiagnosticDetail() {
       </div>
 
       <div className="container mx-auto px-4 py-6 max-w-5xl">
+        {/* Features: Bookmarks, Notes, Tags */}
+        <div className="mb-6">
+          <DiagnosticFeatures diagnosticId={diagnosticId} />
+        </div>
+
         {/* Accuracy Overview Card */}
         {report?.validation && (
           <Card className="mb-6 overflow-hidden">

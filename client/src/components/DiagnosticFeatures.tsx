@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { trpc } from "@/lib/trpc";
-import { Bookmark, BookmarkOff, Tag, StickyNote } from "lucide-react";
+import { Bookmark, X, Tag, StickyNote } from "lucide-react";
 import { toast } from "sonner";
 
 interface DiagnosticFeaturesProps {
@@ -119,7 +119,7 @@ export function DiagnosticFeatures({ diagnosticId }: DiagnosticFeaturesProps) {
         >
           {isBookmarked ? (
             <>
-              <BookmarkOff className="w-4 h-4" />
+              <X className="w-4 h-4" />
               Elimina din favorite
             </>
           ) : (

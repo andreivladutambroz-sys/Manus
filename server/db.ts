@@ -110,7 +110,13 @@ export async function getUserVehicles(userId: number) {
 export async function getUserDiagnostics(userId: number) {
   const database = await getDb() as any;
   if (!database) return [];
-  return (database as any)?.query?.diagnostics?.findMany({ where: (d: any) => d.userId === userId });
+  try {
+    const result = await database.select().from(diagnostics).where(eq(diagnostics.userId, userId)).orderBy(diagnostics.createdAt);
+    return result || [];
+  } catch (error) {
+    console.error("[getUserDiagnostics] Error:", error);
+    return [];
+  }
 }
 
 export async function getVehicleById(vehicleId: number) {
@@ -128,7 +134,13 @@ export async function getVehicleById(vehicleId: number) {
 export async function getDiagnosticById(diagnosticId: number) {
   const database = await getDb() as any;
   if (!database) return null;
-  return (database as any)?.query?.diagnostics?.findFirst({ where: (d: any) => d.id === diagnosticId });
+  try {
+    const result = await database.select().from(diagnostics).where(eq(diagnostics.id, diagnosticId)).limit(1);
+    return result[0] || null;
+  } catch (error) {
+    console.error("[getDiagnosticById] Error:", error);
+    return null;
+  }
 }
 
 export async function getUserNotifications(userId: number) {
