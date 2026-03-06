@@ -358,6 +358,123 @@ export const appRouter = router({
       }),
   }),
 
+  // Bookmarks, notes, tags
+  bookmark: router({
+    add: protectedProcedure
+      .input(z.object({ diagnosticId: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const diagnostic = await getDiagnosticById(input.diagnosticId);
+        if (!diagnostic || diagnostic.userId !== ctx.user.id) throw new Error("Diagnostic not found");
+        const { diagnosticBookmarks } = await import("../drizzle/schema");
+        await db.insert(diagnosticBookmarks).values({
+          diagnosticId: input.diagnosticId,
+          userId: ctx.user.id,
+        });
+        return { success: true };
+      }),
+    remove: protectedProcedure
+      .input(z.object({ diagnosticId: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const { diagnosticBookmarks } = await import("../drizzle/schema");
+        await db.delete(diagnosticBookmarks)
+          .where(and(eq(diagnosticBookmarks.diagnosticId, input.diagnosticId), eq(diagnosticBookmarks.userId, ctx.user.id)));
+        return { success: true };
+      }),
+    list: protectedProcedure.query(async ({ ctx }) => {
+      const db = await getDb();
+      if (!db) return [];
+      const { diagnosticBookmarks } = await import("../drizzle/schema");
+      const bookmarks = await db.select({ diagnosticId: diagnosticBookmarks.diagnosticId })
+        .from(diagnosticBookmarks)
+        .where(eq(diagnosticBookmarks.userId, ctx.user.id));
+      return bookmarks.map(b => b.diagnosticId);
+    }),
+  }),
+  
+  note: router({
+    add: protectedProcedure
+      .input(z.object({ diagnosticId: z.number(), content: z.string().min(1) }))
+      .mutation(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const diagnostic = await getDiagnosticById(input.diagnosticId);
+        if (!diagnostic || diagnostic.userId !== ctx.user.id) throw new Error("Diagnostic not found");
+        const { diagnosticNotes } = await import("../drizzle/schema");
+        const result = await db.insert(diagnosticNotes).values({
+          diagnosticId: input.diagnosticId,
+          userId: ctx.user.id,
+          content: input.content,
+        });
+        return { success: true, noteId: (result as any).insertId };
+      }),
+    list: protectedProcedure
+      .input(z.object({ diagnosticId: z.number() }))
+      .query(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) return [];
+        const { diagnosticNotes } = await import("../drizzle/schema");
+        return await db.select().from(diagnosticNotes)
+          .where(and(eq(diagnosticNotes.diagnosticId, input.diagnosticId), eq(diagnosticNotes.userId, ctx.user.id)));
+      }),
+    delete: protectedProcedure
+      .input(z.object({ noteId: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const { diagnosticNotes } = await import("../drizzle/schema");
+        await db.delete(diagnosticNotes)
+          .where(and(eq(diagnosticNotes.id, input.noteId), eq(diagnosticNotes.userId, ctx.user.id)));
+        return { success: true };
+      }),
+  }),
+  
+  tag: router({
+    add: protectedProcedure
+      .input(z.object({ diagnosticId: z.number(), tag: z.string().min(1).max(100) }))
+      .mutation(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const diagnostic = await getDiagnosticById(input.diagnosticId);
+        if (!diagnostic || diagnostic.userId !== ctx.user.id) throw new Error("Diagnostic not found");
+        const { diagnosticTags } = await import("../drizzle/schema");
+        await db.insert(diagnosticTags).values({
+          diagnosticId: input.diagnosticId,
+          userId: ctx.user.id,
+          tag: input.tag,
+        });
+        return { success: true };
+      }),
+    list: protectedProcedure
+      .input(z.object({ diagnosticId: z.number() }))
+      .query(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) return [];
+        const { diagnosticTags } = await import("../drizzle/schema");
+        const tags = await db.select({ tag: diagnosticTags.tag })
+          .from(diagnosticTags)
+          .where(and(eq(diagnosticTags.diagnosticId, input.diagnosticId), eq(diagnosticTags.userId, ctx.user.id)));
+        return tags.map(t => t.tag);
+      }),
+    remove: protectedProcedure
+      .input(z.object({ diagnosticId: z.number(), tag: z.string() }))
+      .mutation(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const { diagnosticTags } = await import("../drizzle/schema");
+        await db.delete(diagnosticTags)
+          .where(and(
+            eq(diagnosticTags.diagnosticId, input.diagnosticId),
+            eq(diagnosticTags.userId, ctx.user.id),
+            eq(diagnosticTags.tag, input.tag)
+          ));
+        return { success: true };
+      }),
+  }),
+
   export: router({
     pdf: protectedProcedure
       .input(z.object({ diagnosticId: z.number() }))

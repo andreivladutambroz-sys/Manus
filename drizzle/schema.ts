@@ -88,6 +88,48 @@ export type Diagnostic = typeof diagnostics.$inferSelect;
 export type InsertDiagnostic = typeof diagnostics.$inferInsert;
 
 /**
+ * Diagnostic bookmarks - users can bookmark important diagnostics
+ */
+export const diagnosticBookmarks = mysqlTable("diagnosticBookmarks", {
+  id: int("id").autoincrement().primaryKey(),
+  diagnosticId: int("diagnosticId").notNull().references(() => diagnostics.id, { onDelete: "cascade" }),
+  userId: int("userId").notNull().references(() => users.id, { onDelete: "cascade" }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type DiagnosticBookmark = typeof diagnosticBookmarks.$inferSelect;
+export type InsertDiagnosticBookmark = typeof diagnosticBookmarks.$inferInsert;
+
+/**
+ * Diagnostic notes - users can add notes to diagnostics
+ */
+export const diagnosticNotes = mysqlTable("diagnosticNotes", {
+  id: int("id").autoincrement().primaryKey(),
+  diagnosticId: int("diagnosticId").notNull().references(() => diagnostics.id, { onDelete: "cascade" }),
+  userId: int("userId").notNull().references(() => users.id, { onDelete: "cascade" }),
+  content: text("content").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type DiagnosticNote = typeof diagnosticNotes.$inferSelect;
+export type InsertDiagnosticNote = typeof diagnosticNotes.$inferInsert;
+
+/**
+ * Diagnostic tags - users can tag diagnostics for organization
+ */
+export const diagnosticTags = mysqlTable("diagnosticTags", {
+  id: int("id").autoincrement().primaryKey(),
+  diagnosticId: int("diagnosticId").notNull().references(() => diagnostics.id, { onDelete: "cascade" }),
+  userId: int("userId").notNull().references(() => users.id, { onDelete: "cascade" }),
+  tag: varchar("tag", { length: 100 }).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type DiagnosticTag = typeof diagnosticTags.$inferSelect;
+export type InsertDiagnosticTag = typeof diagnosticTags.$inferInsert;
+
+/**
  * Knowledge base - common VAG vehicle problems and solutions
  */
 /**
