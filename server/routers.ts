@@ -25,7 +25,6 @@ import { knowledgeBaseRouter } from "./routers/knowledge-base";
 import { importProgressRouter } from "./routers/import-progress";
 import { diagnosticRouter } from "./routers/diagnostic.router";
 import { imageUploadRouter } from "./routers/image-upload.router";
-import mysql from "mysql2/promise";
 
 export const appRouter = router({
   system: systemRouter,
@@ -40,7 +39,6 @@ export const appRouter = router({
   knowledgeBase: knowledgeBaseRouter,
   importProgress: importProgressRouter,
   diagnosticEngine: diagnosticRouter,
-
   imageUpload: imageUploadRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
@@ -163,31 +161,6 @@ export const appRouter = router({
 
   // Diagnostic procedures - ENHANCED v2
   diagnostic: router({
-search: publicProcedure
-      .input(
-        z.object({
-          query: z.string().min(2).max(100),
-          limit: z.number().min(1).max(50).default(10),
-          offset: z.number().min(0).default(0),
-        })
-      )
-      .query(async ({ input }) => {
-        const connection = await mysql.createConnection(process.env.DATABASE_URL!);
-        try {
-          const searchTerm = `%${input.query}%`;
-          const [results] = await connection.execute(
-            `SELECT id, vehicleMake, vehicleModel, vehicleYear, errorCode, errorSystem, errorDescription, symptoms, repairAction, confidence, sourceType, sourceDomain, repairOutcome FROM repairCases WHERE vehicleMake LIKE ? OR vehicleModel LIKE ? OR errorCode LIKE ? OR errorSystem LIKE ? OR errorDescription LIKE ? ORDER BY confidence DESC LIMIT ? OFFSET ?`,
-            [searchTerm, searchTerm, searchTerm, searchTerm, searchTerm, input.limit, input.offset]
-          );
-          return {
-            results: results as any[],
-            count: (results as any[]).length,
-            hasMore: (results as any[]).length === input.limit,
-          };
-        } finally {
-          await connection.end();
-        }
-      }),
     list: protectedProcedure.query(async ({ ctx }) => {
       return await getUserDiagnostics(ctx.user.id);
     }),
