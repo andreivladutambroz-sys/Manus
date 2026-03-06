@@ -2,7 +2,7 @@
 
 **Obiectiv Final:** MVP complet cu pipeline de colectare date, UI curat, și zero erori
 
-**Status:** Faza 1 - Inceput
+**Status:** Faza 2 - In Progress
 
 ---
 
@@ -237,11 +237,11 @@
 
 ## CURRENT STATUS
 
-**Faza 1 - Milestone 1.1: Database Schema Verification**
-- [ ] Verifica 37 tabele
-- [ ] Testa CRUD operations
-- [ ] Verifica relații
-- [ ] Testa migrations
-- [ ] Documentează schema
+**Faza 2 - Milestone 2.2: 5-Layer Pipeline Implementation**
+- [x] Implementat 6 collector types
+- [x] Implementat 5-layer pipeline
+- [x] Testat cu 1000 mock records
+- [x] Test PASSED: 0.5% acceptance (expected pentru mock data)
+- [ ] Optimizare pentru 200 agenți
 
-**Următorul pas:** Pornire Milestone 1.1
+**Următorul pas:** Milestone 2.3 - Swarm Execution (200 agents)
