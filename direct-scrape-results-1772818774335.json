@@ -1,0 +1,559 @@
+[
+  {
+    "success": true,
+    "source": "epiesa.ro",
+    "brands": [
+      {
+        "value": "0",
+        "name": "MARCA ..."
+      },
+      {
+        "value": "2",
+        "name": "ALFA ROMEO"
+      },
+      {
+        "value": "881",
+        "name": "ASTON MARTIN"
+      },
+      {
+        "value": "5",
+        "name": "AUDI"
+      },
+      {
+        "value": "815",
+        "name": "BENTLEY"
+      },
+      {
+        "value": "16",
+        "name": "BMW"
+      },
+      {
+        "value": "788",
+        "name": "BUGATTI"
+      },
+      {
+        "value": "819",
+        "name": "CADILLAC"
+      },
+      {
+        "value": "138",
+        "name": "CHEVROLET"
+      },
+      {
+        "value": "20",
+        "name": "CHRYSLER"
+      },
+      {
+        "value": "21",
+        "name": "CITROEN"
+      },
+      {
+        "value": "4896",
+        "name": "CUPRA"
+      },
+      {
+        "value": "139",
+        "name": "DACIA"
+      },
+      {
+        "value": "185",
+        "name": "DAEWOO"
+      },
+      {
+        "value": "24",
+        "name": "DAF"
+      },
+      {
+        "value": "25",
+        "name": "DAIHATSU"
+      },
+      {
+        "value": "29",
+        "name": "DODGE"
+      },
+      {
+        "value": "700",
+        "name": "FERRARI"
+      },
+      {
+        "value": "35",
+        "name": "FIAT"
+      },
+      {
+        "value": "36",
+        "name": "FORD"
+      },
+      {
+        "value": "45",
+        "name": "HONDA"
+      },
+      {
+        "value": "1506",
+        "name": "HUMMER"
+      },
+      {
+        "value": "183",
+        "name": "HYUNDAI"
+      },
+      {
+        "value": "1526",
+        "name": "INFINITI"
+      },
+      {
+        "value": "54",
+        "name": "ISUZU"
+      },
+      {
+        "value": "55",
+        "name": "IVECO"
+      },
+      {
+        "value": "56",
+        "name": "JAGUAR"
+      },
+      {
+        "value": "882",
+        "name": "JEEP"
+      },
+      {
+        "value": "184",
+        "name": "KIA"
+      },
+      {
+        "value": "63",
+        "name": "LADA"
+      },
+      {
+        "value": "701",
+        "name": "LAMBORGHINI"
+      },
+      {
+        "value": "64",
+        "name": "LANCIA"
+      },
+      {
+        "value": "1820",
+        "name": "LAND ROVER"
+      },
+      {
+        "value": "842",
+        "name": "LEXUS"
+      },
+      {
+        "value": "69",
+        "name": "MAN"
+      },
+      {
+        "value": "771",
+        "name": "MASERATI"
+      },
+      {
+        "value": "2164",
+        "name": "MAYBACH"
+      },
+      {
+        "value": "72",
+        "name": "MAZDA"
+      },
+      {
+        "value": "74",
+        "name": "MERCEDES-BENZ"
+      },
+      {
+        "value": "75",
+        "name": "MG"
+      },
+      {
+        "value": "1523",
+        "name": "MINI"
+      },
+      {
+        "value": "77",
+        "name": "MITSUBISHI"
+      },
+      {
+        "value": "80",
+        "name": "NISSAN"
+      },
+      {
+        "value": "84",
+        "name": "OPEL"
+      },
+      {
+        "value": "88",
+        "name": "PEUGEOT"
+      },
+      {
+        "value": "774",
+        "name": "PONTIAC"
+      },
+      {
+        "value": "92",
+        "name": "PORSCHE"
+      },
+      {
+        "value": "778",
+        "name": "PROTON"
+      },
+      {
+        "value": "93",
+        "name": "RENAULT"
+      },
+      {
+        "value": "694",
+        "name": "RENAULT TRUCKS"
+      },
+      {
+        "value": "705",
+        "name": "ROLLS-ROYCE"
+      },
+      {
+        "value": "95",
+        "name": "ROVER"
+      },
+      {
+        "value": "99",
+        "name": "SAAB"
+      },
+      {
+        "value": "103",
+        "name": "SCANIA"
+      },
+      {
+        "value": "104",
+        "name": "SEAT"
+      },
+      {
+        "value": "106",
+        "name": "SKODA"
+      },
+      {
+        "value": "1138",
+        "name": "SMART"
+      },
+      {
+        "value": "175",
+        "name": "SSANGYONG"
+      },
+      {
+        "value": "107",
+        "name": "SUBARU"
+      },
+      {
+        "value": "109",
+        "name": "SUZUKI"
+      },
+      {
+        "value": "3328",
+        "name": "TESLA"
+      },
+      {
+        "value": "111",
+        "name": "TOYOTA"
+      },
+      {
+        "value": "120",
+        "name": "VOLVO"
+      },
+      {
+        "value": "121",
+        "name": "VW"
+      },
+      {
+        "value": "0",
+        "name": "MODEL ..."
+      },
+      {
+        "value": "0",
+        "name": "CARBURANT ..."
+      },
+      {
+        "value": "0",
+        "name": "CILINDREE ..."
+      },
+      {
+        "value": "0",
+        "name": "PUTERE ..."
+      },
+      {
+        "value": "0",
+        "name": "MARCA ..."
+      },
+      {
+        "value": "2",
+        "name": "ALFA ROMEO"
+      },
+      {
+        "value": "881",
+        "name": "ASTON MARTIN"
+      },
+      {
+        "value": "5",
+        "name": "AUDI"
+      },
+      {
+        "value": "815",
+        "name": "BENTLEY"
+      },
+      {
+        "value": "16",
+        "name": "BMW"
+      },
+      {
+        "value": "788",
+        "name": "BUGATTI"
+      },
+      {
+        "value": "819",
+        "name": "CADILLAC"
+      },
+      {
+        "value": "138",
+        "name": "CHEVROLET"
+      },
+      {
+        "value": "20",
+        "name": "CHRYSLER"
+      },
+      {
+        "value": "21",
+        "name": "CITROEN"
+      },
+      {
+        "value": "4896",
+        "name": "CUPRA"
+      },
+      {
+        "value": "139",
+        "name": "DACIA"
+      },
+      {
+        "value": "185",
+        "name": "DAEWOO"
+      },
+      {
+        "value": "24",
+        "name": "DAF"
+      },
+      {
+        "value": "25",
+        "name": "DAIHATSU"
+      },
+      {
+        "value": "29",
+        "name": "DODGE"
+      },
+      {
+        "value": "700",
+        "name": "FERRARI"
+      },
+      {
+        "value": "35",
+        "name": "FIAT"
+      },
+      {
+        "value": "36",
+        "name": "FORD"
+      },
+      {
+        "value": "45",
+        "name": "HONDA"
+      },
+      {
+        "value": "1506",
+        "name": "HUMMER"
+      },
+      {
+        "value": "183",
+        "name": "HYUNDAI"
+      },
+      {
+        "value": "1526",
+        "name": "INFINITI"
+      },
+      {
+        "value": "54",
+        "name": "ISUZU"
+      },
+      {
+        "value": "55",
+        "name": "IVECO"
+      },
+      {
+        "value": "56",
+        "name": "JAGUAR"
+      },
+      {
+        "value": "882",
+        "name": "JEEP"
+      },
+      {
+        "value": "184",
+        "name": "KIA"
+      },
+      {
+        "value": "63",
+        "name": "LADA"
+      },
+      {
+        "value": "701",
+        "name": "LAMBORGHINI"
+      },
+      {
+        "value": "64",
+        "name": "LANCIA"
+      },
+      {
+        "value": "1820",
+        "name": "LAND ROVER"
+      },
+      {
+        "value": "842",
+        "name": "LEXUS"
+      },
+      {
+        "value": "69",
+        "name": "MAN"
+      },
+      {
+        "value": "771",
+        "name": "MASERATI"
+      },
+      {
+        "value": "2164",
+        "name": "MAYBACH"
+      },
+      {
+        "value": "72",
+        "name": "MAZDA"
+      },
+      {
+        "value": "74",
+        "name": "MERCEDES-BENZ"
+      },
+      {
+        "value": "75",
+        "name": "MG"
+      },
+      {
+        "value": "1523",
+        "name": "MINI"
+      },
+      {
+        "value": "77",
+        "name": "MITSUBISHI"
+      },
+      {
+        "value": "80",
+        "name": "NISSAN"
+      },
+      {
+        "value": "84",
+        "name": "OPEL"
+      },
+      {
+        "value": "88",
+        "name": "PEUGEOT"
+      },
+      {
+        "value": "774",
+        "name": "PONTIAC"
+      },
+      {
+        "value": "92",
+        "name": "PORSCHE"
+      },
+      {
+        "value": "778",
+        "name": "PROTON"
+      },
+      {
+        "value": "93",
+        "name": "RENAULT"
+      },
+      {
+        "value": "694",
+        "name": "RENAULT TRUCKS"
+      },
+      {
+        "value": "705",
+        "name": "ROLLS-ROYCE"
+      },
+      {
+        "value": "95",
+        "name": "ROVER"
+      },
+      {
+        "value": "99",
+        "name": "SAAB"
+      },
+      {
+        "value": "103",
+        "name": "SCANIA"
+      },
+      {
+        "value": "104",
+        "name": "SEAT"
+      },
+      {
+        "value": "106",
+        "name": "SKODA"
+      },
+      {
+        "value": "1138",
+        "name": "SMART"
+      },
+      {
+        "value": "175",
+        "name": "SSANGYONG"
+      },
+      {
+        "value": "107",
+        "name": "SUBARU"
+      },
+      {
+        "value": "109",
+        "name": "SUZUKI"
+      },
+      {
+        "value": "3328",
+        "name": "TESLA"
+      },
+      {
+        "value": "111",
+        "name": "TOYOTA"
+      },
+      {
+        "value": "120",
+        "name": "VOLVO"
+      },
+      {
+        "value": "121",
+        "name": "VW"
+      },
+      {
+        "value": "0",
+        "name": "MODEL ..."
+      },
+      {
+        "value": "0",
+        "name": "CARBURANT ..."
+      },
+      {
+        "value": "0",
+        "name": "CILINDREE ..."
+      },
+      {
+        "value": "0",
+        "name": "PUTERE ..."
+      }
+    ],
+    "records": 136
+  },
+  {
+    "success": true,
+    "source": "autodoc.ro",
+    "brands": [],
+    "records": 0
+  }
+]

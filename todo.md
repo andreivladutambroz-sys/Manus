@@ -1011,3 +1011,47 @@
   - [ ] failure_statistics.json
   - [ ] Comprehensive execution report
   - [ ] Checkpoint & delivery
+
+
+## REAL DATA COLLECTION SWARM - FlareSolverr FREE Integration (CRITICAL)
+- [x] Set up FlareSolverr (FREE Cloudflare bypass - no costs!)
+- [x] Install dependencies (axios, cheerio, mysql2, dotenv)
+- [x] Create FlareSolverrManager proxy connection handler
+- [x] Implement EpiesaScraper for real data extraction
+- [x] Implement AutodocScraper for real data extraction
+- [x] Create SupplierWorker thread for parallel execution
+- [x] Implement database schema for scraped data (vehicles, parts, sources)
+- [x] Create agents configuration file (30 suppliers)
+- [x] Test components with mock server (100% success rate)
+- [ ] Run 30-agent swarm and collect initial data
+- [ ] Perform HONEST audit on collected data (verify real URLs, OEM codes, prices)
+- [ ] Fix any data quality issues found in audit
+- [ ] Deploy 200-agent swarm for full data collection
+- [ ] Monitor and validate all collected data
+- [ ] Generate final data quality report
+
+
+## 200-AGENT SWARM - FlareSolverr + Vercel Deployment (CRITICAL)
+- [x] Set up FlareSolverr (FREE Cloudflare bypass)
+- [x] Install dependencies (axios, cheerio, mysql2, dotenv)
+- [x] Create FlareSolverrManager proxy connection handler
+- [x] Implement EpiesaScraper v2 for real data extraction
+- [x] Implement AutodocScraper v2 for real data extraction
+- [x] Create SupplierWorker thread for parallel execution
+- [x] Implement database schema for scraped data
+- [x] Create agents configuration file (30 suppliers)
+- [x] Test components with mock server (100% success rate)
+- [x] Create Vercel API route: /api/flaresolverr-proxy
+- [x] Create Vercel API route: /api/launch-swarm
+- [x] Create Vercel cron job: /api/cron/collect-data (daily @ 2 AM)
+- [x] Update vercel.json with cron configuration
+- [x] Create comprehensive Vercel deployment guide
+- [ ] Deploy to Vercel with FlareSolverr integration
+- [ ] Set up FlareSolverr on Render/Railway (external)
+- [ ] Configure Vercel environment variables
+- [ ] Test API endpoints (proxy, launch-swarm, cron)
+- [ ] Run 30-agent swarm and collect initial data
+- [ ] Perform HONEST audit on collected data
+- [ ] Deploy 200-agent swarm for full data collection
+- [ ] Monitor and validate all collected data
+- [ ] Generate final data quality report

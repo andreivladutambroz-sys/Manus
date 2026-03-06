@@ -1,0 +1,77 @@
+
+======================================================================
+📊 DATA AUDIT REPORT
+======================================================================
+
+SUMMARY:
+  Total Records: 12
+  Data Quality Score: 50.0%
+
+COMPLETENESS:
+  Records with Source URL: 12 (100.0%)
+  Records with OEM Code: 12 (100.0%)
+  Records with Price: 12 (100.0%)
+
+DATA AUTHENTICITY:
+  Real OEM Codes: 6
+  Suspicious OEM Codes: 6
+  Real Prices: 12
+  Suspicious Prices: 0
+
+DATA QUALITY:
+  Valid Records: 6 (50.0%)
+  Suspicious Records: 6 (50.0%)
+  Invalid Records: 0 (0.0%)
+  Duplicate Records: 0
+
+VERDICT:
+  ⚠️  FAIR - Data needs significant cleanup
+
+======================================================================
+
+SAMPLE VALID RECORDS (first 5):
+
+  1. Filtru Ulei BMW 3 Series
+     Brand: BMW, Model: 3 Series
+     OEM: BOSCH-0451104100, Price: 45.99 RON
+     Source: epiesa.ro
+     URL: https://www.epiesa.ro/piesa/filtru-ulei-bmw
+
+  2. Bujii Incandescente BMW 3 Series
+     Brand: BMW, Model: 3 Series
+     OEM: NGK-BPR6EY, Price: 89.99 RON
+     Source: epiesa.ro
+     URL: https://www.epiesa.ro/piesa/bujii-bmw
+
+  3. Filtru Ulei BMW 3 Series
+     Brand: Mercedes-Benz, Model: 3 Series
+     OEM: BOSCH-0451104100, Price: 45.99 RON
+     Source: epiesa.ro
+     URL: https://www.epiesa.ro/piesa/filtru-ulei-bmw
+
+  4. Bujii Incandescente BMW 3 Series
+     Brand: Mercedes-Benz, Model: 3 Series
+     OEM: NGK-BPR6EY, Price: 89.99 RON
+     Source: epiesa.ro
+     URL: https://www.epiesa.ro/piesa/bujii-bmw
+
+  5. Filtru Ulei Mercedes C-Class
+     Brand: BMW, Model: C-Class
+     OEM: BOSCH-0451103316, Price: 52.99 RON
+     Source: autodoc.ro
+     URL: https://www.autodoc.ro/part/filtru-ulei-mercedes
+
+
+SAMPLE SUSPICIOUS RECORDS (first 3):
+
+  1. Filtru Aer BMW 3 Series
+     Issues: Suspicious OEM code: MANN-C2532
+     Quality Score: 60%
+
+  2. Filtru Aer BMW 3 Series
+     Issues: Suspicious OEM code: MANN-C2532
+     Quality Score: 60%
+
+  3. Filtru Aer Mercedes C-Class
+     Issues: Suspicious OEM code: MANN-C3532
+     Quality Score: 60%

@@ -1,0 +1,263 @@
+{
+  "totalRecords": 12,
+  "recordsWithSourceUrl": 12,
+  "recordsWithOemCode": 12,
+  "recordsWithPrice": 12,
+  "validUrls": 0,
+  "invalidUrls": 0,
+  "urlCheckErrors": 0,
+  "realOemCodes": 6,
+  "suspiciousOemCodes": 6,
+  "realPrices": 12,
+  "suspiciousPrices": 0,
+  "duplicates": 0,
+  "dataQualityScore": 50,
+  "issues": [],
+  "samples": {
+    "validRecords": [
+      {
+        "index": 0,
+        "record": {
+          "name": "Filtru Ulei BMW 3 Series",
+          "price": 45.99,
+          "currency": "RON",
+          "partNumber": "BOSCH-0451104100",
+          "brand": "BMW",
+          "model": "3 Series",
+          "category": "engine",
+          "sourceUrl": "https://www.epiesa.ro/piesa/filtru-ulei-bmw",
+          "source": "epiesa.ro",
+          "scrapedAt": "2026-03-06T17:29:09.217Z",
+          "oemCodeValid": true
+        },
+        "issues": [],
+        "isValid": true,
+        "quality": 100
+      },
+      {
+        "index": 2,
+        "record": {
+          "name": "Bujii Incandescente BMW 3 Series",
+          "price": 89.99,
+          "currency": "RON",
+          "partNumber": "NGK-BPR6EY",
+          "brand": "BMW",
+          "model": "3 Series",
+          "category": "engine",
+          "sourceUrl": "https://www.epiesa.ro/piesa/bujii-bmw",
+          "source": "epiesa.ro",
+          "scrapedAt": "2026-03-06T17:29:09.219Z",
+          "oemCodeValid": true
+        },
+        "issues": [],
+        "isValid": true,
+        "quality": 100
+      },
+      {
+        "index": 3,
+        "record": {
+          "name": "Filtru Ulei BMW 3 Series",
+          "price": 45.99,
+          "currency": "RON",
+          "partNumber": "BOSCH-0451104100",
+          "brand": "Mercedes-Benz",
+          "model": "3 Series",
+          "category": "engine",
+          "sourceUrl": "https://www.epiesa.ro/piesa/filtru-ulei-bmw",
+          "source": "epiesa.ro",
+          "scrapedAt": "2026-03-06T17:29:09.726Z",
+          "oemCodeValid": true
+        },
+        "issues": [],
+        "isValid": true,
+        "quality": 100
+      },
+      {
+        "index": 5,
+        "record": {
+          "name": "Bujii Incandescente BMW 3 Series",
+          "price": 89.99,
+          "currency": "RON",
+          "partNumber": "NGK-BPR6EY",
+          "brand": "Mercedes-Benz",
+          "model": "3 Series",
+          "category": "engine",
+          "sourceUrl": "https://www.epiesa.ro/piesa/bujii-bmw",
+          "source": "epiesa.ro",
+          "scrapedAt": "2026-03-06T17:29:09.726Z",
+          "oemCodeValid": true
+        },
+        "issues": [],
+        "isValid": true,
+        "quality": 100
+      },
+      {
+        "index": 6,
+        "record": {
+          "name": "Filtru Ulei Mercedes C-Class",
+          "price": 52.99,
+          "currency": "RON",
+          "partNumber": "BOSCH-0451103316",
+          "brand": "BMW",
+          "model": "C-Class",
+          "category": "engine",
+          "sourceUrl": "https://www.autodoc.ro/part/filtru-ulei-mercedes",
+          "source": "autodoc.ro",
+          "scrapedAt": "2026-03-06T17:29:10.243Z",
+          "oemCodeValid": true
+        },
+        "issues": [],
+        "isValid": true,
+        "quality": 100
+      },
+      {
+        "index": 9,
+        "record": {
+          "name": "Filtru Ulei Mercedes C-Class",
+          "price": 52.99,
+          "currency": "RON",
+          "partNumber": "BOSCH-0451103316",
+          "brand": "Mercedes-Benz",
+          "model": "C-Class",
+          "category": "engine",
+          "sourceUrl": "https://www.autodoc.ro/part/filtru-ulei-mercedes",
+          "source": "autodoc.ro",
+          "scrapedAt": "2026-03-06T17:29:10.750Z",
+          "oemCodeValid": true
+        },
+        "issues": [],
+        "isValid": true,
+        "quality": 100
+      }
+    ],
+    "invalidRecords": [],
+    "suspiciousRecords": [
+      {
+        "index": 1,
+        "record": {
+          "name": "Filtru Aer BMW 3 Series",
+          "price": 32.5,
+          "currency": "RON",
+          "partNumber": "MANN-C2532",
+          "brand": "BMW",
+          "model": "3 Series",
+          "category": "engine",
+          "sourceUrl": "https://www.epiesa.ro/piesa/filtru-aer-bmw",
+          "source": "epiesa.ro",
+          "scrapedAt": "2026-03-06T17:29:09.219Z",
+          "oemCodeValid": true
+        },
+        "issues": [
+          "Suspicious OEM code: MANN-C2532"
+        ],
+        "isValid": true,
+        "quality": 60
+      },
+      {
+        "index": 4,
+        "record": {
+          "name": "Filtru Aer BMW 3 Series",
+          "price": 32.5,
+          "currency": "RON",
+          "partNumber": "MANN-C2532",
+          "brand": "Mercedes-Benz",
+          "model": "3 Series",
+          "category": "engine",
+          "sourceUrl": "https://www.epiesa.ro/piesa/filtru-aer-bmw",
+          "source": "epiesa.ro",
+          "scrapedAt": "2026-03-06T17:29:09.726Z",
+          "oemCodeValid": true
+        },
+        "issues": [
+          "Suspicious OEM code: MANN-C2532"
+        ],
+        "isValid": true,
+        "quality": 60
+      },
+      {
+        "index": 7,
+        "record": {
+          "name": "Filtru Aer Mercedes C-Class",
+          "price": 38.5,
+          "currency": "RON",
+          "partNumber": "MANN-C3532",
+          "brand": "BMW",
+          "model": "C-Class",
+          "category": "engine",
+          "sourceUrl": "https://www.autodoc.ro/part/filtru-aer-mercedes",
+          "source": "autodoc.ro",
+          "scrapedAt": "2026-03-06T17:29:10.243Z",
+          "oemCodeValid": true
+        },
+        "issues": [
+          "Suspicious OEM code: MANN-C3532"
+        ],
+        "isValid": true,
+        "quality": 60
+      },
+      {
+        "index": 8,
+        "record": {
+          "name": "Pernă Motor Mercedes C-Class",
+          "price": 125,
+          "currency": "RON",
+          "partNumber": "LEMFÖRDER-37236",
+          "brand": "BMW",
+          "model": "C-Class",
+          "category": "engine",
+          "sourceUrl": "https://www.autodoc.ro/part/perna-motor-mercedes",
+          "source": "autodoc.ro",
+          "scrapedAt": "2026-03-06T17:29:10.243Z",
+          "oemCodeValid": true
+        },
+        "issues": [
+          "Suspicious OEM code: LEMFÖRDER-37236"
+        ],
+        "isValid": true,
+        "quality": 60
+      },
+      {
+        "index": 10,
+        "record": {
+          "name": "Filtru Aer Mercedes C-Class",
+          "price": 38.5,
+          "currency": "RON",
+          "partNumber": "MANN-C3532",
+          "brand": "Mercedes-Benz",
+          "model": "C-Class",
+          "category": "engine",
+          "sourceUrl": "https://www.autodoc.ro/part/filtru-aer-mercedes",
+          "source": "autodoc.ro",
+          "scrapedAt": "2026-03-06T17:29:10.750Z",
+          "oemCodeValid": true
+        },
+        "issues": [
+          "Suspicious OEM code: MANN-C3532"
+        ],
+        "isValid": true,
+        "quality": 60
+      },
+      {
+        "index": 11,
+        "record": {
+          "name": "Pernă Motor Mercedes C-Class",
+          "price": 125,
+          "currency": "RON",
+          "partNumber": "LEMFÖRDER-37236",
+          "brand": "Mercedes-Benz",
+          "model": "C-Class",
+          "category": "engine",
+          "sourceUrl": "https://www.autodoc.ro/part/perna-motor-mercedes",
+          "source": "autodoc.ro",
+          "scrapedAt": "2026-03-06T17:29:10.750Z",
+          "oemCodeValid": true
+        },
+        "issues": [
+          "Suspicious OEM code: LEMFÖRDER-37236"
+        ],
+        "isValid": true,
+        "quality": 60
+      }
+    ]
+  }
+}

@@ -46,9 +46,16 @@
       "description": "Frontend Forge API key"
     }
   },
+  "crons": [
+    {
+      "path": "/api/cron/collect-data",
+      "schedule": "0 2 * * *"
+    }
+  ],
   "functions": {
     "api/**": {
-      "maxDuration": 60
+      "maxDuration": 900,
+      "memory": 3008
     }
   }
 }
