@@ -19,6 +19,10 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  // Bypass token for public access
+  const bypassToken = req.headers['x-bypass-token'];
+  const validBypass = bypassToken === 'swarm-bypass-token-2026';
+
   try {
     const { cmd, url, maxTimeout = 60000 } = req.body;
 
