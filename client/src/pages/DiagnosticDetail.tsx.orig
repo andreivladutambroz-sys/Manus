@@ -15,7 +15,7 @@ import {
   Wrench, Search, Shield, Clock, Zap, ChevronRight, ChevronDown,
   Target, ListChecks, Package, FileText, Brain, Activity,
   Gauge, Info, ArrowRight, CircleDot, TriangleAlert, CircleCheck,
-  MessageSquare, Bookmark, BookmarkOff, Tag, StickyNote
+  MessageSquare
 } from "lucide-react";
 
 // ============================================================
