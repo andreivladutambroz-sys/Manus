@@ -225,7 +225,7 @@ export class PipelineOrchestrator {
       } else {
         rejected.push({
           record,
-          reason: validationResult.reason,
+          reason: validationResult.reason || "Unknown error",
         });
       }
     }
@@ -241,7 +241,7 @@ export class PipelineOrchestrator {
     return validated;
   }
 
-  private validateRecord(record: NormalizedRecord): { valid: boolean; reason?: string } {
+  private validateRecord(record: NormalizedRecord): { valid: boolean; reason?: string | undefined } {
     // Vehicle validation
     if (!record.vehicleInfo.make || !record.vehicleInfo.model) {
       return { valid: false, reason: "Missing vehicle info" };
@@ -346,9 +346,9 @@ export class PipelineOrchestrator {
         repairProcedures: record.repairSteps
           .map(s => `${s.step}. ${s.description}`)
           .join("\n"),
-        parts: record.repairSteps
-          .flatMap(s => s.parts || [])
-          .join("|") || "",
+        parts: (record.repairSteps
+          .flatMap((s: any) => s.parts || [])
+          .join("|") || "") as string,
         laborCost: 0,
         partsCost: 0,
         totalCost: 0,
