@@ -1,0 +1,54 @@
+{
+  "mock_sources": [
+    {
+      "url": "https://www.bimmerfest.com/threads/p0171-fix.123456/",
+      "domain": "bimmerfest.com",
+      "html": "<html><body><h1>P0171 Code - System Too Lean Bank 1</h1><p>I have a 2010 BMW 328i with P0171 code. The symptoms include rough idle when cold, hesitation during acceleration, and the check engine light stays on. I noticed the car runs fine once it warms up.</p><p>After diagnosis, I found the issue was a vacuum leak at the intake manifold. The repair steps were: 1) Inspect all vacuum hoses for cracks, 2) Test the intake manifold gasket with smoke test, 3) Replace the intake manifold gasket with new one, 4) Tighten bolts to 25 Nm. After the repair, the code cleared and the car runs smoothly. Success!</p></body></html>"
+    },
+    {
+      "url": "https://www.bimmerforums.com/forum/p0300-misfire.789012/",
+      "domain": "bimmerforums.com",
+      "html": "<html><body><h1>Random Misfire P0300 - Solved</h1><p>My 2012 BMW 535i throws P0300 code. Symptoms: rough running, loss of power, occasional stalling. The issue appeared after I replaced the spark plugs incorrectly.</p><p>Repair procedure: 1) Check spark plug gap (should be 0.032 inches), 2) Inspect ignition coils for damage, 3) Test fuel pressure with fuel pressure gauge (should read 50-60 psi), 4) Replace faulty ignition coil pack, 5) Reseat all spark plugs with correct gap. Tools needed: OBD scanner, fuel pressure gauge, torque wrench. After these steps, the misfire stopped and performance improved.</p></body></html>"
+    },
+    {
+      "url": "https://www.e90post.com/forums/p0420-catalytic.345678/",
+      "domain": "e90post.com",
+      "html": "<html><body><h1>P0420 Code - Catalytic Converter Efficiency</h1><p>2008 BMW E90 330i with P0420 code. Symptoms: check engine light, slightly reduced fuel economy, no noticeable performance loss. The problem started after 120k miles.</p><p>Diagnosis and repair: 1) Scan OBD with diagnostic tool to confirm P0420, 2) Inspect catalytic converter for physical damage, 3) Check oxygen sensors with multimeter, 4) Test exhaust for leaks using smoke test, 5) Replace oxygen sensor (bank 1 sensor 2) if faulty, 6) Clean catalytic converter or replace if damaged. Torque specs: oxygen sensor 40 Nm. The repair was successful and the code cleared.</p></body></html>"
+    },
+    {
+      "url": "https://www.e46fanatics.com/forum/p0128-thermostat.567890/",
+      "domain": "e46fanatics.com",
+      "html": "<html><body><h1>P0128 Thermostat Code - DIY Fix</h1><p>2003 BMW E46 320i showing P0128 code. Symptoms: engine takes longer to warm up, coolant temperature fluctuates, check engine light on.</p><p>The fix involved: 1) Drain coolant from radiator, 2) Remove thermostat housing bolts (torque 15 Nm), 3) Extract old thermostat and inspect for stuck valve, 4) Install new thermostat (OEM part), 5) Refill coolant to proper level, 6) Bleed air from cooling system. Tools: coolant drain pan, socket wrench, torque wrench. After replacement, the temperature gauge stabilized and code cleared. Success!</p></body></html>"
+    },
+    {
+      "url": "https://reddit.com/r/MechanicAdvice/p0171-lean/",
+      "domain": "reddit.com",
+      "html": "<html><body><h1>P0171 - System Too Lean Bank 1 - SOLVED</h1><p>My 2015 Honda Civic has P0171 code. Symptoms: rough idle, hesitation when accelerating, check engine light. The issue was a vacuum leak.</p><p>Here's what I did: 1) Inspected all vacuum lines for cracks or loose connections, 2) Used a smoke test to find the leak location, 3) Replaced the cracked hose, 4) Cleared the code with OBD scanner. The car runs perfectly now. The repair took 30 minutes and cost $20 for the hose.</p></body></html>"
+    },
+    {
+      "url": "https://www.youcanic.com/guides/p0420-oxygen-sensor/",
+      "domain": "youcanic.com",
+      "html": "<html><body><h1>P0420 Code - Catalytic Converter Efficiency Below Threshold</h1><p>The P0420 code indicates your catalytic converter is not working efficiently. Common symptoms include check engine light, reduced fuel economy, and possible loss of power.</p><p>Diagnostic steps: 1) Scan the vehicle with an OBD2 scanner to confirm P0420, 2) Check for exhaust leaks by inspecting manifold and pipes, 3) Test oxygen sensors with a multimeter, 4) Measure fuel pressure (should be 45-65 psi depending on vehicle), 5) Inspect catalytic converter for physical damage. If the oxygen sensor is faulty, replace it (typically 40-100 Nm torque). If the catalytic converter is damaged, replacement is necessary. This repair usually costs $300-1000 depending on the vehicle.</p></body></html>"
+    },
+    {
+      "url": "https://www.autozone.com/diy/p0300-misfire/",
+      "domain": "autozone.com",
+      "html": "<html><body><h1>P0300 Random Misfire Detected</h1><p>P0300 means your engine is misfiring randomly. Symptoms include rough idle, hesitation, loss of power, and possible stalling. This code can be caused by bad spark plugs, faulty ignition coils, or fuel system issues.</p><p>Repair procedure: 1) Check and replace spark plugs if worn (gap should be 0.032-0.044 inches), 2) Inspect ignition coil packs for damage, 3) Test fuel injectors for proper operation, 4) Check fuel pressure with gauge (should read 45-65 psi), 5) Verify compression with compression tester. Tools needed: spark plug socket, fuel pressure gauge, compression tester, OBD scanner. Torque spark plugs to 15-20 Nm. After repair, clear the code and test drive.</p></body></html>"
+    },
+    {
+      "url": "https://www.repairpal.com/obd-codes/p0505/",
+      "domain": "repairpal.com",
+      "html": "<html><body><h1>P0505 - Idle Air Control System Malfunction</h1><p>P0505 indicates the engine idle speed is not within the expected range. Symptoms: rough idle, engine stalling at stops, check engine light.</p><p>Common causes and fixes: 1) Clean the throttle body with carburetor cleaner, 2) Inspect idle air control valve for carbon buildup, 3) Check for vacuum leaks using smoke test, 4) Test mass airflow (MAF) sensor, 5) Verify fuel pressure is correct (50-60 psi). If the IAC valve is faulty, replace it. Torque: 25 Nm for throttle body bolts. This repair usually takes 1-2 hours and costs $100-300.</p></body></html>"
+    },
+    {
+      "url": "https://www.mechanicbase.com/p0101-maf-sensor/",
+      "domain": "mechanicbase.com",
+      "html": "<html><body><h1>P0101 Mass Airflow Sensor Range Performance</h1><p>P0101 code means the MAF sensor is reading outside normal range. Symptoms: rough idle, hesitation during acceleration, poor fuel economy, check engine light.</p><p>Diagnosis and repair: 1) Inspect MAF sensor for dirt or contamination, 2) Clean MAF sensor with special cleaner (do not touch sensor element), 3) Check for vacuum leaks with smoke test, 4) Test fuel pressure (should be 45-65 psi), 5) Verify ignition timing is correct. If cleaning doesn't help, replace the MAF sensor. Installation torque: 2-3 Nm. Cost: $150-400 for sensor replacement. After repair, clear code and test drive.</p></body></html>"
+    },
+    {
+      "url": "https://www.identifix.com/diagnostics/p0335-crankshaft/",
+      "domain": "identifix.com",
+      "html": "<html><body><h1>P0335 Crankshaft Position Sensor Circuit</h1><p>P0335 indicates a problem with the crankshaft position sensor. Symptoms: engine won't start, rough running, stalling, check engine light.</p><p>Repair steps: 1) Locate the crankshaft position sensor (usually near crankshaft pulley), 2) Disconnect sensor connector and test with multimeter (should show resistance 200-900 ohms), 3) Inspect sensor for damage or corrosion, 4) If faulty, remove old sensor (typically 3-4 bolts), 5) Install new sensor and torque to 8-10 Nm, 6) Reconnect connector and clear code. Tools needed: socket set, multimeter, torque wrench. This repair usually takes 30-60 minutes.</p></body></html>"
+    }
+  ]
+}

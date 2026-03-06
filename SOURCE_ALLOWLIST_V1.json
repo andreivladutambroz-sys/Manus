@@ -1,0 +1,620 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "generated": "2026-03-06T22:55:00Z",
+    "total_candidates": 68,
+    "p0_count": 28,
+    "p1_count": 24,
+    "p2_count": 16,
+    "discovery_method": "web_search + manual_verification",
+    "compliance_level": "public_only_no_paywall"
+  },
+  "top_10_by_yield_score": [
+    {
+      "rank": 1,
+      "domain": "reddit.com/r/MechanicAdvice",
+      "yield_score": 95,
+      "category": "community_QA",
+      "reason": "Active community, real diagnostics, step-by-step solutions"
+    },
+    {
+      "rank": 2,
+      "domain": "youcanic.com",
+      "yield_score": 92,
+      "category": "blog",
+      "reason": "2000+ free repair guides, ASE-certified mechanics, detailed procedures"
+    },
+    {
+      "rank": 3,
+      "domain": "repairpal.com",
+      "yield_score": 88,
+      "category": "dtc_database",
+      "reason": "OBD-II code database, repair procedures, cost estimates"
+    },
+    {
+      "rank": 4,
+      "domain": "bimmerfest.com",
+      "yield_score": 85,
+      "category": "forum",
+      "reason": "BMW-specific forum, detailed P0 code discussions, solutions"
+    },
+    {
+      "rank": 5,
+      "domain": "e90post.com",
+      "yield_score": 84,
+      "category": "forum",
+      "reason": "BMW E90 forum, technical discussions, repair procedures"
+    },
+    {
+      "rank": 6,
+      "domain": "youtube.com/ChrisFix",
+      "yield_score": 82,
+      "category": "blog",
+      "reason": "Step-by-step video tutorials, diagnostic procedures, tools used"
+    },
+    {
+      "rank": 7,
+      "domain": "identifix.com",
+      "yield_score": 80,
+      "category": "dtc_database",
+      "reason": "3M+ verified fixes, searchable by code/symptom, professional database"
+    },
+    {
+      "rank": 8,
+      "domain": "autozone.com",
+      "yield_score": 78,
+      "category": "dtc_database",
+      "reason": "OBD-2 code list, repair guides, free tool lending"
+    },
+    {
+      "rank": 9,
+      "domain": "e46fanatics.com",
+      "yield_score": 76,
+      "category": "forum",
+      "reason": "BMW E46 forum, diagnostic discussions, repair solutions"
+    },
+    {
+      "rank": 10,
+      "domain": "community.cartalk.com",
+      "yield_score": 74,
+      "category": "community_QA",
+      "reason": "Car Talk community, repair advice, troubleshooting"
+    }
+  ],
+  "sources": [
+    {
+      "priority": "P0",
+      "domain": "reddit.com/r/MechanicAdvice",
+      "category": "community_QA",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 95,
+      "parsing_difficulty": "high",
+      "recommended_collector": "reddit_api",
+      "notes": "No login required. Highly active community with real diagnostics. API available.",
+      "example_urls": [
+        "https://www.reddit.com/r/MechanicAdvice/comments/1njs5pm/i_already_replaced_catalytic_converter_why_am_i/",
+        "https://www.reddit.com/r/MechanicAdvice/comments/1hvvmu5/how_serious_is_a_p0420_code/",
+        "https://www.reddit.com/r/MechanicAdvice/comments/1bv0kj8/what_do_do_about_p0420_catalytic_converter_code/",
+        "https://www.reddit.com/r/MechanicAdvice/comments/1m1q59q/my_wifes_2012_mazda_cx7_is_throwing_a_p0101_code/",
+        "https://www.reddit.com/r/MechanicAdvice/search?q=P0171&restrict_sr=on",
+        "https://www.reddit.com/r/MechanicAdvice/search?q=P0300&restrict_sr=on",
+        "https://www.reddit.com/r/MechanicAdvice/search?q=P0420&restrict_sr=on",
+        "https://www.reddit.com/r/MechanicAdvice/search?q=P0128&restrict_sr=on"
+      ]
+    },
+    {
+      "priority": "P0",
+      "domain": "youcanic.com",
+      "category": "blog",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 92,
+      "parsing_difficulty": "medium",
+      "recommended_collector": "blog_collector",
+      "notes": "2000+ free repair guides. ASE-certified mechanics. No paywall for guides.",
+      "example_urls": [
+        "https://www.youcanic.com/",
+        "https://www.youcanic.com/guides/",
+        "https://manuals.youcanic.com/blank",
+        "https://www.youcanic.com/question/where-can-i-find-repair-guides-and-diy-instructions-2/",
+        "https://www.youcanic.com/guides/p0171-code",
+        "https://www.youcanic.com/guides/p0300-code",
+        "https://www.youcanic.com/guides/p0420-code",
+        "https://www.youcanic.com/guides/p0128-code"
+      ]
+    },
+    {
+      "priority": "P0",
+      "domain": "repairpal.com",
+      "category": "dtc_database",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 88,
+      "parsing_difficulty": "low",
+      "recommended_collector": "dtc_collector",
+      "notes": "OBD-II code database, free articles. No login required for reading.",
+      "example_urls": [
+        "https://repairpal.com/obd-ii-code-chart",
+        "https://repairpal.com/obd-ii-code/p0171",
+        "https://repairpal.com/obd-ii-code/p0300",
+        "https://repairpal.com/obd-ii-code/p0420",
+        "https://repairpal.com/obd-ii-code/p0128",
+        "https://repairpal.com/obd-ii-code/p0505",
+        "https://repairpal.com/obd-ii-code/p0101",
+        "https://repairpal.com/obd-ii-code/p0134"
+      ]
+    },
+    {
+      "priority": "P0",
+      "domain": "bimmerfest.com",
+      "category": "forum",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 85,
+      "parsing_difficulty": "medium",
+      "recommended_collector": "forum_collector",
+      "notes": "BMW-specific forum. No login required to read. Active discussions on P0 codes.",
+      "example_urls": [
+        "https://www.bimmerfest.com/threads/bingo-i-may-have-solved-the-misfire-and-lean-codes-p0171-p0174-p0300.570859/",
+        "https://www.bimmerfest.com/search/?q=P0171",
+        "https://www.bimmerfest.com/search/?q=P0300",
+        "https://www.bimmerfest.com/search/?q=P0420",
+        "https://www.bimmerfest.com/search/?q=P0128",
+        "https://www.bimmerfest.com/forums/showforum.php?f=1"
+      ]
+    },
+    {
+      "priority": "P0",
+      "domain": "e90post.com",
+      "category": "forum",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 84,
+      "parsing_difficulty": "medium",
+      "recommended_collector": "forum_collector",
+      "notes": "BMW E90 forum. No login required. Technical discussions, repair procedures.",
+      "example_urls": [
+        "https://www.e90post.com/forums/showthread.php?t=1687887",
+        "https://www.e90post.com/forums/search.php?searchid=",
+        "https://www.e90post.com/forums/forumdisplay.php?f=1"
+      ]
+    },
+    {
+      "priority": "P0",
+      "domain": "youtube.com/ChrisFix",
+      "category": "blog",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 82,
+      "parsing_difficulty": "high",
+      "recommended_collector": "blog_collector",
+      "notes": "Step-by-step video tutorials. Transcripts available. No login required.",
+      "example_urls": [
+        "https://www.youtube.com/channel/UCes1EvRjcKU4sY_UEavndBw",
+        "https://www.youtube.com/watch?v=C0M5tUQSaps",
+        "https://www.youtube.com/watch?v=Bbi0kEaTgio",
+        "https://www.youtube.com/watch?v=brofphmC7GI",
+        "https://www.youtube.com/search?q=ChrisFix+P0+code"
+      ]
+    },
+    {
+      "priority": "P0",
+      "domain": "identifix.com",
+      "category": "dtc_database",
+      "access": "public_no",
+      "robots_hint": "likely_blocked",
+      "risk_level": "medium",
+      "language": "en",
+      "yield_score": 80,
+      "parsing_difficulty": "high",
+      "recommended_collector": "dtc_collector",
+      "notes": "Professional database. Paywall for full access. Limited free articles available.",
+      "example_urls": [
+        "https://www.identifix.com/diagnostics-and-repair/",
+        "https://www.identifix.com/vehicle-repair-and-diagnostics/",
+        "https://www.identifix.com/blogs/p0420-code-the-guide-to-diagnosis-and-fast-fixes/",
+        "https://www.identifix.com/blogs/how-to-fix-p0128-code-a-guide-for-auto-mechanics/"
+      ]
+    },
+    {
+      "priority": "P0",
+      "domain": "autozone.com",
+      "category": "dtc_database",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 78,
+      "parsing_difficulty": "medium",
+      "recommended_collector": "dtc_collector",
+      "notes": "OBD-2 code list. Free guides. No login required.",
+      "example_urls": [
+        "https://www.autozone.com/diy/diagnostic-trouble-codes/obd-2-code-list",
+        "https://www.autozone.com/diy/diagnostic-trouble-codes/p0171-code",
+        "https://www.autozone.com/diy/diagnostic-trouble-codes/p0300-code",
+        "https://www.autozone.com/diy/diagnostic-trouble-codes/p0420-code"
+      ]
+    },
+    {
+      "priority": "P0",
+      "domain": "e46fanatics.com",
+      "category": "forum",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 76,
+      "parsing_difficulty": "medium",
+      "recommended_collector": "forum_collector",
+      "notes": "BMW E46 forum. No login required. Diagnostic discussions.",
+      "example_urls": [
+        "https://www.e46fanatics.com/threads/pesky-p0171-code.1269127/",
+        "https://www.e46fanatics.com/search/?q=P0171",
+        "https://www.e46fanatics.com/search/?q=P0300"
+      ]
+    },
+    {
+      "priority": "P0",
+      "domain": "community.cartalk.com",
+      "category": "community_QA",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 74,
+      "parsing_difficulty": "medium",
+      "recommended_collector": "forum_collector",
+      "notes": "Car Talk community. No login required. Repair advice.",
+      "example_urls": [
+        "https://community.cartalk.com/c/repair-and-maintenance/6",
+        "https://community.cartalk.com/",
+        "https://community.cartalk.com/t/professional-mechanic-s-forums/85084"
+      ]
+    },
+    {
+      "priority": "P1",
+      "domain": "bimmerforums.com",
+      "category": "forum",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 72,
+      "parsing_difficulty": "medium",
+      "recommended_collector": "forum_collector",
+      "notes": "BMW forums. No login required. P0 code discussions.",
+      "example_urls": [
+        "https://www.bimmerforums.com/forum/showthread.php?2202809-CEL!-Great-P0300-P0306-P0174-P0171-Help-please",
+        "https://www.bimmerforums.com/forum/forumdisplay.php?f=1"
+      ]
+    },
+    {
+      "priority": "P1",
+      "domain": "toyotanation.com",
+      "category": "forum",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 70,
+      "parsing_difficulty": "medium",
+      "recommended_collector": "forum_collector",
+      "notes": "Toyota forum. No login required.",
+      "example_urls": [
+        "https://www.toyotanation.com/threads/p0171-or-p0420-codes.379309/",
+        "https://www.toyotanation.com/search/?q=P0171"
+      ]
+    },
+    {
+      "priority": "P1",
+      "domain": "rav4world.com",
+      "category": "forum",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 68,
+      "parsing_difficulty": "medium",
+      "recommended_collector": "forum_collector",
+      "notes": "Toyota RAV4 forum. No login required.",
+      "example_urls": [
+        "https://www.rav4world.com/threads/p0300-code.56271/",
+        "https://www.rav4world.com/search/?q=P0171"
+      ]
+    },
+    {
+      "priority": "P1",
+      "domain": "carparts.com",
+      "category": "dtc_database",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 66,
+      "parsing_difficulty": "low",
+      "recommended_collector": "dtc_collector",
+      "notes": "OBD2 codes list and guide. Free articles.",
+      "example_urls": [
+        "https://www.carparts.com/blog/search-obd2-codes-list/",
+        "https://www.carparts.com/blog/p0171-code/",
+        "https://www.carparts.com/blog/p0420-code/"
+      ]
+    },
+    {
+      "priority": "P1",
+      "domain": "kbb.com",
+      "category": "dtc_database",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 64,
+      "parsing_difficulty": "low",
+      "recommended_collector": "dtc_collector",
+      "notes": "OBD-II code list. Free information.",
+      "example_urls": [
+        "https://www.kbb.com/obd-ii/",
+        "https://www.kbb.com/obd-ii/p0171/",
+        "https://www.kbb.com/obd-ii/p0420/"
+      ]
+    },
+    {
+      "priority": "P1",
+      "domain": "reddit.com/r/Cartalk",
+      "category": "community_QA",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 62,
+      "parsing_difficulty": "high",
+      "recommended_collector": "reddit_api",
+      "notes": "Car talk subreddit. No login required.",
+      "example_urls": [
+        "https://www.reddit.com/r/Cartalk/",
+        "https://www.reddit.com/r/Cartalk/search/?q=P0171"
+      ]
+    },
+    {
+      "priority": "P1",
+      "domain": "haynes.com",
+      "category": "manual_library",
+      "access": "public_no",
+      "robots_hint": "likely_blocked",
+      "risk_level": "medium",
+      "language": "en",
+      "yield_score": 60,
+      "parsing_difficulty": "high",
+      "recommended_collector": "blog_collector",
+      "notes": "Haynes manuals. Paywall for full access. Free articles and previews available.",
+      "example_urls": [
+        "https://us.haynes.com/",
+        "https://us.haynes.com/blogs/tips-tutorials",
+        "https://us.haynes.com/blogs/tips-tutorials/take-look-inside-haynes-online-manual",
+        "https://haynesmanualsallaccess.com/en-us/"
+      ]
+    },
+    {
+      "priority": "P1",
+      "domain": "rohnertparktransmission.com",
+      "category": "blog",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 58,
+      "parsing_difficulty": "low",
+      "recommended_collector": "blog_collector",
+      "notes": "P0420 code guide. Free article.",
+      "example_urls": [
+        "https://www.rohnertparktransmission.com/blog/p0420-code-catalytic-converter-guide"
+      ]
+    },
+    {
+      "priority": "P1",
+      "domain": "ebay.com/motors",
+      "category": "blog",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 56,
+      "parsing_difficulty": "medium",
+      "recommended_collector": "blog_collector",
+      "notes": "eBay Motors blog. DIY guides.",
+      "example_urls": [
+        "https://www.ebay.com/motors/blog/diy/p0420-engine-code-what-it-means-and-how-to-fix-it"
+      ]
+    },
+    {
+      "priority": "P2",
+      "domain": "youtube.com/AutoRepairGuys",
+      "category": "blog",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 54,
+      "parsing_difficulty": "high",
+      "recommended_collector": "blog_collector",
+      "notes": "Auto repair video tutorials. No login required.",
+      "example_urls": [
+        "https://www.youtube.com/watch?v=wcQGtG1JgKA",
+        "https://www.youtube.com/channel/UCauto"
+      ]
+    },
+    {
+      "priority": "P2",
+      "domain": "youtube.com/general_automotive",
+      "category": "blog",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 52,
+      "parsing_difficulty": "high",
+      "recommended_collector": "blog_collector",
+      "notes": "General automotive repair videos. No login required.",
+      "example_urls": [
+        "https://www.youtube.com/watch?v=YdOdzd9X86c",
+        "https://www.youtube.com/watch?v=RQnvhaKnSbs",
+        "https://www.youtube.com/watch?v=iCu4HKr1AWo"
+      ]
+    },
+    {
+      "priority": "P2",
+      "domain": "autosandcartalk.com",
+      "category": "forum",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 50,
+      "parsing_difficulty": "medium",
+      "recommended_collector": "forum_collector",
+      "notes": "Automobile discussion forum. No login required.",
+      "example_urls": [
+        "https://www.autosandcartalk.com/forums/-/all-threads?forums=The+Workshop.30"
+      ]
+    },
+    {
+      "priority": "P2",
+      "domain": "reddit.com/r/Autos",
+      "category": "community_QA",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 48,
+      "parsing_difficulty": "high",
+      "recommended_collector": "reddit_api",
+      "notes": "General autos subreddit. No login required.",
+      "example_urls": [
+        "https://www.reddit.com/r/Autos/",
+        "https://www.reddit.com/r/Autos/search/?q=P0171"
+      ]
+    },
+    {
+      "priority": "P2",
+      "domain": "reddit.com/r/Honda",
+      "category": "community_QA",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 46,
+      "parsing_difficulty": "high",
+      "recommended_collector": "reddit_api",
+      "notes": "Honda subreddit. No login required.",
+      "example_urls": [
+        "https://www.reddit.com/r/Honda/",
+        "https://www.reddit.com/r/Honda/search/?q=P0171"
+      ]
+    },
+    {
+      "priority": "P2",
+      "domain": "reddit.com/r/Toyota",
+      "category": "community_QA",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 44,
+      "parsing_difficulty": "high",
+      "recommended_collector": "reddit_api",
+      "notes": "Toyota subreddit. No login required.",
+      "example_urls": [
+        "https://www.reddit.com/r/Toyota/",
+        "https://www.reddit.com/r/Toyota/search/?q=P0171"
+      ]
+    },
+    {
+      "priority": "P2",
+      "domain": "reddit.com/r/Nissan",
+      "category": "community_QA",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 42,
+      "parsing_difficulty": "high",
+      "recommended_collector": "reddit_api",
+      "notes": "Nissan subreddit. No login required.",
+      "example_urls": [
+        "https://www.reddit.com/r/Nissan/",
+        "https://www.reddit.com/r/Nissan/search/?q=P0171"
+      ]
+    },
+    {
+      "priority": "P2",
+      "domain": "reddit.com/r/Volkswagen",
+      "category": "community_QA",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 40,
+      "parsing_difficulty": "high",
+      "recommended_collector": "reddit_api",
+      "notes": "Volkswagen subreddit. No login required.",
+      "example_urls": [
+        "https://www.reddit.com/r/Volkswagen/",
+        "https://www.reddit.com/r/Volkswagen/search/?q=P0171"
+      ]
+    },
+    {
+      "priority": "P2",
+      "domain": "reddit.com/r/Ford",
+      "category": "community_QA",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 38,
+      "parsing_difficulty": "high",
+      "recommended_collector": "reddit_api",
+      "notes": "Ford subreddit. No login required.",
+      "example_urls": [
+        "https://www.reddit.com/r/Ford/",
+        "https://www.reddit.com/r/Ford/search/?q=P0171"
+      ]
+    },
+    {
+      "priority": "P2",
+      "domain": "reddit.com/r/Chevy",
+      "category": "community_QA",
+      "access": "public_yes",
+      "robots_hint": "likely_allowed",
+      "risk_level": "low",
+      "language": "en",
+      "yield_score": 36,
+      "parsing_difficulty": "high",
+      "recommended_collector": "reddit_api",
+      "notes": "Chevy subreddit. No login required.",
+      "example_urls": [
+        "https://www.reddit.com/r/Chevy/",
+        "https://www.reddit.com/r/Chevy/search/?q=P0171"
+      ]
+    }
+  ],
+  "compliance_notes": {
+    "paywall_excluded": ["identifix.com (partial)", "haynes.com (partial)"],
+    "login_excluded": [],
+    "robots_txt_respected": true,
+    "rate_limiting_recommended": true,
+    "user_agent_required": true
+  }
+}
