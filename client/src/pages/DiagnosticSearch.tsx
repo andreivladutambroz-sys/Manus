@@ -3,10 +3,11 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Search, AlertCircle, Wrench, Lightbulb, Loader2, ChevronDown, ChevronUp, Clock, DollarSign, Zap, X, Heart, Download, Edit2, Save, Trash2, FileText } from 'lucide-react';
+import { Search, AlertCircle, Wrench, Lightbulb, Loader2, ChevronDown, ChevronUp, Clock, DollarSign, Zap, X, Heart, Download, Edit2, Save, Trash2, FileText, Share2 } from 'lucide-react';
 import { trpc } from '@/lib/trpc';
 import { useFavorites, type FavoriteCase, type RepairStatus, STATUS_COLORS, STATUS_LABELS } from '@/hooks/useFavorites';
 import { exportFavoritesToPDF } from '@/lib/exportPdf';
+import { ShareCaseModal } from '@/components/ShareCaseModal';
 
 interface SearchResult {
   id: number;
@@ -50,6 +51,7 @@ export default function DiagnosticSearch() {
   const [showFilters, setShowFilters] = useState(false);
   const [viewMode, setViewMode] = useState<ViewMode>('search');
   const [editingNotes, setEditingNotes] = useState<EditingNotes>({});
+  const [shareCase, setShareCase] = useState<FavoriteCase | null>(null);
 
   const { favorites, toggleFavorite, isFavorite, isLoaded, updateNote, deleteNote, updateStatus } = useFavorites();
 
@@ -408,6 +410,15 @@ export default function DiagnosticSearch() {
                 <p className="text-xs text-slate-400 mt-2">Resolved: {favorite.resolvedDate}</p>
               )}
             </div>
+
+            {/* Share Button */}
+            <button
+              onClick={() => setShareCase(favorite)}
+              className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition-colors mb-4 font-medium"
+            >
+              <Share2 className="w-4 h-4" />
+              Share Case
+            </button>
 
             {/* Notes Section */}
             <div className="bg-slate-700 rounded p-4">
@@ -775,6 +786,13 @@ export default function DiagnosticSearch() {
           </>
         )}
       </div>
+
+      {/* Share Modal */}
+      <ShareCaseModal
+        caseData={shareCase!}
+        isOpen={!!shareCase}
+        onClose={() => setShareCase(null)}
+      />
     </div>
   );
 }

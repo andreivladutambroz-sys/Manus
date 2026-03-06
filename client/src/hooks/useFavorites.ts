@@ -31,6 +31,10 @@ export interface FavoriteCase {
   notes?: string;
   status?: RepairStatus;
   resolvedDate?: string;
+  repairAction?: string;
+  toolsUsed?: string[];
+  repairTimeHours?: number;
+  repairCostEstimate?: number;
 }
 
 const FAVORITES_STORAGE_KEY = 'mechanic-helper-favorites';
