@@ -1,96 +1,57 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useCallback } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Search, AlertCircle, Wrench, Lightbulb } from 'lucide-react';
+import { Search, AlertCircle, Wrench, Lightbulb, Loader2 } from 'lucide-react';
+import { trpc } from '@/lib/trpc';
 
-interface DiagnosticRecord {
-  vehicle_make: string;
-  vehicle_model: string;
+interface SearchResult {
+  id: number;
+  vehicleMake: string;
+  vehicleModel: string;
   year?: number;
-  error_code: string;
+  engine?: string;
+  errorCode: string;
   symptoms: string[];
-  repair_steps: string[];
-  tools_required?: string[];
-  torque_specs?: { [key: string]: string };
-  source_url: string;
-  confidence: number;
+  confidence: string;
+  sourceUrl: string;
 }
 
 export default function DiagnosticSearch() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [filterType, setFilterType] = useState<'vehicle' | 'code' | 'symptom'>('vehicle');
-  const [results, setResults] = useState<DiagnosticRecord[]>([]);
-  const [isSearching, setIsSearching] = useState(false);
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [hasSearched, setHasSearched] = useState(false);
 
-  // Mock data for demonstration
-  const mockData: DiagnosticRecord[] = [
-    {
-      vehicle_make: 'BMW',
-      vehicle_model: '320d',
-      year: 2010,
-      error_code: 'P0171',
-      symptoms: ['CEL', 'knock', 'idle rough'],
-      repair_steps: ['Scan OBD', 'Check fuel pressure', 'Inspect injectors', 'Replace fuel filter'],
-      tools_required: ['OBD scanner', 'Fuel pressure gauge', 'Socket set'],
-      torque_specs: { 'fuel_rail': '25 Nm', 'injectors': '15 Nm' },
-      source_url: 'https://www.bimmerfest.com/forums/',
-      confidence: 0.85
-    },
-    {
-      vehicle_make: 'Toyota',
-      vehicle_model: 'Camry',
-      year: 2015,
-      error_code: 'P0300',
-      symptoms: ['misfire', 'idle rough', 'hesitation'],
-      repair_steps: ['Scan OBD', 'Check spark plugs', 'Test coils', 'Replace plugs if needed'],
-      tools_required: ['OBD scanner', 'Spark plug socket', 'Gap tool'],
-      source_url: 'https://www.reddit.com/r/MechanicAdvice/',
-      confidence: 0.78
-    },
-    {
-      vehicle_make: 'Mercedes',
-      vehicle_model: 'C200',
-      year: 2012,
-      error_code: 'P0700',
-      symptoms: ['transmission_slip', 'power_loss'],
-      repair_steps: ['Scan transmission', 'Check fluid level', 'Inspect filter', 'Replace fluid'],
-      tools_required: ['OBD scanner', 'Transmission fluid', 'Filter'],
-      source_url: 'https://www.youcanic.com/guides',
-      confidence: 0.82
+  // Use tRPC query for search
+  const { data: searchData, isLoading, error } = trpc.diagnostic.search.useQuery(
+    { query: searchQuery, limit: 20 },
+    { enabled: searchQuery.length > 0 }
+  );
+
+  // Update results when search data changes
+  if (searchData && searchData.results) {
+    setResults(searchData.results);
+  }
+
+  const handleSearch = useCallback((e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      setHasSearched(true);
     }
-  ];
+  }, [searchQuery]);
 
-  const handleSearch = () => {
-    setIsSearching(true);
-    
-    // Simulate search delay
-    setTimeout(() => {
-      const filtered = mockData.filter(record => {
-        const query = searchQuery.toLowerCase();
-        
-        if (filterType === 'vehicle') {
-          return (
-            record.vehicle_make.toLowerCase().includes(query) ||
-            record.vehicle_model.toLowerCase().includes(query)
-          );
-        } else if (filterType === 'code') {
-          return record.error_code.toLowerCase().includes(query);
-        } else {
-          return record.symptoms.some(s => s.toLowerCase().includes(query));
-        }
-      });
-      
-      setResults(filtered);
-      setIsSearching(false);
-    }, 500);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    setHasSearched(false);
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      handleSearch();
-    }
+  const confidenceColor = (conf: string | number) => {
+    const num = typeof conf === 'string' ? parseFloat(conf) : conf;
+    if (num >= 0.85) return 'bg-green-100 text-green-800';
+    if (num >= 0.75) return 'bg-blue-100 text-blue-800';
+    if (num >= 0.65) return 'bg-yellow-100 text-yellow-800';
+    return 'bg-orange-100 text-orange-800';
   };
 
   return (
@@ -98,173 +59,150 @@ export default function DiagnosticSearch() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">🔧 Diagnostic Search</h1>
-          <p className="text-slate-400">Find repair procedures for your vehicle issues</p>
+          <h1 className="text-4xl font-bold text-white mb-2">Diagnostic Search</h1>
+          <p className="text-slate-400">Find real repair cases and solutions from verified sources</p>
         </div>
 
-        {/* Search Section */}
+        {/* Search Form */}
         <Card className="mb-8 bg-slate-800 border-slate-700">
           <CardHeader>
-            <CardTitle className="text-white">Search Diagnostics</CardTitle>
-            <CardDescription>Search by vehicle, error code, or symptom</CardDescription>
+            <CardTitle className="text-white">Search Repair Cases</CardTitle>
+            <CardDescription>Search by error code (P0171), vehicle make (BMW), or model (Civic)</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex gap-2 flex-wrap">
-              {(['vehicle', 'code', 'symptom'] as const).map(type => (
-                <Button
-                  key={type}
-                  variant={filterType === type ? 'default' : 'outline'}
-                  onClick={() => setFilterType(type)}
-                  className="capitalize"
-                >
-                  {type === 'vehicle' && '🚗 Vehicle'}
-                  {type === 'code' && '📊 Error Code'}
-                  {type === 'symptom' && '⚠️ Symptom'}
-                </Button>
-              ))}
-            </div>
-
-            <div className="flex gap-2">
+          <CardContent>
+            <form onSubmit={handleSearch} className="flex gap-2">
               <Input
-                placeholder={
-                  filterType === 'vehicle' ? 'e.g., BMW 320d' :
-                  filterType === 'code' ? 'e.g., P0171' :
-                  'e.g., rough idle'
-                }
+                placeholder="Enter error code, vehicle make, or model..."
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyPress={handleKeyPress}
-                className="bg-slate-700 border-slate-600 text-white placeholder-slate-400"
+                onChange={handleInputChange}
+                className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
               />
               <Button
-                onClick={handleSearch}
-                disabled={!searchQuery || isSearching}
-                className="gap-2"
+                type="submit"
+                disabled={!searchQuery.trim() || isLoading}
+                className="bg-orange-500 hover:bg-orange-600"
               >
-                <Search className="w-4 h-4" />
-                {isSearching ? 'Searching...' : 'Search'}
+                {isLoading ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Searching...
+                  </>
+                ) : (
+                  <>
+                    <Search className="w-4 h-4 mr-2" />
+                    Search
+                  </>
+                )}
               </Button>
-            </div>
+            </form>
           </CardContent>
         </Card>
 
+        {/* Error State */}
+        {error && (
+          <Card className="mb-8 bg-red-900/20 border-red-700">
+            <CardContent className="pt-6">
+              <div className="flex items-start gap-3">
+                <AlertCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-red-400 font-medium">Search temporarily unavailable</p>
+                  <p className="text-red-300 text-sm mt-1">Please try again in a moment</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Empty State */}
+        {hasSearched && !isLoading && results.length === 0 && !error && (
+          <Card className="mb-8 bg-slate-800 border-slate-700">
+            <CardContent className="pt-6">
+              <div className="text-center py-8">
+                <Search className="w-12 h-12 text-slate-500 mx-auto mb-3" />
+                <p className="text-slate-400">No results found for "{searchQuery}"</p>
+                <p className="text-slate-500 text-sm mt-2">Try searching with different keywords</p>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
         {/* Results */}
-        <div className="space-y-4">
-          {results.length === 0 && searchQuery && !isSearching && (
-            <Card className="bg-slate-800 border-slate-700">
-              <CardContent className="pt-6">
-                <div className="text-center text-slate-400">
-                  <AlertCircle className="w-8 h-8 mx-auto mb-2 opacity-50" />
-                  <p>No results found for "{searchQuery}"</p>
-                </div>
-              </CardContent>
-            </Card>
-          )}
+        {results.length > 0 && (
+          <div className="space-y-4">
+            <div className="text-sm text-slate-400">
+              Found {results.length} repair case{results.length !== 1 ? 's' : ''}
+            </div>
 
-          {results.map((record, idx) => (
-            <Card key={idx} className="bg-slate-800 border-slate-700 hover:border-slate-600 transition">
-              <CardHeader>
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle className="text-white text-xl">
-                      {record.vehicle_make} {record.vehicle_model}
-                      {record.year && <span className="text-slate-400 text-sm ml-2">({record.year})</span>}
-                    </CardTitle>
-                    <CardDescription className="text-slate-300 mt-1">
-                      Error Code: <Badge variant="secondary" className="ml-1">{record.error_code}</Badge>
-                    </CardDescription>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm text-slate-400">Confidence</div>
-                    <div className="text-lg font-bold text-green-400">{(record.confidence * 100).toFixed(0)}%</div>
-                  </div>
-                </div>
-              </CardHeader>
-
-              <CardContent className="space-y-4">
-                {/* Symptoms */}
-                <div>
-                  <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
-                    <AlertCircle className="w-4 h-4" />
-                    Symptoms
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {record.symptoms.map((symptom, i) => (
-                      <Badge key={i} variant="outline" className="bg-slate-700 text-slate-200">
-                        {symptom}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Repair Steps */}
-                <div>
-                  <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
-                    <Wrench className="w-4 h-4" />
-                    Repair Steps
-                  </h4>
-                  <ol className="list-decimal list-inside space-y-1 text-slate-300">
-                    {record.repair_steps.map((step, i) => (
-                      <li key={i} className="text-sm">{step}</li>
-                    ))}
-                  </ol>
-                </div>
-
-                {/* Tools Required */}
-                {record.tools_required && record.tools_required.length > 0 && (
-                  <div>
-                    <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
-                      <Lightbulb className="w-4 h-4" />
-                      Tools Required
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {record.tools_required.map((tool, i) => (
-                        <Badge key={i} variant="secondary" className="bg-slate-700">
-                          {tool}
+            {results.map((result) => (
+              <Card key={result.id} className="bg-slate-800 border-slate-700 hover:border-slate-600 transition-colors">
+                <CardHeader>
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <CardTitle className="text-white">
+                          {result.vehicleModel} ({result.year})
+                        </CardTitle>
+                        <Badge variant="outline" className="text-slate-300 border-slate-600">
+                          {result.vehicleMake}
                         </Badge>
-                      ))}
+                      </div>
+                      <CardDescription className="text-slate-400">
+                        {result.engine && `${result.engine} • `}
+                        Error Code: <span className="font-mono text-orange-400">{result.errorCode}</span>
+                      </CardDescription>
                     </div>
+                    <Badge className={confidenceColor(result.confidence)}>
+                      {typeof result.confidence === 'string' 
+                        ? (parseFloat(result.confidence) * 100).toFixed(0) 
+                        : (result.confidence * 100).toFixed(0)}% Match
+                    </Badge>
                   </div>
-                )}
+                </CardHeader>
 
-                {/* Torque Specs */}
-                {record.torque_specs && Object.keys(record.torque_specs).length > 0 && (
-                  <div>
-                    <h4 className="text-white font-semibold mb-2">Torque Specifications</h4>
-                    <div className="bg-slate-700 rounded p-3 text-sm text-slate-300 space-y-1">
-                      {Object.entries(record.torque_specs).map(([key, value], i) => (
-                        <div key={i} className="flex justify-between">
-                          <span className="capitalize">{key.replace(/_/g, ' ')}:</span>
-                          <span className="font-mono font-semibold">{value}</span>
-                        </div>
-                      ))}
+                <CardContent className="space-y-4">
+                  {/* Symptoms */}
+                  {Array.isArray(result.symptoms) && result.symptoms.length > 0 && (
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <AlertCircle className="w-4 h-4 text-orange-400" />
+                        <p className="font-medium text-white">Symptoms</p>
+                      </div>
+                      <div className="flex flex-wrap gap-2 ml-6">
+                        {result.symptoms.map((symptom, idx) => (
+                          <Badge key={idx} variant="secondary" className="bg-slate-700 text-slate-200">
+                            {symptom}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
+                  )}
+
+                  {/* Source */}
+                  <div className="flex items-center gap-2 pt-2 border-t border-slate-700">
+                    <Lightbulb className="w-4 h-4 text-slate-400" />
+                    <a
+                      href={result.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-400 hover:text-blue-300 truncate"
+                    >
+                      View source
+                    </a>
                   </div>
-                )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
 
-                {/* Source */}
-                <div className="pt-2 border-t border-slate-700">
-                  <a
-                    href={record.source_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 text-sm"
-                  >
-                    View Source →
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Info Section */}
-        {results.length === 0 && !searchQuery && (
+        {/* Initial State */}
+        {!hasSearched && results.length === 0 && !isLoading && !error && (
           <Card className="bg-slate-800 border-slate-700">
             <CardContent className="pt-6">
-              <div className="text-center text-slate-400">
-                <Search className="w-8 h-8 mx-auto mb-2 opacity-50" />
-                <p>Start by searching for a vehicle, error code, or symptom above</p>
+              <div className="text-center py-12">
+                <Wrench className="w-16 h-16 text-slate-600 mx-auto mb-4" />
+                <p className="text-slate-400 text-lg">Start searching to find repair cases</p>
+                <p className="text-slate-500 text-sm mt-2">Search by error code, vehicle make, or model</p>
               </div>
             </CardContent>
           </Card>

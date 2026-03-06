@@ -25,6 +25,7 @@ import { knowledgeBaseRouter } from "./routers/knowledge-base";
 import { importProgressRouter } from "./routers/import-progress";
 import { diagnosticRouter } from "./routers/diagnostic.router";
 import { imageUploadRouter } from "./routers/image-upload.router";
+import mysql from "mysql2/promise";
 
 export const appRouter = router({
   system: systemRouter,
@@ -161,6 +162,65 @@ export const appRouter = router({
 
   // Diagnostic procedures - ENHANCED v2
   diagnostic: router({
+    search: publicProcedure
+      .input(
+        z.object({
+          query: z.string().min(1).max(100),
+          limit: z.number().min(1).max(20).default(10),
+        })
+      )
+      .query(async ({ input }) => {
+        try {
+          const connection = await mysql.createConnection(process.env.DATABASE_URL!);
+          const trimmedQuery = input.query.trim();
+          const searchParam = `%${trimmedQuery}%`;
+          
+          const query = `
+            SELECT 
+              id,
+              vehicleMake,
+              vehicleModel,
+              vehicleYear as year,
+              engine,
+              errorCode,
+              symptoms,
+              confidence,
+              sourceUrl
+            FROM repairCases
+            WHERE 
+              errorCode = ? OR
+              vehicleMake LIKE ? OR
+              vehicleModel LIKE ?
+            LIMIT 20
+          `;
+          
+          const [results] = await connection.query(query, [
+            trimmedQuery,
+            searchParam,
+            searchParam
+          ]);
+          
+          await connection.end();
+          
+          return {
+            results: (results as any[]).map(row => ({
+              id: row.id,
+              vehicleMake: row.vehicleMake,
+              vehicleModel: row.vehicleModel,
+              year: row.year,
+              engine: row.engine,
+              errorCode: row.errorCode,
+              symptoms: row.symptoms,
+              confidence: row.confidence,
+              sourceUrl: row.sourceUrl,
+            })),
+            count: (results as any[]).length,
+          };
+        } catch (error: any) {
+          console.error('[Search Error]', error.message);
+          throw new Error(`Search failed: ${error.message}`);
+        }
+      }),
     list: protectedProcedure.query(async ({ ctx }) => {
       return await getUserDiagnostics(ctx.user.id);
     }),
