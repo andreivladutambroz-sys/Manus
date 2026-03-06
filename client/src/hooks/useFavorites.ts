@@ -18,6 +18,8 @@ export const STATUS_LABELS: Record<RepairStatus, string> = {
   'not fixed': 'Not Fixed'
 };
 
+export const SUGGESTED_TAGS = ['urgent', 'common', 'tricky', 'customer-approved', 'follow-up'];
+
 export interface FavoriteCase {
   id: number;
   vehicleMake: string;
@@ -35,6 +37,7 @@ export interface FavoriteCase {
   toolsUsed?: string[];
   repairTimeHours?: number;
   repairCostEstimate?: number;
+  tags?: string[];
 }
 
 const FAVORITES_STORAGE_KEY = 'mechanic-helper-favorites';
@@ -127,6 +130,40 @@ export function useFavorites() {
     );
   };
 
+  const addTag = (caseId: number, tag: string) => {
+    const cleanTag = tag.trim().slice(0, 30);
+    if (!cleanTag) return;
+    
+    setFavorites(prev =>
+      prev.map(fav =>
+        fav.id === caseId
+          ? {
+              ...fav,
+              tags: [...(fav.tags || []), cleanTag].filter((t, i, arr) => arr.indexOf(t) === i)
+            }
+          : fav
+      )
+    );
+  };
+
+  const removeTag = (caseId: number, tag: string) => {
+    setFavorites(prev =>
+      prev.map(fav =>
+        fav.id === caseId
+          ? { ...fav, tags: (fav.tags || []).filter(t => t !== tag) }
+          : fav
+      )
+    );
+  };
+
+  const getAllTags = (): string[] => {
+    const allTags = new Set<string>();
+    favorites.forEach(fav => {
+      (fav.tags || []).forEach(tag => allTags.add(tag));
+    });
+    return Array.from(allTags).sort();
+  };
+
   return {
     favorites,
     addFavorite,
@@ -136,6 +173,9 @@ export function useFavorites() {
     updateNote,
     deleteNote,
     updateStatus,
+    addTag,
+    removeTag,
+    getAllTags,
     isLoaded,
   };
 }

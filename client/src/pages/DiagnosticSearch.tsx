@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Search, AlertCircle, Wrench, Lightbulb, Loader2, ChevronDown, ChevronUp, Clock, DollarSign, Zap, X, Heart, Download, Edit2, Save, Trash2, FileText, Share2 } from 'lucide-react';
 import { trpc } from '@/lib/trpc';
-import { useFavorites, type FavoriteCase, type RepairStatus, STATUS_COLORS, STATUS_LABELS } from '@/hooks/useFavorites';
+import { useFavorites, type FavoriteCase, type RepairStatus, STATUS_COLORS, STATUS_LABELS, SUGGESTED_TAGS } from '@/hooks/useFavorites';
 import { exportFavoritesToPDF } from '@/lib/exportPdf';
 import { ShareCaseModal } from '@/components/ShareCaseModal';
 
@@ -52,8 +52,10 @@ export default function DiagnosticSearch() {
   const [viewMode, setViewMode] = useState<ViewMode>('search');
   const [editingNotes, setEditingNotes] = useState<EditingNotes>({});
   const [shareCase, setShareCase] = useState<FavoriteCase | null>(null);
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [addingTag, setAddingTag] = useState<Record<number, string>>({});
 
-  const { favorites, toggleFavorite, isFavorite, isLoaded, updateNote, deleteNote, updateStatus } = useFavorites();
+  const { favorites, toggleFavorite, isFavorite, isLoaded, updateNote, deleteNote, updateStatus, addTag, removeTag, getAllTags } = useFavorites();
 
   // Use tRPC query for search with filters
   const { data: searchData, isLoading, error } = trpc.diagnostic.search.useQuery(
@@ -337,6 +339,11 @@ export default function DiagnosticSearch() {
                       Note
                     </Badge>
                   )}
+                  {(favorite.tags || []).map(tag => (
+                    <Badge key={tag} className="bg-purple-600 text-white text-xs">
+                      {tag}
+                    </Badge>
+                  ))}
                 </div>
                 <CardDescription className="text-slate-400">
                   {favorite.engine && `${favorite.engine} • `}
@@ -773,14 +780,63 @@ export default function DiagnosticSearch() {
                   </Button>
                 </div>
 
-                {/* Favorites List */}
-                <div className="space-y-4">
-                  <div className="text-sm text-slate-400">
-                    {favorites.length} saved case{favorites.length !== 1 ? 's' : ''}
+                {/* Tag Filter */}
+                {getAllTags().length > 0 && (
+                  <div className="mb-6 bg-slate-700 rounded p-4">
+                    <p className="text-sm font-medium text-slate-300 mb-3">Filter by tag:</p>
+                    <div className="flex flex-wrap gap-2">
+                      <button
+                        onClick={() => setSelectedTag(null)}
+                        className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
+                          selectedTag === null
+                            ? 'bg-blue-600 text-white'
+                            : 'bg-slate-600 text-slate-300 hover:bg-slate-500'
+                        }`}
+                      >
+                        All
+                      </button>
+                      {getAllTags().map(tag => (
+                        <button
+                          key={tag}
+                          onClick={() => setSelectedTag(tag)}
+                          className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
+                            selectedTag === tag
+                              ? 'bg-blue-600 text-white'
+                              : 'bg-slate-600 text-slate-300 hover:bg-slate-500'
+                          }`}
+                        >
+                          {tag}
+                        </button>
+                      ))}
+                    </div>
                   </div>
+                )}
 
-                  {favorites.map((favorite) => renderFavoriteCard(favorite))}
-                </div>
+                {/* Favorites List */}
+                {(() => {
+                  const filteredFavorites = selectedTag
+                    ? favorites.filter(fav => (fav.tags || []).includes(selectedTag))
+                    : favorites;
+
+                  return filteredFavorites.length === 0 ? (
+                  <Card className="bg-slate-800 border-slate-700">
+                    <CardContent className="pt-6">
+                      <div className="text-center py-8">
+                        <p className="text-slate-400">No favorites with tag "{selectedTag}"</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ) : (
+                  <div className="space-y-4">
+                    <div className="text-sm text-slate-400">
+                      {filteredFavorites.length} case{filteredFavorites.length !== 1 ? 's' : ''}
+                      {selectedTag && ` with tag "${selectedTag}"`}
+                    </div>
+
+                    {filteredFavorites.map((favorite) => renderFavoriteCard(favorite))}
+                  </div>
+                );
+                })()}
               </>
             )}
           </>
