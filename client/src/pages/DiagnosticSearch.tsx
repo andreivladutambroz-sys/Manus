@@ -3,9 +3,10 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Search, AlertCircle, Wrench, Lightbulb, Loader2, ChevronDown, ChevronUp, Clock, DollarSign, Zap, X, Heart } from 'lucide-react';
+import { Search, AlertCircle, Wrench, Lightbulb, Loader2, ChevronDown, ChevronUp, Clock, DollarSign, Zap, X, Heart, Download } from 'lucide-react';
 import { trpc } from '@/lib/trpc';
 import { useFavorites, type FavoriteCase } from '@/hooks/useFavorites';
+import { exportFavoritesToPDF } from '@/lib/exportPdf';
 
 interface SearchResult {
   id: number;
@@ -122,6 +123,10 @@ export default function DiagnosticSearch() {
       sourceUrl: result.sourceUrl,
     };
     toggleFavorite(favoriteCase);
+  };
+
+  const handleExportPDF = () => {
+    exportFavoritesToPDF(favorites);
   };
 
   const renderResultCard = (result: SearchResult, isFav: boolean) => (
@@ -600,13 +605,27 @@ export default function DiagnosticSearch() {
                 </CardContent>
               </Card>
             ) : (
-              <div className="space-y-4">
-                <div className="text-sm text-slate-400">
-                  {favorites.length} saved case{favorites.length !== 1 ? 's' : ''}
+              <>
+                {/* Export Button */}
+                <div className="mb-6 flex justify-end">
+                  <Button
+                    onClick={handleExportPDF}
+                    className="bg-green-600 hover:bg-green-700 text-white"
+                  >
+                    <Download className="w-4 h-4 mr-2" />
+                    Export PDF
+                  </Button>
                 </div>
 
-                {favorites.map((favorite) => renderFavoriteCard(favorite))}
-              </div>
+                {/* Favorites List */}
+                <div className="space-y-4">
+                  <div className="text-sm text-slate-400">
+                    {favorites.length} saved case{favorites.length !== 1 ? 's' : ''}
+                  </div>
+
+                  {favorites.map((favorite) => renderFavoriteCard(favorite))}
+                </div>
+              </>
             )}
           </>
         )}
