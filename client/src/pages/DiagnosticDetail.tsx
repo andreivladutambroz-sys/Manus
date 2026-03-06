@@ -11,12 +11,13 @@ import { useLocation, useParams } from "wouter";
 import { useState } from "react";
 import { toast } from "sonner";
 import { DiagnosticFeatures } from "@/components/DiagnosticFeatures";
+import { DiagnosticQRCode } from "@/components/DiagnosticQRCode";
 import {
   Download, ArrowLeft, CheckCircle2, AlertTriangle, XCircle,
   Wrench, Search, Shield, Clock, Zap, ChevronRight, ChevronDown,
   Target, ListChecks, Package, FileText, Brain, Activity,
   Gauge, Info, ArrowRight, CircleDot, TriangleAlert, CircleCheck,
-  MessageSquare, Bookmark, BookmarkOff, Tag, StickyNote
+  MessageSquare, Bookmark, Tag, StickyNote
 } from "lucide-react";
 
 // ============================================================
@@ -270,6 +271,7 @@ export default function DiagnosticDetail() {
               <Badge className={diagnostic.status === "completed" ? "bg-green-500 text-white" : "bg-yellow-500 text-white"}>
                 {diagnostic.status === "completed" ? "Finalizat" : diagnostic.status}
               </Badge>
+              <DiagnosticQRCode diagnosticId={diagnostic.id} vehicleBrand={vehicle?.brand || "Vehicle"} vehicleModel={vehicle?.model || ""} />
               <Button onClick={handleExportPDF} size="sm" className="bg-orange-500 hover:bg-orange-600">
                 <Download className="w-4 h-4 mr-1" />
                 PDF

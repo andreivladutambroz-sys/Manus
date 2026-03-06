@@ -111,8 +111,16 @@ export async function getUserDiagnostics(userId: number) {
   const database = await getDb() as any;
   if (!database) return [];
   try {
-    const result = await database.select().from(diagnostics).where(eq(diagnostics.userId, userId)).orderBy(diagnostics.createdAt);
-    return result || [];
+    const result = await database.select().from(diagnostics)
+      .leftJoin(vehicles, eq(diagnostics.vehicleId, vehicles.id))
+      .where(eq(diagnostics.userId, userId))
+      .orderBy(diagnostics.createdAt);
+    
+    // Transform to include vehicle data
+    return result.map((row: any) => ({
+      ...row.diagnostics,
+      vehicle: row.vehicles || null
+    })) || [];
   } catch (error) {
     console.error("[getUserDiagnostics] Error:", error);
     return [];
