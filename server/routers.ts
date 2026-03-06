@@ -184,6 +184,10 @@ export const appRouter = router({
               engine,
               errorCode,
               symptoms,
+              repairAction,
+              repairTimeHours,
+              repairCostEstimate,
+              toolsUsed,
               confidence,
               sourceUrl
             FROM repairCases
@@ -210,7 +214,11 @@ export const appRouter = router({
               year: row.year,
               engine: row.engine,
               errorCode: row.errorCode,
-              symptoms: row.symptoms,
+              symptoms: Array.isArray(row.symptoms) ? row.symptoms : (typeof row.symptoms === 'string' ? JSON.parse(row.symptoms) : []),
+              repairAction: row.repairAction || '',
+              repairTimeHours: row.repairTimeHours ? parseFloat(row.repairTimeHours) : null,
+              repairCostEstimate: row.repairCostEstimate ? parseFloat(row.repairCostEstimate) : null,
+              toolsUsed: Array.isArray(row.toolsUsed) ? row.toolsUsed : (typeof row.toolsUsed === 'string' ? JSON.parse(row.toolsUsed) : []),
               confidence: row.confidence,
               sourceUrl: row.sourceUrl,
             })),

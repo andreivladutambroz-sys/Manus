@@ -3,7 +3,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Search, AlertCircle, Wrench, Lightbulb, Loader2 } from 'lucide-react';
+import { Search, AlertCircle, Wrench, Lightbulb, Loader2, ChevronDown, ChevronUp, Clock, DollarSign, Zap } from 'lucide-react';
 import { trpc } from '@/lib/trpc';
 
 interface SearchResult {
@@ -14,14 +14,23 @@ interface SearchResult {
   engine?: string;
   errorCode: string;
   symptoms: string[];
+  repairAction: string;
+  repairTimeHours: number | null;
+  repairCostEstimate: number | null;
+  toolsUsed: string[];
   confidence: string;
   sourceUrl: string;
+}
+
+interface ExpandedState {
+  [key: number]: boolean;
 }
 
 export default function DiagnosticSearch() {
   const [searchQuery, setSearchQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [hasSearched, setHasSearched] = useState(false);
+  const [expandedResults, setExpandedResults] = useState<ExpandedState>({});
 
   // Use tRPC query for search
   const { data: searchData, isLoading, error } = trpc.diagnostic.search.useQuery(
@@ -38,12 +47,20 @@ export default function DiagnosticSearch() {
     e.preventDefault();
     if (searchQuery.trim()) {
       setHasSearched(true);
+      setExpandedResults({});
     }
   }, [searchQuery]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
     setHasSearched(false);
+  };
+
+  const toggleExpand = (id: number) => {
+    setExpandedResults(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
   };
 
   const confidenceColor = (conf: string | number) => {
@@ -54,9 +71,14 @@ export default function DiagnosticSearch() {
     return 'bg-orange-100 text-orange-800';
   };
 
+  const getConfidencePercent = (conf: string | number) => {
+    const num = typeof conf === 'string' ? parseFloat(conf) : conf;
+    return (num * 100).toFixed(0);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-2">Diagnostic Search</h1>
@@ -134,62 +156,133 @@ export default function DiagnosticSearch() {
             </div>
 
             {results.map((result) => (
-              <Card key={result.id} className="bg-slate-800 border-slate-700 hover:border-slate-600 transition-colors">
-                <CardHeader>
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <CardTitle className="text-white">
-                          {result.vehicleModel} ({result.year})
-                        </CardTitle>
-                        <Badge variant="outline" className="text-slate-300 border-slate-600">
-                          {result.vehicleMake}
-                        </Badge>
-                      </div>
-                      <CardDescription className="text-slate-400">
-                        {result.engine && `${result.engine} • `}
-                        Error Code: <span className="font-mono text-orange-400">{result.errorCode}</span>
-                      </CardDescription>
-                    </div>
-                    <Badge className={confidenceColor(result.confidence)}>
-                      {typeof result.confidence === 'string' 
-                        ? (parseFloat(result.confidence) * 100).toFixed(0) 
-                        : (result.confidence * 100).toFixed(0)}% Match
-                    </Badge>
-                  </div>
-                </CardHeader>
-
-                <CardContent className="space-y-4">
-                  {/* Symptoms */}
-                  {Array.isArray(result.symptoms) && result.symptoms.length > 0 && (
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <AlertCircle className="w-4 h-4 text-orange-400" />
-                        <p className="font-medium text-white">Symptoms</p>
-                      </div>
-                      <div className="flex flex-wrap gap-2 ml-6">
-                        {result.symptoms.map((symptom, idx) => (
-                          <Badge key={idx} variant="secondary" className="bg-slate-700 text-slate-200">
-                            {symptom}
+              <Card key={result.id} className="bg-slate-800 border-slate-700 hover:border-slate-600 transition-colors overflow-hidden">
+                {/* Compact Header */}
+                <button
+                  onClick={() => toggleExpand(result.id)}
+                  className="w-full text-left"
+                >
+                  <CardHeader className="pb-3">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <CardTitle className="text-white text-lg">
+                            {result.vehicleModel} ({result.year})
+                          </CardTitle>
+                          <Badge variant="outline" className="text-slate-300 border-slate-600">
+                            {result.vehicleMake}
                           </Badge>
-                        ))}
+                        </div>
+                        <CardDescription className="text-slate-400">
+                          {result.engine && `${result.engine} • `}
+                          <span className="font-mono text-orange-400">{result.errorCode}</span>
+                        </CardDescription>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Badge className={confidenceColor(result.confidence)}>
+                          {getConfidencePercent(result.confidence)}% Match
+                        </Badge>
+                        {expandedResults[result.id] ? (
+                          <ChevronUp className="w-5 h-5 text-slate-400" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-slate-400" />
+                        )}
                       </div>
                     </div>
-                  )}
+                  </CardHeader>
+                </button>
 
-                  {/* Source */}
-                  <div className="flex items-center gap-2 pt-2 border-t border-slate-700">
-                    <Lightbulb className="w-4 h-4 text-slate-400" />
-                    <a
-                      href={result.sourceUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-blue-400 hover:text-blue-300 truncate"
-                    >
-                      View source
-                    </a>
-                  </div>
-                </CardContent>
+                {/* Expandable Details */}
+                {expandedResults[result.id] && (
+                  <CardContent className="space-y-4 border-t border-slate-700 pt-4">
+                    {/* Symptoms */}
+                    {Array.isArray(result.symptoms) && result.symptoms.length > 0 && (
+                      <div>
+                        <div className="flex items-center gap-2 mb-2">
+                          <AlertCircle className="w-4 h-4 text-orange-400" />
+                          <p className="font-medium text-white">Symptoms</p>
+                        </div>
+                        <div className="flex flex-wrap gap-2 ml-6">
+                          {result.symptoms.map((symptom, idx) => (
+                            <Badge key={idx} variant="secondary" className="bg-slate-700 text-slate-200">
+                              {symptom}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Repair Action */}
+                    {result.repairAction && (
+                      <div>
+                        <div className="flex items-center gap-2 mb-2">
+                          <Wrench className="w-4 h-4 text-blue-400" />
+                          <p className="font-medium text-white">Repair Steps</p>
+                        </div>
+                        <p className="text-slate-300 ml-6 text-sm leading-relaxed">
+                          {result.repairAction}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Tools Required */}
+                    {Array.isArray(result.toolsUsed) && result.toolsUsed.length > 0 && (
+                      <div>
+                        <div className="flex items-center gap-2 mb-2">
+                          <Zap className="w-4 h-4 text-yellow-400" />
+                          <p className="font-medium text-white">Tools Required</p>
+                        </div>
+                        <ul className="ml-6 space-y-1">
+                          {result.toolsUsed.map((tool, idx) => (
+                            <li key={idx} className="text-slate-300 text-sm flex items-start">
+                              <span className="mr-2">•</span>
+                              <span>{tool}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Time & Cost */}
+                    <div className="grid grid-cols-2 gap-4">
+                      {result.repairTimeHours !== null && (
+                        <div className="bg-slate-700 rounded p-3">
+                          <div className="flex items-center gap-2 mb-1">
+                            <Clock className="w-4 h-4 text-cyan-400" />
+                            <p className="text-xs font-medium text-slate-400">Estimated Time</p>
+                          </div>
+                          <p className="text-white font-semibold">
+                            {result.repairTimeHours.toFixed(1)} hours
+                          </p>
+                        </div>
+                      )}
+                      {result.repairCostEstimate !== null && (
+                        <div className="bg-slate-700 rounded p-3">
+                          <div className="flex items-center gap-2 mb-1">
+                            <DollarSign className="w-4 h-4 text-green-400" />
+                            <p className="text-xs font-medium text-slate-400">Estimated Cost</p>
+                          </div>
+                          <p className="text-white font-semibold">
+                            ${result.repairCostEstimate.toFixed(2)}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Source Link */}
+                    <div className="flex items-center gap-2 pt-2 border-t border-slate-700">
+                      <Lightbulb className="w-4 h-4 text-slate-400" />
+                      <a
+                        href={result.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-blue-400 hover:text-blue-300 truncate"
+                      >
+                        View source
+                      </a>
+                    </div>
+                  </CardContent>
+                )}
               </Card>
             ))}
           </div>
