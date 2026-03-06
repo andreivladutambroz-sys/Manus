@@ -21,8 +21,14 @@ export async function setupVite(app: Express, server: Server) {
   });
 
   app.use(vite.middlewares);
+  // Don't intercept API routes - let them pass through to Express handlers
   app.use("*", async (req, res, next) => {
     const url = req.originalUrl;
+    
+    // Skip Vite for API routes
+    if (url.startsWith("/api/")) {
+      return next();
+    }
 
     try {
       const clientTemplate = path.resolve(
