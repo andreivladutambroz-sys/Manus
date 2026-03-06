@@ -179,7 +179,7 @@ async function callKimi(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: "moonshot-v1-128k",
+      model: "moonshot-v1-256k",
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt },
@@ -261,7 +261,7 @@ export async function ocrCertificateAgent(imageUrl: string): Promise<Partial<Veh
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: "moonshot-v1-128k",
+      model: "moonshot-v1-256k",
       messages: [
         {
           role: "system",
