@@ -1,0 +1,3 @@
+{"vehicle_make":"BMW","vehicle_model":"320d","year":2010,"error_code":"P0171","symptoms":["CEL","idle_rough","knock"],"source_url":"https://www.bimmerfest.com/forums/showthread.php?t=1234567","confidence":0.85}
+{"vehicle_make":"Mercedes","vehicle_model":"C200","year":2012,"error_code":"P0700","symptoms":["power_loss","transmission_slip"],"source_url":"https://www.reddit.com/r/MechanicAdvice","confidence":0.78}
+{"vehicle_make":"Toyota","vehicle_model":"Camry","year":2015,"error_code":"P0300","symptoms":["acceleration_hesitation","cylinder_misfire","idle_rough"],"source_url":"https://www.youcanic.com/guides","confidence":0.8}
