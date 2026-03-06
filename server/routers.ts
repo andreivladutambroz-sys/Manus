@@ -25,6 +25,7 @@ import { knowledgeBaseRouter } from "./routers/knowledge-base";
 import { importProgressRouter } from "./routers/import-progress";
 import { diagnosticRouter } from "./routers/diagnostic.router";
 import { imageUploadRouter } from "./routers/image-upload.router";
+import { dataCollectionRouter } from "./routers/data-collection.router";
 import mysql from "mysql2/promise";
 
 export const appRouter = router({
@@ -41,6 +42,7 @@ export const appRouter = router({
   importProgress: importProgressRouter,
   diagnosticEngine: diagnosticRouter,
   imageUpload: imageUploadRouter,
+  dataCollection: dataCollectionRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
