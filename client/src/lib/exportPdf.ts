@@ -66,12 +66,19 @@ export function exportFavoritesToPDF(favorites: FavoriteCase[]) {
     doc.setFont('Helvetica', 'normal');
     doc.setTextColor(0, 0, 0);
 
+    const statusLabel = caseItem.status
+      ? caseItem.status.charAt(0).toUpperCase() + caseItem.status.slice(1)
+      : 'Pending';
     const details = [
       `Year: ${caseItem.year || 'N/A'}`,
       `Engine: ${caseItem.engine || 'N/A'}`,
       `Error Code: ${caseItem.errorCode}`,
       `Confidence: ${(parseFloat(caseItem.confidence) * 100).toFixed(0)}%`,
+      `Status: ${statusLabel}`,
     ];
+    if (caseItem.resolvedDate) {
+      details.push(`Resolved Date: ${caseItem.resolvedDate}`);
+    }
 
     details.forEach(detail => {
       doc.text(detail, margin + 5, yPosition);

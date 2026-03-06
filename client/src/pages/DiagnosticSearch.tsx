@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Search, AlertCircle, Wrench, Lightbulb, Loader2, ChevronDown, ChevronUp, Clock, DollarSign, Zap, X, Heart, Download, Edit2, Save, Trash2, FileText } from 'lucide-react';
 import { trpc } from '@/lib/trpc';
-import { useFavorites, type FavoriteCase } from '@/hooks/useFavorites';
+import { useFavorites, type FavoriteCase, type RepairStatus, STATUS_COLORS, STATUS_LABELS } from '@/hooks/useFavorites';
 import { exportFavoritesToPDF } from '@/lib/exportPdf';
 
 interface SearchResult {
@@ -51,7 +51,7 @@ export default function DiagnosticSearch() {
   const [viewMode, setViewMode] = useState<ViewMode>('search');
   const [editingNotes, setEditingNotes] = useState<EditingNotes>({});
 
-  const { favorites, toggleFavorite, isFavorite, isLoaded, updateNote, deleteNote } = useFavorites();
+  const { favorites, toggleFavorite, isFavorite, isLoaded, updateNote, deleteNote, updateStatus } = useFavorites();
 
   // Use tRPC query for search with filters
   const { data: searchData, isLoading, error } = trpc.diagnostic.search.useQuery(
@@ -383,6 +383,31 @@ export default function DiagnosticSearch() {
                 </div>
               </div>
             )}
+
+            {/* Status Selector */}
+            <div className="bg-slate-700 rounded p-4">
+              <div className="flex items-center justify-between mb-3">
+                <p className="font-medium text-white">Status</p>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                {(['pending', 'in progress', 'completed', 'resolved', 'not fixed'] as RepairStatus[]).map(status => (
+                  <button
+                    key={status}
+                    onClick={() => updateStatus(favorite.id, status)}
+                    className={`px-3 py-2 rounded text-sm font-medium transition-colors ${
+                      favorite.status === status
+                        ? STATUS_COLORS[status]
+                        : 'bg-slate-600 text-slate-300 hover:bg-slate-500'
+                    }`}
+                  >
+                    {STATUS_LABELS[status]}
+                  </button>
+                ))}
+              </div>
+              {favorite.resolvedDate && (favorite.status === 'resolved' || favorite.status === 'completed') && (
+                <p className="text-xs text-slate-400 mt-2">Resolved: {favorite.resolvedDate}</p>
+              )}
+            </div>
 
             {/* Notes Section */}
             <div className="bg-slate-700 rounded p-4">
