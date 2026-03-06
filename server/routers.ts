@@ -167,6 +167,10 @@ export const appRouter = router({
         z.object({
           query: z.string().min(1).max(100),
           limit: z.number().min(1).max(20).default(10),
+          minYear: z.number().optional(),
+          maxYear: z.number().optional(),
+          engineFilter: z.string().max(50).optional(),
+          minConfidence: z.number().min(0).max(1).optional(),
         })
       )
       .query(async ({ input }) => {
@@ -192,16 +196,26 @@ export const appRouter = router({
               sourceUrl
             FROM repairCases
             WHERE 
-              errorCode = ? OR
-              vehicleMake LIKE ? OR
-              vehicleModel LIKE ?
+              (errorCode = ? OR vehicleMake LIKE ? OR vehicleModel LIKE ?)
+              AND (? IS NULL OR vehicleYear >= ?)
+              AND (? IS NULL OR vehicleYear <= ?)
+              AND (? IS NULL OR engine LIKE ?)
+              AND (? IS NULL OR confidence >= ?)
             LIMIT 20
           `;
           
           const [results] = await connection.query(query, [
             trimmedQuery,
             searchParam,
-            searchParam
+            searchParam,
+            input.minYear || null,
+            input.minYear || 0,
+            input.maxYear || null,
+            input.maxYear || 9999,
+            input.engineFilter ? `%${input.engineFilter}%` : null,
+            input.engineFilter ? `%${input.engineFilter}%` : null,
+            input.minConfidence || null,
+            input.minConfidence || 0,
           ]);
           
           await connection.end();

@@ -3,7 +3,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Search, AlertCircle, Wrench, Lightbulb, Loader2, ChevronDown, ChevronUp, Clock, DollarSign, Zap } from 'lucide-react';
+import { Search, AlertCircle, Wrench, Lightbulb, Loader2, ChevronDown, ChevronUp, Clock, DollarSign, Zap, X } from 'lucide-react';
 import { trpc } from '@/lib/trpc';
 
 interface SearchResult {
@@ -26,15 +26,28 @@ interface ExpandedState {
   [key: number]: boolean;
 }
 
+interface Filters {
+  minYear?: number;
+  maxYear?: number;
+  engineFilter?: string;
+  minConfidence?: number;
+}
+
 export default function DiagnosticSearch() {
   const [searchQuery, setSearchQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [hasSearched, setHasSearched] = useState(false);
   const [expandedResults, setExpandedResults] = useState<ExpandedState>({});
+  const [filters, setFilters] = useState<Filters>({});
+  const [showFilters, setShowFilters] = useState(false);
 
-  // Use tRPC query for search
+  // Use tRPC query for search with filters
   const { data: searchData, isLoading, error } = trpc.diagnostic.search.useQuery(
-    { query: searchQuery, limit: 20 },
+    { 
+      query: searchQuery, 
+      limit: 20,
+      ...filters
+    },
     { enabled: searchQuery.length > 0 }
   );
 
@@ -63,6 +76,19 @@ export default function DiagnosticSearch() {
     }));
   };
 
+  const updateFilter = (key: keyof Filters, value: any) => {
+    setFilters(prev => ({
+      ...prev,
+      [key]: value || undefined
+    }));
+  };
+
+  const clearFilters = () => {
+    setFilters({});
+  };
+
+  const hasActiveFilters = Object.values(filters).some(v => v !== undefined && v !== '');
+
   const confidenceColor = (conf: string | number) => {
     const num = typeof conf === 'string' ? parseFloat(conf) : conf;
     if (num >= 0.85) return 'bg-green-100 text-green-800';
@@ -86,7 +112,7 @@ export default function DiagnosticSearch() {
         </div>
 
         {/* Search Form */}
-        <Card className="mb-8 bg-slate-800 border-slate-700">
+        <Card className="mb-6 bg-slate-800 border-slate-700">
           <CardHeader>
             <CardTitle className="text-white">Search Repair Cases</CardTitle>
             <CardDescription>Search by error code (P0171), vehicle make (BMW), or model (Civic)</CardDescription>
@@ -120,6 +146,99 @@ export default function DiagnosticSearch() {
           </CardContent>
         </Card>
 
+        {/* Filter Toggle Button */}
+        {hasSearched && (
+          <button
+            onClick={() => setShowFilters(!showFilters)}
+            className="mb-4 flex items-center gap-2 text-sm text-slate-400 hover:text-slate-300 transition-colors"
+          >
+            <Zap className="w-4 h-4" />
+            {showFilters ? 'Hide Filters' : 'Show Filters'}
+            {hasActiveFilters && (
+              <Badge variant="secondary" className="bg-orange-500 text-white ml-2">
+                {Object.values(filters).filter(v => v !== undefined && v !== '').length}
+              </Badge>
+            )}
+          </button>
+        )}
+
+        {/* Filter Panel */}
+        {showFilters && hasSearched && (
+          <Card className="mb-6 bg-slate-800 border-slate-700">
+            <CardHeader className="pb-3">
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-white text-base">Filter Results</CardTitle>
+                {hasActiveFilters && (
+                  <button
+                    onClick={clearFilters}
+                    className="text-xs text-slate-400 hover:text-slate-200 flex items-center gap-1"
+                  >
+                    <X className="w-3 h-3" />
+                    Clear All
+                  </button>
+                )}
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {/* Year Range Filter */}
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-xs font-medium text-slate-400 block mb-2">Min Year</label>
+                  <Input
+                    type="number"
+                    placeholder="e.g., 2010"
+                    value={filters.minYear || ''}
+                    onChange={(e) => updateFilter('minYear', e.target.value ? parseInt(e.target.value) : undefined)}
+                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-500 text-sm"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-medium text-slate-400 block mb-2">Max Year</label>
+                  <Input
+                    type="number"
+                    placeholder="e.g., 2024"
+                    value={filters.maxYear || ''}
+                    onChange={(e) => updateFilter('maxYear', e.target.value ? parseInt(e.target.value) : undefined)}
+                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-500 text-sm"
+                  />
+                </div>
+              </div>
+
+              {/* Engine Filter */}
+              <div>
+                <label className="text-xs font-medium text-slate-400 block mb-2">Engine (e.g., 2.0L, 5.3L)</label>
+                <Input
+                  type="text"
+                  placeholder="Filter by engine size..."
+                  value={filters.engineFilter || ''}
+                  onChange={(e) => updateFilter('engineFilter', e.target.value || undefined)}
+                  className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-500 text-sm"
+                />
+              </div>
+
+              {/* Confidence Threshold */}
+              <div>
+                <label className="text-xs font-medium text-slate-400 block mb-2">Minimum Confidence</label>
+                <div className="grid grid-cols-4 gap-2">
+                  {[0.70, 0.75, 0.80, 0.85, 0.90].map(conf => (
+                    <button
+                      key={conf}
+                      onClick={() => updateFilter('minConfidence', filters.minConfidence === conf ? undefined : conf)}
+                      className={`px-3 py-2 rounded text-sm font-medium transition-colors ${
+                        filters.minConfidence === conf
+                          ? 'bg-orange-500 text-white'
+                          : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                      }`}
+                    >
+                      {(conf * 100).toFixed(0)}%
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
         {/* Error State */}
         {error && (
           <Card className="mb-8 bg-red-900/20 border-red-700">
@@ -142,7 +261,7 @@ export default function DiagnosticSearch() {
               <div className="text-center py-8">
                 <Search className="w-12 h-12 text-slate-500 mx-auto mb-3" />
                 <p className="text-slate-400">No results found for "{searchQuery}"</p>
-                <p className="text-slate-500 text-sm mt-2">Try searching with different keywords</p>
+                {hasActiveFilters && <p className="text-slate-500 text-sm mt-2">Try adjusting your filters</p>}
               </div>
             </CardContent>
           </Card>
@@ -153,6 +272,7 @@ export default function DiagnosticSearch() {
           <div className="space-y-4">
             <div className="text-sm text-slate-400">
               Found {results.length} repair case{results.length !== 1 ? 's' : ''}
+              {hasActiveFilters && ' (filtered)'}
             </div>
 
             {results.map((result) => (
