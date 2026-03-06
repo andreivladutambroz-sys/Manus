@@ -92,7 +92,16 @@ export const appRouter = router({
         const db = await getDb();
         if (!db) throw new Error("Database not available");
         const result = await db.insert(vehicles).values({ userId: ctx.user.id, ...input });
-        const vehicleId = (result as any)[0]?.insertId || (result as any).insertId || 0;
+        console.log('[Vehicle.create] Insert result:', JSON.stringify(result));
+        console.log('[Vehicle.create] Result type:', typeof result, 'isArray:', Array.isArray(result));
+        if (Array.isArray(result)) {
+          console.log('[Vehicle.create] Result[0]:', result[0]);
+        }
+        const vehicleId = Array.isArray(result) && result[0]?.insertId 
+          ? result[0].insertId 
+          : (result as any)?.insertId || 0;
+        console.log('[Vehicle.create] Extracted vehicleId:', vehicleId);
+        if (!vehicleId) throw new Error("Failed to create vehicle");
         return { success: true, vehicleId };
       }),
     get: protectedProcedure
@@ -102,65 +111,39 @@ export const appRouter = router({
         if (!vehicle || vehicle.userId !== ctx.user.id) throw new Error("Vehicle not found");
         return vehicle;
       }),
-    getMotorizations: publicProcedure
+    update: protectedProcedure
       .input(z.object({
-        brand: z.string(),
-        model: z.string(),
+        id: z.number(),
+        brand: z.string().optional(),
+        model: z.string().optional(),
         year: z.number().optional(),
-      }))
-      .query(async ({ input }) => {
-        const db = await getDb();
-        if (!db) return [];
-        
-        const year = input.year || new Date().getFullYear();
-        const motorizations = await db
-          .select()
-          .from(vehicleMotorizations)
-          .where(
-            and(
-              eq(vehicleMotorizations.brand, input.brand),
-              eq(vehicleMotorizations.model, input.model),
-              sql`${vehicleMotorizations.yearFrom} <= ${year} AND ${vehicleMotorizations.yearTo} >= ${year}`
-            )
-          );
-        
-        return motorizations;
-      }),
-  }),
-
-  // OCR - Extragere date din certificat auto
-  ocr: router({
-    certificate: protectedProcedure
-      .input(z.object({ imageUrl: z.string() }))
-      .mutation(async ({ input }) => {
-        try {
-          const vehicleData = await ocrCertificateAgent(input.imageUrl);
-          return { success: true, data: vehicleData };
-        } catch (error) {
-          console.error("OCR error:", error);
-          return { success: false, data: {}, error: "Failed to extract data from certificate" };
-        }
-      }),
-  }),
-
-  // Upload images
-  upload: router({
-    image: protectedProcedure
-      .input(z.object({
-        fileName: z.string(),
-        fileBase64: z.string(),
-        contentType: z.string(),
+        engine: z.string().optional(),
+        engineCode: z.string().optional(),
+        mileage: z.number().optional(),
+        vin: z.string().optional(),
+        licensePlate: z.string().optional(),
       }))
       .mutation(async ({ ctx, input }) => {
-        const suffix = Math.random().toString(36).substring(2, 10);
-        const key = `${ctx.user.id}-uploads/${Date.now()}-${suffix}-${input.fileName}`;
-        const buffer = Buffer.from(input.fileBase64, "base64");
-        const { url } = await storagePut(key, buffer, input.contentType);
-        return { url };
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const vehicle = await getVehicleById(input.id);
+        if (!vehicle || vehicle.userId !== ctx.user.id) throw new Error("Vehicle not found");
+        const { id, ...updateData } = input;
+        await db.update(vehicles).set(updateData).where(eq(vehicles.id, id));
+        return { success: true };
+      }),
+    delete: protectedProcedure
+      .input(z.object({ id: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const vehicle = await getVehicleById(input.id);
+        if (!vehicle || vehicle.userId !== ctx.user.id) throw new Error("Vehicle not found");
+        await db.delete(vehicles).where(eq(vehicles.id, input.id));
+        return { success: true };
       }),
   }),
 
-  // Diagnostic procedures - ENHANCED v2
   diagnostic: router({
     search: publicProcedure
       .input(
@@ -448,183 +431,4 @@ export const appRouter = router({
         return await addDiagnosticImage(input.diagnosticId, input.imageUrl, input.description);
       }),
   }),
-
-  // Knowledge Base Admin procedures
-  knowledge: router({
-    listDocuments: protectedProcedure.query(async ({ ctx }) => {
-      const db = await getDb();
-      if (!db) return [];
-      return await db.select().from(knowledgeDocuments).orderBy(desc(knowledgeDocuments.createdAt));
-    }),
-    uploadDocument: protectedProcedure
-      .input(z.object({
-        title: z.string(),
-        description: z.string().optional(),
-        category: z.enum(["elsa", "etka", "autodata", "workshop_manual", "wiring_diagram", "tsi_bulletin", "other"]),
-        brand: z.string().optional(),
-        model: z.string().optional(),
-        yearFrom: z.number().optional(),
-        yearTo: z.number().optional(),
-        engineCode: z.string().optional(),
-        fileUrl: z.string(),
-        fileKey: z.string(),
-        fileName: z.string(),
-        fileSize: z.number().optional(),
-        mimeType: z.string().optional(),
-        extractedText: z.string().optional(),
-        tags: z.array(z.string()).optional(),
-      }))
-      .mutation(async ({ ctx, input }) => {
-        const db = await getDb();
-        if (!db) throw new Error("Database not available");
-        const result = await db.insert(knowledgeDocuments).values({
-          uploadedBy: ctx.user.id,
-          ...input,
-        });
-        return { success: true, id: (result as any)[0]?.insertId || 0 };
-      }),
-    deleteDocument: protectedProcedure
-      .input(z.object({ id: z.number() }))
-      .mutation(async ({ ctx, input }) => {
-        const db = await getDb();
-        if (!db) throw new Error("Database not available");
-        if (ctx.user.role !== "admin") throw new Error("Admin only");
-        await db.delete(knowledgeDocuments).where(eq(knowledgeDocuments.id, input.id));
-        return { success: true };
-      }),
-    searchDocuments: protectedProcedure
-      .input(z.object({
-        query: z.string().optional(),
-        brand: z.string().optional(),
-        category: z.string().optional(),
-      }))
-      .query(async ({ input }) => {
-        const db = await getDb();
-        if (!db) return [];
-        const conditions = [];
-        if (input.query) {
-          conditions.push(
-            or(
-              like(knowledgeDocuments.title, `%${input.query}%`),
-              like(knowledgeDocuments.extractedText, `%${input.query}%`)
-            )
-          );
-        }
-        if (input.brand) conditions.push(eq(knowledgeDocuments.brand, input.brand));
-        if (conditions.length > 0) {
-          return await db.select().from(knowledgeDocuments).where(and(...conditions)).orderBy(desc(knowledgeDocuments.createdAt));
-        }
-        return await db.select().from(knowledgeDocuments).orderBy(desc(knowledgeDocuments.createdAt));
-      }),
-  }),
-
-  // Chat Messages procedures
-  chat: router({
-    loadMessages: protectedProcedure
-      .input(z.object({ chatId: z.string() }))
-      .query(async ({ ctx, input }) => {
-        const db = await getDb();
-        if (!db) return [];
-        const messages = await db.select().from(chatMessages)
-          .where(and(eq(chatMessages.chatId, input.chatId), eq(chatMessages.userId, ctx.user.id)))
-          .orderBy(chatMessages.ordering);
-        return messages.map(m => m.content);
-      }),
-    saveMessage: protectedProcedure
-      .input(z.object({
-        chatId: z.string(),
-        messageId: z.string(),
-        diagnosticId: z.number().optional(),
-        content: z.any(),
-        ordering: z.number(),
-      }))
-      .mutation(async ({ ctx, input }) => {
-        const db = await getDb();
-        if (!db) throw new Error("Database not available");
-        await db.insert(chatMessages).values({
-          id: input.messageId,
-          chatId: input.chatId,
-          diagnosticId: input.diagnosticId,
-          userId: ctx.user.id,
-          content: input.content,
-          ordering: input.ordering,
-        }).onDuplicateKeyUpdate({ set: { content: input.content } });
-        return { success: true };
-      }),
-  }),
-
-  // Learning Engine procedures
-  learning: router({
-    // Submit feedback for a diagnostic
-    submitFeedback: protectedProcedure
-      .input(z.object({
-        diagnosticId: z.number(),
-        overallRating: z.number().min(1).max(5),
-        accuracyRating: z.number().min(1).max(5),
-        usefulnessRating: z.number().min(1).max(5),
-        causesFeedback: z.array(z.object({
-          causeId: z.string(),
-          cause: z.string(),
-          rating: z.enum(["correct", "partially_correct", "incorrect"]),
-          mechanicComment: z.string().optional(),
-        })).optional(),
-        actualCause: z.string().optional(),
-        actualParts: z.array(z.string()).optional(),
-        actualCost: z.number().optional(),
-        actualTime: z.string().optional(),
-        mechanicNotes: z.string().optional(),
-        wasResolved: z.boolean(),
-      }))
-      .mutation(async ({ ctx, input }) => {
-        return await submitFeedback({
-          ...input,
-          userId: ctx.user.id,
-        });
-      }),
-
-    // Get feedback for a specific diagnostic
-    getFeedback: protectedProcedure
-      .input(z.object({ diagnosticId: z.number() }))
-      .query(async ({ input }) => {
-        return await getFeedbackForDiagnostic(input.diagnosticId);
-      }),
-
-    // Get accuracy dashboard
-    accuracyDashboard: protectedProcedure
-      .query(async () => {
-        return await getAccuracyDashboard();
-      }),
-
-    // Find similar patterns for a new diagnostic
-    findPatterns: protectedProcedure
-      .input(z.object({
-        brand: z.string(),
-        symptoms: z.string(),
-        errorCodes: z.array(z.string()).optional(),
-      }))
-      .query(async ({ input }) => {
-        return await findSimilarPatterns(input.brand, input.symptoms, input.errorCodes);
-      }),
-
-    // Optimize prompt for an agent (admin only)
-    optimizePrompt: protectedProcedure
-      .input(z.object({ agentName: z.string() }))
-      .mutation(async ({ ctx, input }) => {
-        if (ctx.user.role !== "admin") throw new Error("Admin only");
-        return await optimizePromptForAgent(input.agentName);
-      }),
-
-    // Get active prompt for an agent
-    getActivePrompt: protectedProcedure
-      .input(z.object({
-        agentName: z.string(),
-        vehicleBrand: z.string().optional(),
-        symptoms: z.string().optional(),
-      }))
-      .query(async ({ input }) => {
-        return await getActivePromptForAgent(input.agentName, input.vehicleBrand, input.symptoms);
-      }),
-  }),
 });
-
-export type AppRouter = typeof appRouter;

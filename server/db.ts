@@ -1,5 +1,6 @@
 import { drizzle } from "drizzle-orm/mysql2";
 import { InsertUser, users, profiles, vehicles, diagnostics, diagnosticImages, notifications, knowledgeBase } from "../drizzle/schema";
+import { eq } from "drizzle-orm";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -113,9 +114,15 @@ export async function getUserDiagnostics(userId: number) {
 }
 
 export async function getVehicleById(vehicleId: number) {
-  const database = await getDb() as any;
-  if (!database) return null;
-  return (database as any)?.query?.vehicles?.findFirst({ where: (v: any) => v.id === vehicleId });
+  try {
+    const connection = await import('mysql2/promise').then(m => m.createConnection(process.env.DATABASE_URL!));
+    const [rows] = await connection.query('SELECT * FROM vehicles WHERE id = ?', [vehicleId]);
+    await connection.end();
+    return (rows as any[])[0] || null;
+  } catch (error) {
+    console.error('[getVehicleById] Error:', error);
+    return null;
+  }
 }
 
 export async function getDiagnosticById(diagnosticId: number) {
