@@ -3,7 +3,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Search, AlertCircle, Wrench, Lightbulb, Loader2, ChevronDown, ChevronUp, Clock, DollarSign, Zap, X, Heart, Download } from 'lucide-react';
+import { Search, AlertCircle, Wrench, Lightbulb, Loader2, ChevronDown, ChevronUp, Clock, DollarSign, Zap, X, Heart, Download, Edit2, Save, Trash2, FileText } from 'lucide-react';
 import { trpc } from '@/lib/trpc';
 import { useFavorites, type FavoriteCase } from '@/hooks/useFavorites';
 import { exportFavoritesToPDF } from '@/lib/exportPdf';
@@ -28,6 +28,10 @@ interface ExpandedState {
   [key: number]: boolean;
 }
 
+interface EditingNotes {
+  [key: number]: string;
+}
+
 interface Filters {
   minYear?: number;
   maxYear?: number;
@@ -45,8 +49,9 @@ export default function DiagnosticSearch() {
   const [filters, setFilters] = useState<Filters>({});
   const [showFilters, setShowFilters] = useState(false);
   const [viewMode, setViewMode] = useState<ViewMode>('search');
+  const [editingNotes, setEditingNotes] = useState<EditingNotes>({});
 
-  const { favorites, toggleFavorite, isFavorite, isLoaded } = useFavorites();
+  const { favorites, toggleFavorite, isFavorite, isLoaded, updateNote, deleteNote } = useFavorites();
 
   // Use tRPC query for search with filters
   const { data: searchData, isLoading, error } = trpc.diagnostic.search.useQuery(
@@ -127,6 +132,35 @@ export default function DiagnosticSearch() {
 
   const handleExportPDF = () => {
     exportFavoritesToPDF(favorites);
+  };
+
+  const startEditNote = (caseId: number, currentNote: string | undefined) => {
+    setEditingNotes(prev => ({
+      ...prev,
+      [caseId]: currentNote || ''
+    }));
+  };
+
+  const saveNote = (caseId: number) => {
+    const note = editingNotes[caseId];
+    if (note && note.length > 1000) {
+      alert('Note must be less than 1000 characters');
+      return;
+    }
+    updateNote(caseId, note);
+    setEditingNotes(prev => {
+      const updated = { ...prev };
+      delete updated[caseId];
+      return updated;
+    });
+  };
+
+  const cancelEditNote = (caseId: number) => {
+    setEditingNotes(prev => {
+      const updated = { ...prev };
+      delete updated[caseId];
+      return updated;
+    });
   };
 
   const renderResultCard = (result: SearchResult, isFav: boolean) => (
@@ -275,87 +309,173 @@ export default function DiagnosticSearch() {
     </Card>
   );
 
-  const renderFavoriteCard = (favorite: FavoriteCase) => (
-    <Card key={favorite.id} className="bg-slate-800 border-slate-700 hover:border-slate-600 transition-colors overflow-hidden">
-      <button
-        onClick={() => toggleExpand(favorite.id)}
-        className="w-full text-left"
-      >
-        <CardHeader className="pb-3">
-          <div className="flex items-start justify-between gap-4">
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <CardTitle className="text-white text-lg">
-                  {favorite.vehicleModel} ({favorite.year})
-                </CardTitle>
-                <Badge variant="outline" className="text-slate-300 border-slate-600">
-                  {favorite.vehicleMake}
-                </Badge>
+  const renderFavoriteCard = (favorite: FavoriteCase) => {
+    const isEditingNote = editingNotes[favorite.id] !== undefined;
+    const hasNote = !!favorite.notes;
+
+    return (
+      <Card key={favorite.id} className="bg-slate-800 border-slate-700 hover:border-slate-600 transition-colors overflow-hidden">
+        <button
+          onClick={() => toggleExpand(favorite.id)}
+          className="w-full text-left"
+        >
+          <CardHeader className="pb-3">
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <CardTitle className="text-white text-lg">
+                    {favorite.vehicleModel} ({favorite.year})
+                  </CardTitle>
+                  <Badge variant="outline" className="text-slate-300 border-slate-600">
+                    {favorite.vehicleMake}
+                  </Badge>
+                  {hasNote && (
+                    <Badge className="bg-blue-600 text-white">
+                      <FileText className="w-3 h-3 mr-1" />
+                      Note
+                    </Badge>
+                  )}
+                </div>
+                <CardDescription className="text-slate-400">
+                  {favorite.engine && `${favorite.engine} • `}
+                  <span className="font-mono text-orange-400">{favorite.errorCode}</span>
+                </CardDescription>
               </div>
-              <CardDescription className="text-slate-400">
-                {favorite.engine && `${favorite.engine} • `}
-                <span className="font-mono text-orange-400">{favorite.errorCode}</span>
-              </CardDescription>
+              <div className="flex items-center gap-3">
+                <Badge className={confidenceColor(favorite.confidence)}>
+                  {getConfidencePercent(favorite.confidence)}% Match
+                </Badge>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleFavorite(favorite);
+                  }}
+                  className="p-2 hover:bg-slate-700 rounded transition-colors"
+                >
+                  <Heart className="w-5 h-5 fill-red-500 text-red-500" />
+                </button>
+                {expandedResults[favorite.id] ? (
+                  <ChevronUp className="w-5 h-5 text-slate-400" />
+                ) : (
+                  <ChevronDown className="w-5 h-5 text-slate-400" />
+                )}
+              </div>
             </div>
-            <div className="flex items-center gap-3">
-              <Badge className={confidenceColor(favorite.confidence)}>
-                {getConfidencePercent(favorite.confidence)}% Match
-              </Badge>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  toggleFavorite(favorite);
-                }}
-                className="p-2 hover:bg-slate-700 rounded transition-colors"
-              >
-                <Heart className="w-5 h-5 fill-red-500 text-red-500" />
-              </button>
-              {expandedResults[favorite.id] ? (
-                <ChevronUp className="w-5 h-5 text-slate-400" />
+          </CardHeader>
+        </button>
+
+        {/* Expandable Details */}
+        {expandedResults[favorite.id] && (
+          <CardContent className="space-y-4 border-t border-slate-700 pt-4">
+            {/* Symptoms */}
+            {Array.isArray(favorite.symptoms) && favorite.symptoms.length > 0 && (
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <AlertCircle className="w-4 h-4 text-orange-400" />
+                  <p className="font-medium text-white">Symptoms</p>
+                </div>
+                <div className="flex flex-wrap gap-2 ml-6">
+                  {favorite.symptoms.map((symptom, idx) => (
+                    <Badge key={idx} variant="secondary" className="bg-slate-700 text-slate-200">
+                      {symptom}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Notes Section */}
+            <div className="bg-slate-700 rounded p-4">
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-blue-400" />
+                  <p className="font-medium text-white">Notes</p>
+                </div>
+                {!isEditingNote && (
+                  <button
+                    onClick={() => startEditNote(favorite.id, favorite.notes)}
+                    className="p-1 hover:bg-slate-600 rounded transition-colors"
+                  >
+                    <Edit2 className="w-4 h-4 text-slate-400 hover:text-slate-200" />
+                  </button>
+                )}
+              </div>
+
+              {isEditingNote ? (
+                <div className="space-y-2">
+                  <textarea
+                    value={editingNotes[favorite.id]}
+                    onChange={(e) => {
+                      if (e.target.value.length <= 1000) {
+                        setEditingNotes(prev => ({
+                          ...prev,
+                          [favorite.id]: e.target.value
+                        }));
+                      }
+                    }}
+                    placeholder="Add your notes here... (max 1000 characters)"
+                    className="w-full h-24 bg-slate-600 border border-slate-500 rounded text-white placeholder:text-slate-400 p-2 text-sm resize-none"
+                  />
+                  <div className="flex items-center justify-between">
+                    <p className="text-xs text-slate-400">
+                      {editingNotes[favorite.id]?.length || 0} / 1000
+                    </p>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => cancelEditNote(favorite.id)}
+                        className="px-3 py-1 bg-slate-600 hover:bg-slate-500 text-white rounded text-sm transition-colors"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        onClick={() => saveNote(favorite.id)}
+                        className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded text-sm flex items-center gap-1 transition-colors"
+                      >
+                        <Save className="w-3 h-3" />
+                        Save
+                      </button>
+                    </div>
+                  </div>
+                </div>
               ) : (
-                <ChevronDown className="w-5 h-5 text-slate-400" />
+                <div>
+                  {favorite.notes ? (
+                    <div className="bg-slate-600 rounded p-3 text-slate-100 text-sm whitespace-pre-wrap break-words">
+                      {favorite.notes}
+                    </div>
+                  ) : (
+                    <p className="text-slate-400 text-sm italic">No notes yet. Click edit to add one.</p>
+                  )}
+                  {favorite.notes && (
+                    <button
+                      onClick={() => deleteNote(favorite.id)}
+                      className="mt-2 px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded text-sm flex items-center gap-1 transition-colors"
+                    >
+                      <Trash2 className="w-3 h-3" />
+                      Delete Note
+                    </button>
+                  )}
+                </div>
               )}
             </div>
-          </div>
-        </CardHeader>
-      </button>
 
-      {/* Expandable Details */}
-      {expandedResults[favorite.id] && (
-        <CardContent className="space-y-4 border-t border-slate-700 pt-4">
-          {/* Symptoms */}
-          {Array.isArray(favorite.symptoms) && favorite.symptoms.length > 0 && (
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <AlertCircle className="w-4 h-4 text-orange-400" />
-                <p className="font-medium text-white">Symptoms</p>
-              </div>
-              <div className="flex flex-wrap gap-2 ml-6">
-                {favorite.symptoms.map((symptom, idx) => (
-                  <Badge key={idx} variant="secondary" className="bg-slate-700 text-slate-200">
-                    {symptom}
-                  </Badge>
-                ))}
-              </div>
+            {/* Source Link */}
+            <div className="flex items-center gap-2 pt-2 border-t border-slate-700">
+              <Lightbulb className="w-4 h-4 text-slate-400" />
+              <a
+                href={favorite.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-blue-400 hover:text-blue-300 truncate"
+              >
+                View source
+              </a>
             </div>
-          )}
-
-          {/* Source Link */}
-          <div className="flex items-center gap-2 pt-2 border-t border-slate-700">
-            <Lightbulb className="w-4 h-4 text-slate-400" />
-            <a
-              href={favorite.sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-blue-400 hover:text-blue-300 truncate"
-            >
-              View source
-            </a>
-          </div>
-        </CardContent>
-      )}
-    </Card>
-  );
+          </CardContent>
+        )}
+      </Card>
+    );
+  };
 
   if (!isLoaded) {
     return (

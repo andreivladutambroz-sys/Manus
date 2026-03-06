@@ -10,6 +10,7 @@ export interface FavoriteCase {
   confidence: string;
   symptoms: string[];
   sourceUrl: string;
+  notes?: string;
 }
 
 const FAVORITES_STORAGE_KEY = 'mechanic-helper-favorites';
@@ -68,12 +69,34 @@ export function useFavorites() {
     }
   };
 
+  const updateNote = (caseId: number, note: string) => {
+    setFavorites(prev =>
+      prev.map(fav =>
+        fav.id === caseId
+          ? { ...fav, notes: note.trim() || undefined }
+          : fav
+      )
+    );
+  };
+
+  const deleteNote = (caseId: number) => {
+    setFavorites(prev =>
+      prev.map(fav =>
+        fav.id === caseId
+          ? { ...fav, notes: undefined }
+          : fav
+      )
+    );
+  };
+
   return {
     favorites,
     addFavorite,
     removeFavorite,
     isFavorite,
     toggleFavorite,
+    updateNote,
+    deleteNote,
     isLoaded,
   };
 }
