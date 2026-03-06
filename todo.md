@@ -966,3 +966,48 @@
 - [ ] Integrate telematics data (optional)
 - [ ] Test and validate predictions
 - [ ] Deploy to production
+
+
+## Multi-Source Data Pipeline Orchestrator (OVERNIGHT AUTONOMOUS)
+- [ ] Phase 1: Multi-Source Collectors
+  - [ ] Marketplace collector (AutoScout24, Mobile.de, eBay Motors, Facebook)
+  - [ ] Salvage auction collector (Copart, IAA, Manheim, Adesa, BCA, Autorola)
+  - [ ] Inspection dataset collector (UK MOT, TÜV, RDW, NHTSA)
+  - [ ] Raw source storage (raw_html, extracted_text, fetched_at, status_code)
+- [ ] Phase 2: Unified Extractor with Anchoring
+  - [ ] Vehicle information extractor (make, model, year, engine, VIN, mileage)
+  - [ ] Symptom detector (engine knocking, misfire, overheating, oil leak, etc.)
+  - [ ] Defect detector (engine damage, transmission problem, no start, etc.)
+  - [ ] Evidence anchoring (offsets, snippet matching)
+  - [ ] Confidence scoring (0.70-0.95 based on signals)
+- [ ] Phase 3: Normalization & Deduplication
+  - [ ] Symptom normalization (check engine light -> CEL, engine knocking -> knock)
+  - [ ] Vehicle make/model standardization
+  - [ ] Engine normalization
+  - [ ] Deduplication by vehicle + symptom + source hash
+- [ ] Phase 4: Analytics & Statistics Generator
+  - [ ] Failure frequency by vehicle
+  - [ ] Failure frequency by engine
+  - [ ] Symptom distribution
+  - [ ] Common defects per model
+  - [ ] Confidence distribution analysis
+- [ ] Phase 5: Smoke Test (1000 records)
+  - [ ] Collect 1000 records from all sources
+  - [ ] Generate 10 raw_html samples
+  - [ ] Generate 10 extracted_text samples
+  - [ ] Generate 10 parsed_records samples
+  - [ ] Verify data authenticity
+  - [ ] Generate smoke test report
+- [ ] Phase 6: Production Launcher
+  - [ ] Multi-source orchestrator
+  - [ ] Batch processing engine
+  - [ ] Error handling & retry logic
+  - [ ] Progress monitoring
+  - [ ] Database writes
+- [ ] Phase 7: Output & Delivery
+  - [ ] marketplace_failures.jsonl (50k-200k records)
+  - [ ] salvage_failures.jsonl (100k-300k records)
+  - [ ] inspection_defects.jsonl (1M+ records)
+  - [ ] failure_statistics.json
+  - [ ] Comprehensive execution report
+  - [ ] Checkpoint & delivery

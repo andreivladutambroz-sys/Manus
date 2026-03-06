@@ -1,0 +1,2 @@
+{"vehicle_make":"Toyota","year":2015,"mileage":95000,"symptoms":["no start"],"source_url":"https://www.copart.com/lot/toyota-camry","source_category":"salvage","raw_source_id":"raw-1772756589230-6r1ois40o","confidence":0.75,"canonical_key":"Toyota:no start"}
+{"vehicle_make":"Honda","year":2014,"mileage":105000,"symptoms":["engine knocking","oil leak","overheating"],"source_url":"https://www.iaai.com/lot/honda-civic","source_category":"salvage","raw_source_id":"raw-1772756589230-3zfsh3xr5","confidence":0.85,"canonical_key":"Honda:engine knocking|oil leak|overheating"}

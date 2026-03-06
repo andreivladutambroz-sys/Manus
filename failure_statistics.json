@@ -1,0 +1,116 @@
+{
+  "vehicles": [
+    {
+      "make": "BMW",
+      "count": 1,
+      "symptoms": [
+        "check engine light",
+        "engine knocking",
+        "rough idle"
+      ],
+      "avg_confidence": 0.85
+    },
+    {
+      "make": "Mercedes",
+      "count": 1,
+      "symptoms": [
+        "transmission slip"
+      ],
+      "avg_confidence": 0.75
+    },
+    {
+      "make": "Audi",
+      "count": 1,
+      "symptoms": [
+        "coolant leak",
+        "oil leak",
+        "overheating"
+      ],
+      "avg_confidence": 0.85
+    },
+    {
+      "make": "Toyota",
+      "count": 1,
+      "symptoms": [
+        "no start"
+      ],
+      "avg_confidence": 0.75
+    },
+    {
+      "make": "Honda",
+      "count": 1,
+      "symptoms": [
+        "engine knocking",
+        "oil leak",
+        "overheating"
+      ],
+      "avg_confidence": 0.85
+    }
+  ],
+  "symptoms": [
+    {
+      "symptom": "check engine light",
+      "frequency": 1,
+      "vehicles": [
+        "BMW"
+      ]
+    },
+    {
+      "symptom": "engine knocking",
+      "frequency": 2,
+      "vehicles": [
+        "BMW",
+        "Honda"
+      ]
+    },
+    {
+      "symptom": "rough idle",
+      "frequency": 1,
+      "vehicles": [
+        "BMW"
+      ]
+    },
+    {
+      "symptom": "transmission slip",
+      "frequency": 1,
+      "vehicles": [
+        "Mercedes"
+      ]
+    },
+    {
+      "symptom": "coolant leak",
+      "frequency": 1,
+      "vehicles": [
+        "Audi"
+      ]
+    },
+    {
+      "symptom": "oil leak",
+      "frequency": 2,
+      "vehicles": [
+        "Audi",
+        "Honda"
+      ]
+    },
+    {
+      "symptom": "overheating",
+      "frequency": 2,
+      "vehicles": [
+        "Audi",
+        "Honda"
+      ]
+    },
+    {
+      "symptom": "no start",
+      "frequency": 1,
+      "vehicles": [
+        "Toyota"
+      ]
+    }
+  ],
+  "summary": {
+    "total_records": 5,
+    "unique_vehicles": 5,
+    "unique_symptoms": 8
+  }
+}
