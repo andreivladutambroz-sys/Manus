@@ -18,16 +18,17 @@ export const mechanicRatesRouter = router({
           throw new Error('User not authenticated');
         }
 
+        const userId = typeof ctx.user.id === 'string' ? parseInt(ctx.user.id) : ctx.user.id;
+
         // Update user's hourly rate
-        const updated = await db
+        await db
           .update(users)
           .set({
-            hourly_rate: input.hourlyRate,
+            hourly_rate: input.hourlyRate.toString(),
             currency: input.currency,
             rate_updated_at: new Date()
           })
-          .where(eq(users.id, ctx.user.id))
-          .returning();
+          .where(eq(users.id, userId));
 
         return {
           success: true,
@@ -48,12 +49,14 @@ export const mechanicRatesRouter = router({
           throw new Error('User not authenticated');
         }
 
+        const userId = typeof ctx.user.id === 'string' ? parseInt(ctx.user.id) : ctx.user.id;
+
         const user = await db.query.users.findFirst({
-          where: eq(users.id, ctx.user.id)
+          where: eq(users.id, userId)
         });
 
         return {
-          hourlyRate: user?.hourly_rate || 50,
+          hourlyRate: user?.hourly_rate ? parseFloat(user.hourly_rate as unknown as string) : 50,
           currency: user?.currency || 'USD',
           lastUpdated: user?.rate_updated_at || new Date()
         };
@@ -75,11 +78,13 @@ export const mechanicRatesRouter = router({
           throw new Error('User not authenticated');
         }
 
+        const userId = typeof ctx.user.id === 'string' ? parseInt(ctx.user.id) : ctx.user.id;
+
         const user = await db.query.users.findFirst({
-          where: eq(users.id, ctx.user.id)
+          where: eq(users.id, userId)
         });
 
-        const hourlyRate = user?.hourly_rate || 50;
+        const hourlyRate = user?.hourly_rate ? parseFloat(user.hourly_rate as unknown as string) : 50;
         const currency = user?.currency || 'USD';
 
         const laborCost = hourlyRate * input.estimatedHours;
@@ -115,17 +120,17 @@ export const mechanicRatesRouter = router({
           throw new Error('Unauthorized: Only admins can view all mechanics rates');
         }
 
-        const mechanics = await db.query.users.findMany({
-          where: eq(users.role, 'user')
-        });
+        const mechanics = await db.query.users.findMany();
 
-        return mechanics.map(m => ({
-          id: m.id,
-          name: m.name,
-          hourlyRate: m.hourly_rate || 50,
-          currency: m.currency || 'USD',
-          lastUpdated: m.rate_updated_at
-        }));
+        return mechanics
+          .filter((m: any) => m.role === 'user')
+          .map((m: any) => ({
+            id: m.id,
+            name: m.name,
+            hourlyRate: m.hourly_rate ? parseFloat(m.hourly_rate as unknown as string) : 50,
+            currency: m.currency || 'USD',
+            lastUpdated: m.rate_updated_at
+          }));
       } catch (error) {
         throw new Error(`Failed to get mechanics rates: ${error}`);
       }
@@ -144,15 +149,16 @@ export const mechanicRatesRouter = router({
           throw new Error('Unauthorized: Only admins can update mechanic rates');
         }
 
-        const updated = await db
+        const mechanicId = parseInt(input.mechanicId);
+
+        await db
           .update(users)
           .set({
-            hourly_rate: input.hourlyRate,
+            hourly_rate: input.hourlyRate.toString(),
             currency: input.currency,
             rate_updated_at: new Date()
           })
-          .where(eq(users.id, input.mechanicId))
-          .returning();
+          .where(eq(users.id, mechanicId));
 
         return {
           success: true,

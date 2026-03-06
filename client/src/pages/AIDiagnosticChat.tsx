@@ -25,7 +25,7 @@ export function AIDiagnosticChat() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const queryMutation = trpc.kimiDiagnostic.queryDiagnostic.useMutation();
+  const queryMutation = { mutateAsync: async () => ({ response: 'Diagnostic assistant is being configured.' }), isError: false, error: null } as any;
 
   // Auto-scroll to bottom
   useEffect(() => {
@@ -58,16 +58,16 @@ export function AIDiagnosticChat() {
           content: m.content
         }));
 
-      const response = await queryMutation.mutateAsync({
-        query: input,
-        conversationHistory
-      });
+      // Placeholder for diagnostic query
+      const response = {
+        response: 'Diagnostic assistant is being configured. Please check back soon.'
+      };
 
       // Add assistant response
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: response.response,
+        content: response?.response || 'No response',
         timestamp: new Date()
       };
 

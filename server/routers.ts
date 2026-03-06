@@ -339,7 +339,8 @@ export const appRouter = router({
         diagnosticId: z.number().optional(),
       }))
       .mutation(async ({ ctx, input }) => {
-        return await createNotification(ctx.user.id, input.type, input.title, input.message, input.diagnosticId);
+        return await createNotification(ctx.user.id, input.type, input.title || "",
+        input.message || "", input.diagnosticId);
       }),
     markAsRead: protectedProcedure
       .input(z.object({ notificationId: z.number() }))
