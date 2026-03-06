@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -68,9 +68,11 @@ export default function DiagnosticSearch() {
   );
 
   // Update results when search data changes
-  if (searchData && searchData.results) {
-    setResults(searchData.results);
-  }
+  useEffect(() => {
+    if (searchData && searchData.results) {
+      setResults(searchData.results);
+    }
+  }, [searchData])
 
   const handleSearch = useCallback((e: React.FormEvent) => {
     e.preventDefault();
