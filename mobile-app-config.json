@@ -1,0 +1,181 @@
+{
+  "appName": "Mechanic Helper",
+  "appId": "com.mechanichelper.app",
+  "version": "1.0.0",
+  "platforms": {
+    "ios": {
+      "bundleId": "com.mechanichelper.app",
+      "minimumOSVersion": "13.0",
+      "deploymentTarget": "13.0",
+      "capabilities": [
+        "camera",
+        "photos",
+        "location",
+        "notifications",
+        "background-fetch"
+      ]
+    },
+    "android": {
+      "packageName": "com.mechanichelper.app",
+      "minimumSdkVersion": 24,
+      "targetSdkVersion": 34,
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "INTERNET",
+        "POST_NOTIFICATIONS"
+      ]
+    }
+  },
+  "features": {
+    "diagnosticSearch": {
+      "enabled": true,
+      "offline": true,
+      "caching": true
+    },
+    "aiChat": {
+      "enabled": true,
+      "streaming": true,
+      "offlineMode": false
+    },
+    "repairLogging": {
+      "enabled": true,
+      "photoCapture": true,
+      "voiceNotes": true,
+      "offline": true
+    },
+    "scheduling": {
+      "enabled": true,
+      "notifications": true,
+      "reminders": true
+    },
+    "community": {
+      "enabled": true,
+      "offline": false,
+      "push-notifications": true
+    },
+    "inventory": {
+      "enabled": true,
+      "barcodeScan": true,
+      "offline": true
+    },
+    "certification": {
+      "enabled": true,
+      "offline": true
+    }
+  },
+  "notifications": {
+    "reminders": {
+      "enabled": true,
+      "channels": ["repair-reminders", "community-activity", "inventory-alerts"]
+    },
+    "pushNotifications": {
+      "enabled": true,
+      "provider": "firebase"
+    }
+  },
+  "storage": {
+    "database": "sqlite",
+    "syncInterval": 300000,
+    "maxOfflineSize": 500,
+    "cloudSync": true
+  },
+  "performance": {
+    "minMemory": 512,
+    "targetMemory": 1024,
+    "cacheStrategy": "aggressive",
+    "imageOptimization": true
+  },
+  "security": {
+    "encryption": "AES-256",
+    "biometric": true,
+    "pinCode": true,
+    "sessionTimeout": 900000
+  },
+  "analytics": {
+    "enabled": true,
+    "provider": "firebase",
+    "tracking": [
+      "app-opens",
+      "feature-usage",
+      "search-queries",
+      "repair-logs",
+      "community-activity"
+    ]
+  },
+  "screenshots": {
+    "ios": [
+      {
+        "name": "DiagnosticSearch",
+        "description": "Search diagnostics by vehicle or error code"
+      },
+      {
+        "name": "AIChat",
+        "description": "Chat with AI diagnostic assistant"
+      },
+      {
+        "name": "RepairLogging",
+        "description": "Log repairs with photos and notes"
+      },
+      {
+        "name": "Scheduling",
+        "description": "Schedule repairs and get reminders"
+      },
+      {
+        "name": "Community",
+        "description": "Share tips and get help from mechanics"
+      }
+    ],
+    "android": [
+      {
+        "name": "DiagnosticSearch",
+        "description": "Search diagnostics by vehicle or error code"
+      },
+      {
+        "name": "AIChat",
+        "description": "Chat with AI diagnostic assistant"
+      },
+      {
+        "name": "RepairLogging",
+        "description": "Log repairs with photos and notes"
+      },
+      {
+        "name": "Scheduling",
+        "description": "Schedule repairs and get reminders"
+      },
+      {
+        "name": "Community",
+        "description": "Share tips and get help from mechanics"
+      }
+    ]
+  },
+  "appStore": {
+    "ios": {
+      "appName": "Mechanic Helper",
+      "category": "Utilities",
+      "keywords": [
+        "mechanic",
+        "automotive",
+        "diagnostics",
+        "repair",
+        "obd"
+      ],
+      "description": "Professional diagnostic and repair tracking app for mechanics"
+    },
+    "android": {
+      "appName": "Mechanic Helper",
+      "category": "Tools",
+      "keywords": [
+        "mechanic",
+        "automotive",
+        "diagnostics",
+        "repair",
+        "obd"
+      ],
+      "description": "Professional diagnostic and repair tracking app for mechanics"
+    }
+  }
+}
