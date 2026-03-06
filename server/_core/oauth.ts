@@ -48,11 +48,18 @@ export function registerOAuthRoutes(app: Express) {
         name: userInfo.name || "",
         expiresInMs: ONE_YEAR_MS,
       });
+      console.log("[OAuth] Session token created, length:", sessionToken.length);
 
       const cookieOptions = getSessionCookieOptions(req);
-      console.log("[OAuth] Setting cookie with options:", cookieOptions);
+      console.log("[OAuth] Cookie options:", cookieOptions);
+      console.log("[OAuth] Cookie name:", COOKIE_NAME);
+      console.log("[OAuth] Request protocol:", req.protocol);
+      console.log("[OAuth] X-Forwarded-Proto:", req.headers["x-forwarded-proto"]);
+      
       res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
-      console.log("[OAuth] Cookie set, redirecting to /");
+      const setCookieHeader = res.getHeader("set-cookie");
+      console.log("[OAuth] Set-Cookie header:", setCookieHeader);
+      console.log("[OAuth] Redirecting to /");
 
       res.redirect(302, "/");
     } catch (error) {

@@ -16,8 +16,12 @@ export default function Home() {
   const { data: diagnostics } = trpc.diagnostic.list.useQuery();
   const { data: vehicles } = trpc.vehicle.list.useQuery();
 
+  // TEMPORARY: Disable auth check for testing - always show dashboard
+  // TODO: Re-enable authentication after testing
+  const isAuthDisabledForTesting = true;
+
   // If not authenticated, show landing page
-  if (!isAuthenticated) {
+  if (!isAuthenticated && !isAuthDisabledForTesting) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         {/* Navigation */}
